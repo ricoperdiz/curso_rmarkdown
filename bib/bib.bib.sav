@@ -1,0 +1,68 @@
+@Book{rmarkdown,
+  author    = {Xie, Yihui and Allaire, J. J. and Grolemund, Garrett},
+  publisher = {Chapman and Hall/CRC},
+  title     = {{R Markdown: the definitive guide}},
+  year      = {2018},
+  address   = {Boca Raton, Florida},
+  note      = {ISBN 9781138359338},
+  url       = {https://bookdown.org/yihui/rmarkdown},
+}
+
+@Book{Wickham2017,
+  author    = {Wickham, Hadley and Grolemund, Garrett},
+  publisher = {O’Reilly Media},
+  title     = {{R for Data Science}},
+  year      = {2017},
+  address   = {Sebastopol, California},
+  file      = {:C\:/Users/ricop/OneDrive/Documentos/CIENCIA/Artigos_livros_afins/WickhamGrolemund2017.pdf:PDF},
+  url       = {https://r4ds.had.co.nz},
+}
+
+@Book{Xie2017,
+  author    = {Xie, Yihui and Hill, Alison Presmanes and Thomas, Amber},
+  publisher = {Chapman and Hall/CRC},
+  title     = {blogdown: Creating Websites with {R} Markdown},
+  year      = {2017},
+  address   = {Boca Raton, Florida},
+  note      = {ISBN 978-0815363729},
+  url       = {https://bookdown.org/yihui/blogdown/},
+}
+
+@Book{bookdown,
+  author    = {Yihui Xie},
+  publisher = {Chapman and Hall/CRC},
+  title     = {bookdown: Authoring Books and Technical Documents with {R} Markdown},
+  year      = {2016},
+  address   = {Boca Raton, Florida},
+  isbn      = {978-1138700109},
+  url       = {https://bookdown.org/yihui/bookdown},
+}
+
+@Online{handel2020,
+  author           = {Handel, Andreas},
+  date             = {2020-10-07},
+  langid           = {en},
+  modificationdate = {2024-03-08T17:37:06},
+  title            = {{Custom Word Formatting Using R Markdown}},
+  url              = {https://www.andreashandel.com/posts/2020-10-07-custom-word-format},
+}
+
+@Article{Ricklefs2015,
+  author           = {Ricklefs, Robert E.},
+  journal          = {Annals of Botany},
+  title            = {{How tree species fill geographic and ecological space in eastern North America}},
+  year             = {2015},
+  issn             = {0305-7364},
+  month            = {04},
+  number           = {6},
+  pages            = {949-959},
+  volume           = {115},
+  abstract         = {{Background and Aims Ecologists broadly accept that the number of species present within a region balances regional processes of immigration and speciation against competitive and other interactions between populations that limit distribution and constrain diversity. Although ecological theory has, for a long time, addressed the premise that ecological space can be filled to ‘capacity’ with species, only with the availability of time-calibrated phylogenies has it been possible to test the hypothesis that diversification slows as the number of species in a region increases. Focusing on the deciduous trees of eastern North America, this study tested predictions from competition theory concerning the distribution and abundance of species.Methods Local assemblages of trees tabulated in a previous study published in 1950 were analysed. Assemblages were ordinated with respect to species composition by non-metric multidimensional scaling (NMS). Distributions of trees were analysed by taxonomically nested analysis of variance, discriminant analysis based on NMS scores, and canonical correlation analysis of NMS scores and Bioclim climate variables.Key Results Most of the variance in species abundance and distribution was concentrated among closely related (i.e. congeneric) species, indicating evolutionary lability. Species distribution and abundance were unrelated to the number of close relatives, suggesting that competitive effects are diffuse. Distances between pairs of congeneric species in NMS space did not differ significantly from distances between more distantly related species, in contrast to the predictions of both competitive habitat partitioning and ecological sorting of species.Conclusions Eastern deciduous forests of North America do not appear to be saturated with species. The distributions and abundances of individual species provide little evidence of being shaped by competition from related (i.e. ecologically similar) species and, by inference, that diversification is constrained by interspecific competition.}},
+  creationdate     = {2024-03-18T09:29:38},
+  doi              = {10.1093/aob/mcv029},
+  eprint           = {https://academic.oup.com/aob/article-pdf/115/6/949/17635497/mcv029.pdf},
+  modificationdate = {2024-03-18T09:29:38},
+  url              = {https://doi.org/10.1093/aob/mcv029},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
