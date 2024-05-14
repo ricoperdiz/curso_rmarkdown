@@ -1,0 +1,51 @@
+project:
+  type: book
+
+book:
+  title: "Introdução ao Rmarkdown e Quarto"
+  author:
+    - name: "Ricardo de Oliveira Perdiz"
+      orcid: "https://orcid.org/0000-0002-2333-6549"
+      email: ricoperdiz@gmail.com
+      affiliation:
+        - name: "Pós-doutorando no Programa de pós-graduação em Recursos Naturais (PRONAT), Universidade Federal de Roraima (UFRR)"
+          city: Boa Vista
+          state: RR
+          url: "https://www.ricardoperdiz.com/"
+  date: last-modified
+  date-format: "[Última atualização:] DD/MMM/YYYY"
+  chapters:
+    - index.qmd
+    - 01_instalacao.qmd
+    - 02_basico.qmd
+    # - bibtex.qmd
+    # - docx.qmd
+  twitter-card: true
+  site-url: "https://intrormarkdown.netlify.app/"
+  # Sidebar tools: 
+  search: true
+  sharing: [twitter, facebook]
+
+encoding: "UTF-8"
+
+lang: pt-br
+
+# execute:
+#   echo: false
+#   warning: false
+
+
+citation: true
+
+bibliography: 
+  - bib/bib.bib
+  - bib/pkg-bib.bib
+
+format:
+  html:
+    theme: cosmo
+  # pdf: default
+  # docx: default
+
+# editor: visual
+

@@ -1,0 +1,110 @@
+
+# Instalação de programas
+
+Este capítulo fornece instruções sobre como instalar os programas necessários para trabalharmos com o *Rmarkdown*.
+Em primeiro lugar, é necessário termos o ambiente R instalado.
+Para complementar, sugiro que o usuário faça seus trabalhos escritos utilizando um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)); este programa nada mais é que um local em há várias ferramentas disponíveis no mesmo lugar (melhorar xxx).
+Por fim, precisaremos instalar um ambiente LaTeX para podermos gerar arquivos em formato *pdf*, e tatmbém instalaremos o organizador de bibliografias *JabRef*.  
+
+## Instalação do R
+
+Acesse o sítio [https://www.r-project.org/](https://www.r-project.org/).
+A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.  
+
+```{r}
+#| echo: false
+knitr::include_url("https://www.r-project.org/")
+```
+
+1. **Windows:**
+   - Acesse o site [CRAN](https://cran.r-project.org/bin/windows/base/) e clique no link para baixar a versão mais recente do R para Windows.
+   - Execute o instalador baixado e siga as instruções do assistente de instalação.
+  
+2. **Mac OS X:**
+   - Vá para o site [CRAN](https://cran.r-project.org/bin/macosx/) e baixe o instalador para a versão mais recente do R para Mac OS X.
+   - Abra o arquivo baixado e siga as instruções do assistente de instalação.
+
+3. **Linux:**
+   - Dependendo da sua distribuição Linux, você pode instalar o R usando o gerenciador de pacotes. Por exemplo, para Ubuntu, você pode usar o comando `sudo apt-get install r-base`.
+   - Consulte a documentação específica da sua distribuição para obter instruções detalhadas.
+
+### Pacotes R necessários
+
+Os pacotes R abaixo (veja este [capítulo](https://intror.netlify.app/base-pacotes) do livro [Curso básico de introdução à linguagem R](https://intror.netlify.app) para entender o que são pacotes de R) são necessários para podermos compilar os diferentes formatos a serem trabalhados na disciplina.
+Uma vez que o usuário tenha o R instalado, abra o ambiente R e execute os comandos abaixo, um a um:
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("rmarkdown") # Mais importante
+install.packages("blogdown") # Blogs
+install.packages("bookdown") # Livros, teses e afins
+install.packages("xaringan") # Apresentações
+install.packages("officer") # Produtos Word, Powerpoint, Excel
+```
+
+## Instalação de um ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)
+
+Recomendamos que o IDE [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, entre os quais se inclui o pacote [bookdown](https://github.com/rstudio/bookdown), utilizado para construir este livro online.
+Ademais, **IDE**s  como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.  
+
+Existem outras alternativas de **IDE**, ([Visual Studio Code](https://code.visualstudio.com/)). Fique à vontade para escolher.  
+
+1. Acesse o site da [RStudio](https://posit.co/download/rstudio-desktop/) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;
+
+2. Execute o instalador baixado e siga as instruções do assistente de instalação.  
+
+Caso o usuário decida optar por outros programas, listo algumas alternativas abaixo:
+
++ VS Code - [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
+
++ Sublime text - [https://www.sublimetext.com/download](https://www.sublimetext.com/download)
+
++ Eclipse - [https://www.eclipse.org/downloads/packages/installer](https://www.eclipse.org/downloads/packages/installer)
+
++ Rkward - [https://rkward.kde.org/Download_RKWard.html](https://rkward.kde.org/Download_RKWard.html)
+
+## Instalação do organizador de bibliografias - JabRef
+
+1. Visite o site do [JabRef](https://www.jabref.org/#downloads) e baixe a versão mais recente para o seu sistema operacional;
+
+2. Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.  
+
+## Instalação do Pandoc
+
+::: {.callout-warning}
+Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do *Pandoc*.  
+:::
+
+1. Visite o site oficial do [Pandoc](https://pandoc.org/installing.html) e encontre as instruções de instalação específicas para o seu sistema operacional;
+
+2. Siga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.  
+
+
+```{r}
+#| echo: false
+knitr::include_url("https://pandoc.org/installing.html")
+```
+
+
+## Instalar distribuição LaTeX
+
+A maneira mais *fácil* de ter uma distribuição LateX atualmente é por meio da instalação do pacote R `tinytex` [@tinytex2019].
+Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote.
+Siga as instruções da tela.  
+
+```{r, echo = TRUE, eval=FALSE}
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
+<!-- ## Verificação da Instalação -->
+
+<!-- Após a conclusão das instalações, você pode verificar se todas as ferramentas foram instaladas corretamente executando os seguintes comandos em seu terminal ou console: -->
+
+<!-- - Para verificar a instalação do R, execute `R --version`. -->
+<!-- - Para verificar a instalação do RStudio, abra o RStudio e verifique a versão na barra de título ou vá para `Help > About`. -->
+<!-- - Para verificar a instalação do Pandoc, execute `pandoc --version`. -->
+
+<!-- Agora você está pronto para começar a utilizar essas ferramentas para criar documentos em R Markdown e aproveitar ao máximo a análise de dados e a geração de relatórios. -->
+

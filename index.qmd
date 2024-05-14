@@ -1,0 +1,52 @@
+
+# Prefácio {.unnumbered}
+
+Este é o site do nosso curso sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos. 
+O objetivo inicial é servir como material de apoio para os discentes da disciplina "Produção de documentos científicos com a linguagem Rmarkdown", oferecida no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima (UFRR), com previsão de início em julho de 2024.
+Nossa intenção com este livro é disponibilizar um material em português de qualidade de forma a aumentar a acessibilidade e abrangência de uso desta ferramenta, visto que a maioria dos livros e tutoriais que tratam de Rmarkdown são disponibilizados na língua inglesa.  
+
+A meta é prover uma introdução ao uso dessa linguagem/ferramenta chamada "RMarkdown", que é simples e poderosa para a produção de diferentes tipos de documentos com elevada qualidade gráfica, além de oferecer ao usuário a possibilidade de produzir documentos dinâmicos e interativos.
+Ressaltamos que isto **não** é um curso de estatística.  
+
+## Estrutura do livro {-}
+
+::: {.callout-warning}
+Estas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização.
+Sua contribuição é muito importante, então sinta-se à vontade para deixar sua opinião e sugestão.
+Caso encontre algum erro tipográfico, ou possua sugestões de melhora, ou possua o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**"issues"**) no repositório do livro, disponível neste link <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.
+Você pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:
+<https://github.com/ricoperdiz/curso_rmarkdown/tree/main>.
+:::
+
+## Pré-requisitos {-}
+
+Devido ao modo como foi construído, este livro pode ser tanto lido quanto "executado", uma vez que seus arquivos são o que chamamos de *Rmarkdown*, uma linguagem que mistura texto com código.
+Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos, e em *tablets*.
+É importante que o usuário possua uma noção básica sobre o funcionamento da linguagem R.
+Caso você não tenha, busque saber o básico.
+Há muito material disponível na rede, dentre os quais sugiro o livro [Curso básico de introdução à linguagem R](https://intror.netlify.app), escrito em português e de livre acesso.  
+
+## Agradecimentos {-}
+
+Agradeço à minha filha por ser minha inspiração diária.  
+Ao PRONAT UFRR por me oferecer um espaço para eu realizar minha pesquisa.  
+E ao Pai e Mãe celestiais, sempre.  
+
+
+```{r}
+#| label: build-pkg-bib
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::write_bib(c(
+      # .packages(),
+      "tinytex",
+      "rmarkdown", # Mais importante
+      "blogdown", # Blogs
+      "bookdown", # Livros, teses e afins
+      "xaringan", # Apresentações
+      "officer" # Produtos Word, Powerpoint, Excel
+      ),
+   'bib/pkg-bib.bib')
+```
