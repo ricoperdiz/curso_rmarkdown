@@ -1,5 +1,7 @@
 ---
+title: "Introdução ao Rmarkdown e Quarto"
 output: github_document
+# output: md_document
 ---
 
 ```{r, include = FALSE}
@@ -9,9 +11,32 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Curso Rmarkdown
+## Descrição {-}
+
+Este é o repositório contendo o código fonte do livro [Introdução ao Rmarkdown e Quarto](https://intrormarkdown.netlify.app) de Ricardo de Oliveira Perdiz.
+
+<!-- [![Status do livro online](https://github.com/LABOTAM/IntroR/workflows/renderbook/badge.svg)](https://github.com/LABOTAM/IntroR/actions) -->
 
 <!-- badges: start -->
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 <!-- badges: end -->
 
+## Licença {-}
+
+O livro [Introdução ao Rmarkdown e Quarto](https://intrormarkdown.netlify.app) de Ricardo de Oliveira Perdiz está licenciado sob [Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0) ][cc-by-sa].
+Baseado em trabalho disponível em <https://github.com/ricoperdiz/curso_rmarkdown>.
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+# Citação
+
+Para citar o livro `Introdução ao Rmarkdown e Quarto` em publicações use:
+
+```
+Ricardo de Oliveira Perdiz (2024). Introção ao Rmarkdown e Quarto. Disponível em <https://intrormarkdown.netlify.app>. Acesso em DIA MÊS ANO.
+```
 
