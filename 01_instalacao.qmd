@@ -2,11 +2,11 @@
 # Instalação de programas
 
 Este capítulo fornece instruções sobre como instalar os programas necessários para trabalharmos com o *Rmarkdown*.
-Em primeiro lugar, é necessário termos o ambiente R instalado.
-Para complementar, sugiro que o usuário faça seus trabalhos escritos utilizando um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)); este programa nada mais é que um local em há várias ferramentas disponíveis no mesmo lugar (melhorar xxx).
-Por fim, precisaremos instalar um ambiente LaTeX para podermos gerar arquivos em formato *pdf*, e tatmbém instalaremos o organizador de bibliografias *JabRef*.  
+Em primeiro lugar, é necessário ter o ambiente R instalado.
+Para complementar, sugiro que o usuário faça seus trabalhos escritos utilizando um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)).
+Em seguida, deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib*([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
 
-## Instalação do R
+## R
 
 Acesse o sítio [https://www.r-project.org/](https://www.r-project.org/).
 A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.  
@@ -43,9 +43,9 @@ install.packages("xaringan") # Apresentações
 install.packages("officer") # Produtos Word, Powerpoint, Excel
 ```
 
-## Instalação de um ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)
+## Ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)
 
-Recomendamos que o IDE [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, entre os quais se inclui o pacote [bookdown](https://github.com/rstudio/bookdown), utilizado para construir este livro online.
+Recomenda-se que o IDE [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes [rmarkdown](https://github.com/rstudio/rmarkdown) e [bookdown](https://github.com/rstudio/bookdown).
 Ademais, **IDE**s  como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.  
 
 Existem outras alternativas de **IDE**, ([Visual Studio Code](https://code.visualstudio.com/)). Fique à vontade para escolher.  
@@ -64,13 +64,13 @@ Caso o usuário decida optar por outros programas, listo algumas alternativas ab
 
 + Rkward - [https://rkward.kde.org/Download_RKWard.html](https://rkward.kde.org/Download_RKWard.html)
 
-## Instalação do organizador de bibliografias - JabRef
+## Organizador de bibliografias - JabRef
 
 1. Visite o site do [JabRef](https://www.jabref.org/#downloads) e baixe a versão mais recente para o seu sistema operacional;
 
 2. Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.  
 
-## Instalação do Pandoc
+## Pandoc
 
 ::: {.callout-warning}
 Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do *Pandoc*.  
@@ -87,9 +87,9 @@ knitr::include_url("https://pandoc.org/installing.html")
 ```
 
 
-## Instalar distribuição LaTeX
+## Distribuição LaTeX
 
-A maneira mais *fácil* de ter uma distribuição LateX atualmente é por meio da instalação do pacote R `tinytex` [@tinytex2019].
+A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R `tinytex` [@tinytex2019].
 Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote.
 Siga as instruções da tela.  
 

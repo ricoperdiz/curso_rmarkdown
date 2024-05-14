@@ -44,14 +44,14 @@
     "href": "01_instalacao.html",
     "title": "1  Instalação de programas",
     "section": "",
-    "text": "1.1 Instalação do R\nAcesse o sítio https://www.r-project.org/. A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.",
+    "text": "1.1 R\nAcesse o sítio https://www.r-project.org/. A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
-    "objectID": "01_instalacao.html#instalação-do-r",
-    "href": "01_instalacao.html#instalação-do-r",
+    "objectID": "01_instalacao.html#r",
+    "href": "01_instalacao.html#r",
     "title": "1  Instalação de programas",
     "section": "",
     "text": "Windows:\n\nAcesse o site CRAN e clique no link para baixar a versão mais recente do R para Windows.\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\nMac OS X:\n\nVá para o site CRAN e baixe o instalador para a versão mais recente do R para Mac OS X.\nAbra o arquivo baixado e siga as instruções do assistente de instalação.\n\nLinux:\n\nDependendo da sua distribuição Linux, você pode instalar o R usando o gerenciador de pacotes. Por exemplo, para Ubuntu, você pode usar o comando sudo apt-get install r-base.\nConsulte a documentação específica da sua distribuição para obter instruções detalhadas.\n\n\n\n1.1.1 Pacotes R necessários\nOs pacotes R abaixo (veja este capítulo do livro Curso básico de introdução à linguagem R para entender o que são pacotes de R) são necessários para podermos compilar os diferentes formatos a serem trabalhados na disciplina. Uma vez que o usuário tenha o R instalado, abra o ambiente R e execute os comandos abaixo, um a um:\n\ninstall.packages(\"rmarkdown\") # Mais importante\ninstall.packages(\"blogdown\") # Blogs\ninstall.packages(\"bookdown\") # Livros, teses e afins\ninstall.packages(\"xaringan\") # Apresentações\ninstall.packages(\"officer\") # Produtos Word, Powerpoint, Excel",
@@ -60,41 +60,41 @@
     ]
   },
   {
-    "objectID": "01_instalacao.html#instalação-de-um-ambiente-de-desenvolvimento-integrado---ide-e.g.-rstudio-vs-code",
-    "href": "01_instalacao.html#instalação-de-um-ambiente-de-desenvolvimento-integrado---ide-e.g.-rstudio-vs-code",
+    "objectID": "01_instalacao.html#ambiente-de-desenvolvimento-integrado---ide-e.g.-rstudio-vs-code",
+    "href": "01_instalacao.html#ambiente-de-desenvolvimento-integrado---ide-e.g.-rstudio-vs-code",
     "title": "1  Instalação de programas",
-    "section": "1.2 Instalação de um ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)",
-    "text": "1.2 Instalação de um ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)\nRecomendamos que o IDE RStudio seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem Rmarkdown, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, entre os quais se inclui o pacote bookdown, utilizado para construir este livro online. Ademais, IDEs como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.\nExistem outras alternativas de IDE, (Visual Studio Code). Fique à vontade para escolher.\n\nAcesse o site da RStudio e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\nCaso o usuário decida optar por outros programas, listo algumas alternativas abaixo:\n\nVS Code - https://code.visualstudio.com/download\nSublime text - https://www.sublimetext.com/download\nEclipse - https://www.eclipse.org/downloads/packages/installer\nRkward - https://rkward.kde.org/Download_RKWard.html",
+    "section": "1.2 Ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)",
+    "text": "1.2 Ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)\nRecomenda-se que o IDE RStudio seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem Rmarkdown, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes rmarkdown e bookdown. Ademais, IDEs como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.\nExistem outras alternativas de IDE, (Visual Studio Code). Fique à vontade para escolher.\n\nAcesse o site da RStudio e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\nCaso o usuário decida optar por outros programas, listo algumas alternativas abaixo:\n\nVS Code - https://code.visualstudio.com/download\nSublime text - https://www.sublimetext.com/download\nEclipse - https://www.eclipse.org/downloads/packages/installer\nRkward - https://rkward.kde.org/Download_RKWard.html",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
-    "objectID": "01_instalacao.html#instalação-do-organizador-de-bibliografias---jabref",
-    "href": "01_instalacao.html#instalação-do-organizador-de-bibliografias---jabref",
+    "objectID": "01_instalacao.html#organizador-de-bibliografias---jabref",
+    "href": "01_instalacao.html#organizador-de-bibliografias---jabref",
     "title": "1  Instalação de programas",
-    "section": "1.3 Instalação do organizador de bibliografias - JabRef",
-    "text": "1.3 Instalação do organizador de bibliografias - JabRef\n\nVisite o site do JabRef e baixe a versão mais recente para o seu sistema operacional;\nApós o download, execute o instalador e siga as instruções do assistente para concluir a instalação.",
+    "section": "1.3 Organizador de bibliografias - JabRef",
+    "text": "1.3 Organizador de bibliografias - JabRef\n\nVisite o site do JabRef e baixe a versão mais recente para o seu sistema operacional;\nApós o download, execute o instalador e siga as instruções do assistente para concluir a instalação.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
-    "objectID": "01_instalacao.html#instalação-do-pandoc",
-    "href": "01_instalacao.html#instalação-do-pandoc",
+    "objectID": "01_instalacao.html#pandoc",
+    "href": "01_instalacao.html#pandoc",
     "title": "1  Instalação de programas",
-    "section": "1.4 Instalação do Pandoc",
-    "text": "1.4 Instalação do Pandoc\n\n\n\n\n\n\nAviso\n\n\n\nCaso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do Pandoc.\n\n\n\nVisite o site oficial do Pandoc e encontre as instruções de instalação específicas para o seu sistema operacional;\nSiga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.",
+    "section": "1.4 Pandoc",
+    "text": "1.4 Pandoc\n\n\n\n\n\n\nAviso\n\n\n\nCaso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do Pandoc.\n\n\n\nVisite o site oficial do Pandoc e encontre as instruções de instalação específicas para o seu sistema operacional;\nSiga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
-    "objectID": "01_instalacao.html#instalar-distribuição-latex",
-    "href": "01_instalacao.html#instalar-distribuição-latex",
+    "objectID": "01_instalacao.html#distribuição-latex",
+    "href": "01_instalacao.html#distribuição-latex",
     "title": "1  Instalação de programas",
-    "section": "1.5 Instalar distribuição LaTeX",
-    "text": "1.5 Instalar distribuição LaTeX\nA maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R tinytex (Xie 2019). Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote. Siga as instruções da tela.\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()",
+    "section": "1.5 Distribuição LaTeX",
+    "text": "1.5 Distribuição LaTeX\nA maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R tinytex (Xie 2019). Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote. Siga as instruções da tela.\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "02_basico.html",
     "title": "2  Conceitos básicos",
     "section": "",
-    "text": "Nota\n\n\n\nLivro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou abra uma solicitação na seção Issues do repositório https://github.com/ricoperdiz/curso_rmarkdown/issues.",
+    "text": "Nota\n\n\n\nLivro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
     ]

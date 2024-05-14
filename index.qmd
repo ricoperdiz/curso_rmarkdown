@@ -8,7 +8,7 @@ Nossa intenção com este livro é disponibilizar um material em português de q
 A meta é prover uma introdução ao uso dessa linguagem/ferramenta chamada "RMarkdown", que é simples e poderosa para a produção de diferentes tipos de documentos com elevada qualidade gráfica, além de oferecer ao usuário a possibilidade de produzir documentos dinâmicos e interativos.
 Ressaltamos que isto **não** é um curso de estatística.  
 
-## Estrutura do livro {-}
+## Estrutura do livro {.unnumbered}
 
 ::: {.callout-warning}
 Estas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização.
@@ -18,7 +18,7 @@ Você pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:
 <https://github.com/ricoperdiz/curso_rmarkdown/tree/main>.
 :::
 
-## Pré-requisitos {-}
+## Pré-requisitos {.unnumbered}
 
 Devido ao modo como foi construído, este livro pode ser tanto lido quanto "executado", uma vez que seus arquivos são o que chamamos de *Rmarkdown*, uma linguagem que mistura texto com código.
 Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos, e em *tablets*.
@@ -26,7 +26,7 @@ Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos
 Caso você não tenha, busque saber o básico.
 Há muito material disponível na rede, dentre os quais sugiro o livro [Curso básico de introdução à linguagem R](https://intror.netlify.app), escrito em português e de livre acesso.  
 
-## Agradecimentos {-}
+## Agradecimentos {.unnumbered}
 
 Agradeço à minha filha por ser minha inspiração diária.  
 Ao PRONAT UFRR por me oferecer um espaço para eu realizar minha pesquisa.  

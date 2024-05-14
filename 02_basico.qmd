@@ -4,5 +4,5 @@
 ::: {.callout-note}
 Livro em construção.
 Em breve, teremos atualizações.
-Caso queira deixar um recado, fazer sugestões, entre em contato via email ou abra uma solicitação na seção `Issues` do repositório <https://github.com/ricoperdiz/curso_rmarkdown/issues>.  
+Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.  
 :::
