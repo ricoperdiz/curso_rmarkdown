@@ -25,6 +25,9 @@ book:
   # Sidebar tools: 
   search: true
   sharing: [twitter, facebook]
+  comments:
+    giscus:
+      repo: ricoperdiz/curso_rmarkdown
 
 encoding: "UTF-8"
 
@@ -34,6 +37,7 @@ execute:
   freeze: auto
   echo: false
   warning: false
+
 
 
 citation: true
