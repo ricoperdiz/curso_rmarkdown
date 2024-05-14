@@ -98,6 +98,9 @@ install.packages('tinytex')
 tinytex::install_tinytex()
 ```
 
+# Referências
+
+
 <!-- ## Verificação da Instalação -->
 
 <!-- Após a conclusão das instalações, você pode verificar se todas as ferramentas foram instaladas corretamente executando os seguintes comandos em seu terminal ou console: -->
