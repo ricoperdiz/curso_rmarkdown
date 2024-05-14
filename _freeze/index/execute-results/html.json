@@ -1,0 +1,15 @@
+{
+  "hash": "0001009196436bf3771e1b61a3ff6cd9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n# Prefácio {.unnumbered}\n\nEste é o site do nosso curso sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos. \nO objetivo inicial é servir como material de apoio para os discentes da disciplina \"Produção de documentos científicos com a linguagem Rmarkdown\", oferecida no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima (UFRR), com previsão de início em julho de 2024.\nNossa intenção com este livro é disponibilizar um material em português de qualidade de forma a aumentar a acessibilidade e abrangência de uso desta ferramenta, visto que a maioria dos livros e tutoriais que tratam de Rmarkdown são disponibilizados na língua inglesa.  \n\nA meta é prover uma introdução ao uso dessa linguagem/ferramenta chamada \"RMarkdown\", que é simples e poderosa para a produção de diferentes tipos de documentos com elevada qualidade gráfica, além de oferecer ao usuário a possibilidade de produzir documentos dinâmicos e interativos.\nRessaltamos que isto **não** é um curso de estatística.  \n\n## Estrutura do livro {-}\n\n::: {.callout-warning}\nEstas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização.\nSua contribuição é muito importante, então sinta-se à vontade para deixar sua opinião e sugestão.\nCaso encontre algum erro tipográfico, ou possua sugestões de melhora, ou possua o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**\"issues\"**) no repositório do livro, disponível neste link <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.\nVocê pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:\n<https://github.com/ricoperdiz/curso_rmarkdown/tree/main>.\n:::\n\n## Pré-requisitos {-}\n\nDevido ao modo como foi construído, este livro pode ser tanto lido quanto \"executado\", uma vez que seus arquivos são o que chamamos de *Rmarkdown*, uma linguagem que mistura texto com código.\nSendo assim, o livro pode ser visualizado em computadores, em celulares modernos, e em *tablets*.\nÉ importante que o usuário possua uma noção básica sobre o funcionamento da linguagem R.\nCaso você não tenha, busque saber o básico.\nHá muito material disponível na rede, dentre os quais sugiro o livro [Curso básico de introdução à linguagem R](https://intror.netlify.app), escrito em português e de livre acesso.  \n\n## Agradecimentos {-}\n\nAgradeço à minha filha por ser minha inspiração diária.  \nAo PRONAT UFRR por me oferecer um espaço para eu realizar minha pesquisa.  \nE ao Pai e Mãe celestiais, sempre.  \n\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
