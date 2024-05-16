@@ -1,0 +1,25 @@
+---
+title: "Compilação de arquivos RMarkdown"
+format: html
+aliases: 
+  - /compilacao/
+---
+
+### Usando o RStudio
+
+No RStudio, basta abrir o arquivo RMarkdown e clicar no botão "Knit" na barra de ferramentas.
+Isso compilará o arquivo RMarkdown, executando o código R e incorporando os resultados no documento final.  
+
+### Usando a Linha de Comando
+
+Para compilar um arquivo RMarkdown usando a linha de comando, você pode usar o seguinte comando no console do R:
+
+```
+rmarkdown::render("caminho/do/seu/arquivo.Rmd")
+```
+
+::: {.callout-note}
+Livro em construção.
+Em breve, teremos atualizações.
+Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.  
+:::

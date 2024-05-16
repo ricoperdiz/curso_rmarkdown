@@ -1,0 +1,203 @@
+---
+title: "Sintaxe"
+format: html
+aliases: 
+  - /sintaxe/
+---
+
+## Sintaxe
+
+A sintaxe de Markdown é simples.
+Exponho[^inspirado-quarto] abaixo as notações mais comuns da linguagem.
+Testem em seus documentos.  
+
+[^inspirado-quarto]: As tabelas escritas em Markdown contendo código e sintaxe da linguagem foram abertamente inspirados [nesta página](https://quarto.org/docs/authoring/markdown-basics.html#text-formatting) que ensina sobre a sintaxe de Markdown no livro sobre o Quarto.  
+
+### Formatação
+
++-----------------------------------------+-----------------------------------------+
+| Sintaxe                                 | Resultado                               |
++=========================================+=========================================+
+| ``` markdown                            | *itálico* é _itálico_                   | 
+| *itálico* é _itálico_                   | **negrito** é __negrito__               |
+| **negrito** é __negrito__               |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            |  ***itálico e negrito***                |
+| ***itálico e negrito***                 |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            | Sobrescrito^2^ / Subescrito~2~          |
+| Sobrescrito^2^ / Subescrito~2~          |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            | ~~riscado~~                             |
+| ~~Riscado~~                             |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            | `verbatim`                              |
+| `verbatim`                              |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+
+### Cabeçalho {#cabecalhos}
+
++-----------------+-----------------------------------+
+| Sintaxe         | Resultado                         |
++=================+===================================+
+| ``` markdown    | # Cabeçalho 1 {.heading-output}   |
+| # Cabeçalho 1   |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ## Cabeçalho 2 {.heading-output}  |
+| ## Cabeçalho 2  |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ### Cabeçalho 3 {.heading-output} |
+| ### Cabeçalho 3 |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | #### Cab. 4 4 {.heading-output}   |
+| #### Cab. 4     |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ##### Cab. 5 {.heading-output}    |
+| ##### Cab. 5    |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ###### Cab. 6 {.heading-output}   |
+| ###### Cab. 6   |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+
+```{=html}
+<style type="text/css">
+.heading-output {
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+```
+
+
+### *Links*
+
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Sintaxe                                                      | Resultado                                                                                              |
++==============================================================+========================================================================================================+
+| ``` markdown                                                 | <https://ufrr.br/>                                                                                     |
+| <https://ufrr.br/>                                           |                                                                                                        |
+| ```                                                          |                                                                                                        |
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| ``` markdown                                                 | [UFRR](https://ufrr.br/)                                                                               |
+| [UFRR](https://ufrr.br/)                                     |                                                                                                        |
+| ```                                                          |                                                                                                        |
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| ``` markdown                                                 | ![Legenda](figuras/ufrr.png){fig-alt="Texto alternativo."}                                             |
+| ![Legenda](figuras/capa.png)                                 |                                                                                                        |
+| ```                                                          |                                                                                                        |
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| ``` markdown                                                 | [![Legenda](figuras/ufrr.png)](https://ufrr.br)                                                        |
+| [![Legenda](figuras/ufrr.png)](https://ufrr.br)              |                                                                                                        |
+| ```                                                          |                                                                                                        |
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| ``` markdown                                                 | [![Legenda](figuras/ufrr.png "UFRR"){fig-alt="Texto alternativo"}](https://ufrr.br)                    |
+| [![Caption](figuras/ufrr.png "UFRR")](https://ufrr.br)       |                                                                                                        |
+| ```                                                          |                                                                                                        |
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| ``` markdown                                                 | [![](figuras/ufrr.png){fig-alt="Texto"}](https://ufrr.br)                                              |
+| [![](figuras/ufrr.png){fig-alt="Texto"}](https://ufrr.br)    |                                                                                                        |
+| ```                                                          |                                                                                                        |
++--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+### Listas
+
++-----------------------------------+---------------------------------+
+| Sintaxe                           | Resultado                       |
++===================================+=================================+
+| ``` markdown                      |                                 |
+| * Lista não ordenada              | * Lista não ordenada            |
+|     + sub-item 1                  |     + sub-item 1                |
+|     + sub-item 2                  |     + sub-item 2                |
+|         - sub-sub-item 1          |         - sub-sub-item 1        |
+| ```                               |                                 |
++-----------------------------------+---------------------------------+
+| ``` markdown                      |                                 |
+| *   item 2                        |  *   item 2                     |
+|     Item 2 continua - basta       | Item 2 continua - basta inserir |
+| inserir 4 espaços                 |4 espaços                        |
+| ```                               |                                 |
++-----------------------------------+---------------------------------+
+| ``` markdown                      |                                 |
+| 1. Lista ordenada                 |  1. Lista ordenada              |
+| 2. item 2                         | 2. item 2                       |
+|     i) sub-item 1                 |     i) sub-item 1               |
+|          A.  sub-sub-item 1       |         A.  sub-sub-item 1      |
+| ```                               |                                 |
+|                                   |                                 |
++-----------------------------------+---------------------------------+
+| ``` markdown                      |                                 |
+| (@)  Uma lista cuja numeração     |  (1) Uma lista cuja numeração   |
+|                                   |                                 |
+| continua após                     |  continua após                  |
+|                                   |                                 |
+| (@)  uma interrupção              |  (2) uma interrupção            |
+| ```                               |                                 |
++-----------------------------------+---------------------------------+
+| ``` markdown                      |                                 |
+| termo                             | termo                           |
+| : definição                       | : definição                     |
+| ```                               |                                 |
++-----------------------------------+---------------------------------+
+
+### Expressões matematicas
+
+Expressões matemáticas podem ser inserir utilizando um cifrão, `$`, antes e depois da expressão.
+Já equações matemáticas devem ser inseridas com um par de cifrões, `$$`, antes e depois da equação.
+Logo, temos a expressão `$x = y $` que será compilada em:
+
+$x = y$
+
+Já a equação matemática `$$math-equation$$` é compilada para
+
+$$math-equation$$
+
+### Citação em blocos
+
+Citações podem ser feitas em blocos por meio do acento circunflexo, `>`.
+Basta inserir o `>` no início de uma linha e, em seguida, inserir text.  
+
+> Bloco de citação
+
+Outra opção é inserir o texto dentro de três crases:
+
+```
+Este texto será apresentado com um destaque visual.
+```
+
+Podemos também fazer uso de quatro espaços para destacar o texto:
+
+    Com quatro espaços, eu destaco o texto também.
+
+
+## Códigos R em linha ("inline codes")
+
+Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em "code chuncks", podem ser feitos utilizando a notação `r `.
+Inserimos o pedaço de código após a letra `r `, e antes da crase.
+O resultado será exposto como um texto normal, e não será distinto do texto circundante.
+Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.  
+
+Tomando o conjunto de dados `iris` como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:
+
+> `r nrow(iris)`
+
+Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados.
+Vejam:
+
+````
++ Há dados para `r length(unique(iris$Species))` espécies
+
++ Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.
+
+````

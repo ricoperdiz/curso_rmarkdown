@@ -16,12 +16,29 @@ book:
   date-format: "[Última atualização:] DD/MMM/YYYY"
   chapters:
     - index.qmd
-    - 01_instalacao.qmd
-    - 02_basico.qmd
+    - part: "Introdução ao Rmarkdown"
+      chapters:
+        - 01_instalacao.qmd
+        - 02_basico.qmd
+        - 03_sintaxe.qmd
+        - 04_compilacao.qmd
+    - part: "Introdução ao Quarto"
+      chapters: 
+        - 0_quarto.qmd
     # - bibtex.qmd
     # - docx.qmd
-  twitter-card: true
+  page-navigation: true
+  favicon: "figuras/favicon.png"
+  twitter-card:
+    title: "Introdução ao Rmarkdown e Quarto"
+    description: "Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos."
+    image: "figuras/capa.png"
+    creator: "ricoperdiz"
+    site: "ricoperdiz"
   site-url: "https://intrormarkdown.netlify.app/"
+  repo-url: https://github.com/ricoperdiz/curso_rmarkdown
+  repo-actions: issue
+  issue-url: https://github.com/ricoperdiz/curso_rmarkdown/issues
   # Sidebar tools: 
   search: true
   sharing: [twitter, facebook]
@@ -30,27 +47,38 @@ book:
       repo: ricoperdiz/curso_rmarkdown
 
 encoding: "UTF-8"
-
 lang: pt-br
 
 execute:
   freeze: auto
   echo: false
   warning: false
+  message: false
 
-
+knitr:
+  opts_knit:
+    verbose: true
 
 citation: true
-
 bibliography: 
   - bib/bib.bib
   - bib/pkg-bib.bib
 
 format:
   html:
-    theme: cosmo
-  # pdf: default
-  # docx: default
+    # toc: true
+    # toc-depth: 3
+    # toc-expand: 2
+    # toc-title: "Conteúdo"
+    # toc-location: left
+    number-sections: false
+    # number-depth: 1
+    fontsize: 1.1em
+    theme: 
+      light: zephyr
+      dark: darkly
+    code-copy: "hover"
+    code-overflow: wrap
 
 # editor: visual
 

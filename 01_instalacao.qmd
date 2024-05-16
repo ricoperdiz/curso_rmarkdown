@@ -1,19 +1,25 @@
-
-# Instalação de programas
+---
+title: "Instalação de programas"
+format: html
+aliases: 
+  - /instalacao/
+---
 
 Este capítulo fornece instruções sobre como instalar os programas necessários para trabalharmos com o *Rmarkdown*.
 Em primeiro lugar, é necessário ter o ambiente R instalado.
 Para complementar, sugiro que o usuário faça seus trabalhos escritos utilizando um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)).
-Em seguida, deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib*([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
+Em seguida, deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib* ([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
 
 ## R
 
-Acesse o sítio [https://www.r-project.org/](https://www.r-project.org/).
+Acesse o sítio [https://www.r-project.org/](https://www.r-project.org/) (@fig-rproject).
 A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.  
 
 ```{r}
+#| label: fig-rproject
+#| fig-cap: "Página inicial do sítio de instalação do ambiente R: <https://www.r-project.org/>."
 #| echo: false
-knitr::include_url("https://www.r-project.org/")
+knitr::include_graphics("figuras/rproject.png")
 ```
 
 1. **Windows:**
@@ -43,18 +49,25 @@ install.packages("xaringan") # Apresentações
 install.packages("officer") # Produtos Word, Powerpoint, Excel
 ```
 
-## Ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)
+## Ambiente de desenvolvimento integrado - IDE
 
 Recomenda-se que o IDE [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes [rmarkdown](https://github.com/rstudio/rmarkdown) e [bookdown](https://github.com/rstudio/bookdown).
 Ademais, **IDE**s  como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.  
 
-Existem outras alternativas de **IDE**, ([Visual Studio Code](https://code.visualstudio.com/)). Fique à vontade para escolher.  
-
-1. Acesse o site da [RStudio](https://posit.co/download/rstudio-desktop/) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;
+1. Acesse o site da [RStudio](https://posit.co/download/rstudio-desktop/) (@fig-rstudio) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;
 
 2. Execute o instalador baixado e siga as instruções do assistente de instalação.  
 
-Caso o usuário decida optar por outros programas, listo algumas alternativas abaixo:
+```{r}
+#| label: fig-rstudio
+#| fig-cap: "Página inicial do sítio de instalação do RStudio: <https://posit.co/download/rstudio-desktop/>."
+#| echo: false
+knitr::include_graphics("figuras/rstudio.png")
+```
+
+Existem outras alternativas de **IDE**.
+Fique à vontade para escolher.
+Listo algumas alternativas abaixo:
 
 + VS Code - [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
@@ -66,9 +79,16 @@ Caso o usuário decida optar por outros programas, listo algumas alternativas ab
 
 ## Organizador de bibliografias - JabRef
 
-1. Visite o site do [JabRef](https://www.jabref.org/#downloads) e baixe a versão mais recente para o seu sistema operacional;
+1. Visite o site do [JabRef](https://www.jabref.org/#downloads) (@fig-jabref) e baixe a versão mais recente para o seu sistema operacional;
 
 2. Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.  
+
+```{r}
+#| label: fig-jabref
+#| fig-cap: "Página inicial do sítio de instalação do JabRef: <https://www.jabref.org/#downloads>."
+#| echo: false
+knitr::include_graphics("figuras/jabref.png")
+```
 
 ## Pandoc
 
@@ -76,14 +96,16 @@ Caso o usuário decida optar por outros programas, listo algumas alternativas ab
 Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do *Pandoc*.  
 :::
 
-1. Visite o site oficial do [Pandoc](https://pandoc.org/installing.html) e encontre as instruções de instalação específicas para o seu sistema operacional;
+1. Visite o site oficial do [Pandoc](https://pandoc.org/installing.html) (@fig-pandoc) e encontre as instruções de instalação específicas para o seu sistema operacional;
 
 2. Siga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.  
 
 
 ```{r}
+#| label: fig-pandoc
+#| fig-cap: "Página inicial do sítio de instalação do Pandoc: <https://pandoc.org/installing.html>."
 #| echo: false
-knitr::include_url("https://pandoc.org/installing.html")
+knitr::include_graphics("figuras/pandoc.png")
 ```
 
 

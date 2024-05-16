@@ -1,8 +1,157 @@
+---
+title: "Conceitos básicos"
+format: html
+aliases: 
+  - /basico/
+---
 
-# Conceitos básicos
+## O que é Markdown?
 
-::: {.callout-note}
-Livro em construção.
-Em breve, teremos atualizações.
-Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.  
+<!-- Extraido de <https://rpubs.com/Henriqueufla/markdown> -->
+Markdown é uma linguagem de marcação projetada para formatar textos de forma simples e legível, ou seja, não é uma linguagem de programação.
+A linguagem Markdown [foi criada por John Gruber em 2004](https://pt.wikipedia.org/wiki/Markdown) com a colaboração de Aaron Swartz.
+O objetivo do Markdown é permitir que escritores criem conteúdo rico em formatação, sem precisar usar mais complexas, como encontradas na [linguagem HTML](https://pt.wikipedia.org/wiki/HTML), por exemplo.  
+
+## O que é Rmarkdown?
+
+Esse tipo de documento foi introduzido inicialmente no pacote `knitr` [@knitr2014;@knitr2015;@R-knitr] no ano de 2012.
+A idéia era superar as limitações do [Sweave](https://en.wikipedia.org/wiki/Sweave), uma ferramenta que permite a integração de código R com documentos LaTeX.
+Em seu desenho, o Rmarkdown (apesar de possuir o **R** no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, [literate programming](https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada)).
+A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas.
+Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte.
+A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.  
+
+## Para que serve o RMarkdown?
+
+O RMarkdown é utilizado para uma variedade de finalidades, incluindo:
+
+- **Relatórios Reprodutíveis**: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises.
+- **Documentação de Análises de Dados**: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas.
+- **Apresentações Dinâmicas**: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real.
+- **Geração de Documentos Variados**: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.  
+
+<!-- R Markdown provides an authoring framework for data science. You can use a single R Markdown file to both -->
+<!--     save and execute code, and -->
+<!--     generate high quality reports that can be shared with an audience. -->
+<!-- R Markdown was designed for easier reproducibility, since both the computing code and narratives are in the same document, and results are automatically generated from the source code. R Markdown supports dozens of static and dynamic/interactive output formats. -->
+<!-- RMarkdown é a possibilidade de executar-se scripts em R (além de outras linguagens) e incorporá-los a um arquivo Markdown (extensão .md). O pacote knitr executará “pedaços” (chunk) de códigos e gerará um arquivo .md com os códigos e seus resultados. -->
+<!-- Na sequência, o pandoc, que é um conversor, converte-o para a linguagem desejada, gerando os arquivos nos formatos escolhidos (.html, .docx, .pdf, .odt) (http://rmarkdown.rstudio.com). A Figura 1 ilustra o processo: -->
+
+<!-- RMarkdown é um tipo de arquivo que combina texto formatado com código R para criar documentos dinâmicos e interativos. Ele permite a integração perfeita de narrativa, código e resultados em um único documento. -->
+
+::: {.callout-tip}
+Arquivos Markdown apresentam extensão `.md`.
+Arquivos Rmarkdown apresentam extensão `.Rmd`.
+Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto é, o formato do arquivo, sugiro que [siga este tutorial](https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01) para habilitar esta função em seu computador.
+Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.
 :::
+
+## Benefícios de se utilizar o Rmarkdown
+
+Os benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos.
+De todos esses pontos, destaco abaixo os que considero mais importantes:
+
+  + Reprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises.
+
+  + Integração de código e texto. XXX
+  + Visualizações interativas.   
+
+## Exemplos de produtos gerados com Rmarkdown
+
+Há uma infinidade de exemplos de produtos que foram gerados utilizando o Rmarkdown.
+Listo abaixo alguns exemplos, colocando tanto o produto quanto o código fonte.  
+
+  + [Sítio digital e pacote - R Markdown](https://rmarkdown.rstudio.com/) | [Código fonte](https://github.com/rstudio/rmarkdown)
+
+  + [Livro - Efficient R programming](https://bookdown.org/csgillespie/efficientR/)  | [Código fonte](https://github.com/csgillespie/efficientR/)
+  
+  + [Livro - bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/) | [Código fonte](https://github.com/rstudio/bookdown)
+  
+  + [Apresentação - Xaringan](https://slides.yihui.org/xaringan/) | [Código fonte](https://github.com/yihui/xaringan)
+
+## Como criar um arquivo `.Rmd`
+
+XXXX
+
+## Estrutura de um documento Rmarkdown
+
+Um arquivo RMarkdown é composto por três tipos principais de elementos:
+
+1. **Metadados YAML**: Também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.
+
+2. **Chunk de Código**: São blocos de código R delimitados por três crases (`````). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.
+
+3. **Texto Formatado**: Texto normal que pode incluir formatação com Markdown para criar títulos, listas, links, entre outros.
+
+  ````
+  ---
+  title: "Meu primeiro documento em Rmarkdown"
+  author: "Coloco meu nome aqui, entre aspas"
+  date: "15 Maio 2024"
+  ---
+  
+  ## Análise exploratória de dados
+
+  Vou analisar o conjunto de dados chamado `iris`.  
+
+  ```{{r}}
+  iris
+  ```
+  
+  Aqui escrevo mais texto sobre meu conjunto de dados.
+  
+  ### Gráficos
+  
+  ```{{r}}
+  gplot(iris$Sepal.Length, iris$Sepal.Width)
+  ```
+  
+  ````
+
+### YAML
+
+
+```{verbatim}
+---
+title: "Meu primeiro documento em Rmarkdown"
+author: "Coloco meu nome aqui, entre aspas"
+date: "15 Maio 2024"
+---
+```
+
+YAML[^yaml] se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento.
+Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos.
+No exemplo acima, definimos o produto como `html_document`.
+Caso quiséssemos um arquivo no formato `.docx` (ou Word), o output deveria ser modificado para `word_document`.
+Cada formato possui um conjunto de opções disponíveis.
+Nesse caso, é importante consultar a página de cada formato disponível na documentação do RMarkdown.  
+
+
+[^yaml]: YAML vem do inglês **Y**AML **A**in’t **M**arkup **L**anguage, que significa *YAML não é uma linguagem de marcação*.  
+
+
+### Pedaços de código
+
+Os pedaços de código em R  (*code chunks*) podem ser executados para gerar resultados que serão incorporados ao documento.
+Você pode inserir um pedaço de código manualmente manualmente ou com o atalho `CTRL + ALT + I` no Windows/Linux e `CMD + ALT + I` no MacOS.
+É possível incluir uma série de opções relacionadas à execução do código.
+Falaremos destas opções mais adiante.  
+
+```{r, eval = FALSE, echo = TRUE}
+# Exemplo de um chunk de código R
+summary(mtcars)
+```
+
+### Texto
+
+#### Citações de referências bibliográficas
+
+
+
+
+
+<!-- Isso conclui nosso capítulo introdutório sobre o RMarkdown. -->
+<!-- Nos próximos capítulos, vamos explorar a sintaxe de Markdown e tipos diferentes de produtos com Rmarkdown.   -->
+<!-- tópicos mais avançados, incluindo personalização de saída, integração com pacotes externos e dicas de boas práticas.   -->
+<!-- Por exemplo, um mesmo código Markdown pode ser convertido para HTML, LaTeX (gera pdf’s), docx etc. -->
+<!-- Para isso, é necessário um conversor, que lê um código em Markdown e, considerando a escolha do output desejado, converte o arquivo para a linguagem desejada. Isto ficará mais claro com os exemplos. -->
