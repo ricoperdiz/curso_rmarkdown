@@ -2,14 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://intrormarkdown.netlify.app/index.html</loc>
-    <lastmod>2024-05-14T18:06:57.047Z</lastmod>
+    <lastmod>2024-05-15T16:31:13.307Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/01_instalacao.html</loc>
-    <lastmod>2024-05-14T18:12:18.304Z</lastmod>
+    <lastmod>2024-05-16T15:38:50.011Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/02_basico.html</loc>
-    <lastmod>2024-05-14T17:56:36.181Z</lastmod>
+    <lastmod>2024-05-16T15:23:10.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://intrormarkdown.netlify.app/03_sintaxe.html</loc>
+    <lastmod>2024-05-16T15:48:56.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://intrormarkdown.netlify.app/04_compilacao.html</loc>
+    <lastmod>2024-05-16T15:49:38.064Z</lastmod>
+  </url>
+  <url>
+    <loc>https://intrormarkdown.netlify.app/0_quarto.html</loc>
+    <lastmod>2024-05-15T19:24:07.593Z</lastmod>
   </url>
 </urlset>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introdução ao Rmarkdown e Quarto - Instalação de programas</title>
+<title>Introdução ao Rmarkdown e Quarto - Compilação de arquivos RMarkdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_basico.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./0_quarto.html" rel="next">
+<link href="./03_sintaxe.html" rel="prev">
 <link href="./figuras/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -146,7 +92,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./01_instalacao.html"><span class="chapter-title">Instalação de programas</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./04_compilacao.html"><span class="chapter-title">Compilação de arquivos RMarkdown</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -209,7 +155,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_instalacao.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Instalação de programas</span></a>
+  <a href="./01_instalacao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalação de programas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -224,7 +170,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_compilacao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Compilação de arquivos RMarkdown</span></a>
+  <a href="./04_compilacao.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Compilação de arquivos RMarkdown</span></a>
   </div>
 </li>
       </ul>
@@ -255,24 +201,17 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a>
-  <ul class="collapse">
-  <li><a href="#pacotes-r-necessários" id="toc-pacotes-r-necessários" class="nav-link" data-scroll-target="#pacotes-r-necessários">Pacotes R necessários</a></li>
-  </ul></li>
-  <li><a href="#ambiente-de-desenvolvimento-integrado---ide" id="toc-ambiente-de-desenvolvimento-integrado---ide" class="nav-link" data-scroll-target="#ambiente-de-desenvolvimento-integrado---ide">Ambiente de desenvolvimento integrado - IDE</a></li>
-  <li><a href="#organizador-de-bibliografias---jabref" id="toc-organizador-de-bibliografias---jabref" class="nav-link" data-scroll-target="#organizador-de-bibliografias---jabref">Organizador de bibliografias - JabRef</a></li>
-  <li><a href="#pandoc" id="toc-pandoc" class="nav-link" data-scroll-target="#pandoc">Pandoc</a></li>
-  <li><a href="#distribuição-latex" id="toc-distribuição-latex" class="nav-link" data-scroll-target="#distribuição-latex">Distribuição LaTeX</a></li>
-  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
+  <li><a href="#usando-o-rstudio" id="toc-usando-o-rstudio" class="nav-link active" data-scroll-target="#usando-o-rstudio">Usando o RStudio</a></li>
+  <li><a href="#usando-a-linha-de-comando" id="toc-usando-a-linha-de-comando" class="nav-link" data-scroll-target="#usando-a-linha-de-comando">Usando a Linha de Comando</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./01_instalacao.html"><span class="chapter-title">Instalação de programas</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./04_compilacao.html"><span class="chapter-title">Compilação de arquivos RMarkdown</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Instalação de programas</span></h1>
+<h1 class="title"><span class="chapter-title">Compilação de arquivos RMarkdown</span></h1>
 </div>
 
 
@@ -289,160 +228,29 @@ div.csl-indent {
 </header>
 
 
-<p>Este capítulo fornece instruções sobre como instalar os programas necessários para trabalharmos com o <em>Rmarkdown</em>. Em primeiro lugar, é necessário ter o ambiente R instalado. Para complementar, sugiro que o usuário faça seus trabalhos escritos utilizando um ambiente de desenvolvimento integrado (do inglês <em>Integrated Development Environment</em>, <strong>IDE</strong>; <a href="https://www.redhat.com/pt-br/topics/middleware/what-is-ide">acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo</a>). Em seguida, deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato <em>pdf</em>, e, por fim, deve-se instalar um organizador de bibliografias, <em>JabRef</em>, para lidar com arquivos em formato <em>bib</em> (<a href="https://www.reviversoft.com/pt/file-extensions/bib">veja aqui o que é um arquivo bib</a>).</p>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
-<p>Acesse o sítio <a href="https://www.r-project.org/">https://www.r-project.org/</a> (<a href="#fig-rproject" class="quarto-xref">Figura&nbsp;<span>1.1</span></a>). A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-rproject" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figuras/rproject.png" class="img-fluid figure-img" width="800">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.1: Página inicial do sítio de instalação do ambiente R: <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ol type="1">
-<li><strong>Windows:</strong>
-<ul>
-<li>Acesse o site <a href="https://cran.r-project.org/bin/windows/base/">CRAN</a> e clique no link para baixar a versão mais recente do R para Windows.</li>
-<li>Execute o instalador baixado e siga as instruções do assistente de instalação.</li>
-</ul></li>
-<li><strong>Mac OS X:</strong>
-<ul>
-<li>Vá para o site <a href="https://cran.r-project.org/bin/macosx/">CRAN</a> e baixe o instalador para a versão mais recente do R para Mac OS X.</li>
-<li>Abra o arquivo baixado e siga as instruções do assistente de instalação.</li>
-</ul></li>
-<li><strong>Linux:</strong>
-<ul>
-<li>Dependendo da sua distribuição Linux, você pode instalar o R usando o gerenciador de pacotes. Por exemplo, para Ubuntu, você pode usar o comando <code>sudo apt-get install r-base</code>.</li>
-<li>Consulte a documentação específica da sua distribuição para obter instruções detalhadas.</li>
-</ul></li>
-</ol>
-<section id="pacotes-r-necessários" class="level3">
-<h3 class="anchored" data-anchor-id="pacotes-r-necessários">Pacotes R necessários</h3>
-<p>Os pacotes R abaixo (veja este <a href="https://intror.netlify.app/base-pacotes">capítulo</a> do livro <a href="https://intror.netlify.app">Curso básico de introdução à linguagem R</a> para entender o que são pacotes de R) são necessários para podermos compilar os diferentes formatos a serem trabalhados na disciplina. Uma vez que o usuário tenha o R instalado, abra o ambiente R e execute os comandos abaixo, um a um:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>) <span class="co"># Mais importante</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"blogdown"</span>) <span class="co"># Blogs</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bookdown"</span>) <span class="co"># Livros, teses e afins</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"xaringan"</span>) <span class="co"># Apresentações</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"officer"</span>) <span class="co"># Produtos Word, Powerpoint, Excel</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="usando-o-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="usando-o-rstudio">Usando o RStudio</h3>
+<p>No RStudio, basta abrir o arquivo RMarkdown e clicar no botão “Knit” na barra de ferramentas. Isso compilará o arquivo RMarkdown, executando o código R e incorporando os resultados no documento final.</p>
 </section>
-</section>
-<section id="ambiente-de-desenvolvimento-integrado---ide" class="level2">
-<h2 class="anchored" data-anchor-id="ambiente-de-desenvolvimento-integrado---ide">Ambiente de desenvolvimento integrado - IDE</h2>
-<p>Recomenda-se que o IDE <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem <em>Rmarkdown</em>, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes <a href="https://github.com/rstudio/rmarkdown">rmarkdown</a> e <a href="https://github.com/rstudio/bookdown">bookdown</a>. Ademais, <strong>IDE</strong>s como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.</p>
-<ol type="1">
-<li><p>Acesse o site da <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> (<a href="#fig-rstudio" class="quarto-xref">Figura&nbsp;<span>1.2</span></a>) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;</p></li>
-<li><p>Execute o instalador baixado e siga as instruções do assistente de instalação.</p></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-rstudio" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figuras/rstudio.png" class="img-fluid figure-img" width="800">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.2: Página inicial do sítio de instalação do RStudio: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Existem outras alternativas de <strong>IDE</strong>. Fique à vontade para escolher. Listo algumas alternativas abaixo:</p>
-<ul>
-<li><p>VS Code - <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p></li>
-<li><p>Sublime text - <a href="https://www.sublimetext.com/download">https://www.sublimetext.com/download</a></p></li>
-<li><p>Eclipse - <a href="https://www.eclipse.org/downloads/packages/installer">https://www.eclipse.org/downloads/packages/installer</a></p></li>
-<li><p>Rkward - <a href="https://rkward.kde.org/Download_RKWard.html">https://rkward.kde.org/Download_RKWard.html</a></p></li>
-</ul>
-</section>
-<section id="organizador-de-bibliografias---jabref" class="level2">
-<h2 class="anchored" data-anchor-id="organizador-de-bibliografias---jabref">Organizador de bibliografias - JabRef</h2>
-<ol type="1">
-<li><p>Visite o site do <a href="https://www.jabref.org/#downloads">JabRef</a> (<a href="#fig-jabref" class="quarto-xref">Figura&nbsp;<span>1.3</span></a>) e baixe a versão mais recente para o seu sistema operacional;</p></li>
-<li><p>Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.</p></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-jabref" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-jabref-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figuras/jabref.png" class="img-fluid figure-img" width="800">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jabref-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.3: Página inicial do sítio de instalação do JabRef: <a href="https://www.jabref.org/#downloads" class="uri">https://www.jabref.org/#downloads</a>.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="pandoc" class="level2">
-<h2 class="anchored" data-anchor-id="pandoc">Pandoc</h2>
-<div class="callout callout-style-default callout-warning callout-titled">
+<section id="usando-a-linha-de-comando" class="level3">
+<h3 class="anchored" data-anchor-id="usando-a-linha-de-comando">Usando a Linha de Comando</h3>
+<p>Para compilar um arquivo RMarkdown usando a linha de comando, você pode usar o seguinte comando no console do R:</p>
+<pre><code>rmarkdown::render("caminho/do/seu/arquivo.Rmd")</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aviso
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do <em>Pandoc</em>.</p>
+<p>Livro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.</p>
 </div>
 </div>
-<ol type="1">
-<li><p>Visite o site oficial do <a href="https://pandoc.org/installing.html">Pandoc</a> (<a href="#fig-pandoc" class="quarto-xref">Figura&nbsp;<span>1.4</span></a>) e encontre as instruções de instalação específicas para o seu sistema operacional;</p></li>
-<li><p>Siga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.</p></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-pandoc" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pandoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figuras/pandoc.png" class="img-fluid figure-img" width="800">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pandoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.4: Página inicial do sítio de instalação do Pandoc: <a href="https://pandoc.org/installing.html" class="uri">https://pandoc.org/installing.html</a>.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="distribuição-latex" class="level2">
-<h2 class="anchored" data-anchor-id="distribuição-latex">Distribuição LaTeX</h2>
-<p>A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R <code>tinytex</code> <span class="citation" data-cites="tinytex2019">(<a href="#ref-tinytex2019" role="doc-biblioref">Xie 2019</a>)</span>. Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote. Siga as instruções da tela.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="referências" class="level1">
-<h1>Referências</h1>
-<!-- ## Verificação da Instalação -->
-<!-- Após a conclusão das instalações, você pode verificar se todas as ferramentas foram instaladas corretamente executando os seguintes comandos em seu terminal ou console: -->
-<!-- - Para verificar a instalação do R, execute `R --version`. -->
-<!-- - Para verificar a instalação do RStudio, abra o RStudio e verifique a versão na barra de título ou vá para `Help > About`. -->
-<!-- - Para verificar a instalação do Pandoc, execute `pandoc --version`. -->
-<!-- Agora você está pronto para começar a utilizar essas ferramentas para criar documentos em R Markdown e aproveitar ao máximo a análise de dados e a geração de relatórios. -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-tinytex2019" class="csl-entry" role="listitem">
-Xie, Yihui. 2019. <span>“TinyTeX: A lightweight, cross-platform, and easy-to-maintain LaTeX distribution based on TeX Live”</span>. <em>TUGboat</em> 40 (1): 30–32. <a href="https://tug.org/TUGboat/Contents/contents40-1.html">https://tug.org/TUGboat/Contents/contents40-1.html</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -1005,13 +813,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Prefácio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefácio</span>
+      <a href="./03_sintaxe.html" class="pagination-link" aria-label="Sintaxe">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sintaxe</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_basico.html" class="pagination-link" aria-label="Conceitos básicos">
-        <span class="nav-page-text"><span class="chapter-title">Conceitos básicos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./0_quarto.html" class="pagination-link" aria-label="O que é Quarto?">
+        <span class="nav-page-text"><span class="chapter-title">O que é Quarto?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

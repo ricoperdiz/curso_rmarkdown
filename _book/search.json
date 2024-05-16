@@ -42,71 +42,221 @@
   {
     "objectID": "01_instalacao.html",
     "href": "01_instalacao.html",
-    "title": "1  Instalação de programas",
+    "title": "Instalação de programas",
     "section": "",
-    "text": "1.1 R\nAcesse o sítio https://www.r-project.org/. A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.",
+    "text": "R\nAcesse o sítio https://www.r-project.org/ (Figura 1.1). A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.\nFigura 1.1: Página inicial do sítio de instalação do ambiente R: https://www.r-project.org/.",
     "crumbs": [
+      "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
     "objectID": "01_instalacao.html#r",
     "href": "01_instalacao.html#r",
-    "title": "1  Instalação de programas",
+    "title": "Instalação de programas",
     "section": "",
-    "text": "Windows:\n\nAcesse o site CRAN e clique no link para baixar a versão mais recente do R para Windows.\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\nMac OS X:\n\nVá para o site CRAN e baixe o instalador para a versão mais recente do R para Mac OS X.\nAbra o arquivo baixado e siga as instruções do assistente de instalação.\n\nLinux:\n\nDependendo da sua distribuição Linux, você pode instalar o R usando o gerenciador de pacotes. Por exemplo, para Ubuntu, você pode usar o comando sudo apt-get install r-base.\nConsulte a documentação específica da sua distribuição para obter instruções detalhadas.\n\n\n\n1.1.1 Pacotes R necessários\nOs pacotes R abaixo (veja este capítulo do livro Curso básico de introdução à linguagem R para entender o que são pacotes de R) são necessários para podermos compilar os diferentes formatos a serem trabalhados na disciplina. Uma vez que o usuário tenha o R instalado, abra o ambiente R e execute os comandos abaixo, um a um:\n\ninstall.packages(\"rmarkdown\") # Mais importante\ninstall.packages(\"blogdown\") # Blogs\ninstall.packages(\"bookdown\") # Livros, teses e afins\ninstall.packages(\"xaringan\") # Apresentações\ninstall.packages(\"officer\") # Produtos Word, Powerpoint, Excel",
+    "text": "Windows:\n\nAcesse o site CRAN e clique no link para baixar a versão mais recente do R para Windows.\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\nMac OS X:\n\nVá para o site CRAN e baixe o instalador para a versão mais recente do R para Mac OS X.\nAbra o arquivo baixado e siga as instruções do assistente de instalação.\n\nLinux:\n\nDependendo da sua distribuição Linux, você pode instalar o R usando o gerenciador de pacotes. Por exemplo, para Ubuntu, você pode usar o comando sudo apt-get install r-base.\nConsulte a documentação específica da sua distribuição para obter instruções detalhadas.\n\n\n\nPacotes R necessários\nOs pacotes R abaixo (veja este capítulo do livro Curso básico de introdução à linguagem R para entender o que são pacotes de R) são necessários para podermos compilar os diferentes formatos a serem trabalhados na disciplina. Uma vez que o usuário tenha o R instalado, abra o ambiente R e execute os comandos abaixo, um a um:\n\ninstall.packages(\"rmarkdown\") # Mais importante\ninstall.packages(\"blogdown\") # Blogs\ninstall.packages(\"bookdown\") # Livros, teses e afins\ninstall.packages(\"xaringan\") # Apresentações\ninstall.packages(\"officer\") # Produtos Word, Powerpoint, Excel",
     "crumbs": [
+      "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
-    "objectID": "01_instalacao.html#ambiente-de-desenvolvimento-integrado---ide-e.g.-rstudio-vs-code",
-    "href": "01_instalacao.html#ambiente-de-desenvolvimento-integrado---ide-e.g.-rstudio-vs-code",
-    "title": "1  Instalação de programas",
-    "section": "1.2 Ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)",
-    "text": "1.2 Ambiente de desenvolvimento integrado - IDE (e.g., RStudio, VS code)\nRecomenda-se que o IDE RStudio seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem Rmarkdown, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes rmarkdown e bookdown. Ademais, IDEs como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.\nExistem outras alternativas de IDE, (Visual Studio Code). Fique à vontade para escolher.\n\nAcesse o site da RStudio e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\nCaso o usuário decida optar por outros programas, listo algumas alternativas abaixo:\n\nVS Code - https://code.visualstudio.com/download\nSublime text - https://www.sublimetext.com/download\nEclipse - https://www.eclipse.org/downloads/packages/installer\nRkward - https://rkward.kde.org/Download_RKWard.html",
+    "objectID": "01_instalacao.html#ambiente-de-desenvolvimento-integrado---ide",
+    "href": "01_instalacao.html#ambiente-de-desenvolvimento-integrado---ide",
+    "title": "Instalação de programas",
+    "section": "Ambiente de desenvolvimento integrado - IDE",
+    "text": "Ambiente de desenvolvimento integrado - IDE\nRecomenda-se que o IDE RStudio seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem Rmarkdown, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes rmarkdown e bookdown. Ademais, IDEs como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.\n\nAcesse o site da RStudio (Figura 1.2) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;\nExecute o instalador baixado e siga as instruções do assistente de instalação.\n\n\n\n\n\n\n\n\n\nFigura 1.2: Página inicial do sítio de instalação do RStudio: https://posit.co/download/rstudio-desktop/.\n\n\n\n\n\nExistem outras alternativas de IDE. Fique à vontade para escolher. Listo algumas alternativas abaixo:\n\nVS Code - https://code.visualstudio.com/download\nSublime text - https://www.sublimetext.com/download\nEclipse - https://www.eclipse.org/downloads/packages/installer\nRkward - https://rkward.kde.org/Download_RKWard.html",
     "crumbs": [
+      "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
     "objectID": "01_instalacao.html#organizador-de-bibliografias---jabref",
     "href": "01_instalacao.html#organizador-de-bibliografias---jabref",
-    "title": "1  Instalação de programas",
-    "section": "1.3 Organizador de bibliografias - JabRef",
-    "text": "1.3 Organizador de bibliografias - JabRef\n\nVisite o site do JabRef e baixe a versão mais recente para o seu sistema operacional;\nApós o download, execute o instalador e siga as instruções do assistente para concluir a instalação.",
+    "title": "Instalação de programas",
+    "section": "Organizador de bibliografias - JabRef",
+    "text": "Organizador de bibliografias - JabRef\n\nVisite o site do JabRef (Figura 1.3) e baixe a versão mais recente para o seu sistema operacional;\nApós o download, execute o instalador e siga as instruções do assistente para concluir a instalação.\n\n\n\n\n\n\n\n\n\nFigura 1.3: Página inicial do sítio de instalação do JabRef: https://www.jabref.org/#downloads.",
     "crumbs": [
+      "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
     "objectID": "01_instalacao.html#pandoc",
     "href": "01_instalacao.html#pandoc",
-    "title": "1  Instalação de programas",
-    "section": "1.4 Pandoc",
-    "text": "1.4 Pandoc\n\n\n\n\n\n\nAviso\n\n\n\nCaso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do Pandoc.\n\n\n\nVisite o site oficial do Pandoc e encontre as instruções de instalação específicas para o seu sistema operacional;\nSiga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.",
+    "title": "Instalação de programas",
+    "section": "Pandoc",
+    "text": "Pandoc\n\n\n\n\n\n\nAviso\n\n\n\nCaso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do Pandoc.\n\n\n\nVisite o site oficial do Pandoc (Figura 1.4) e encontre as instruções de instalação específicas para o seu sistema operacional;\nSiga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.\n\n\n\n\n\n\n\n\n\nFigura 1.4: Página inicial do sítio de instalação do Pandoc: https://pandoc.org/installing.html.",
     "crumbs": [
+      "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
     "objectID": "01_instalacao.html#distribuição-latex",
     "href": "01_instalacao.html#distribuição-latex",
-    "title": "1  Instalação de programas",
-    "section": "1.5 Distribuição LaTeX",
-    "text": "1.5 Distribuição LaTeX\nA maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R tinytex (Xie 2019). Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote. Siga as instruções da tela.\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()",
+    "title": "Instalação de programas",
+    "section": "Distribuição LaTeX",
+    "text": "Distribuição LaTeX\nA maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R tinytex (Xie 2019). Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote. Siga as instruções da tela.\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()",
     "crumbs": [
+      "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
     ]
   },
   {
     "objectID": "02_basico.html",
     "href": "02_basico.html",
-    "title": "2  Conceitos básicos",
+    "title": "Conceitos básicos",
+    "section": "",
+    "text": "O que é Markdown?\nMarkdown é uma linguagem de marcação projetada para formatar textos de forma simples e legível, ou seja, não é uma linguagem de programação. A linguagem Markdown foi criada por John Gruber em 2004 com a colaboração de Aaron Swartz. O objetivo do Markdown é permitir que escritores criem conteúdo rico em formatação, sem precisar usar mais complexas, como encontradas na linguagem HTML, por exemplo.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#o-que-é-rmarkdown",
+    "href": "02_basico.html#o-que-é-rmarkdown",
+    "title": "Conceitos básicos",
+    "section": "O que é Rmarkdown?",
+    "text": "O que é Rmarkdown?\nEsse tipo de documento foi introduzido inicialmente no pacote knitr (Xie 2014, 2015, 2024) no ano de 2012. A idéia era superar as limitações do Sweave, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmarkdown (apesar de possuir o R no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, literate programming). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#para-que-serve-o-rmarkdown",
+    "href": "02_basico.html#para-que-serve-o-rmarkdown",
+    "title": "Conceitos básicos",
+    "section": "Para que serve o RMarkdown?",
+    "text": "Para que serve o RMarkdown?\nO RMarkdown é utilizado para uma variedade de finalidades, incluindo:\n\nRelatórios Reprodutíveis: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises.\nDocumentação de Análises de Dados: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas.\nApresentações Dinâmicas: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real.\nGeração de Documentos Variados: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDica\n\n\n\nArquivos Markdown apresentam extensão .md. Arquivos Rmarkdown apresentam extensão .Rmd. Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto é, o formato do arquivo, sugiro que siga este tutorial para habilitar esta função em seu computador. Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#benefícios-de-se-utilizar-o-rmarkdown",
+    "href": "02_basico.html#benefícios-de-se-utilizar-o-rmarkdown",
+    "title": "Conceitos básicos",
+    "section": "Benefícios de se utilizar o Rmarkdown",
+    "text": "Benefícios de se utilizar o Rmarkdown\nOs benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos. De todos esses pontos, destaco abaixo os que considero mais importantes:\n\nReprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises.\nIntegração de código e texto. XXX\nVisualizações interativas.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#exemplos-de-produtos-gerados-com-rmarkdown",
+    "href": "02_basico.html#exemplos-de-produtos-gerados-com-rmarkdown",
+    "title": "Conceitos básicos",
+    "section": "Exemplos de produtos gerados com Rmarkdown",
+    "text": "Exemplos de produtos gerados com Rmarkdown\nHá uma infinidade de exemplos de produtos que foram gerados utilizando o Rmarkdown. Listo abaixo alguns exemplos, colocando tanto o produto quanto o código fonte.\n\nSítio digital e pacote - R Markdown | Código fonte\nLivro - Efficient R programming | Código fonte\nLivro - bookdown: Authoring Books and Technical Documents with R Markdown | Código fonte\nApresentação - Xaringan | Código fonte",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#como-criar-um-arquivo-.rmd",
+    "href": "02_basico.html#como-criar-um-arquivo-.rmd",
+    "title": "Conceitos básicos",
+    "section": "Como criar um arquivo .Rmd",
+    "text": "Como criar um arquivo .Rmd\nXXXX",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#estrutura-de-um-documento-rmarkdown",
+    "href": "02_basico.html#estrutura-de-um-documento-rmarkdown",
+    "title": "Conceitos básicos",
+    "section": "Estrutura de um documento Rmarkdown",
+    "text": "Estrutura de um documento Rmarkdown\nUm arquivo RMarkdown é composto por três tipos principais de elementos:\n\nMetadados YAML: Também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.\nChunk de Código: São blocos de código R delimitados por três crases (`````). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.\nTexto Formatado: Texto normal que pode incluir formatação com Markdown para criar títulos, listas, links, entre outros.\n\n---\ntitle: \"Meu primeiro documento em Rmarkdown\"\nauthor: \"Coloco meu nome aqui, entre aspas\"\ndate: \"15 Maio 2024\"\n---\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.  \n\n```{r}\niris\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r}\ngplot(iris$Sepal.Length, iris$Sepal.Width)\n```\n\nYAML\n---\ntitle: \"Meu primeiro documento em Rmarkdown\"\nauthor: \"Coloco meu nome aqui, entre aspas\"\ndate: \"15 Maio 2024\"\n---\nYAML1 se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como html_document. Caso quiséssemos um arquivo no formato .docx (ou Word), o output deveria ser modificado para word_document. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do RMarkdown.\n\n\nPedaços de código\nOs pedaços de código em R (code chunks) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho CTRL + ALT + I no Windows/Linux e CMD + ALT + I no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.\n\n# Exemplo de um chunk de código R\nsummary(mtcars)\n\n\n\nTexto\n\nCitações de referências bibliográficas\n\n\n\n\n\n\n\n\n\nXie, Yihui. 2014. “knitr: A Comprehensive Tool for Reproducible Research in R”. Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2024. knitr: A General-Purpose Package for Dynamic Report Generation in R. https://yihui.org/knitr/.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "02_basico.html#footnotes",
+    "href": "02_basico.html#footnotes",
+    "title": "Conceitos básicos",
+    "section": "",
+    "text": "YAML vem do inglês YAML Ain’t Markup Language, que significa YAML não é uma linguagem de marcação.↩︎",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+    ]
+  },
+  {
+    "objectID": "03_sintaxe.html",
+    "href": "03_sintaxe.html",
+    "title": "Sintaxe",
+    "section": "",
+    "text": "Sintaxe\nA sintaxe de Markdown é simples. Exponho1 abaixo as notações mais comuns da linguagem. Testem em seus documentos.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
+    ]
+  },
+  {
+    "objectID": "03_sintaxe.html#sintaxe",
+    "href": "03_sintaxe.html#sintaxe",
+    "title": "Sintaxe",
+    "section": "Cabeçalho 2",
+    "text": "Formatação\n\n\n\n\n\n\n\nSintaxe\nResultado\n\n\n\n\n*itálico* é _itálico_\n**negrito** é __negrito__\nitálico é itálico negrito é negrito\n\n\n***itálico e negrito***\nitálico e negrito\n\n\nSobrescrito^2^ / Subescrito~2~\nSobrescrito2 / Subescrito2\n\n\n~~Riscado~~\nriscado\n\n\n`verbatim`\nverbatim\n\n\n\n\n\nCabeçalho\n\n\n\n\n\n\n\nSintaxe\nResultado\n\n\n\n\n# Cabeçalho 1\nCabeçalho 1\n\n\n## Cabeçalho 2\nCabeçalho 2\n\n\n### Cabeçalho 3\nCabeçalho 3\n\n\n#### Cab. 4\nCab. 4 4\n\n\n##### Cab. 5\nCab. 5\n\n\n###### Cab. 6\nCab. 6\n\n\n\n\n\n\nLinks\n\n\n\nSintaxe\nResultado\n\n\n\n\n&lt;https://ufrr.br/&gt;\nhttps://ufrr.br/\n\n\n[UFRR](https://ufrr.br/)\nUFRR\n\n\n![Legenda](figuras/capa.png)\n\n\n\nLegenda\n\n\n\n\n[![Legenda](figuras/ufrr.png)](https://ufrr.br)\n\n\n\n[![Caption](figuras/ufrr.png \"UFRR\")](https://ufrr.br)\n\n\n\n[![](figuras/ufrr.png){fig-alt=\"Texto\"}](https://ufrr.br)\n\n\n\n\n\n\nListas\n\n\n\n\n\n\n\nSintaxe\nResultado\n\n\n\n\n* Lista não ordenada\n    + sub-item 1\n    + sub-item 2\n        - sub-sub-item 1\n\nLista não ordenada\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\n\n\n\n*   item 2\n    Item 2 continua - basta\ninserir 4 espaços\n\nitem 2 Item 2 continua - basta inserir 4 espaços\n\n\n\n1. Lista ordenada\n2. item 2\n    i) sub-item 1\n         A.  sub-sub-item 1\n\nLista ordenada\nitem 2\n\nsub-item 1\n\nsub-sub-item 1\n\n\n\n\n\n(@)  Uma lista cuja numeração\n\ncontinua após\n\n(@)  uma interrupção\n\nUma lista cuja numeração\n\ncontinua após\n\numa interrupção\n\n\n\ntermo\n: definição\n\ntermo\n\ndefinição\n\n\n\n\n\n\n\nExpressões matematicas\nExpressões matemáticas podem ser inserir utilizando um cifrão, $, antes e depois da expressão. Já equações matemáticas devem ser inseridas com um par de cifrões, $$, antes e depois da equação. Logo, temos a expressão $x = y $ que será compilada em:\n\\(x = y\\)\nJá a equação matemática $$math-equation$$ é compilada para\n\\[math-equation\\]\n\n\nCitação em blocos\nCitações podem ser feitas em blocos por meio do acento circunflexo, &gt;. Basta inserir o &gt; no início de uma linha e, em seguida, inserir text.\n\nBloco de citação\n\nOutra opção é inserir o texto dentro de três crases:\nEste texto será apresentado com um destaque visual.\nPodemos também fazer uso de quatro espaços para destacar o texto:\nCom quatro espaços, eu destaco o texto também.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
+    ]
+  },
+  {
+    "objectID": "03_sintaxe.html#códigos-r-em-linha-inline-codes",
+    "href": "03_sintaxe.html#códigos-r-em-linha-inline-codes",
+    "title": "Sintaxe",
+    "section": "Códigos R em linha (“inline codes”)",
+    "text": "Códigos R em linha (“inline codes”)\nCódigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação r. Inserimos o pedaço de código após a letra r, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.\nTomando o conjunto de dados iris como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:\n\nr nrow(iris)\n\nOu então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:\n+ Há dados para `r length(unique(iris$Species))` espécies\n\n+ Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
+    ]
+  },
+  {
+    "objectID": "03_sintaxe.html#footnotes",
+    "href": "03_sintaxe.html#footnotes",
+    "title": "Sintaxe",
+    "section": "",
+    "text": "As tabelas escritas em Markdown contendo código e sintaxe da linguagem foram abertamente inspirados nesta página que ensina sobre a sintaxe de Markdown no livro sobre o Quarto.↩︎",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
+    ]
+  },
+  {
+    "objectID": "04_compilacao.html",
+    "href": "04_compilacao.html",
+    "title": "Compilação de arquivos RMarkdown",
+    "section": "",
+    "text": "Usando o RStudio\nNo RStudio, basta abrir o arquivo RMarkdown e clicar no botão “Knit” na barra de ferramentas. Isso compilará o arquivo RMarkdown, executando o código R e incorporando os resultados no documento final.\n\n\nUsando a Linha de Comando\nPara compilar um arquivo RMarkdown usando a linha de comando, você pode usar o seguinte comando no console do R:\nrmarkdown::render(\"caminho/do/seu/arquivo.Rmd\")\n\n\n\n\n\n\nNota\n\n\n\nLivro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Compilação de arquivos RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "0_quarto.html",
+    "href": "0_quarto.html",
+    "title": "O que é Quarto?",
     "section": "",
     "text": "Nota\n\n\n\nLivro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
+      "Introdução ao Quarto",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>O que é Quarto?</span>"
     ]
   }
 ]

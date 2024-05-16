@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introdução ao Rmarkdown e Quarto - 2&nbsp; Conceitos básicos</title>
+<title>Introdução ao Rmarkdown e Quarto - Conceitos básicos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,16 +84,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./03_sintaxe.html" rel="next">
 <link href="./01_instalacao.html" rel="prev">
+<link href="./figuras/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,8 +127,14 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto - 2&nbsp; Conceitos básicos">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto">
+<meta name="twitter:description" content="Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.">
+<meta name="twitter:image" content="https://intrormarkdown.netlify.app/figuras/capa.png">
+<meta name="twitter:creator" content="ricoperdiz">
+<meta name="twitter:site" content="ricoperdiz">
+<meta name="twitter:image-height" content="796">
+<meta name="twitter:image-width" content="1589">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating">
@@ -82,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_basico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceitos básicos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./02_basico.html"><span class="chapter-title">Conceitos básicos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -98,7 +162,8 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introdução ao Rmarkdown e Quarto</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/ricoperdiz/curso_rmarkdown" title="Código fonte" class="quarto-navigation-tool px-1" aria-label="Código fonte"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Compartilhar" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Compartilhar"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -116,6 +181,7 @@ ul.task-list li input[type="checkbox"] {
           </li>
       </ul>
     </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -132,32 +198,84 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Prefácio</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Introdução ao Rmarkdown</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_instalacao.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instalação de programas</span></span></a>
+  <a href="./01_instalacao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalação de programas</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_basico.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceitos básicos</span></span></a>
+  <a href="./02_basico.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Conceitos básicos</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_sintaxe.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sintaxe</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_compilacao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Compilação de arquivos RMarkdown</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Introdução ao Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">O que é Quarto?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#o-que-é-markdown" id="toc-o-que-é-markdown" class="nav-link active" data-scroll-target="#o-que-é-markdown">O que é Markdown?</a></li>
+  <li><a href="#o-que-é-rmarkdown" id="toc-o-que-é-rmarkdown" class="nav-link" data-scroll-target="#o-que-é-rmarkdown">O que é Rmarkdown?</a></li>
+  <li><a href="#para-que-serve-o-rmarkdown" id="toc-para-que-serve-o-rmarkdown" class="nav-link" data-scroll-target="#para-que-serve-o-rmarkdown">Para que serve o RMarkdown?</a></li>
+  <li><a href="#benefícios-de-se-utilizar-o-rmarkdown" id="toc-benefícios-de-se-utilizar-o-rmarkdown" class="nav-link" data-scroll-target="#benefícios-de-se-utilizar-o-rmarkdown">Benefícios de se utilizar o Rmarkdown</a></li>
+  <li><a href="#exemplos-de-produtos-gerados-com-rmarkdown" id="toc-exemplos-de-produtos-gerados-com-rmarkdown" class="nav-link" data-scroll-target="#exemplos-de-produtos-gerados-com-rmarkdown">Exemplos de produtos gerados com Rmarkdown</a></li>
+  <li><a href="#como-criar-um-arquivo-.rmd" id="toc-como-criar-um-arquivo-.rmd" class="nav-link" data-scroll-target="#como-criar-um-arquivo-.rmd">Como criar um arquivo <code>.Rmd</code></a></li>
+  <li><a href="#estrutura-de-um-documento-rmarkdown" id="toc-estrutura-de-um-documento-rmarkdown" class="nav-link" data-scroll-target="#estrutura-de-um-documento-rmarkdown">Estrutura de um documento Rmarkdown</a>
+  <ul class="collapse">
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#pedaços-de-código" id="toc-pedaços-de-código" class="nav-link" data-scroll-target="#pedaços-de-código">Pedaços de código</a></li>
+  <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./02_basico.html"><span class="chapter-title">Conceitos básicos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceitos básicos</span></h1>
+<h1 class="title"><span class="chapter-title">Conceitos básicos</span></h1>
 </div>
 
 
@@ -174,21 +292,145 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="o-que-é-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-markdown">O que é Markdown?</h2>
+<!-- Extraido de <https://rpubs.com/Henriqueufla/markdown> -->
+<p>Markdown é uma linguagem de marcação projetada para formatar textos de forma simples e legível, ou seja, não é uma linguagem de programação. A linguagem Markdown <a href="https://pt.wikipedia.org/wiki/Markdown">foi criada por John Gruber em 2004</a> com a colaboração de Aaron Swartz. O objetivo do Markdown é permitir que escritores criem conteúdo rico em formatação, sem precisar usar mais complexas, como encontradas na <a href="https://pt.wikipedia.org/wiki/HTML">linguagem HTML</a>, por exemplo.</p>
+</section>
+<section id="o-que-é-rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-rmarkdown">O que é Rmarkdown?</h2>
+<p>Esse tipo de documento foi introduzido inicialmente no pacote <code>knitr</code> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2024</a>)</span> no ano de 2012. A idéia era superar as limitações do <a href="https://en.wikipedia.org/wiki/Sweave">Sweave</a>, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmarkdown (apesar de possuir o <strong>R</strong> no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, <a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada">literate programming</a>). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.</p>
+</section>
+<section id="para-que-serve-o-rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="para-que-serve-o-rmarkdown">Para que serve o RMarkdown?</h2>
+<p>O RMarkdown é utilizado para uma variedade de finalidades, incluindo:</p>
+<ul>
+<li><strong>Relatórios Reprodutíveis</strong>: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises.</li>
+<li><strong>Documentação de Análises de Dados</strong>: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas.</li>
+<li><strong>Apresentações Dinâmicas</strong>: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real.</li>
+<li><strong>Geração de Documentos Variados</strong>: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.</li>
+</ul>
+<!-- R Markdown provides an authoring framework for data science. You can use a single R Markdown file to both -->
+<!--     save and execute code, and -->
+<!--     generate high quality reports that can be shared with an audience. -->
+<!-- R Markdown was designed for easier reproducibility, since both the computing code and narratives are in the same document, and results are automatically generated from the source code. R Markdown supports dozens of static and dynamic/interactive output formats. -->
+<!-- RMarkdown é a possibilidade de executar-se scripts em R (além de outras linguagens) e incorporá-los a um arquivo Markdown (extensão .md). O pacote knitr executará “pedaços” (chunk) de códigos e gerará um arquivo .md com os códigos e seus resultados. -->
+<!-- Na sequência, o pandoc, que é um conversor, converte-o para a linguagem desejada, gerando os arquivos nos formatos escolhidos (.html, .docx, .pdf, .odt) (http://rmarkdown.rstudio.com). A Figura 1 ilustra o processo: -->
+<!-- RMarkdown é um tipo de arquivo que combina texto formatado com código R para criar documentos dinâmicos e interativos. Ele permite a integração perfeita de narrativa, código e resultados em um único documento. -->
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+Dica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Livro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.</p>
+<p>Arquivos Markdown apresentam extensão <code>.md</code>. Arquivos Rmarkdown apresentam extensão <code>.Rmd</code>. Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto é, o formato do arquivo, sugiro que <a href="https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01">siga este tutorial</a> para habilitar esta função em seu computador. Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.</p>
 </div>
 </div>
+</section>
+<section id="benefícios-de-se-utilizar-o-rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="benefícios-de-se-utilizar-o-rmarkdown">Benefícios de se utilizar o Rmarkdown</h2>
+<p>Os benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos. De todos esses pontos, destaco abaixo os que considero mais importantes:</p>
+<ul>
+<li><p>Reprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises.</p></li>
+<li><p>Integração de código e texto. XXX</p></li>
+<li><p>Visualizações interativas.</p></li>
+</ul>
+</section>
+<section id="exemplos-de-produtos-gerados-com-rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos-de-produtos-gerados-com-rmarkdown">Exemplos de produtos gerados com Rmarkdown</h2>
+<p>Há uma infinidade de exemplos de produtos que foram gerados utilizando o Rmarkdown. Listo abaixo alguns exemplos, colocando tanto o produto quanto o código fonte.</p>
+<ul>
+<li><p><a href="https://rmarkdown.rstudio.com/">Sítio digital e pacote - R Markdown</a> | <a href="https://github.com/rstudio/rmarkdown">Código fonte</a></p></li>
+<li><p><a href="https://bookdown.org/csgillespie/efficientR/">Livro - Efficient R programming</a> | <a href="https://github.com/csgillespie/efficientR/">Código fonte</a></p></li>
+<li><p><a href="https://bookdown.org/yihui/bookdown/">Livro - bookdown: Authoring Books and Technical Documents with R Markdown</a> | <a href="https://github.com/rstudio/bookdown">Código fonte</a></p></li>
+<li><p><a href="https://slides.yihui.org/xaringan/">Apresentação - Xaringan</a> | <a href="https://github.com/yihui/xaringan">Código fonte</a></p></li>
+</ul>
+</section>
+<section id="como-criar-um-arquivo-.rmd" class="level2">
+<h2 class="anchored" data-anchor-id="como-criar-um-arquivo-.rmd">Como criar um arquivo <code>.Rmd</code></h2>
+<p>XXXX</p>
+</section>
+<section id="estrutura-de-um-documento-rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="estrutura-de-um-documento-rmarkdown">Estrutura de um documento Rmarkdown</h2>
+<p>Um arquivo RMarkdown é composto por três tipos principais de elementos:</p>
+<ol type="1">
+<li><p><strong>Metadados YAML</strong>: Também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.</p></li>
+<li><p><strong>Chunk de Código</strong>: São blocos de código R delimitados por três crases (`````). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.</p></li>
+<li><p><strong>Texto Formatado</strong>: Texto normal que pode incluir formatação com Markdown para criar títulos, listas, links, entre outros.</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Meu primeiro documento em Rmarkdown"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Coloco meu nome aqui, entre aspas"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "15 Maio 2024"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análise exploratória de dados</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Vou analisar o conjunto de dados chamado <span class="in">`iris`</span>.  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">iris</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráficos</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">gplot(iris$Sepal.Length, iris$Sepal.Width)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="yaml" class="level3">
+<h3 class="anchored" data-anchor-id="yaml">YAML</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title: "Meu primeiro documento em Rmarkdown"</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author: "Coloco meu nome aqui, entre aspas"</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date: "15 Maio 2024"</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>YAML<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como <code>html_document</code>. Caso quiséssemos um arquivo no formato <code>.docx</code> (ou Word), o output deveria ser modificado para <code>word_document</code>. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do RMarkdown.</p>
+</section>
+<section id="pedaços-de-código" class="level3">
+<h3 class="anchored" data-anchor-id="pedaços-de-código">Pedaços de código</h3>
+<p>Os pedaços de código em R (<em>code chunks</em>) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho <code>CTRL + ALT + I</code> no Windows/Linux e <code>CMD + ALT + I</code> no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo de um chunk de código R</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="texto" class="level3">
+<h3 class="anchored" data-anchor-id="texto">Texto</h3>
+<section id="citações-de-referências-bibliográficas" class="level4">
+<h4 class="anchored" data-anchor-id="citações-de-referências-bibliográficas">Citações de referências bibliográficas</h4>
+<!-- Isso conclui nosso capítulo introdutório sobre o RMarkdown. -->
+<!-- Nos próximos capítulos, vamos explorar a sintaxe de Markdown e tipos diferentes de produtos com Rmarkdown.   -->
+<!-- tópicos mais avançados, incluindo personalização de saída, integração com pacotes externos e dicas de boas práticas.   -->
+<!-- Por exemplo, um mesmo código Markdown pode ser convertido para HTML, LaTeX (gera pdf’s), docx etc. -->
+<!-- Para isso, é necessário um conversor, que lê um código em Markdown e, considerando a escolha do output desejado, converte o arquivo para a linguagem desejada. Isto ficará mais claro com os exemplos. -->
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-knitr2014" class="csl-entry" role="listitem">
+Xie, Yihui. 2014. <span>“knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>”</span>. Em <em>Implementing Reproducible Computational Research</em>, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.
+</div>
+<div id="ref-knitr2015" class="csl-entry" role="listitem">
+———. 2015. <em>Dynamic Documents with <span>R</span> and knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry" role="listitem">
+———. 2024. <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>YAML vem do inglês <strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage, que significa <em>YAML não é uma linguagem de marcação</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -211,6 +453,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -607,10 +993,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./01_instalacao.html" class="pagination-link" aria-label="Instalação de programas">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instalação de programas</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Instalação de programas</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./03_sintaxe.html" class="pagination-link" aria-label="Sintaxe">
+        <span class="nav-page-text"><span class="chapter-title">Sintaxe</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -618,4 +1007,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
