@@ -121,29 +121,7 @@
     "href": "02_basico.html#o-que-é-rmarkdown",
     "title": "Conceitos básicos",
     "section": "O que é Rmarkdown?",
-    "text": "O que é Rmarkdown?\nEsse tipo de documento foi introduzido inicialmente no pacote knitr (Xie 2014, 2015, 2024) no ano de 2012. A idéia era superar as limitações do Sweave, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmarkdown (apesar de possuir o R no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, literate programming). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.",
-    "crumbs": [
-      "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
-    ]
-  },
-  {
-    "objectID": "02_basico.html#para-que-serve-o-rmarkdown",
-    "href": "02_basico.html#para-que-serve-o-rmarkdown",
-    "title": "Conceitos básicos",
-    "section": "Para que serve o RMarkdown?",
-    "text": "Para que serve o RMarkdown?\nO RMarkdown é utilizado para uma variedade de finalidades, incluindo:\n\nRelatórios Reprodutíveis: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises.\nDocumentação de Análises de Dados: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas.\nApresentações Dinâmicas: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real.\nGeração de Documentos Variados: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDica\n\n\n\nArquivos Markdown apresentam extensão .md. Arquivos Rmarkdown apresentam extensão .Rmd. Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto é, o formato do arquivo, sugiro que siga este tutorial para habilitar esta função em seu computador. Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.",
-    "crumbs": [
-      "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
-    ]
-  },
-  {
-    "objectID": "02_basico.html#benefícios-de-se-utilizar-o-rmarkdown",
-    "href": "02_basico.html#benefícios-de-se-utilizar-o-rmarkdown",
-    "title": "Conceitos básicos",
-    "section": "Benefícios de se utilizar o Rmarkdown",
-    "text": "Benefícios de se utilizar o Rmarkdown\nOs benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos. De todos esses pontos, destaco abaixo os que considero mais importantes:\n\nReprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises.\nIntegração de código e texto. XXX\nVisualizações interativas.",
+    "text": "O que é Rmarkdown?\nEsse tipo de documento foi introduzido inicialmente no pacote knitr (Xie 2014, 2015, 2024) no ano de 2012. A idéia era superar as limitações do Sweave, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmarkdown (apesar de possuir o R no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, literate programming). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDica\n\n\n\nArquivos Markdown apresentam extensão .md. Arquivos Rmarkdown apresentam extensão .Rmd. Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto é, o formato do arquivo, sugiro que siga este tutorial para habilitar esta função em seu computador. Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"

@@ -257,8 +257,6 @@ div.csl-indent {
   <ul>
   <li><a href="#o-que-é-markdown" id="toc-o-que-é-markdown" class="nav-link active" data-scroll-target="#o-que-é-markdown">O que é Markdown?</a></li>
   <li><a href="#o-que-é-rmarkdown" id="toc-o-que-é-rmarkdown" class="nav-link" data-scroll-target="#o-que-é-rmarkdown">O que é Rmarkdown?</a></li>
-  <li><a href="#para-que-serve-o-rmarkdown" id="toc-para-que-serve-o-rmarkdown" class="nav-link" data-scroll-target="#para-que-serve-o-rmarkdown">Para que serve o RMarkdown?</a></li>
-  <li><a href="#benefícios-de-se-utilizar-o-rmarkdown" id="toc-benefícios-de-se-utilizar-o-rmarkdown" class="nav-link" data-scroll-target="#benefícios-de-se-utilizar-o-rmarkdown">Benefícios de se utilizar o Rmarkdown</a></li>
   <li><a href="#exemplos-de-produtos-gerados-com-rmarkdown" id="toc-exemplos-de-produtos-gerados-com-rmarkdown" class="nav-link" data-scroll-target="#exemplos-de-produtos-gerados-com-rmarkdown">Exemplos de produtos gerados com Rmarkdown</a></li>
   <li><a href="#como-criar-um-arquivo-.rmd" id="toc-como-criar-um-arquivo-.rmd" class="nav-link" data-scroll-target="#como-criar-um-arquivo-.rmd">Como criar um arquivo <code>.Rmd</code></a></li>
   <li><a href="#estrutura-de-um-documento-rmarkdown" id="toc-estrutura-de-um-documento-rmarkdown" class="nav-link" data-scroll-target="#estrutura-de-um-documento-rmarkdown">Estrutura de um documento Rmarkdown</a>
@@ -300,16 +298,12 @@ div.csl-indent {
 <section id="o-que-é-rmarkdown" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-é-rmarkdown">O que é Rmarkdown?</h2>
 <p>Esse tipo de documento foi introduzido inicialmente no pacote <code>knitr</code> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2024</a>)</span> no ano de 2012. A idéia era superar as limitações do <a href="https://en.wikipedia.org/wiki/Sweave">Sweave</a>, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmarkdown (apesar de possuir o <strong>R</strong> no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, <a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada">literate programming</a>). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.</p>
-</section>
-<section id="para-que-serve-o-rmarkdown" class="level2">
-<h2 class="anchored" data-anchor-id="para-que-serve-o-rmarkdown">Para que serve o RMarkdown?</h2>
-<p>O RMarkdown é utilizado para uma variedade de finalidades, incluindo:</p>
-<ul>
-<li><strong>Relatórios Reprodutíveis</strong>: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises.</li>
-<li><strong>Documentação de Análises de Dados</strong>: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas.</li>
-<li><strong>Apresentações Dinâmicas</strong>: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real.</li>
-<li><strong>Geração de Documentos Variados</strong>: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.</li>
-</ul>
+<!-- ## Para que serve o RMarkdown? -->
+<!-- O RMarkdown é utilizado para uma variedade de finalidades, incluindo: -->
+<!-- - **Relatórios Reprodutíveis**: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises. -->
+<!-- - **Documentação de Análises de Dados**: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas. -->
+<!-- - **Apresentações Dinâmicas**: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real. -->
+<!-- - **Geração de Documentos Variados**: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.   -->
 <!-- R Markdown provides an authoring framework for data science. You can use a single R Markdown file to both -->
 <!--     save and execute code, and -->
 <!--     generate high quality reports that can be shared with an audience. -->
@@ -330,15 +324,12 @@ Dica
 <p>Arquivos Markdown apresentam extensão <code>.md</code>. Arquivos Rmarkdown apresentam extensão <code>.Rmd</code>. Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto é, o formato do arquivo, sugiro que <a href="https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01">siga este tutorial</a> para habilitar esta função em seu computador. Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.</p>
 </div>
 </div>
-</section>
-<section id="benefícios-de-se-utilizar-o-rmarkdown" class="level2">
-<h2 class="anchored" data-anchor-id="benefícios-de-se-utilizar-o-rmarkdown">Benefícios de se utilizar o Rmarkdown</h2>
-<p>Os benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos. De todos esses pontos, destaco abaixo os que considero mais importantes:</p>
-<ul>
-<li><p>Reprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises.</p></li>
-<li><p>Integração de código e texto. XXX</p></li>
-<li><p>Visualizações interativas.</p></li>
-</ul>
+<!-- ## Benefícios de se utilizar o Rmarkdown -->
+<!-- Os benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos. -->
+<!-- De todos esses pontos, destaco abaixo os que considero mais importantes: -->
+<!--   + Reprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises. -->
+<!--   + Integração de código e texto. XXX -->
+<!--   + Visualizações interativas.    -->
 </section>
 <section id="exemplos-de-produtos-gerados-com-rmarkdown" class="level2">
 <h2 class="anchored" data-anchor-id="exemplos-de-produtos-gerados-com-rmarkdown">Exemplos de produtos gerados com Rmarkdown</h2>

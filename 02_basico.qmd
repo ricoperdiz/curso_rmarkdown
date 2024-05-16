@@ -21,14 +21,14 @@ A programação letrada foi introduzida por Donald Knuth em 1984 e consite em co
 Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte.
 A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.  
 
-## Para que serve o RMarkdown?
+<!-- ## Para que serve o RMarkdown? -->
 
-O RMarkdown é utilizado para uma variedade de finalidades, incluindo:
+<!-- O RMarkdown é utilizado para uma variedade de finalidades, incluindo: -->
 
-- **Relatórios Reprodutíveis**: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises.
-- **Documentação de Análises de Dados**: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas.
-- **Apresentações Dinâmicas**: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real.
-- **Geração de Documentos Variados**: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.  
+<!-- - **Relatórios Reprodutíveis**: Permite a criação de relatórios que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises. -->
+<!-- - **Documentação de Análises de Dados**: Facilita a documentação de análises de dados, incluindo a explicação do raciocínio por trás das decisões analíticas. -->
+<!-- - **Apresentações Dinâmicas**: Permite a criação de apresentações dinâmicas que incorporam análises de dados em tempo real. -->
+<!-- - **Geração de Documentos Variados**: Pode ser usado para criar uma variedade de documentos, incluindo relatórios PDF, páginas da web, apresentações de slides e até mesmo livros eletrônicos.   -->
 
 <!-- R Markdown provides an authoring framework for data science. You can use a single R Markdown file to both -->
 <!--     save and execute code, and -->
@@ -46,15 +46,15 @@ Caso você use SO Windows e não consiga ver a extensão de cada arquivo, isto �
 Isso ajuda no entendimento dos diferentes tipos de arquivos que lidaremos nesse curso.
 :::
 
-## Benefícios de se utilizar o Rmarkdown
+<!-- ## Benefícios de se utilizar o Rmarkdown -->
 
-Os benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos.
-De todos esses pontos, destaco abaixo os que considero mais importantes:
+<!-- Os benefícios de uso do Rmarkdown podem ser sintetizados nos seguintes pontos: reprodutibilidade, integração de código e texto, flexibilidade de formatos, suporte a múltiplas linguagens de programação, colaboração e controle de versão, visualizações interativas, facilidade de uso, elevado caráter de personalização e existência de pacotes para ampliar os usos. -->
+<!-- De todos esses pontos, destaco abaixo os que considero mais importantes: -->
 
-  + Reprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises.
+<!--   + Reprodutibilidade. R Markdown facilita a criação de documentos reprodutíveis, onde o código é executado toda vez que o documento é gerado. Isso assegura que os resultados apresentados estejam sempre atualizados e sejam derivados diretamente do código fornecido, permitindo que outros possam reproduzir exatamente as mesmas análises. -->
 
-  + Integração de código e texto. XXX
-  + Visualizações interativas.   
+<!--   + Integração de código e texto. XXX -->
+<!--   + Visualizações interativas.    -->
 
 ## Exemplos de produtos gerados com Rmarkdown
 
