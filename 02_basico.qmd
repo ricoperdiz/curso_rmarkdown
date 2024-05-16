@@ -71,7 +71,7 @@ Listo abaixo alguns exemplos, colocando tanto o produto quanto o código fonte.
 
 ## Como criar um arquivo `.Rmd`
 
-XXXX
+Em construção.  
 
 ## Estrutura de um documento Rmarkdown
 
@@ -144,11 +144,14 @@ summary(mtcars)
 
 ### Texto
 
+Em construção.  
+
+
 #### Citações de referências bibliográficas
 
+Em construção.  
 
-
-
+# Referências
 
 <!-- Isso conclui nosso capítulo introdutório sobre o RMarkdown. -->
 <!-- Nos próximos capítulos, vamos explorar a sintaxe de Markdown e tipos diferentes de produtos com Rmarkdown.   -->
