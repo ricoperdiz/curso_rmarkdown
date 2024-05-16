@@ -1,4 +1,29 @@
 
+```{r}
+#| label: build-pkg-bib
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::write_bib(
+   c(
+      # .packages(),
+      "knitr",
+      "tinytex",
+      "rmarkdown",
+      # Mais importante
+      "blogdown",
+      # Blogs
+      "bookdown",
+      # Livros, teses e afins
+      "xaringan",
+      # Apresentações
+      "officer" # Produtos Word, Powerpoint, Excel
+   ),
+   'bib/pkg-bib.bib'
+)
+```
+
 # Prefácio {.unnumbered}
 
 Este é o site do nosso curso sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos. 
@@ -32,21 +57,3 @@ Agradeço à minha filha por ser minha inspiração diária.
 Ao PRONAT UFRR por me oferecer um espaço para eu realizar minha pesquisa.  
 E ao Pai e Mãe celestiais, sempre.  
 
-
-```{r}
-#| label: build-pkg-bib
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-knitr::write_bib(c(
-      # .packages(),
-      "tinytex",
-      "rmarkdown", # Mais importante
-      "blogdown", # Blogs
-      "bookdown", # Livros, teses e afins
-      "xaringan", # Apresentações
-      "officer" # Produtos Word, Powerpoint, Excel
-      ),
-   'bib/pkg-bib.bib')
-```
