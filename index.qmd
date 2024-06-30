@@ -89,10 +89,11 @@ sinfo <- xfun::session_info(c(
    'tinytex', 'xaringan', 'officer', 'officedown'
 ), dependencies = FALSE)
 so_dad <- stringr::str_split(gsub("Running under: ", "", sinfo[3]), ", ") |> unlist()
+rstudio <- gsub("RStudio", "RStudio, versão", so_dad[2])
 ```
 
 Este livro foi construído por meio da plataforma Quarto [^quarto], versão `r quarto::quarto_version()`, dentro do ambiente `r gsub("version", "versão", R.version.string)`.
-Utilizei o `r gsub("RStudio", "RStudio, versão", so_dad[2])` dentro do sistema operacional `r so_dad[1]`.
+Utilizei o RStudio, versão 2024.4.2.764, dentro do sistema operacional `r so_dad[1]`.
 Abaixo disponibilizo as informações sobre os pacotes utilizados durante a construção deste livro: 
 
 [^quarto]: O Quarto é uma reimaginação multilínguas e multifuncionalidades do Rmarkdown. Para saber mais, visite <https://quarto.org/>.  
@@ -143,7 +144,6 @@ knitr::write_bib(
 #| echo: false
 #| message: false
 #| warning: false
-#| cache: true
 library("emoji")
 library("dplyr")
 oracao <- 
