@@ -1,0 +1,16 @@
+---
+title: "Exemplo - Mapa"
+author: "R. O. Perdiz"
+date: "1 Jan 2024"
+output: html_document
+---
+
+Um mapa bonito para compartilhar.
+
+```{r}
+library("leaflet")
+leaflet() |>
+  addTiles() |>
+  setView(-60.691585, 2.834153, zoom = 19)
+```
+
