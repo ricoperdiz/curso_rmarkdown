@@ -5,6 +5,11 @@
 
 /.quarto/
 
+bib/*.sav
 codigo/
-figuras/
-pres_xaringan/
+dados/
+docs/
+pres/
+
+figuras/anatomia.png
+figuras/favicon_pre.png
