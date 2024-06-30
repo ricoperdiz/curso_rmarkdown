@@ -5,10 +5,25 @@ aliases:
   - /instalacao/
 ---
 
-Este capítulo fornece instruções sobre como instalar os programas necessários para trabalharmos com o *Rmarkdown*.
+Este capítulo fornece instruções sobre como instalar os programas necessários para se trabalhar com o *Rmarkdown*.
 Em primeiro lugar, é necessário ter o ambiente R instalado.
-Para complementar, sugiro que o usuário faça seus trabalhos escritos utilizando um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)).
-Em seguida, deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib* ([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
+Em seguida, necessitamos de um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)), que será onde o usuário poderá escrever seus textos.
+Também deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib* ([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
+
+### Objetivos de aprendizado
+
++ Instalar o R e pacotes necessários
++ Instalar um IDE
++ Instalar distribuição LaTeX
++ Instalar um organizador de bibliografias
+
+::: {.callout-tip}
+## Dica de OURO!
+__Usuários Windows__, sugiro fortemente que vocês busquem a configuração do sistema para ativar a __VISUALIZAÇÃO DE EXTENSÕES DE ARQUIVOS__
+O que é isso???  
+Isso significa poder ver no Explorador de arquivos que tipo de arquivo você está observando. Por exemplo, arquivos do programa Word terminam geralmente ou em `.doc` ou em `.docx`; arquivos Excel, `.xlsx`; arquivos Rmarkdown, `.rmd`, e assim por diante.
+Caso vocês não saibam como ativar essa opção, leiam como fazer neste endereço: <https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01>.
+:::
 
 ## R
 
@@ -119,9 +134,6 @@ Siga as instruções da tela.
 install.packages('tinytex')
 tinytex::install_tinytex()
 ```
-
-# Referências
-
 
 <!-- ## Verificação da Instalação -->
 

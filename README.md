@@ -28,7 +28,6 @@ trabalho disponível em <https://github.com/ricoperdiz/curso_rmarkdown>.
 
 # Citação
 
-Para citar o livro `Introdução ao Rmarkdown e Quarto` em publicações
-use:
+Para citar o livro `Introdução ao Rmarkdown e Quarto` em publicações:
 
-    Ricardo de Oliveira Perdiz (2024). Introção ao Rmarkdown e Quarto. Disponível em <https://intrormarkdown.netlify.app>. Acesso em DIA MÊS ANO.
+    Ricardo de Oliveira Perdiz (2024). Introdução ao Rmarkdown e Quarto. Disponível em <https://intrormarkdown.netlify.app>. Acesso em DIA MÊS ANO.

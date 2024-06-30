@@ -5,13 +5,22 @@ aliases:
   - /sintaxe/
 ---
 
-## Sintaxe
-
 A sintaxe de Markdown é simples.
 Exponho[^inspirado-quarto] abaixo as notações mais comuns da linguagem.
 Testem em seus documentos.  
 
 [^inspirado-quarto]: As tabelas escritas em Markdown contendo código e sintaxe da linguagem foram abertamente inspirados [nesta página](https://quarto.org/docs/authoring/markdown-basics.html#text-formatting) que ensina sobre a sintaxe de Markdown no livro sobre o Quarto.  
+
+### Objetivos de aprendizado
+
+<!-- + Aprender a sintaxe básica de Markdown -->
+<!-- + Testar a sintaxe em documentos próprios para se ambientar com as possibilidades -->
++ Aprender a utilizar cabeçalhos para divisões no texto;
++ Aplicar formatação de texto (negrito, itálico, listas);
++ Inserir e executar blocos de código;
++ Entender a diferença entre texto e código no documento;
++ Incluir tabelas e gráficos gerados pelo código R;
++ Incorporar elementos visuais adicionais, como imagens e links.  
 
 ### Formatação
 
@@ -38,6 +47,15 @@ Testem em seus documentos.
 | ``` markdown                            | `verbatim`                              |
 | `verbatim`                              |                                         |
 | ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| Traço --                                | Traço --                                |
+|                                         |                                         |
++-----------------------------------------+-----------------------------------------+
+| Travessão ---                           | Travessão ---                           |
+|                                         |                                         |
++-----------------------------------------+-----------------------------------------+
+| Régua horizontal                        | Régua horizontal                        |
+| ***                                     | ***                                     |
 +-----------------------------------------+-----------------------------------------+
 
 ### Cabeçalho {#cabecalhos}
@@ -180,6 +198,31 @@ Podemos também fazer uso de quatro espaços para destacar o texto:
 
     Com quatro espaços, eu destaco o texto também.
 
+## Blocos de código {#sec-blococodigo}
+
+Para fazer um bloco de código, devemos inserir três crases ("`") seguidas pelo nome da linguagem que vamos utilizar (e.g., R, Python, Julia etc) em letras minúsculas, colocando o nome entre chaves ("{}").  
+
+Um código em R:
+
+```{{r}}
+print("Olá, como vai?")
+```
+
+Um código em Python:
+
+
+```{{python}}
+print("OI")
+```
+
+As linguagens em blocos de códigos são processadas pelo pacote __knitr__ [@knitr2014;@knitr2015;@R-knitr].
+Atualmente, as linguagens que têm suporte para serem utilizadas em blocos de código são:
+
+```{r}
+names(knitr::knit_engines$get())
+```
+
+Para mais exemplos, veja a [seção "Other Languages"](https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html#other-languages) do livro "Rmarkdown Cookbook" [@rmarkdown2020].  
 
 ## Códigos R em linha ("inline codes")
 
@@ -201,3 +244,81 @@ Vejam:
 + Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.
 
 ````
+
+## Tabelas
+
+Tabelas podem ser inclusas de diversas maneiras em documentos com Rmarkdown.
+A maneira mais comum de incluir tabelas é usar código Markdown.
+Por exemplo, o código abaixo cria uma tabela:
+
+``` markdown
+| Var1 | Var2 | Nome | 
+|---------|:-----|------:|
+| 10      | 9   |  Joana |
+| 15     | 7  |   João |
+| 20       | 4    |  Jaci |
+
+: Demonstração de sintaxe de tabela em Markdown
+```
+
+
+| Var1 | Var2 | Nome | 
+|---------|:-----|------:|
+| 10      | 9   |  Joana |
+| 15     | 7  |   João |
+| 20       | 4    |  Jaci |
+
+: Demonstração de sintaxe de tabela em Markdown
+
+Outra maneira de criar tabelas é através da importação de arquivos por meio de códigos.
+Tomemos por exemplo os comandos necessários para importar uma tabela de extensão CSV e dados separados por tabulação ("\\t") contendo informação sopre municípios do Brasil: <https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv>.  
+
+```{r}
+#| echo: true
+dad <- read.table("https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv", sep = "\t", header = TRUE)
+head(dad, 6)
+```
+
+Para deixar a tabela mais elegante visualmente, uma dica é utilizar a função `knitr::kable()`:
+
+```{r}
+#| echo: true
+knitr::kable(head(dad, 6))
+```
+
+
+## Figuras
+
+A maneira mais simples de inserir uma figura é usando a notação abaixo:
+
+```
+![Legenda da figura](endereco-da-figura)
+```
+
+A figura pode estar gravada em seu computador, ou pode estar alojada na rede em algum sítio digital.
+O necessário é que o endereço esteja correto.
+Por exemplo, a figura "capa.png" está dentro de uma pasta "figuras/" dentro deste projeto.
+Vou colocá-la abaixo da seguinte maneira:
+
+```
+![Capa deste livro](figuras/capa.png)
+```
+
+![Capa deste livro](figuras/capa.png)
+
+As figuras inseridas podem ser de diversos formatos: jpeg, png, tiff etc.
+Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do arquivo. 
+É importante então se atentar para este detalhe.  
+
+Outra maneira de inserir figuras é por meio de funções dentro de [blocos de código](#sec-blococodigo).
+Vamos incluir uma imagem usando a função `knitr::include_graphics()`:
+
+```{{r}}
+knitr::include_graphics("figuras/capa.png")
+```
+
+```{r}
+#| echo: true
+knitr::include_graphics("figuras/capa.png")
+```
+

@@ -1,0 +1,25 @@
+Type: Book
+Package: intrormarkdownlivro
+Title: Introdução ao Rmarkdown e Quarto
+Version: 0.1
+Authors@R: 
+    c(person(given = "Ricardo",
+             family = "de Oliveira Perdiz",
+             role = c("aut", "cre"),
+             email = "ricoperdiz@gmail.com")
+             )
+Depends: 
+    R (>= 3.3.0)
+Imports:
+    blogdown,
+    bookdown,
+    knitr,
+    leaflet,
+    officedown,
+    officer,
+    quarto,
+    rmarkdown,
+    tinytex,
+    xaringan,
+    webshot2
+Encoding: UTF-8

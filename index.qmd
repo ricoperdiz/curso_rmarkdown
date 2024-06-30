@@ -1,46 +1,78 @@
-
-```{r}
-#| label: build-pkg-bib
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-knitr::write_bib(
-   c(
-      # .packages(),
-      "knitr",
-      "tinytex",
-      "rmarkdown",
-      # Mais importante
-      "blogdown",
-      # Blogs
-      "bookdown",
-      # Livros, teses e afins
-      "xaringan",
-      # Apresentações
-      "officer" # Produtos Word, Powerpoint, Excel
-   ),
-   'bib/pkg-bib.bib'
-)
-```
+---
+pagetitle: "Introdução"
+---
 
 # Prefácio {.unnumbered}
 
-Este é o site do nosso curso sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos. 
-O objetivo inicial é servir como material de apoio para os discentes da disciplina "Produção de documentos científicos com a linguagem Rmarkdown", oferecida no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima (UFRR), com previsão de início em julho de 2024.
-Nossa intenção com este livro é disponibilizar um material em português de qualidade de forma a aumentar a acessibilidade e abrangência de uso desta ferramenta, visto que a maioria dos livros e tutoriais que tratam de Rmarkdown são disponibilizados na língua inglesa.  
+Este livro compreende conceitos básicos sobre o uso de [Rmarkdown](https://rmarkdown.rstudio.com/) e [Quarto](https://quarto.org/) para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.  
 
-A meta é prover uma introdução ao uso dessa linguagem/ferramenta chamada "RMarkdown", que é simples e poderosa para a produção de diferentes tipos de documentos com elevada qualidade gráfica, além de oferecer ao usuário a possibilidade de produzir documentos dinâmicos e interativos.
-Ressaltamos que isto **não** é um curso de estatística.  
+O objetivo primário deste livro é servir como material de apoio para os discentes da disciplina "Produção de documentos científicos com a linguagem Rmarkdown", oferecida no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima (UFRR), com previsão de início em julho de 2024.
+Além disso, outro objetivo é poder disponibilizar um material em português de qualidade, de forma a aumentar a acessibilidade e abrangência de uso desta ferramenta, visto que a maioria dos livros e tutoriais que tratam de Rmarkdown são disponibilizados na língua inglesa.  
+
+## O que é Rmarkdown?
+
+RMarkdown é prover linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica.
+Além disso, a linguagem é capaz de ser mesclada com códigos de programação, oferecendo então ao usuário a possibilidade de produzir documentos dinâmicos e interativos.  
+
+<!-- Ressalto que isto **não** é um curso de estatística.   -->
+
+## Por que usar Rmarkdown?  {.unnumbered}
+
+A linguagem foi projetada para ser usada de três maneiras (veja capítulo [Introduction](https://r4ds.had.co.nz/r-markdown.html#introduction-18) em @WickhamGrolemund2017):
+
++ Comunicação com tomadores de decisão - foco é no resultado, e não no código que gera um resultado;
++ Comunicação com outros cientistas - foco tanto no resultado quanto no código;
++ Como um ambiente para se fazer ciência de dados e documentar não somente o que você fez mas também como você fez.  
+
+<!-- Dentro desse contexto, Rmarkdown se encaixa na academia, em ambientes profissionais, em ambientes de tomadas de decisão. -->
 
 ## Estrutura do livro {.unnumbered}
 
-::: {.callout-warning}
+O livro está dividido em duas partes.
+A primeira parte foca no ensino do Rmarkdown, enquanto a segunda foca no ensino do Quarto.
+Inicialmente, o livro focará mais em conteúdo para a primeira parte; a segunda parte, futuramente, poderá ser desmembrada e virar um novo livro digital.  
+
+Na parte 1, temos os seguintes capítulos:
+
+* **[Capítulo "Instalação de programas"](01_instalacao.qmd)** aborda a instalação de programas necessários para poder compilar arquivos Rmarkdown e poder fazer uso de suas funcionalides.
+* **[Capítulo "Conceitos básicos"](02_basico.qmd)** trata de explicar o que é o Rmarkdown, como se originou, e qual é a estrutura de um arquivo desse tipo, além de fornecer um breve histórico sobre essa ferramenta.
+* **[Capítulo "Sintaxe"](03_sintaxe.qmd)** trata da sintaxe em Markdown. Lá você aprenderá como escrever em itálico, negrito, inserir figuras, tabelas e outras coisas mais.
+* **[Capítulo "Compilação"](04_compilacao.qmd)** ensinará a compilar arquivos Rmarkdown usando o RStudio ou por meio de linhas de comando e ensinará o fluxo de trabalho por trás da compilação dos diferentes produtos.  
+
+Após a segunda parte, temos dois capítulos:
+
+* **[Capítulo "Exemplos"](exemplos.qmd)** que disponibiliza alguns arquivos em Rmarkdown contendo códigos, que podem ser mesclados de forma a facilitar a produção de documentos contendo figuras, tabelas, mapas e afins, por estudantes iniciantes.
+* **[Capítulo "Referências"](referencias.qmd)** lista as referências citadas ao longo deste trabalho.  
+
+A parte 2 ainda não começou a ser construída, possui apenas o [capítulo "Quarto"](0_quarto.qmd) disponível até o momento e sem conteúdo.  
+
+::: {.callout-note}
+Você pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:
+<https://github.com/ricoperdiz/curso_rmarkdown/tree/main>.  
+:::
+
+
+## Contribuições {.unnumbered}
+
 Estas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização.
 Sua contribuição é muito importante, então sinta-se à vontade para deixar sua opinião e sugestão.
-Caso encontre algum erro tipográfico, ou possua sugestões de melhora, ou possua o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**"issues"**) no repositório do livro, disponível neste link <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.
-Você pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:
-<https://github.com/ricoperdiz/curso_rmarkdown/tree/main>.
+Caso encontre algum erro tipográfico, caso possua sugestões de melhora, tenha o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**"issues"**) no repositório do livro, disponível neste endereço <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.
+Você pode também deixar comentários diretamente no livro, ao fim de cada página principal (@fig-comentarios).  
+
+::: {#fig-comentarios layout-nrow=2}
+
+![Você pode deixar comentários ao fim de cada página principal. Porém, o login em uma conta GitHub é necessário. Veja a solicitação de login na conta GitHub no canto direito da imagem. Além de escrever a mensagem, usando a linguagem Markdown, você pode verificar como ficaria o texto, usando a opção 'Preview', exibida no canto superior esquerdo.](figuras/comentario_deslogado.png)
+
+![Ao estar logado em uma conta GitHub, somente é necessária a adição do comentário e o envio do comentário.](figuras/comentario_logado.png)
+
+Imagens de caixas de comentário ao fim de cada página principal. A primeira imagem mostra a visão da caixa de comentário **sem estar** logado no GitHub; a segunda imagem mostra a visão de quem está logado. É necessário estar logado para deixar comentários.  
+
+:::
+
+::: {.callout-tip}
+Para deixar uma contribuição, observação, reclamação e afins, no endereço citado acima, é necessário que você possua uma conta no [GitHub](https://github.com/).
+O mesmo vale para o caso de você desejar deixar um comentário em cada página deste livro, ao fim do corpo do texto (@fig-comentarios).  
+
 :::
 
 ## Pré-requisitos {.unnumbered}
@@ -51,9 +83,95 @@ Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos
 Caso você não tenha, busque saber o básico.
 Há muito material disponível na rede, dentre os quais sugiro o livro [Curso básico de introdução à linguagem R](https://intror.netlify.app), escrito em português e de livre acesso.  
 
+## Informações sobre a compilação deste livro {.unnumbered}
+
+```{r}
+#| echo: false
+sinfo <- xfun::session_info(c(
+  'rmarkdown', 'blogdown', 'bookdown', 'knitr', 'quarto',
+   'tinytex', 'xaringan', 'officer', 'officedown'
+), dependencies = FALSE)
+so_dad <- stringr::str_split(gsub("Running under: ", "", sinfo[3]), ", ") |> unlist()
+```
+
+Este livro foi construído por meio da plataforma Quarto [^quarto], versão `r quarto::quarto_version()`, dentro do ambiente `r gsub("version", "versão", R.version.string)`.
+Utilizei o `r gsub("RStudio", "RStudio, versão", so_dad[2])` dentro do sistema operacional `r so_dad[1]`.
+Abaixo disponibilizo as informações sobre os pacotes utilizados durante a construção deste livro: 
+
+[^quarto]: O Quarto é uma reimaginação multilínguas e multifuncionalidades do Rmarkdown. Para saber mais, visite <https://quarto.org/>.  
+
+```{r}
+# copiado de <https://github.com/dgrtwo/tidy-text-mining/blob/master/index.Rmd>
+#| echo: false
+deps <- desc::desc_get_deps()
+pkgs <- sort(deps$package[deps$type == "Imports"])
+pkgs <- sessioninfo::package_info(pkgs, dependencies = FALSE)
+df <- tibble::tibble(
+  Pacote = pkgs$package,
+  Versão = pkgs$ondiskversion,
+  Fonte = gsub("@", "\\\\@", pkgs$source)
+)
+knitr::kable(df, format = "markdown")
+```
+
+
+```{r}
+#| label: build-pkg-bib
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::write_bib(
+   c(
+      # .packages(),
+      "blogdown",
+      "bookdown",
+      "knitr",
+      "leaflet",
+      "officedown",
+      "officer",
+      "quarto",
+      "rmarkdown",
+      "tinytex",
+      "webshot2",
+      "xaringan"
+      ),
+   'bib/pkg-bib.bib'
+)
+```
+
+```{r}
+#| label: call-pkgs-emoji
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+library("emoji")
+library("dplyr")
+oracao <- 
+  emojis |>
+  filter(name == "folded hands") %>%
+  .[["emoji"]]
+```
+
+## Convenções {.unnumbered}
+
+Adotamos o nome "Rmd" para se referir ao formato de arquivo Rmarkdown, cuja extensão é ".Rmd".
+Vamos nos referir ao Rmarkdown ao longo deste livro como "Rmd".
+Nomes de pacotes aparecerão em negrito (e.g., __knitr__, __rmarkdown__).
+Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação `nomeDoPacote::nomeDaFuncao()`, e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto.  
+
 ## Agradecimentos {.unnumbered}
 
-Agradeço à minha filha por ser minha inspiração diária.  
-Ao PRONAT UFRR por me oferecer um espaço para eu realizar minha pesquisa.  
-E ao Pai e Mãe celestiais, sempre.  
+Este livro é produto de anos se dedicando a aprender programação e novas formas de apresentar dados e resultados.
+Então, é natural deixar meus agradecimentos a todos que passaram, passam e continuarão a passar por minha vida, sempre a me ensinar algo ou a me inspirar.  
+
+Naturalmente, por ter tido a decisão de escrever um livro sobre Rmarkdown, cabe aqui meu agradecimento ao criador da linguagem Markdown, John Gruber, e um agradecimento especial, como admirador e fã do trabalho, ao criador dos pacotes mais interessantes, a meu ver, da última década no ambiente R, o [Yihui Xie](https://yihui.org/); eu passei a usar Rmarkdown por inspiração em suas postagens, ele criou vários pacotes importantes para o desenvolvimento da linguagem [^pacotesrmarkdown], e tem vídeos interessantíssimos que divulgam vários desses pacotes e suas funcionalidades.  
+
+Para finalizar, agradeço à minha filha por ser minha inspiração diária.
+Ao PRONAT UFRR, por me oferecer um espaço para eu realizar minha pesquisa, e dar a oportunidade de ensinar.
+E ao Divino, sempre `r oracao`.  
+
+[^pacotesrmarkdown]: Pacotes knitr, bookdown, blogdown, pagedown, xaringan e tinytex, entre outros.  
 
