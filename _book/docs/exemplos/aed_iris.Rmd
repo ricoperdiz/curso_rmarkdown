@@ -1,0 +1,22 @@
+---
+title: "Análise exploratória de dados - iris"
+author: "Euzinho Euzo Euzão"
+date: "15 Maio 2024"
+---
+
+## Análise exploratória de dados
+
+Vou analisar o conjunto de dados chamado `iris`.
+
+```{r}
+iris
+```
+
+Aqui escrevo mais texto sobre meu conjunto de dados.
+
+### Gráficos
+
+```{r}
+library("ggplot2")
+gplot(iris$Sepal.Length, iris$Sepal.Width)
+```
