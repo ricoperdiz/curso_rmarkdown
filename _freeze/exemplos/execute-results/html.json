@@ -1,0 +1,17 @@
+{
+  "hash": "8ac3ac3a25b2a86b63e2f3570d516cad",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Modelos de arquivos\"\n---\n\n\n\n\nDisponibilizo abaixo alguns arquivos Rmd que podem auxiliar você a produzir documentos contendo mapas, tabelas e outros, por meio de códigos em R.\nPretendo disponibilizar arquivos variados para que eles possam ser mesclados e ajudar o praticante iniciante na produção do que ele desejar.  \n\n## Análise exploratória de dados - Conjunto de dados `iris`\n\nDisponível em: [/docs/exemplos/aed_iris.Rmd](/docs/exemplos/aed_iris.Rmd).  \n\n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n````{.sourceCode .r}\n---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.\n\n```{r}\niris\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r}\nlibrary(\"ggplot2\")\ngplot(iris$Sepal.Length, iris$Sepal.Width)\n```\n````\n\n\n:::\n:::\n\n\n\n\n\n## Mapa interativo com pacote `leaflet`\n\nDisponível em: [/docs/exemplos/mapa1.Rmd](/docs/exemplos/mapa1.Rmd).  \n\n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n````{.sourceCode .r}\n---\ntitle: \"Exemplo - Mapa\"\nauthor: \"R. O. Perdiz\"\ndate: \"1 Jan 2024\"\noutput: html_document\n---\n\nUm mapa bonito para compartilhar.\n\n```{r}\nlibrary(\"leaflet\")\nleaflet() |>\n  addTiles() |>\n  setView(-60.691585, 2.834153, zoom = 19)\n```\n````\n\n\n:::\n:::",
+    "supporting": [
+      "exemplos_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
