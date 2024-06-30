@@ -1,0 +1,29 @@
+---
+title: "Modelos de arquivos"
+---
+
+Disponibilizo abaixo alguns arquivos Rmd que podem auxiliar você a produzir documentos contendo mapas, tabelas e outros, por meio de códigos em R.
+Pretendo disponibilizar arquivos variados para que eles possam ser mesclados e ajudar o praticante iniciante na produção do que ele desejar.  
+
+## Análise exploratória de dados - Conjunto de dados `iris`
+
+Disponível em: [/docs/exemplos/aed_iris.Rmd](/docs/exemplos/aed_iris.Rmd).  
+
+```{r}
+#| echo: false
+#| warning: false
+#| class-output: "sourceCode r"
+cat(readLines("docs/exemplos/aed_iris.Rmd"), sep = "\n")
+```
+
+
+## Mapa interativo com pacote `leaflet`
+
+Disponível em: [/docs/exemplos/mapa1.Rmd](/docs/exemplos/mapa1.Rmd).  
+
+```{r}
+#| echo: false
+#| warning: false
+#| class-output: "sourceCode r"
+cat(readLines("docs/exemplos/mapa1.Rmd"), sep = "\n")
+```

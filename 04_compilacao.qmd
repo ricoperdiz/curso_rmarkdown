@@ -1,25 +1,59 @@
 ---
-title: "Compilação de arquivos RMarkdown"
+title: "Compilação de arquivos Rmd"
 format: html
 aliases: 
   - /compilacao/
 ---
 
-### Usando o RStudio
+### Objetivos de aprendizado
 
-No RStudio, basta abrir o arquivo RMarkdown e clicar no botão "Knit" na barra de ferramentas.
-Isso compilará o arquivo RMarkdown, executando o código R e incorporando os resultados no documento final.  
++ Ser capaz de renderizar um arquivo Rmd em diferentes formatos de saída;
++ Conhecer os comandos e opções disponíveis para a renderização de documentos.
 
-### Usando a Linha de Comando
+<!-- 6. **Aplicação Prática:** -->
+<!--    - Realizar exercícios práticos para criar documentos Rmd simples que integrem texto formatado com resultados de código R. -->
+<!--    - Praticar a incorporação de gráficos, tabelas e outras saídas geradas pelo R no documento Rmd. -->
 
-Para compilar um arquivo RMarkdown usando a linha de comando, você pode usar o seguinte comando no console do R:
+<!-- 7. **Melhores Práticas:** -->
+<!--    - Aprender sobre melhores práticas para escrever documentos Rmd claros, bem-organizados e reprodutíveis. -->
+<!--    - Conhecer técnicas para comentar e documentar o código dentro dos chunks. -->
+
+## O que significa compilar um arquivo Rmd?
+
+
+![Fluxo de trabalho que ocorre durante a compilação de um arquivo Rmd. Extraído do sítio digital do livro "Rmarkdown Cookbook".](https://bookdown.org/yihui/rmarkdown-cookbook/images/workflow.png)
+
+## Compilação utilizando a estrutura do RStudio
+
+O RStudio é otimizado para lidar com arquivos Rmd.
+Para compilar um arquivo neste programa, basta abrir o arquivo Rmd e clicar no botão "Knit" na barra de ferramentas (@fig-botaoknit).
+Isso compilará o arquivo Rmd, executando o código (se presente!) e incorporando os resultados no documento final.  
+
+![Botão "Knit" destacado com um retângulo verde. Este botão está localizado em uma barra abaixo dos nomes de arquivos abertos dentro do RStudio. Clicando neste botão, você compila o arquivo para o formato especificado no próprio arquivo. Caso clique em uma seta ao lado do nome "Knit", outras opções de formato final são apresentadas, como mostra esta figura.](figuras/botao_knit.png){#fig-botaoknit}
+
+### Linha de comando
+
+Para compilar um arquivo Rmd usando a linha de comando, você pode usar o seguinte comando no console do R:
 
 ```
 rmarkdown::render("caminho/do/seu/arquivo.Rmd")
 ```
 
-::: {.callout-note}
-Livro em construção.
-Em breve, teremos atualizações.
-Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.  
+Por exemplo, vamos imaginar que tenhamos um arquivo chamado "arq1.Rmd" em minha pasta de trabalho e desejo compilá-lo.
+Devemos executar o seguinte comando:
+
+```{r}
+#| echo: true
+#| eval: false
+rmarkdown::render("arq1.Rmd")
+```
+
+
+::: {.callout-tip}
+Caro leitor,
+
+Caso você não tenha conhecimento suficiente em R ou se sinta inseguro ao utilizar a linguagem, recomendo a leitura do livro [Curso básico de introdução à linguagem R](https://intror.netlify.app/), disponível gratuitamente na rede.
 :::
+
+
+

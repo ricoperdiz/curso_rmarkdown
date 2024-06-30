@@ -1,0 +1,9 @@
+---
+title: "Referências"
+format: html
+aliases: 
+  - /refs/
+---
+
+::: {#refs}
+:::
