@@ -2,10 +2,13 @@
 .Rhistory
 .RData
 .Ruserdata
+*.Rproj
+.Rbuildignore
 
 /.quarto/
 
-bib/*.sav
+bib/bib.bib.sav
+bib/pkg-bib.bib.sav
 codigo/
 dados/
 docs/
@@ -13,3 +16,5 @@ pres/
 
 figuras/anatomia.png
 figuras/favicon_pre.png
+
+perguntas_frequentes.qmd

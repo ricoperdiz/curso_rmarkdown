@@ -46,6 +46,16 @@ book:
   comments:
     giscus:
       repo: ricoperdiz/curso_rmarkdown
+      category: "Announcements"
+      mapping: title
+      reactions-enabled: true
+      loading: lazy
+      input-position: top
+      theme:
+        light: "light"
+        dark: "dark_dimmed"
+      language: pt
+      # strict: true
 
 encoding: "UTF-8"
 lang: pt
