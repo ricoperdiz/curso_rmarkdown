@@ -53,8 +53,13 @@ Você pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:
 
 Estas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização.
 Sua contribuição é muito importante, então sinta-se à vontade para deixar sua opinião e sugestão.
-Caso encontre algum erro tipográfico, caso possua sugestões de melhora, tenha o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**"issues"**) no repositório do livro, disponível neste endereço <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.
-Você pode também deixar comentários diretamente no livro, ao fim de cada página principal (@fig-comentarios).  
+Caso encontre algum erro tipográfico, caso possua sugestões de melhora, tenha o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**"issues"**) no repositório do livro, disponível neste endereço <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.  
+
+## Comentários {.unnumbered}
+
+Uma outra forma de participar é você deixar comentários diretamente no livro, ao fim de cada página principal (@fig-comentarios).
+Para isso, é necessário que você possua uma conta no [GitHub](https://github.com/), faça o login e, uma vez logado, deixe seu comentário.
+Todos os comentários podem ser observados dentro da aba __Discussions__ na página do repositório: <https://github.com/ricoperdiz/curso_rmarkdown/discussions>.  
 
 ::: {#fig-comentarios layout-nrow=2}
 
