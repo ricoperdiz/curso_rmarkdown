@@ -110,7 +110,6 @@ div.csl-indent {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "Nenhum resultado",
     "search-matching-documents-text": "documentos correspondentes",
@@ -127,6 +126,9 @@ div.csl-indent {
 }</script>
 
 
+<meta property="og:title" content="Conceitos básicos – Introdução ao Rmarkdown e Quarto">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:description" content="Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.">
 <meta name="twitter:image" content="https://intrormarkdown.netlify.app/figuras/capa.png">
@@ -137,7 +139,7 @@ div.csl-indent {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -158,15 +160,34 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introdução ao Rmarkdown e Quarto</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/ricoperdiz/curso_rmarkdown" title="Código fonte" class="quarto-navigation-tool px-1" aria-label="Código fonte"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/ricoperdiz/curso_rmarkdown">
+            Código fonte do livro
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/ricoperdiz/curso_rmarkdown/issues">
+            Reporte um problema
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/ricoperdiz/curso_rmarkdown/discussions">
+            Deixe seu comentário
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
               <i class="bi bi-twitter pe-1"></i>
@@ -182,6 +203,11 @@ div.csl-indent {
       </ul>
     </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -276,9 +302,10 @@ div.csl-indent {
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
   <li><a href="#pedaços-de-código" id="toc-pedaços-de-código" class="nav-link" data-scroll-target="#pedaços-de-código">Pedaços de código</a></li>
   <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
+  <li><a href="#citações-de-referências-bibliográficas" id="toc-citações-de-referências-bibliográficas" class="nav-link" data-scroll-target="#citações-de-referências-bibliográficas">Citações de referências bibliográficas</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -462,9 +489,27 @@ Figura&nbsp;2.3: Criação de arquivo Rmarkdown usando as opções presentes no 
 </section>
 <section id="texto" class="level3">
 <h3 class="anchored" data-anchor-id="texto">Texto</h3>
-<p>Em construção.</p>
-<section id="citações-de-referências-bibliográficas" class="level4">
-<h4 class="anchored" data-anchor-id="citações-de-referências-bibliográficas">Citações de referências bibliográficas</h4>
+<p>No corpo do texto, você pode escrever normalmente, utilizando a sintaxe de Markdown para incluir elementos em itálico, negrito, incluir imagens, tabelas etc. Veja o aprofundamento deste tema no <strong><a href="./03_sintaxe.html">capítulo “Sintaxe”</a></strong>.</p>
+<p>Por exemplo, veja o texto escrito em Markdown abaixo:</p>
+<pre><code>## Cabeçalho de nível 2
+
+Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  
+
+Temos *itálico*, __negrito__, listas como a presente abaixo:
+  
+  + item 1
+  + item 2
+</code></pre>
+<p>Se compilamos um arquivo Markdown contendo este texto, o produto final terá uma imagem como a evidenciada abaixo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figuras/exemplo_md.png" class="img-fluid figure-img"></p>
+<figcaption>Texto em Markdown compilado para um arquivo HTML. A aparência pode ser alterada, porém reparem em como o código exibido acima se transforma no texto exibido nesta imagem.</figcaption>
+</figure>
+</div>
+</section>
+<section id="citações-de-referências-bibliográficas" class="level3">
+<h3 class="anchored" data-anchor-id="citações-de-referências-bibliográficas">Citações de referências bibliográficas</h3>
 <p>Em construção.</p>
 <!-- Isso conclui nosso capítulo introdutório sobre o RMarkdown. -->
 <!-- Nos próximos capítulos, vamos explorar a sintaxe de Markdown e tipos diferentes de produtos com Rmarkdown.   -->
@@ -484,7 +529,6 @@ Xie, Yihui. 2014. <span>«knitr: A Comprehensive Tool for Reproducible Research 
 ———. 2023. <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -1076,8 +1120,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ricoperdiz/curso_rmarkdown?tab=CC-BY-4.0-1-ov-file#readme">
+<p>Licença</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./perguntas_frequentes.html">
+<p>Perguntas frequentes</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ricoperdiz/curso_rmarkdown/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
