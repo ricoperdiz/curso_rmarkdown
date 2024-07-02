@@ -154,10 +154,28 @@ gplot(iris$Sepal.Length, iris$Sepal.Width)
 
 ### Texto
 
-Em construção.  
+No corpo do texto, você pode escrever normalmente, utilizando a sintaxe de Markdown para incluir elementos em itálico, negrito, incluir imagens, tabelas etc.
+Veja o aprofundamento deste tema no **[capítulo "Sintaxe"](03_sintaxe.qmd)**.  
 
+Por exemplo, veja o texto escrito em Markdown abaixo:
 
-#### Citações de referências bibliográficas
+```
+## Cabeçalho de nível 2
+
+Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  
+
+Temos *itálico*, __negrito__, listas como a presente abaixo:
+  
+  + item 1
+  + item 2
+
+```
+
+Se compilamos um arquivo Markdown contendo este texto, o produto final terá uma imagem como a evidenciada abaixo:
+
+![Texto em Markdown compilado para um arquivo HTML. A aparência pode ser alterada, porém reparem em como o código exibido acima se transforma no texto exibido nesta imagem.](figuras/exemplo_md.png)
+
+### Citações de referências bibliográficas
 
 Em construção.  
 

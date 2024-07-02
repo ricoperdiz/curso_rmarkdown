@@ -1,0 +1,21 @@
+---
+title: "Perguntas mais frequentes"
+---
+
+### O que é Rmarkdown?
+
+Rmarkdown é uma implementação da linguagem de marcação Markdown, criada para mesclar texto formatado em Markdown junto a códigos de programação de diversas linguagens (e.g., R, Python, Julia etc).  
+
+### Com qual finalidade devo usar o Rmarkdown?
+
+Rmarkdown pode ser utilizado para produzir artigos científicos, relatórios dinâmicos, apresentações, sítios web, livros etc.
+As possibilidades são inúmeras e dependem do desejo do usuário.  
+
+### Como eu posso usar o Rmarkdown?
+
+Para escrever usando o Rmarkdown, é necessário ter o R instalado, um editor de textos, e o pacote R rmarkdown instalado (saiba mais no **[capítulo "Instalação de programas"](01_instalacao.qmd)**).
+Uma vez tendo isso instalado, você pode seguir os passos dados no **[capítulo "Compilação"](04_compilacao.qmd)** deste livro.  
+
+
+
+

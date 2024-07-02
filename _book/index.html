@@ -76,7 +76,6 @@ div.csl-indent {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "Nenhum resultado",
     "search-matching-documents-text": "documentos correspondentes",
@@ -93,6 +92,10 @@ div.csl-indent {
 }</script>
 
 
+<meta property="og:title" content="Introdução ao Rmarkdown e Quarto">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://intrormarkdown.netlify.app/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta property="og:site_name" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:description" content="Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.">
 <meta name="twitter:image" content="https://intrormarkdown.netlify.app/figuras/capa.png">
@@ -103,7 +106,7 @@ div.csl-indent {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -124,15 +127,34 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introdução ao Rmarkdown e Quarto</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/ricoperdiz/curso_rmarkdown" title="Código fonte" class="quarto-navigation-tool px-1" aria-label="Código fonte"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/ricoperdiz/curso_rmarkdown">
+            Código fonte do livro
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/ricoperdiz/curso_rmarkdown/issues">
+            Reporte um problema
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/ricoperdiz/curso_rmarkdown/discussions">
+            Deixe seu comentário
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
               <i class="bi bi-twitter pe-1"></i>
@@ -148,6 +170,11 @@ div.csl-indent {
       </ul>
     </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -238,13 +265,17 @@ div.csl-indent {
   <li><a href="#estrutura-do-livro" id="toc-estrutura-do-livro" class="nav-link" data-scroll-target="#estrutura-do-livro">Estrutura do livro</a></li>
   <li><a href="#contribuições" id="toc-contribuições" class="nav-link" data-scroll-target="#contribuições">Contribuições</a></li>
   <li><a href="#comentários" id="toc-comentários" class="nav-link" data-scroll-target="#comentários">Comentários</a></li>
-  <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos">Pré-requisitos</a></li>
+  <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos">Pré-requisitos</a>
+  <ul class="collapse">
+  <li><a href="#caso-você-possua-um-computador" id="toc-caso-você-possua-um-computador" class="nav-link" data-scroll-target="#caso-você-possua-um-computador">Caso você possua um computador</a></li>
+  <li><a href="#caso-você-não-possua-um-computador" id="toc-caso-você-não-possua-um-computador" class="nav-link" data-scroll-target="#caso-você-não-possua-um-computador">Caso você não possua um computador</a></li>
+  </ul></li>
   <li><a href="#informações-sobre-a-compilação-deste-livro" id="toc-informações-sobre-a-compilação-deste-livro" class="nav-link" data-scroll-target="#informações-sobre-a-compilação-deste-livro">Informações sobre a compilação deste livro</a></li>
   <li><a href="#convenções" id="toc-convenções" class="nav-link" data-scroll-target="#convenções">Convenções</a></li>
   <li><a href="#agradecimentos" id="toc-agradecimentos" class="nav-link" data-scroll-target="#agradecimentos">Agradecimentos</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -289,13 +320,14 @@ div.csl-indent {
 </header>
 
 
+
 <section id="prefácio" class="level1 unnumbered">
-<h1 class="unnumbered">Prefácio</h1>
+<h1 class="unnumbered">Prefácio</h1><p><img src="figuras/capa.png" title="Introdução ao Rmarkdown e Quarto" class="quarto-cover-image img-fluid"></p>
 <p>Este livro compreende conceitos básicos sobre o uso de <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> e <a href="https://quarto.org/">Quarto</a> para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.</p>
 <p>O objetivo primário deste livro é servir como material de apoio para os discentes da disciplina “Produção de documentos científicos com a linguagem Rmarkdown”, oferecida no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima (UFRR), com previsão de início em julho de 2024. Além disso, outro objetivo é poder disponibilizar um material em português de qualidade, de forma a aumentar a acessibilidade e abrangência de uso desta ferramenta, visto que a maioria dos livros e tutoriais que tratam de Rmarkdown são disponibilizados na língua inglesa.</p>
 <section id="o-que-é-rmarkdown" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-é-rmarkdown">O que é Rmarkdown?</h2>
-<p>RMarkdown é prover linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica. Além disso, a linguagem é capaz de ser mesclada com códigos de programação, oferecendo então ao usuário a possibilidade de produzir documentos dinâmicos e interativos.</p>
+<p>RMarkdown é uma linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica. Além disso, a linguagem é capaz de ser mesclada com códigos de programação, oferecendo então ao usuário a possibilidade de produzir documentos dinâmicos e interativos.</p>
 <!-- Ressalto que isto **não** é um curso de estatística.   -->
 </section>
 <section id="por-que-usar-rmarkdown" class="level2 unnumbered">
@@ -391,6 +423,126 @@ Dica
 <section id="pré-requisitos" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="pré-requisitos">Pré-requisitos</h2>
 <p>Devido ao modo como foi construído, este livro pode ser tanto lido quanto “executado”, uma vez que seus arquivos são o que chamamos de <em>Rmarkdown</em>, uma linguagem que mistura texto com código. Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos, e em <em>tablets</em>. É importante que o usuário possua uma noção básica sobre o funcionamento da linguagem R. Caso você não tenha, busque saber o básico. Há muito material disponível na rede, dentre os quais sugiro o livro <a href="https://intror.netlify.app">Curso básico de introdução à linguagem R</a>, escrito em português e de livre acesso.</p>
+<p>Pensando na possibilidade de os leitores deste livro possuírem ou não um computador em mãos, disponibilizo abaixo instruções para que vocês possam aproveitar as lições deste livro usando um celular moderno ou tablet. Espero que as instruções sejam úteis e possam abranger um maior número de pessoas.</p>
+<section id="caso-você-possua-um-computador" class="level3">
+<h3 class="anchored" data-anchor-id="caso-você-possua-um-computador">Caso você possua um computador</h3>
+<p>Se você tiver um computador em mãos, proceda para o <strong><a href="./01_instalacao.html">capítulo “Instalação de programas”</a></strong> para instalar todos os programas necessários para executar arquivos escritos em Rmarkdown.</p>
+</section>
+<section id="caso-você-não-possua-um-computador" class="level3">
+<h3 class="anchored" data-anchor-id="caso-você-não-possua-um-computador">Caso você não possua um computador</h3>
+<p>Se você tiver apenas um celular moderno ou um tablet em mãos, sugiro que você faça uso da infraestrutura fornecida pela <a href="https://posit.co/">Posit</a>, a criadora e mantenedora do <a href="https://posit.co/products/open-source/rstudio/">RStudio</a>. A Posit disponibiliza de graça (com limitações) o <a href="https://posit.cloud/">Posit Cloud</a>, uma versão online do RStudio. Uma vez tendo uma conta na <em>Posit Cloud</em>, você pode importar o conteúdo deste livro na forma de um <em>Projeto</em>, e executar todo o conteúdo do livro na rede, estando conectado na Posit. Que tal?</p>
+<p>Para poder fazer isso, siga os passos abaixo:</p>
+<ol type="1">
+<li>Visite o sítio da Posit Cloud: <a href="https://posit.cloud/" class="uri">https://posit.cloud/</a> (<a href="#fig-positcloud" class="quarto-xref">Figura&nbsp;<span>2</span></a>).</li>
+</ol>
+<div id="fig-positcloud" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Página inicial da Posit Cloud.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Conecte-se à Posit Cloud clicando no botão <a href="https://client.login.posit.cloud/oauth/login?show_auth=0&amp;show_login=1">Login</a>. Lá você verá várias opções de login. Sugiro que use ou sua conta Gmail ou sua conta GitHub para logar (<a href="#fig-positcloudlogin" class="quarto-xref">Figura&nbsp;<span>3</span></a>).</li>
+</ol>
+<div id="fig-positcloudlogin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloudlogin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_login.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloudlogin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Página para se conectar à Posit Cloud.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Uma vez conectado à Posit Cloud, a tela inicial será parecida com a exibida na <a href="#fig-positcloudinicial" class="quarto-xref">Figura&nbsp;<span>4</span></a>.</li>
+</ol>
+<div id="fig-positcloudinicial" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloudinicial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_inicial.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloudinicial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Página de entrada no Posit Cloud, estando conectado.
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Crie um projeto clicando no botão <strong>New project</strong> (<a href="#fig-positcloudnewproject" class="quarto-xref">Figura&nbsp;<span>5</span></a>).</li>
+</ol>
+<div id="fig-positcloudnewproject" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloudnewproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_newproject.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloudnewproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Botão <strong>New project</strong> fica localizado no canto superior direito da página de entrada do Posit Cloud.
+</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Ao clicar no no botão <strong>New project</strong>, selecione a opção <em>New Project from Git Repository</em> (<a href="#fig-positcloudimportgit" class="quarto-xref">Figura&nbsp;<span>7</span></a>).</li>
+</ol>
+<div id="fig-positcloudimportgit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloudimportgit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_importgit.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloudimportgit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Opções disponíveis ao clicar no botão <strong>New project</strong>. Selecione a última opção, <em>New Project from Git Repository</em>.
+</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Digite na caixa <strong>URL of your Git Repository</strong> o endereço do repositório GitHub deste livro: <a href="https://github.com/ricoperdiz/curso_rmarkdown" class="uri">https://github.com/ricoperdiz/curso_rmarkdown</a>. Em seguida, clique no botão <strong>Ok</strong>.</li>
+</ol>
+<div id="fig-positcloudimportgit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloudimportgit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_importgitrepo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloudimportgit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Espaço para inserir o endereço do repositório GitHub que se pretende importar ao Posit Cloud. É necessário que o repositório seja de acesso público.
+</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Em seguida, o Posit Cloud se conectará ao repositório e importará o conteúdo como se contra no momento da importação ao seu espaço Posit Cloud. Ao finalizar a importação, o RStudio em versão virtual se abrirá e apresentará um conteúdo similar ao apresentado na <a href="#fig-positcloudrepoimported" class="quarto-xref">Figura&nbsp;<span>8</span></a>.</li>
+</ol>
+<div id="fig-positcloudrepoimported" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloudrepoimported-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_repoimported.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloudrepoimported-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Tela mostrando o conteúdo deste livro, importado ao Posit Cloud.
+</figcaption>
+</figure>
+</div>
+<p>Pronto! Agora você poderá ver o conteúdo bruto deste livro no seu telefone/tablet, além de poder ter acesso ao conteúdo das páginas em HTML, geradas por meio de arquivos <code>qmd</code> do <a href="./0_quarto.html">Quarto</a>. As páginas em HTML estão disponíveis na pasta <code>_book</code> (<a href="#fig-positcloud_book" class="quarto-xref">Figura&nbsp;<span>9</span></a>).</p>
+<div id="fig-positcloud_book" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-positcloud_book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/posit_cloud_repoimported.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-positcloud_book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9: Tela destacando a pasta <code>_book/</code>, que contem as páginas em HTML deste livro. Esta pasta fica disponível no Posit Cloud, após você importar o conteúdo do repositório onde se encontra todos os capítulos deste livro, disponíveis no endereço <a href="https://github.com/ricoperdiz/curso_rmarkdown" class="uri">https://github.com/ricoperdiz/curso_rmarkdown</a>.
+</figcaption>
+</figure>
+</div>
+<section id="conectar-mouse-e-teclado-a-um-telefone-android" class="level4">
+<h4 class="anchored" data-anchor-id="conectar-mouse-e-teclado-a-um-telefone-android">Conectar mouse e teclado a um telefone Android</h4>
+<p>Pensando na dificuldade de estudar as aulas do livro usando somente a tela pequena de um celular, é necessário pensar em otimizar o tamanho da tela para que você possa ler o conteúdo e também escrever. Para isso, seria bom considerar a possibilidade de conectar um teclado e um mouse ao telefone. Para isso, é necessário saber se o seu telefone é compatível com um <a href="https://tecnoblog.net/responde/o-que-e-um-cabo-otg/">adaptador OTG</a>.</p>
+<p>Sendo compatível, obtenha um adaptador OTG e o conecte ao seu celular. Em seguida, você conecta o teclado ou o mouse no adaptador. Caso você deseje utilizar tanto o mouse quanto o teclado, você também necessitará de um <a href="https://www.hp.com/br-pt/shop/tech-takes/o-que-voce-pode-fazer-com-um-hub-de-entrada-usb">hub USB</a>.</p>
+<p>Com um <em>hub USB</em> em mãos, você conecta o mouse e o teclado no hub USB e, em seguida, conecta o hub ao adaptador OTG, que já estará conectado ao telefone. Pronto, agora é curtir as aulas deste livro.</p>
+<p>Para facilitar o entendimento das instruções acima, veja o vídeo abaixo com essas instruções:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/MfrORhUK6Lk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
 </section>
 <section id="informações-sobre-a-compilação-deste-livro" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="informações-sobre-a-compilação-deste-livro">Informações sobre a compilação deste livro</h2>
@@ -1062,7 +1214,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="ricoperdiz/curso_rmarkdown" data-repo-id="R_kgDOLdtsrQ" data-category="Announcements" data-category-id="DIC_kwDOLdtsrc4CfW1m" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="pt" crossorigin="anonymous" data-loading="lazy" async="">
+<script src="https://giscus.app/client.js" data-repo="ricoperdiz/curso_rmarkdown" data-repo-id="R_kgDOLdtsrQ" data-category="Announcements" data-category-id="DIC_kwDOLdtsrc4CfW1m" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="pt" crossorigin="anonymous" data-loading="lazy" async="">
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
 <input type="hidden" id="giscus-alt-theme" value="dark_dimmed">
@@ -1076,8 +1228,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ricoperdiz/curso_rmarkdown?tab=CC-BY-4.0-1-ov-file#readme">
+<p>Licença</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./perguntas_frequentes.html">
+<p>Perguntas frequentes</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ricoperdiz/curso_rmarkdown/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi bi-github"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

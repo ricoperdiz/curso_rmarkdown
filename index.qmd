@@ -8,7 +8,7 @@ Além disso, outro objetivo é poder disponibilizar um material em português de
 
 ## O que é Rmarkdown?
 
-RMarkdown é prover linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica.
+RMarkdown é uma linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica.
 Além disso, a linguagem é capaz de ser mesclada com códigos de programação, oferecendo então ao usuário a possibilidade de produzir documentos dinâmicos e interativos.  
 
 <!-- Ressalto que isto **não** é um curso de estatística.   -->
@@ -84,6 +84,74 @@ Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos
 É importante que o usuário possua uma noção básica sobre o funcionamento da linguagem R.
 Caso você não tenha, busque saber o básico.
 Há muito material disponível na rede, dentre os quais sugiro o livro [Curso básico de introdução à linguagem R](https://intror.netlify.app), escrito em português e de livre acesso.  
+
+Pensando na possibilidade de os leitores deste livro possuírem ou não um computador em mãos, disponibilizo abaixo instruções para que vocês possam aproveitar as lições deste livro usando um celular moderno ou tablet.
+Espero que as instruções sejam úteis e possam abranger um maior número de pessoas.  
+
+### Caso você possua um computador
+
+Se você tiver um computador em mãos, proceda para o **[capítulo "Instalação de programas"](01_instalacao.qmd)** para instalar todos os programas necessários para executar arquivos escritos em Rmarkdown.  
+
+### Caso você não possua um computador
+
+Se você tiver apenas um celular moderno ou um tablet em mãos, sugiro que você faça uso da infraestrutura fornecida pela [Posit](https://posit.co/), a criadora e mantenedora do [RStudio](https://posit.co/products/open-source/rstudio/).
+A Posit disponibiliza de graça (com limitações) o [Posit Cloud](https://posit.cloud/), uma versão online do RStudio.
+Uma vez tendo uma conta na *Posit Cloud*, você pode importar o conteúdo deste livro na forma de um *Projeto*, e executar todo o conteúdo do livro na rede, estando conectado na Posit.
+Que tal?
+
+Para poder fazer isso, siga os passos abaixo:
+
+1) Visite o sítio da Posit Cloud: <https://posit.cloud/> (@fig-positcloud).  
+
+![Página inicial da Posit Cloud.](figuras/posit_cloud.png){#fig-positcloud}
+
+2) Conecte-se à Posit Cloud clicando no botão [Login](https://client.login.posit.cloud/oauth/login?show_auth=0&show_login=1).
+Lá você verá várias opções de login. Sugiro que use ou sua conta Gmail ou sua conta GitHub para logar (@fig-positcloudlogin).  
+
+![Página para se conectar à Posit Cloud.](figuras/posit_cloud_login.png){#fig-positcloudlogin}
+
+3) Uma vez conectado à Posit Cloud, a tela inicial será parecida com a exibida na @fig-positcloudinicial.  
+
+![Página de entrada no Posit Cloud, estando conectado.](figuras/posit_cloud_inicial.png){#fig-positcloudinicial}
+
+4) Crie um projeto clicando no botão **New project** (@fig-positcloudnewproject).  
+
+![Botão **New project** fica localizado no canto superior direito da página de entrada do Posit Cloud.](figuras/posit_cloud_newproject.png){#fig-positcloudnewproject}
+
+5) Ao clicar no no botão **New project**, selecione a opção *New Project from Git Repository* (@fig-positcloudimportgit).  
+
+![Opções disponíveis ao clicar no botão **New project**. Selecione a última opção, *New Project from Git Repository*.](figuras/posit_cloud_importgit.png){#fig-positcloudimportgit}
+
+6) Digite na caixa **URL of your Git Repository** o endereço do repositório GitHub deste livro: <https://github.com/ricoperdiz/curso_rmarkdown>. Em seguida, clique no botão **Ok**.  
+
+![Espaço para inserir o endereço do repositório GitHub que se pretende importar ao Posit Cloud. É necessário que o repositório seja de acesso público.](figuras/posit_cloud_importgitrepo.png){#fig-positcloudimportgit}
+
+7) Em seguida, o Posit Cloud se conectará ao repositório e importará o conteúdo como se contra no momento da importação ao seu espaço Posit Cloud.
+Ao finalizar a importação, o RStudio em versão virtual se abrirá e apresentará um conteúdo similar ao apresentado na @fig-positcloudrepoimported.  
+
+![Tela mostrando o conteúdo deste livro, importado ao Posit Cloud.](figuras/posit_cloud_repoimported.png){#fig-positcloudrepoimported}
+
+Pronto!
+Agora você poderá ver o conteúdo bruto deste livro no seu telefone/tablet, além de poder ter acesso ao conteúdo das páginas em HTML, geradas por meio de arquivos `qmd` do [Quarto](0_quarto.qmd).
+As páginas em HTML estão disponíveis na pasta `_book` (@fig-positcloud_book).  
+
+![Tela destacando a pasta `_book/`, que contem as páginas em HTML deste livro. Esta pasta fica disponível no Posit Cloud, após você importar o conteúdo do repositório onde se encontra todos os capítulos deste livro, disponíveis no endereço <https://github.com/ricoperdiz/curso_rmarkdown>.](figuras/posit_cloud_repoimported.png){#fig-positcloud_book}
+
+#### Conectar mouse e teclado a um telefone Android
+
+Pensando na dificuldade de estudar as aulas do livro usando somente a tela pequena de um celular, é necessário pensar em otimizar o tamanho da tela para que você possa ler o conteúdo e também escrever.
+Para isso, seria bom considerar a possibilidade de conectar um teclado e um mouse ao telefone.
+Para isso, é necessário saber se o seu telefone é compatível com um [adaptador OTG](https://tecnoblog.net/responde/o-que-e-um-cabo-otg/).  
+
+Sendo compatível, obtenha um adaptador OTG e o conecte ao seu celular. Em seguida, você conecta o teclado ou o mouse no adaptador.
+Caso você deseje utilizar tanto o mouse quanto o teclado, você também necessitará de um [hub USB](https://www.hp.com/br-pt/shop/tech-takes/o-que-voce-pode-fazer-com-um-hub-de-entrada-usb).  
+
+Com um *hub USB* em mãos, você conecta o mouse e o teclado no hub USB e, em seguida, conecta o hub ao adaptador OTG, que já estará conectado ao telefone.
+Pronto, agora é curtir as aulas deste livro.  
+
+Para facilitar o entendimento das instruções acima, veja o vídeo abaixo com essas instruções:
+
+{{< video https://www.youtube.com/watch?v=MfrORhUK6Lk >}}
 
 ## Informações sobre a compilação deste livro {.unnumbered}
 
