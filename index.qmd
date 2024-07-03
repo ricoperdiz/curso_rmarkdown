@@ -234,13 +234,17 @@ Quando fizermos referência a uma função de um determinado pacote, adotaremos 
 
 ## Agradecimentos {.unnumbered}
 
-Este livro é produto de anos se dedicando a aprender programação e novas formas de apresentar dados e resultados.
+O presente trabalho foi realizado com apoio da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Código de Financiamento 001.  
+
+Este livro é produto de anos se dedicando a aprender programação e novas formas de apresentar e visualizar dados e resultados.
 Então, é natural deixar meus agradecimentos a todos que passaram, passam e continuarão a passar por minha vida, sempre a me ensinar algo ou a me inspirar.  
 
-Naturalmente, por ter tido a decisão de escrever um livro sobre Rmarkdown, cabe aqui meu agradecimento ao criador da linguagem Markdown, John Gruber, e um agradecimento especial, como admirador e fã do trabalho, ao criador dos pacotes mais interessantes, a meu ver, da última década no ambiente R, o [Yihui Xie](https://yihui.org/); eu passei a usar Rmarkdown por inspiração em suas postagens, ele criou vários pacotes importantes para o desenvolvimento da linguagem [^pacotesrmarkdown], e tem vídeos interessantíssimos que divulgam vários desses pacotes e suas funcionalidades.  
+Naturalmente, por ter tido a decisão de escrever um livro sobre Rmarkdown, cabe aqui meu agradecimento ao criador da linguagem Markdown, John Gruber, e um agradecimento especial, como admirador e fã de seu trabalho, ao criador dos pacotes mais interessantes, a meu ver, da última década no ambiente R, o [Yihui Xie](https://yihui.org/); eu passei a usar Rmarkdown por inspiração em suas postagens, ele criou vários pacotes importantes para o desenvolvimento da linguagem [^pacotesrmarkdown], e tem vídeos interessantíssimos que divulgam vários desses pacotes e suas funcionalidades.  
 
-Para finalizar, agradeço à minha filha por ser minha inspiração diária.
-Ao PRONAT UFRR, por me oferecer um espaço para eu realizar minha pesquisa, e dar a oportunidade de ensinar.
+Para finalizar, agradeço à minha filha por ser minha inspiração diária.  
+
+Ao PRONAT UFRR, por me oferecer um espaço para eu realizar minha pesquisa, e dar a oportunidade de ensinar.  
+
 E ao Divino, sempre `r oracao`.  
 
 [^pacotesrmarkdown]: Pacotes knitr, bookdown, blogdown, pagedown, xaringan e tinytex, entre outros.  

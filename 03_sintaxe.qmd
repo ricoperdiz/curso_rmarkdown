@@ -75,7 +75,7 @@ Testem em seus documentos.
 | ### Cabeçalho 3 |                                   |
 | ```             |                                   |
 +-----------------+-----------------------------------+
-| ``` markdown    | #### Cab. 4 4 {.heading-output}   |
+| ``` markdown    | #### Cab. 4   {.heading-output}   |
 | #### Cab. 4     |                                   |
 | ```             |                                   |
 +-----------------+-----------------------------------+
@@ -322,3 +322,32 @@ knitr::include_graphics("figuras/capa.png")
 knitr::include_graphics("figuras/capa.png")
 ```
 
+## Página nova
+
+Um comando útil para inserir conteúdo em uma nova página é o comando `\newpage`.
+Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.  
+
+Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto.
+Então, o conteúdo após esse comando iniciará na nova página.
+Vejam:
+
+```
+## Um cabeçalho qualquer
+
+
+Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.
+Para isso, eu insiro o comando de *nova página* abaixo.  
+
+\newpage
+
+## Esse cabeçalho aparecerá em uma nova página
+
+Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  
+
+
+```
+
+<!-- ## Parágrafos -->
+
+
+<!-- XXX -->
