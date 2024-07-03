@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://intrormarkdown.netlify.app/index.html</loc>
-    <lastmod>2024-07-02T03:29:41.671Z</lastmod>
+    <lastmod>2024-07-02T20:52:33.499Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/01_instalacao.html</loc>
-    <lastmod>2024-07-02T00:28:36.915Z</lastmod>
+    <lastmod>2024-07-03T00:48:43.140Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/02_basico.html</loc>
-    <lastmod>2024-07-01T19:56:18.835Z</lastmod>
+    <lastmod>2024-07-03T22:08:52.540Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/03_sintaxe.html</loc>
-    <lastmod>2024-06-30T15:36:45.690Z</lastmod>
+    <lastmod>2024-07-03T22:20:16.246Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/04_compilacao.html</loc>
-    <lastmod>2024-06-30T15:36:45.691Z</lastmod>
+    <lastmod>2024-07-03T22:09:18.059Z</lastmod>
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/0_quarto.html</loc>
@@ -34,6 +34,6 @@
   </url>
   <url>
     <loc>https://intrormarkdown.netlify.app/perguntas_frequentes.html</loc>
-    <lastmod>2024-07-01T18:14:39.592Z</lastmod>
+    <lastmod>2024-07-02T03:35:56.590Z</lastmod>
   </url>
 </urlset>

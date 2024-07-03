@@ -331,6 +331,7 @@ window.Quarto = {
   <li><a href="#códigos-r-em-linha-inline-codes" id="toc-códigos-r-em-linha-inline-codes" class="nav-link" data-scroll-target="#códigos-r-em-linha-inline-codes">Códigos R em linha (“inline codes”)</a></li>
   <li><a href="#tabelas" id="toc-tabelas" class="nav-link" data-scroll-target="#tabelas">Tabelas</a></li>
   <li><a href="#figuras" id="toc-figuras" class="nav-link" data-scroll-target="#figuras">Figuras</a></li>
+  <li><a href="#página-nova" id="toc-página-nova" class="nav-link" data-scroll-target="#página-nova">Página nova</a></li>
   </ul>
 </nav>
     </div>
@@ -448,7 +449,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Cab. 4</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h4 id="cab.-4-4" class="heading-output anchored">Cab. 4 4</h4></td>
+<td><h4 id="cab.-4" class="heading-output anchored">Cab. 4</h4></td>
 </tr>
 <tr class="odd">
 <td><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Cab. 5</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
@@ -796,6 +797,26 @@ definição
 </div>
 </div>
 </div>
+</section>
+<section id="página-nova" class="level2">
+<h2 class="anchored" data-anchor-id="página-nova">Página nova</h2>
+<p>Um comando útil para inserir conteúdo em uma nova página é o comando <code>\newpage</code>. Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.</p>
+<p>Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto. Então, o conteúdo após esse comando iniciará na nova página. Vejam:</p>
+<pre><code>## Um cabeçalho qualquer
+
+
+Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.
+Para isso, eu insiro o comando de *nova página* abaixo.  
+
+\newpage
+
+## Esse cabeçalho aparecerá em uma nova página
+
+Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  
+
+</code></pre>
+<!-- ## Parágrafos -->
+<!-- XXX -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

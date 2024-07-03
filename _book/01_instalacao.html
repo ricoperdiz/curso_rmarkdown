@@ -295,11 +295,13 @@ div.csl-indent {
   <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a>
   <ul class="collapse">
   <li><a href="#pacotes-r-necessários" id="toc-pacotes-r-necessários" class="nav-link" data-scroll-target="#pacotes-r-necessários">Pacotes R necessários</a></li>
+  <li><a href="#rtools-para-usuários-windows" id="toc-rtools-para-usuários-windows" class="nav-link" data-scroll-target="#rtools-para-usuários-windows">Rtools para usuários Windows</a></li>
   </ul></li>
-  <li><a href="#ambiente-de-desenvolvimento-integrado---ide" id="toc-ambiente-de-desenvolvimento-integrado---ide" class="nav-link" data-scroll-target="#ambiente-de-desenvolvimento-integrado---ide">Ambiente de desenvolvimento integrado - IDE</a></li>
-  <li><a href="#organizador-de-bibliografias---jabref" id="toc-organizador-de-bibliografias---jabref" class="nav-link" data-scroll-target="#organizador-de-bibliografias---jabref">Organizador de bibliografias - JabRef</a></li>
-  <li><a href="#pandoc" id="toc-pandoc" class="nav-link" data-scroll-target="#pandoc">Pandoc</a></li>
   <li><a href="#distribuição-latex" id="toc-distribuição-latex" class="nav-link" data-scroll-target="#distribuição-latex">Distribuição LaTeX</a></li>
+  <li><a href="#ambiente-de-desenvolvimento-integrado---ide" id="toc-ambiente-de-desenvolvimento-integrado---ide" class="nav-link" data-scroll-target="#ambiente-de-desenvolvimento-integrado---ide">Ambiente de desenvolvimento integrado - IDE</a></li>
+  <li><a href="#organizador-de-bibliografias" id="toc-organizador-de-bibliografias" class="nav-link" data-scroll-target="#organizador-de-bibliografias">Organizador de bibliografias</a></li>
+  <li><a href="#pandoc" id="toc-pandoc" class="nav-link" data-scroll-target="#pandoc">Pandoc</a></li>
+  <li><a href="#verificação-da-instalação" id="toc-verificação-da-instalação" class="nav-link" data-scroll-target="#verificação-da-instalação">Verificação da instalação</a></li>
   </ul>
 </nav>
     </div>
@@ -326,12 +328,13 @@ div.csl-indent {
 
 
 <p>Este capítulo fornece instruções sobre como instalar os programas necessários para se trabalhar com o <em>Rmarkdown</em>. Em primeiro lugar, é necessário ter o ambiente R instalado. Em seguida, necessitamos de um ambiente de desenvolvimento integrado (do inglês <em>Integrated Development Environment</em>, <strong>IDE</strong>; <a href="https://www.redhat.com/pt-br/topics/middleware/what-is-ide">acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo</a>), que será onde o usuário poderá escrever seus textos. Também deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato <em>pdf</em>, e, por fim, deve-se instalar um organizador de bibliografias, <em>JabRef</em>, para lidar com arquivos em formato <em>bib</em> (<a href="https://www.reviversoft.com/pt/file-extensions/bib">veja aqui o que é um arquivo bib</a>).</p>
-<section id="objetivos-de-aprendizado" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h3>
+<section id="objetivos-de-aprendizado" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h2>
 <ul>
 <li>Instalar o R e pacotes necessários</li>
-<li>Instalar um IDE</li>
+<li>Instalar o Rtools</li>
 <li>Instalar distribuição LaTeX</li>
+<li>Instalar um IDE</li>
 <li>Instalar um organizador de bibliografias</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -394,12 +397,69 @@ Figura&nbsp;1.1: Página inicial do sítio de instalação do ambiente R: <a hre
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"officer"</span>) <span class="co"># Produtos Word, Powerpoint, Excel</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="rtools-para-usuários-windows" class="level3">
+<h3 class="anchored" data-anchor-id="rtools-para-usuários-windows">Rtools para usuários Windows</h3>
+<p>Em teoria, não deveria ser necessário instalar o Rtools, um conjunto de ferramentas para compilar pacotes R do código fonte (os pacotes geralmente são instalados a partir do arquivo já compilado, o chamado arquivo binário). Porém, já vi pessoas tendo problemas para fazer o Rmarkdown funcionar em função de não conseguirem instalar o pacote <code>stringi</code> no Windows. Por isso, aos <strong>usuários Windows</strong>, recomendo a instalação do <strong>Rtools.</strong></p>
+<p>Para instalar o <strong>Rtools</strong>, siga o procedimento abaixo:</p>
+<ol type="1">
+<li>Na página de instalação do Windows por meio do sítio <a href="https://www.r-project.org/">https://www.r-project.org/</a>, você verá a opção <strong>Rtools</strong> como última opção. Clique nesse nome (<a href="#fig-rtoolslocalizacao" class="quarto-xref">Figura&nbsp;<span>1.2</span></a>).</li>
+</ol>
+<div id="fig-rtoolslocalizacao" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rtoolslocalizacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rtoolslocalizacao.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rtoolslocalizacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.2: Veja a opção <strong>Rtools</strong> com destaque em azul circundando o nome. Esta é a tela de instalação do R para usuários Windows.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Em seguida, uma nova tela aparece e lá você deve escolher a versão do <strong>Rtools</strong> em função da sua versão de R. Se o R que você possui é a versão 4.4.x, instale o <strong>Rtools</strong> 4.4; se é a versão 4.3, instale o <strong>Rtools</strong> 4.3; e assim sucessivamente (<a href="#fig-rtoolsversao" class="quarto-xref">Figura&nbsp;<span>1.3</span></a>).</li>
+</ol>
+<div id="fig-rtoolsversao" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rtoolsversao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rtoolsversao.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rtoolsversao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.3: Tela de escolha da versão do <strong>Rtools</strong> a ser instalado.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Após escolher a versão do <strong>Rtools</strong>, selecione agora o instalador. Selecione a opção destacada na <a href="#fig-rtoolsinstalador" class="quarto-xref">Figura&nbsp;<span>1.4</span></a>.</li>
+</ol>
+<div id="fig-rtoolsinstalador" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rtoolsinstalador-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rtoolsinstalador.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rtoolsinstalador-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.4: Instalador do <strong>Rtools</strong> a ser utilizado, com destaque na cor verde abaixo da opção sugerida.
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Após baixar o instalador do <strong>Rtools</strong>, execute o arquivo e siga as instruções do assistente de instalação.</li>
+</ol>
+</section>
+</section>
+<section id="distribuição-latex" class="level2">
+<h2 class="anchored" data-anchor-id="distribuição-latex">Distribuição LaTeX</h2>
+<p>Para poder gerar um arquivo PDF, é necessário possuir uma distribuição LaTeX no seu sistema. A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R <code>tinytex</code> <span class="citation" data-cites="tinytex2019">(<a href="referencias.html#ref-tinytex2019" role="doc-biblioref">Xie 2019</a>)</span>. Uma vez que o usuário tenha o R instalado, execute os comandos abaixo para poder instalar o pacote e, em seguida, usar a função <code>tinytex::install_tinytex()</code> para instalar o LaTeX localmente. Siga as instruções da tela.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="ambiente-de-desenvolvimento-integrado---ide" class="level2">
 <h2 class="anchored" data-anchor-id="ambiente-de-desenvolvimento-integrado---ide">Ambiente de desenvolvimento integrado - IDE</h2>
 <p>Recomenda-se que o IDE <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem <em>Rmarkdown</em>, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes <a href="https://github.com/rstudio/rmarkdown">rmarkdown</a> e <a href="https://github.com/rstudio/bookdown">bookdown</a>. Ademais, <strong>IDE</strong>s como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.</p>
 <ol type="1">
-<li><p>Acesse o site da <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> (<a href="#fig-rstudio" class="quarto-xref">Figura&nbsp;<span>1.2</span></a>) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;</p></li>
+<li><p>Acesse o site da <a href="https://posit.co/download/rstudio-desktop/">RStudio</a> (<a href="#fig-rstudio" class="quarto-xref">Figura&nbsp;<span>1.5</span></a>) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;</p></li>
 <li><p>Execute o instalador baixado e siga as instruções do assistente de instalação.</p></li>
 </ol>
 <div class="cell">
@@ -410,7 +470,7 @@ Figura&nbsp;1.1: Página inicial do sítio de instalação do ambiente R: <a hre
 <img src="figuras/rstudio.png" class="img-fluid figure-img" width="800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.2: Página inicial do sítio de instalação do RStudio: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>.
+Figura&nbsp;1.5: Página inicial do sítio de instalação do RStudio: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>.
 </figcaption>
 </figure>
 </div>
@@ -424,10 +484,12 @@ Figura&nbsp;1.2: Página inicial do sítio de instalação do RStudio: <a href="
 <li><p>Rkward - <a href="https://rkward.kde.org/Download_RKWard.html">https://rkward.kde.org/Download_RKWard.html</a></p></li>
 </ul>
 </section>
-<section id="organizador-de-bibliografias---jabref" class="level2">
-<h2 class="anchored" data-anchor-id="organizador-de-bibliografias---jabref">Organizador de bibliografias - JabRef</h2>
+<section id="organizador-de-bibliografias" class="level2">
+<h2 class="anchored" data-anchor-id="organizador-de-bibliografias">Organizador de bibliografias</h2>
+<p>Existem vários organizadores de bibliografia. Eu utilizo o JabRef. Caso você já faça uso de um e consiga gerar arquivos <a href="https://www.reviversoft.com/pt/file-extensions/bib?alid=120423556.1719964778">bib</a>, ótimo. Prossiga nele!</p>
+<p>Caso ainda não tenha, sugiro que instale o JabRef, seguindo os passos abaixo:</p>
 <ol type="1">
-<li><p>Visite o site do <a href="https://www.jabref.org/#downloads">JabRef</a> (<a href="#fig-jabref" class="quarto-xref">Figura&nbsp;<span>1.3</span></a>) e baixe a versão mais recente para o seu sistema operacional;</p></li>
+<li><p>Visite o site do <a href="https://www.jabref.org/#downloads">JabRef</a> (<a href="#fig-jabref" class="quarto-xref">Figura&nbsp;<span>1.6</span></a>) e baixe a versão mais recente para o seu sistema operacional;</p></li>
 <li><p>Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.</p></li>
 </ol>
 <div class="cell">
@@ -438,7 +500,7 @@ Figura&nbsp;1.2: Página inicial do sítio de instalação do RStudio: <a href="
 <img src="figuras/jabref.png" class="img-fluid figure-img" width="800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jabref-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.3: Página inicial do sítio de instalação do JabRef: <a href="https://www.jabref.org/#downloads" class="uri">https://www.jabref.org/#downloads</a>.
+Figura&nbsp;1.6: Página inicial do sítio de instalação do JabRef: <a href="https://www.jabref.org/#downloads" class="uri">https://www.jabref.org/#downloads</a>.
 </figcaption>
 </figure>
 </div>
@@ -457,11 +519,11 @@ Aviso
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do <em>Pandoc</em>.</p>
+<p>Caso o usuário tenha optado por utilizar um IDE <strong>diferente</strong> do RStudio, será necessária a instalação do <em>Pandoc</em>.</p>
 </div>
 </div>
 <ol type="1">
-<li><p>Visite o site oficial do <a href="https://pandoc.org/installing.html">Pandoc</a> (<a href="#fig-pandoc" class="quarto-xref">Figura&nbsp;<span>1.4</span></a>) e encontre as instruções de instalação específicas para o seu sistema operacional;</p></li>
+<li><p>Visite o site oficial do <a href="https://pandoc.org/installing.html">Pandoc</a> (<a href="#fig-pandoc" class="quarto-xref">Figura&nbsp;<span>1.7</span></a>) e encontre as instruções de instalação específicas para o seu sistema operacional;</p></li>
 <li><p>Siga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.</p></li>
 </ol>
 <div class="cell">
@@ -472,26 +534,22 @@ Aviso
 <img src="figuras/pandoc.png" class="img-fluid figure-img" width="800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pandoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.4: Página inicial do sítio de instalação do Pandoc: <a href="https://pandoc.org/installing.html" class="uri">https://pandoc.org/installing.html</a>.
+Figura&nbsp;1.7: Página inicial do sítio de instalação do Pandoc: <a href="https://pandoc.org/installing.html" class="uri">https://pandoc.org/installing.html</a>.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="distribuição-latex" class="level2">
-<h2 class="anchored" data-anchor-id="distribuição-latex">Distribuição LaTeX</h2>
-<p>A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R <code>tinytex</code> <span class="citation" data-cites="tinytex2019">(<a href="referencias.html#ref-tinytex2019" role="doc-biblioref">Xie 2019</a>)</span>. Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote. Siga as instruções da tela.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- ## Verificação da Instalação -->
-<!-- Após a conclusão das instalações, você pode verificar se todas as ferramentas foram instaladas corretamente executando os seguintes comandos em seu terminal ou console: -->
-<!-- - Para verificar a instalação do R, execute `R --version`. -->
-<!-- - Para verificar a instalação do RStudio, abra o RStudio e verifique a versão na barra de título ou vá para `Help > About`. -->
-<!-- - Para verificar a instalação do Pandoc, execute `pandoc --version`. -->
-<!-- Agora você está pronto para começar a utilizar essas ferramentas para criar documentos em R Markdown e aproveitar ao máximo a análise de dados e a geração de relatórios. -->
+<section id="verificação-da-instalação" class="level1">
+<h1>Verificação da instalação</h1>
+<p>Após a conclusão das instalações, você pode verificar se já está apto a escrever em Rmd se o procedimento abaixo funcionar. Caso não funcione, cheque se o passo a passo acima foi seguido corretamente, cheque as mensagens que o computador informa. E se ainda assim não obtiver sucesso, entre em contato comigo que tentarei ajudar. Ou busque ajuda com um amigo ou com o Google.</p>
+<ol type="1">
+<li><p>Abra o RStudio e crie um novo arquivo Rmd (siga as <a href="./02_basico.html#criar-rmd">instruções aqui presentes</a>).</p></li>
+<li><p>Uma tela será aberta e lá você poderá incluir o nome do autor, título do arquivo e tipo de produto desejado (HTML, PDF ou WORD).</p></li>
+<li><p>Salve o arquivo e o compile (para compilar um Rmd, <a href="./04_compilacao.html#compilarrmd">siga essas instruções</a>).</p></li>
+</ol>
+<p>Se você gerar o arquivo HTML, PDF ou WORD, a depender do que você selecionou, então está tudo certo, podemos prosseguir para os próximos capítulos. Agora você está pronto para começar a utilizar essa ferramenta para criar documentos e aproveitar ao máximo a análise de dados e a geração de relatórios.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

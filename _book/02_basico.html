@@ -294,15 +294,15 @@ div.csl-indent {
   <li><a href="#objetivos-de-aprendizado" id="toc-objetivos-de-aprendizado" class="nav-link active" data-scroll-target="#objetivos-de-aprendizado">Objetivos de aprendizado</a></li>
   <li><a href="#o-que-é-markdown" id="toc-o-que-é-markdown" class="nav-link" data-scroll-target="#o-que-é-markdown">O que é Markdown?</a></li>
   <li><a href="#o-que-é-rmarkdown" id="toc-o-que-é-rmarkdown" class="nav-link" data-scroll-target="#o-que-é-rmarkdown">O que é Rmarkdown?</a></li>
-  <li><a href="#para-que-serve-o-rmarkdown" id="toc-para-que-serve-o-rmarkdown" class="nav-link" data-scroll-target="#para-que-serve-o-rmarkdown">Para que serve o RMarkdown?</a></li>
+  <li><a href="#para-que-serve-o-rmd" id="toc-para-que-serve-o-rmd" class="nav-link" data-scroll-target="#para-que-serve-o-rmd">Para que serve o Rmd?</a></li>
   <li><a href="#exemplos-de-produtos-gerados-com-rmarkdown" id="toc-exemplos-de-produtos-gerados-com-rmarkdown" class="nav-link" data-scroll-target="#exemplos-de-produtos-gerados-com-rmarkdown">Exemplos de produtos gerados com Rmarkdown</a></li>
-  <li><a href="#como-criar-um-arquivo-.rmd" id="toc-como-criar-um-arquivo-.rmd" class="nav-link" data-scroll-target="#como-criar-um-arquivo-.rmd">Como criar um arquivo <code>.Rmd</code></a></li>
-  <li><a href="#estrutura-de-um-documento-rmarkdown" id="toc-estrutura-de-um-documento-rmarkdown" class="nav-link" data-scroll-target="#estrutura-de-um-documento-rmarkdown">Estrutura de um documento Rmarkdown</a>
+  <li><a href="#dica-de-organização---criar-projeto-no-rstudio" id="toc-dica-de-organização---criar-projeto-no-rstudio" class="nav-link" data-scroll-target="#dica-de-organização---criar-projeto-no-rstudio">Dica de organização - criar projeto no RStudio</a></li>
+  <li><a href="#criar-rmd" id="toc-criar-rmd" class="nav-link" data-scroll-target="#criar-rmd">Como criar um arquivo <code>.Rmd</code></a></li>
+  <li><a href="#estrutura-de-um-documento-rmd" id="toc-estrutura-de-um-documento-rmd" class="nav-link" data-scroll-target="#estrutura-de-um-documento-rmd">Estrutura de um documento Rmd</a>
   <ul class="collapse">
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
-  <li><a href="#pedaços-de-código" id="toc-pedaços-de-código" class="nav-link" data-scroll-target="#pedaços-de-código">Pedaços de código</a></li>
   <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
-  <li><a href="#citações-de-referências-bibliográficas" id="toc-citações-de-referências-bibliográficas" class="nav-link" data-scroll-target="#citações-de-referências-bibliográficas">Citações de referências bibliográficas</a></li>
+  <li><a href="#pedaços-de-código" id="toc-pedaços-de-código" class="nav-link" data-scroll-target="#pedaços-de-código">Pedaços de código</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -332,12 +332,12 @@ div.csl-indent {
 <section id="objetivos-de-aprendizado" class="level3">
 <h3 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h3>
 <ul>
-<li>Conhecer o que é RMarkdown e como ele se diferencia do Markdown simples;</li>
-<li>Entender as vantagens de usar RMarkdown para relatórios reprodutíveis e documentos dinâmicos;</li>
-<li>Identificar e compreender a estrutura básica de um arquivo RMarkdown, incluindo o cabeçalho YAML, os pedaços de código, e o corpo do documento;</li>
+<li>Conhecer o que é Rmd e como ele se diferencia do Markdown simples;</li>
+<li>Entender as vantagens de usar Rmd para relatórios reprodutíveis e documentos dinâmicos;</li>
+<li>Identificar e compreender a estrutura básica de um arquivo Rmd, incluindo o cabeçalho YAML, os pedaços de código, e o corpo do documento;</li>
 <li>Saber como configurar o cabeçalho YAML para definir parâmetros como título, autor, data e formato de saída (HTML, PDF, Word, etc.);</li>
-<li>Aprender a inserir e configurar pedaços de código dentro do documento RMarkdown;</li>
-<li>Entender como executar código dentro de um documento RMarkdown e como controlar a saída desses códigos (exibição de código, resultados, gráficos, etc.).</li>
+<li>Aprender a inserir e configurar pedaços de código dentro do documento Rmd;</li>
+<li>Entender como executar código dentro de um documento Rmd e como controlar a saída desses códigos (exibição de código, resultados, gráficos, etc.).</li>
 </ul>
 </section>
 <section id="o-que-é-markdown" class="level2">
@@ -347,12 +347,12 @@ div.csl-indent {
 </section>
 <section id="o-que-é-rmarkdown" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-é-rmarkdown">O que é Rmarkdown?</h2>
-<p>Esse tipo de documento foi introduzido inicialmente no pacote <code>knitr</code> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="referencias.html#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="referencias.html#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="referencias.html#ref-R-knitr" role="doc-biblioref">2023</a>)</span> no ano de 2012. A idéia era superar as limitações do <a href="https://en.wikipedia.org/wiki/Sweave">Sweave</a>, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmarkdown (apesar de possuir o <strong>R</strong> no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, <a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada">literate programming</a>). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.</p>
+<p>Esse tipo de documento foi introduzido inicialmente no pacote <code>knitr</code> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="referencias.html#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="referencias.html#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="referencias.html#ref-R-knitr" role="doc-biblioref">2023</a>)</span> no ano de 2012. A idéia era superar as limitações do <a href="https://en.wikipedia.org/wiki/Sweave">Sweave</a>, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmd (apesar de possuir o <strong>R</strong> no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, <a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada">literate programming</a>). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.</p>
 <!-- R Markdown was designed for easier reproducibility, since both the computing code and narratives are in the same document, and results are automatically generated from the source code. R Markdown supports dozens of static and dynamic/interactive output formats. -->
 </section>
-<section id="para-que-serve-o-rmarkdown" class="level2">
-<h2 class="anchored" data-anchor-id="para-que-serve-o-rmarkdown">Para que serve o RMarkdown?</h2>
-<p>O RMarkdown é utilizado para uma variedade de finalidades, incluindo:</p>
+<section id="para-que-serve-o-rmd" class="level2">
+<h2 class="anchored" data-anchor-id="para-que-serve-o-rmd">Para que serve o Rmd?</h2>
+<p>O Rmd é utilizado para uma variedade de finalidades, incluindo:</p>
 <ul>
 <li>produção de <strong>relatórios reprodutíveis</strong>, que podem ser facilmente reproduzidos, facilitando a transparência e a replicabilidade das análises;</li>
 <li><strong>documentação de análises de dados</strong>, incluindo a explicação do raciocínio por trás das decisões analíticas;</li>
@@ -396,49 +396,108 @@ Dica
 <li><p><a href="https://slides.yihui.org/xaringan/">Apresentação - Xaringan</a> | <a href="https://github.com/yihui/xaringan">Código fonte</a></p></li>
 </ul>
 </section>
-<section id="como-criar-um-arquivo-.rmd" class="level2">
-<h2 class="anchored" data-anchor-id="como-criar-um-arquivo-.rmd">Como criar um arquivo <code>.Rmd</code></h2>
-<p>A primeira maneira de criar um arquivo Rmarkdown é apertar o botão de criar arquivos presente no lado superior esquerdo do RStudio (<a href="#fig-criarmd1" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>). Ao clicar neste botão, opções de arquivos são listadas, entre as quais se inclui o Rmarkdown.</p>
+<section id="dica-de-organização---criar-projeto-no-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="dica-de-organização---criar-projeto-no-rstudio">Dica de organização - criar projeto no RStudio</h2>
+<p>Antes de começar a brincar com os arquivos Rmd e testar as possibilidades, eu sugiro <strong>fortemente</strong> que vocês criem um projeto no RStudio.</p>
+<p>Criar um projeto no RStudio é escolher uma pasta para depositar todos seus arquivos ali e facilitar a busca desses arquivos, tanto por você, usuário, quanto pelo R, que será utilizado pelo RStudio para compilar os arquivos Rmd nos diferentes produtos que você desejar.</p>
+<p>Portanto, siga os passos abaixo para criar um projeto no RStudio:</p>
+<ol type="1">
+<li><p>Abra o RStudio.</p></li>
+<li><p>Clique em <code>File -&gt; New Project...</code> (<a href="#fig-rstudionewproject" class="quarto-xref">Figura&nbsp;<span>2.3</span></a>)</p></li>
+</ol>
+<div id="fig-rstudionewproject" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudionewproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rstudio_newproject.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudionewproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Tela exibe a opção de criar um novo projeto na aba <code>File</code> do RStudio.
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Selecione a opção <em>New Directory</em> para criar uma nova pasta para conter seu projeto (<a href="#fig-rstudionewdir" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>).</li>
+</ol>
+<div id="fig-rstudionewdir" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudionewdir-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rstudio_newproject_wizard.png" id="fig-rstudionewdir" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudionewdir-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Em seguida, escolha a opção <em>New Project</em> (<a href="#fig-rstudionewproject" class="quarto-xref">Figura&nbsp;<span>2.3</span></a>).</li>
+</ol>
+<div id="fig-rstudionewproject" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudionewproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rstudio_newproject_options.png" id="fig-rstudionewproject" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudionewproject-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Por fim, coloque o nome da sua nova pasta contendo o projeto RStudio dentro da opção <em>Directory Name</em>. E na opção inferior, nomeada <em>Create project as subdirectory of:</em>, escolha por meio do botão <em>Browser</em> a pasta mãe que abrigará a pasta contendo seu projeto (<a href="#fig-rstudiofoldersubfolder" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>).</li>
+</ol>
+<div id="fig-rstudiofoldersubfolder" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudiofoldersubfolder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figuras/rstudio_newproject_folder.png" id="fig-rstudiofoldersubfolder" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudiofoldersubfolder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+<p>Ao finalizar essas etapas, o RStudio criará um arquivo de sufixo <code>.Rproj</code> dentro da pasta que você criou. Ao clicar duas vezes nesse arquivo, o RStudio se abrirá, tendo essa pasta como a de trabalho (veja aqui <a href="https://intror.netlify.app/%C3%A1rea-de-trabalho-vs.-pasta-de-trabalho.html">o que é uma pasta de trabalho no R</a>) na sua sessão.</p>
+<p>Para finalizar, disponibilizo o vídeo abaixo, feito pelo perfil do YouTube <a href="https://www.youtube.com/@epidemioforadacurva3046">Epidemio Fora da Curva</a>, para facilitar o entendimento de vocês:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ts4jLbY6zUc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="criar-rmd" class="level2">
+<h2 class="anchored" data-anchor-id="criar-rmd">Como criar um arquivo <code>.Rmd</code></h2>
+<p>A primeira maneira de criar um arquivo Rmarkdown é apertar o botão de criar arquivos presente no lado superior esquerdo do RStudio (<a href="#fig-criarmd1" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>). Ao clicar neste botão, opções de arquivos são listadas, entre as quais se inclui o Rmarkdown.</p>
 <div id="fig-criarmd1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-criarmd1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figuras/cria_rmd.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-criarmd1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.1: Botão, presente na interface do RStudio, utilizado para criar arquivos, destacado com um retângulo verde.
+Figura&nbsp;2.5: Botão, presente na interface do RStudio, utilizado para criar arquivos, destacado com um retângulo verde.
 </figcaption>
 </figure>
 </div>
-<p>Ao selecionar a opção “Rmarkdown”, uma tela se abre demandando que se coloque o título do arquivo, autor, e data. Também se solicita o tipo de arquivo final desejado: HTML, PDF, ou Word (<a href="#fig-novormd" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>).</p>
+<p>Ao selecionar a opção “Rmarkdown”, uma tela se abre demandando que se coloque o título do arquivo, autor, e data. Também se solicita o tipo de arquivo final desejado: HTML, PDF, ou Word (<a href="#fig-novormd" class="quarto-xref">Figura&nbsp;<span>2.6</span></a>).</p>
 <div id="fig-novormd" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-novormd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figuras/novo_rmd.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-novormd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.2: Tela que se abre ao criarmos um novo arquivo Rmarkdown.
+Figura&nbsp;2.6: Tela que se abre ao criarmos um novo arquivo Rmarkdown.
 </figcaption>
 </figure>
 </div>
-<p>Uma outra maneira de criar um arquivo Rmarkdown é pelo menu de entrada. Selecionam-se as opções <code>File -&gt; New File -&gt; Rmarkdown ...</code> (<a href="#fig-criarmd2" class="quarto-xref">Figura&nbsp;<span>2.3</span></a>) para iniciar um novo arquivo e a tela apresentada na <a href="#fig-novormd" class="quarto-xref">Figura&nbsp;<span>2.2</span></a> aparecer novamente.</p>
+<p>Uma outra maneira de criar um arquivo Rmarkdown é pelo menu de entrada. Selecionam-se as opções <code>File -&gt; New File -&gt; Rmarkdown ...</code> (<a href="#fig-criarmd2" class="quarto-xref">Figura&nbsp;<span>2.7</span></a>) para iniciar um novo arquivo e a tela apresentada na <a href="#fig-novormd" class="quarto-xref">Figura&nbsp;<span>2.6</span></a> aparecer novamente.</p>
 <div id="fig-criarmd2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-criarmd2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figuras/cria_rmd2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-criarmd2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.3: Criação de arquivo Rmarkdown usando as opções presentes no menu do RStudio (<code>File -&gt; New File -&gt; Rmarkdown ...</code>).
+Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no menu do RStudio (<code>File -&gt; New File -&gt; Rmarkdown ...</code>).
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="estrutura-de-um-documento-rmarkdown" class="level2">
-<h2 class="anchored" data-anchor-id="estrutura-de-um-documento-rmarkdown">Estrutura de um documento Rmarkdown</h2>
-<p>Um arquivo RMarkdown é composto por três tipos principais de elementos:</p>
+<section id="estrutura-de-um-documento-rmd" class="level2">
+<h2 class="anchored" data-anchor-id="estrutura-de-um-documento-rmd">Estrutura de um documento Rmd</h2>
+<p>Um arquivo Rmd é composto por três tipos principais de elementos:</p>
 <ol type="1">
-<li><p><strong>Metadados YAML</strong>: também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.</p></li>
-<li><p><strong>Pedaço de código</strong>: são blocos de código delimitados por três crases (```). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.</p></li>
+<li><p><strong>Metadados</strong>: também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.</p></li>
 <li><p><strong>Texto formatado</strong>: texto normal que pode incluir formatação com Markdown para criar títulos, listas, links, entre outros.</p></li>
+<li><p><strong>Pedaço de código</strong>: são blocos de código delimitados por três crases (```). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.</p></li>
 </ol>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -477,15 +536,7 @@ Figura&nbsp;2.3: Criação de arquivo Rmarkdown usando as opções presentes no 
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>YAML<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como <code>html_document</code>. Caso quiséssemos um arquivo no formato <code>.docx</code> (ou Word), o output deveria ser modificado para <code>word_document</code>. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do RMarkdown.</p>
-</section>
-<section id="pedaços-de-código" class="level3">
-<h3 class="anchored" data-anchor-id="pedaços-de-código">Pedaços de código</h3>
-<p>Os pedaços de código em R (<em>code chunks</em>) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho <code>CTRL + ALT + I</code> no Windows/Linux e <code>CMD + ALT + I</code> no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">library("ggplot2")</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">gplot(iris$Sepal.Length, iris$Sepal.Width)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>YAML<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como <code>html_document</code>. Caso quiséssemos um arquivo no formato <code>.docx</code> (ou Word), o output deveria ser modificado para <code>word_document</code>. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do Rmd.</p>
 </section>
 <section id="texto" class="level3">
 <h3 class="anchored" data-anchor-id="texto">Texto</h3>
@@ -508,11 +559,14 @@ Temos *itálico*, __negrito__, listas como a presente abaixo:
 </figure>
 </div>
 </section>
-<section id="citações-de-referências-bibliográficas" class="level3">
-<h3 class="anchored" data-anchor-id="citações-de-referências-bibliográficas">Citações de referências bibliográficas</h3>
-<p>Em construção.</p>
-<!-- Isso conclui nosso capítulo introdutório sobre o RMarkdown. -->
-<!-- Nos próximos capítulos, vamos explorar a sintaxe de Markdown e tipos diferentes de produtos com Rmarkdown.   -->
+<section id="pedaços-de-código" class="level3">
+<h3 class="anchored" data-anchor-id="pedaços-de-código">Pedaços de código</h3>
+<p>Os pedaços de código em R (<em>code chunks</em>) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho <code>CTRL + ALT + I</code> no Windows/Linux e <code>CMD + ALT + I</code> no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">library("ggplot2")</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">gplot(iris$Sepal.Length, iris$Sepal.Width)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Isso conclui nosso capítulo introdutório sobre arquivos Rmd. Nos próximos capítulos, vamos explorar a sintaxe utilizada em arquivos Rmd e tipos diferentes de produtos com o Rmd.</p>
 <!-- tópicos mais avançados, incluindo personalização de saída, integração com pacotes externos e dicas de boas práticas.   -->
 <!-- Por exemplo, um mesmo código Markdown pode ser convertido para HTML, LaTeX (gera pdf’s), docx etc. -->
 <!-- Para isso, é necessário um conversor, que lê um código em Markdown e, considerando a escolha do output desejado, converte o arquivo para a linguagem desejada. Isto ficará mais claro com os exemplos. -->

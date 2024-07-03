@@ -20,10 +20,9 @@ aliases:
 
 ## O que significa compilar um arquivo Rmd?
 
-
 ![Fluxo de trabalho que ocorre durante a compilação de um arquivo Rmd. Extraído do sítio digital do livro "Rmarkdown Cookbook".](https://bookdown.org/yihui/rmarkdown-cookbook/images/workflow.png)
 
-## Compilação utilizando a estrutura do RStudio
+## Compilação utilizando a estrutura do RStudio {#compilarrmd}
 
 O RStudio é otimizado para lidar com arquivos Rmd.
 Para compilar um arquivo neste programa, basta abrir o arquivo Rmd e clicar no botão "Knit" na barra de ferramentas (@fig-botaoknit).

@@ -10,11 +10,12 @@ Em primeiro lugar, é necessário ter o ambiente R instalado.
 Em seguida, necessitamos de um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)), que será onde o usuário poderá escrever seus textos.
 Também deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib* ([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
 
-### Objetivos de aprendizado
+## Objetivos de aprendizado
 
 + Instalar o R e pacotes necessários
-+ Instalar um IDE
++ Instalar o Rtools
 + Instalar distribuição LaTeX
++ Instalar um IDE
 + Instalar um organizador de bibliografias
 
 ::: {.callout-tip}
@@ -37,15 +38,15 @@ A depender do seu sistema operacional (SO), há maneiras diferentes de se instal
 knitr::include_graphics("figuras/rproject.png")
 ```
 
-1. **Windows:**
+1) **Windows:**
    - Acesse o site [CRAN](https://cran.r-project.org/bin/windows/base/) e clique no link para baixar a versão mais recente do R para Windows.
    - Execute o instalador baixado e siga as instruções do assistente de instalação.
   
-2. **Mac OS X:**
+2) **Mac OS X:**
    - Vá para o site [CRAN](https://cran.r-project.org/bin/macosx/) e baixe o instalador para a versão mais recente do R para Mac OS X.
    - Abra o arquivo baixado e siga as instruções do assistente de instalação.
 
-3. **Linux:**
+3) **Linux:**
    - Dependendo da sua distribuição Linux, você pode instalar o R usando o gerenciador de pacotes. Por exemplo, para Ubuntu, você pode usar o comando `sudo apt-get install r-base`.
    - Consulte a documentação específica da sua distribuição para obter instruções detalhadas.
 
@@ -64,14 +65,53 @@ install.packages("xaringan") # Apresentações
 install.packages("officer") # Produtos Word, Powerpoint, Excel
 ```
 
+### Rtools para usuários Windows
+
+Em teoria, não deveria ser necessário instalar o Rtools, um conjunto de ferramentas para compilar pacotes R do código fonte (os pacotes geralmente são instalados a partir do arquivo já compilado, o chamado arquivo binário).
+Porém, já vi pessoas tendo problemas para fazer o Rmarkdown funcionar em função de não conseguirem instalar o pacote `stringi` no Windows.
+Por isso, aos **usuários Windows**, recomendo a instalação do **Rtools.**  
+
+Para instalar o **Rtools**, siga o procedimento abaixo:
+
+1) Na página de instalação do Windows por meio do sítio [https://www.r-project.org/](https://www.r-project.org/), você verá a opção **Rtools** como última opção. Clique nesse nome (@fig-rtoolslocalizacao).  
+
+![Veja a opção **Rtools** com destaque em azul circundando o nome. Esta é a tela de instalação do R para usuários Windows.](figuras/rtoolslocalizacao.png){#fig-rtoolslocalizacao}
+
+2) Em seguida, uma nova tela aparece e lá você deve escolher a versão do **Rtools** em função da sua versão de R.
+Se o R que você possui é a versão 4.4.x, instale o **Rtools** 4.4; se é a versão 4.3, instale o **Rtools** 4.3; e assim sucessivamente (@fig-rtoolsversao).  
+
+![Tela de escolha da versão do **Rtools** a ser instalado.](figuras/rtoolsversao.png){#fig-rtoolsversao}
+
+3) Após escolher a versão do **Rtools**, selecione agora o instalador. Selecione a opção destacada na @fig-rtoolsinstalador.  
+
+![Instalador do **Rtools** a ser utilizado, com destaque na cor verde abaixo da opção sugerida.](figuras/rtoolsinstalador.png){#fig-rtoolsinstalador}
+
+4) Após baixar o instalador do **Rtools**, execute o arquivo e siga as instruções do assistente de instalação.  
+
+## Distribuição LaTeX
+
+Para poder gerar um arquivo PDF, é necessário possuir uma distribuição LaTeX no seu sistema.
+A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R `tinytex` [@tinytex2019].
+Uma vez que o usuário tenha o R instalado, execute os comandos abaixo para poder instalar o pacote e, em seguida, usar a função `tinytex::install_tinytex()` para instalar o LaTeX localmente.
+Siga as instruções da tela.  
+
+```{r, echo = TRUE, eval=FALSE}
+install.packages('tinytex')
+```
+
+
+```{r, echo = TRUE, eval=FALSE}
+tinytex::install_tinytex()
+```
+
 ## Ambiente de desenvolvimento integrado - IDE
 
 Recomenda-se que o IDE [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes [rmarkdown](https://github.com/rstudio/rmarkdown) e [bookdown](https://github.com/rstudio/bookdown).
 Ademais, **IDE**s  como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.  
 
-1. Acesse o site da [RStudio](https://posit.co/download/rstudio-desktop/) (@fig-rstudio) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;
+1) Acesse o site da [RStudio](https://posit.co/download/rstudio-desktop/) (@fig-rstudio) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;
 
-2. Execute o instalador baixado e siga as instruções do assistente de instalação.  
+2) Execute o instalador baixado e siga as instruções do assistente de instalação.  
 
 ```{r}
 #| label: fig-rstudio
@@ -92,11 +132,18 @@ Listo algumas alternativas abaixo:
 
 + Rkward - [https://rkward.kde.org/Download_RKWard.html](https://rkward.kde.org/Download_RKWard.html)
 
-## Organizador de bibliografias - JabRef
+## Organizador de bibliografias
 
-1. Visite o site do [JabRef](https://www.jabref.org/#downloads) (@fig-jabref) e baixe a versão mais recente para o seu sistema operacional;
+Existem vários organizadores de bibliografia.
+Eu utilizo o JabRef.
+Caso você já faça uso de um e consiga gerar arquivos [bib](https://www.reviversoft.com/pt/file-extensions/bib?alid=120423556.1719964778), ótimo.
+Prossiga nele!
 
-2. Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.  
+Caso ainda não tenha, sugiro que instale o JabRef, seguindo os passos abaixo:
+
+1) Visite o site do [JabRef](https://www.jabref.org/#downloads) (@fig-jabref) e baixe a versão mais recente para o seu sistema operacional;
+
+2) Após o download, execute o instalador e siga as instruções do assistente para concluir a instalação.  
 
 ```{r}
 #| label: fig-jabref
@@ -108,12 +155,12 @@ knitr::include_graphics("figuras/jabref.png")
 ## Pandoc
 
 ::: {.callout-warning}
-Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será necessária a instalação do *Pandoc*.  
+Caso o usuário tenha optado por utilizar um IDE **diferente** do RStudio, será necessária a instalação do *Pandoc*.  
 :::
 
-1. Visite o site oficial do [Pandoc](https://pandoc.org/installing.html) (@fig-pandoc) e encontre as instruções de instalação específicas para o seu sistema operacional;
+1) Visite o site oficial do [Pandoc](https://pandoc.org/installing.html) (@fig-pandoc) e encontre as instruções de instalação específicas para o seu sistema operacional;
 
-2. Siga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.  
+2) Siga as instruções fornecidas para baixar e instalar o Pandoc em seu sistema.  
 
 
 ```{r}
@@ -123,25 +170,19 @@ Caso o usuário tenha optado por utilizar um IDE diferente do RStudio, será nec
 knitr::include_graphics("figuras/pandoc.png")
 ```
 
+# Verificação da instalação
 
-## Distribuição LaTeX
+Após a conclusão das instalações, você pode verificar se já está apto a escrever em Rmd se o procedimento abaixo funcionar.
+Caso não funcione, cheque se o passo a passo acima foi seguido corretamente, cheque as mensagens que o computador informa.
+E se ainda assim não obtiver sucesso, entre em contato comigo que tentarei ajudar.
+Ou busque ajuda com um amigo ou com o Google.  
 
-A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R `tinytex` [@tinytex2019].
-Uma vez que o usuário tenha o R instalado, execute o comando abaixo para poder instalar o pacote.
-Siga as instruções da tela.  
+1) Abra o RStudio e crie um novo arquivo Rmd (siga as [instruções aqui presentes](02_basico.qmd#criar-rmd)).  
 
-```{r, echo = TRUE, eval=FALSE}
-install.packages('tinytex')
-tinytex::install_tinytex()
-```
+2) Uma tela será aberta e lá você poderá incluir o nome do autor, título do arquivo e tipo de produto desejado (HTML, PDF ou WORD).  
 
-<!-- ## Verificação da Instalação -->
+3) Salve o arquivo e o compile (para compilar um Rmd, [siga essas instruções](04_compilacao.qmd#compilarrmd)).  
 
-<!-- Após a conclusão das instalações, você pode verificar se todas as ferramentas foram instaladas corretamente executando os seguintes comandos em seu terminal ou console: -->
-
-<!-- - Para verificar a instalação do R, execute `R --version`. -->
-<!-- - Para verificar a instalação do RStudio, abra o RStudio e verifique a versão na barra de título ou vá para `Help > About`. -->
-<!-- - Para verificar a instalação do Pandoc, execute `pandoc --version`. -->
-
-<!-- Agora você está pronto para começar a utilizar essas ferramentas para criar documentos em R Markdown e aproveitar ao máximo a análise de dados e a geração de relatórios. -->
+Se você gerar o arquivo HTML, PDF ou WORD, a depender do que você selecionou, então está tudo certo, podemos prosseguir para os próximos capítulos.
+Agora você está pronto para começar a utilizar essa ferramenta para criar documentos e aproveitar ao máximo a análise de dados e a geração de relatórios.  
 
