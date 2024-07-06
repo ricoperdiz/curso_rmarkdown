@@ -27,7 +27,7 @@ O objetivo do Markdown é permitir que escritores criem conteúdo rico em format
 Esse tipo de documento foi introduzido inicialmente no pacote `knitr` [@knitr2014;@knitr2015;@R-knitr] no ano de 2012.
 A idéia era superar as limitações do [Sweave](https://en.wikipedia.org/wiki/Sweave), uma ferramenta que permite a integração de código R com documentos LaTeX.
 Em seu desenho, o Rmd (apesar de possuir o **R** no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, [literate programming](https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada)).
-A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas.
+A programação letrada foi introduzida por Donald Knuth em 1984 e consiste em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas.
 Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte.
 A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.  
 
@@ -179,7 +179,7 @@ Veja o aprofundamento deste tema no **[capítulo "Sintaxe"](03_sintaxe.qmd)**.
 
 Por exemplo, veja o texto escrito em Markdown abaixo:
 
-```
+```md
 ## Cabeçalho de nível 2
 
 Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  
@@ -201,7 +201,6 @@ Os pedaços de código em R  (*code chunks*) podem ser executados para gerar res
 Você pode inserir um pedaço de código manualmente manualmente ou com o atalho `CTRL + ALT + I` no Windows/Linux e `CMD + ALT + I` no MacOS.
 É possível incluir uma série de opções relacionadas à execução do código.
 Falaremos destas opções mais adiante.  
-
 
 ```{{r}}
 library("ggplot2")

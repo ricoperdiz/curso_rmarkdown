@@ -1,0 +1,21 @@
+title: "Análise exploratória de dados"
+author: Ricardinho
+date: 4 Jun 2024
+output: bookdown::html_document2
+
+## Introdução
+
+Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  
+
+Vejam a figura \@ref(fig:fig1).  
+
+```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}
+plot(mtcars)
+```
+
+
+A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  
+
+```{r minha-tabela}
+kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")
+```

@@ -1,0 +1,136 @@
+---
+title: "Tipos de produtos (='Output')"
+format: html
+aliases: 
+  - /output/
+---
+
+```{r}
+#| include: false
+source("R/utils.R")
+```
+
+
+Podemos produzir diferentes tipos de produtos utilizando arquivos Rmd: documentos, apresentações, sítios web, e painéis de gestão (conhecidos como *dashboard* na língua inglesa).
+Discorrerei sobre cada um deles, nas próximas seções.  
+
+
+## Objetivos de aprendizado
+
++ Compilar um arquivo Rmd em HTML;
++ Compilar um arquivo Rmd em PDF;
++ Compilar um arquivo Rmd em DOCX;
+
+<!-- 6. **Aplicação Prática:** -->
+<!--    - Realizar exercícios práticos para criar documentos Rmd simples que integrem texto formatado com resultados de código R. -->
+<!--    - Praticar a incorporação de gráficos, tabelas e outras saídas geradas pelo R no documento Rmd. -->
+
+<!-- 7. **Melhores Práticas:** -->
+<!--    - Aprender sobre melhores práticas para escrever documentos Rmd claros, bem-organizados e reprodutíveis. -->
+<!--    - Conhecer técnicas para comentar e documentar o código dentro dos chunks. -->
+
+## HTML
+
+O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd.
+Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML.
+Começaremos pela maneira mais simples, utilizando a função `rmarkdown::html_document()` do pacote R __rmarkdown__ [@R-rmarkdown]:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Ricardinho
+date: 4 Jun 2024
+output: html_document
+---
+```
+
+### Acrescentar sumário
+
+Para acrescentar um sumário em seu documento, use o argumento `toc` e especifique a profundidade do sumário por meio do argumento `toc_depth`:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Ricardinho
+date: 4 Jun 2024
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+---
+```
+
+Reparem que em metadados YAML, os espaços contam; isto é, a [indentação](https://w2websites.com/glossario/o-que-e-indentacao/) é __necessária__!
+
+A profundidade do sumário diz respeito ao grau do cabeçalho que se deseja atingir, isto é, você deseja que seu sumário liste os cabeçalhos até o segundo grau (== "##")? Ou até o terceiro grau (=="###")? Ou até o quarto grau (="####") ?  
+
+Para cada uma das respostas acima, teríamos o argumento `toc_depth` com as seguintes respostas:
+
+```yaml
+toc_depth: 2
+toc_depth: 3
+toc_depth: 4
+```
+
+Se não desejarmos o sumário, podemos usar o argumento `toc: false` ou simplesmente não utilizá-lo.  
+
+### Numerar seções
+
+Você pode numerar seções utilizando o argumento `number_sections`, que habilita a numeração caso seja atribuído o valor `true` a ele:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Ricardinho
+date: 4 Jun 2024
+output: 
+  html_document:
+    number_sections: true
+---
+```
+
+Se você desejar numerar todas as seções, excluindo alguma(s), você pode fazer acrescentar o valor `{-}` após o cabeçalho que você deseja não numerar.
+Por exemplo, suponha que a seção `# Prefácio` não deva ser numerada por você.
+Você deve fazer então da seguinte maneira:
+
+```md
+# Prefácio {-}
+```
+
+### Referência cruzada de figuras e tabelas
+
+Fazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento.
+Porém, este recurso só está disponível no pacote R __bookdown__ [@R-bookdown].
+Logo, será necessário mudar o valor atribuído ao argumento `output` nos metadados do seu arquivo.
+Em vez de `output: html_document`, usaremos `output: bookdown::html_document2`.
+Veja abaixo:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Ricardinho
+date: 4 Jun 2024
+output: bookdown::html_document2
+---
+```
+
+Em seguida, devemos nos preocupar com a referência em si.
+Para isso, precisaremos dos itens abaixo:
+
++ Figuras ou tabelas deverão possuir uma legenda;
++ Pedaços de código nomeados, pois esse nome será o código utilizado como identificador da referência.  
+
+A referência cruzada é feita por meio da seguinte notação:
+
+> `\@ref(tipo:codigo)`
+
+em que `tipo` se refere à figura `fig` ou tabela `tab`, e `codigo` se refere ao codigo identificador do pedaço de código em que faremos a inserção da figura ou tabela.  
+
+Para ficar mais claro, vejam o exemplo abaixo:
+
+`r import_example("referencia_cruzada.Rmd")`
+
+Para mais possibilidades, veja a seção [Update the date automatically](https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html) do livro [Rmarkdown cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) [@rmarkdown2020].  
+
+
+

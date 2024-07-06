@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modelos de arquivos – Introdução ao Rmarkdown e Quarto</title>
+<title>Tipos de produtos (=‘Output’) – Introdução ao Rmarkdown e Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,8 +84,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./referencias.html" rel="next">
-<link href="./0_quarto.html" rel="prev">
+<link href="./0_quarto.html" rel="next">
+<link href="./04_compilacao.html" rel="prev">
 <link href="./figuras/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -106,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Modelos de arquivos – Introdução ao Rmarkdown e Quarto">
+<meta property="og:title" content="Tipos de produtos (=‘Output’) – Introdução ao Rmarkdown e Quarto">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto">
@@ -128,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exemplos.html"><span class="chapter-title">Modelos de arquivos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./05_output.html"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -235,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></a>
+  <a href="./05_output.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></a>
   </div>
 </li>
       </ul>
@@ -258,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exemplos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Modelos de arquivos</span></a>
+  <a href="./exemplos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Modelos de arquivos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -276,18 +296,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#análise-exploratória-de-dados---conjunto-de-dados-iris" id="toc-análise-exploratória-de-dados---conjunto-de-dados-iris" class="nav-link active" data-scroll-target="#análise-exploratória-de-dados---conjunto-de-dados-iris">Análise exploratória de dados - Conjunto de dados <code>iris</code></a></li>
-  <li><a href="#mapa-interativo-com-pacote-leaflet" id="toc-mapa-interativo-com-pacote-leaflet" class="nav-link" data-scroll-target="#mapa-interativo-com-pacote-leaflet">Mapa interativo com pacote <code>leaflet</code></a></li>
-  <li><a href="#referência-cruzada-em-figuras-e-tabelas" id="toc-referência-cruzada-em-figuras-e-tabelas" class="nav-link" data-scroll-target="#referência-cruzada-em-figuras-e-tabelas">Referência cruzada em figuras e tabelas</a></li>
+  <li><a href="#objetivos-de-aprendizado" id="toc-objetivos-de-aprendizado" class="nav-link active" data-scroll-target="#objetivos-de-aprendizado">Objetivos de aprendizado</a></li>
+  <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html">HTML</a>
+  <ul class="collapse">
+  <li><a href="#acrescentar-sumário" id="toc-acrescentar-sumário" class="nav-link" data-scroll-target="#acrescentar-sumário">Acrescentar sumário</a></li>
+  <li><a href="#numerar-seções" id="toc-numerar-seções" class="nav-link" data-scroll-target="#numerar-seções">Numerar seções</a></li>
+  <li><a href="#referência-cruzada-de-figuras-e-tabelas" id="toc-referência-cruzada-de-figuras-e-tabelas" class="nav-link" data-scroll-target="#referência-cruzada-de-figuras-e-tabelas">Referência cruzada de figuras e tabelas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./05_output.html"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Modelos de arquivos</span></h1>
+<h1 class="title"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></h1>
 </div>
 
 
@@ -304,95 +328,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Disponibilizo abaixo alguns arquivos Rmd que podem auxiliar você a produzir documentos contendo mapas, tabelas e outros, por meio de códigos em R. Pretendo disponibilizar arquivos variados para que eles possam ser mesclados e ajudar o praticante iniciante na produção do que ele desejar.</p>
-<section id="análise-exploratória-de-dados---conjunto-de-dados-iris" class="level2">
-<h2 class="anchored" data-anchor-id="análise-exploratória-de-dados---conjunto-de-dados-iris">Análise exploratória de dados - Conjunto de dados <code>iris</code></h2>
-<p>Disponível em: <a href=".\docs/exemplos/aed_iris.Rmd">/docs/exemplos/aed_iris.Rmd</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados - iris"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Euzinho Euzo Euzão"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "15 Maio 2024"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include=FALSE}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in"># estafuncao checa se os pacotes em `lista_de_pacotes` estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">lista_de_pacotes &lt;- c("ggplot2")</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">pacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,"Package"])]</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">if(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análise exploratória de dados</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Vou analisar o conjunto de dados chamado <span class="in">`iris`</span>.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">head(iris, 5)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráficos</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=TRUE}</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">library("ggplot2")</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">iris |&gt; </span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(aes(Sepal.Length, Sepal.Width)) +</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point()</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colocarei uma figura localizada em outra pasta</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Usarei o caminho relativo.  </span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="al">![](../../figuras/capa.png)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos produzir diferentes tipos de produtos utilizando arquivos Rmd: documentos, apresentações, sítios web, e painéis de gestão (conhecidos como <em>dashboard</em> na língua inglesa). Discorrerei sobre cada um deles, nas próximas seções.</p>
+<section id="objetivos-de-aprendizado" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h2>
+<ul>
+<li>Compilar um arquivo Rmd em HTML;</li>
+<li>Compilar um arquivo Rmd em PDF;</li>
+<li>Compilar um arquivo Rmd em DOCX;</li>
+</ul>
+<!-- 6. **Aplicação Prática:** -->
+<!--    - Realizar exercícios práticos para criar documentos Rmd simples que integrem texto formatado com resultados de código R. -->
+<!--    - Praticar a incorporação de gráficos, tabelas e outras saídas geradas pelo R no documento Rmd. -->
+<!-- 7. **Melhores Práticas:** -->
+<!--    - Aprender sobre melhores práticas para escrever documentos Rmd claros, bem-organizados e reprodutíveis. -->
+<!--    - Conhecer técnicas para comentar e documentar o código dentro dos chunks. -->
 </section>
-<section id="mapa-interativo-com-pacote-leaflet" class="level2">
-<h2 class="anchored" data-anchor-id="mapa-interativo-com-pacote-leaflet">Mapa interativo com pacote <code>leaflet</code></h2>
-<p>Disponível em: <a href=".\docs/exemplos/mapa1.Rmd">/docs/exemplos/mapa1.Rmd</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exemplo - Mapa"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "R. O. Perdiz"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "1 Jan 2024"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Um mapa bonito para compartilhar.</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">library("leaflet")</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">leaflet() |&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">  addTiles() |&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="in">  setView(-60.691585, 2.834153, zoom = 19)</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="html" class="level2">
+<h2 class="anchored" data-anchor-id="html">HTML</h2>
+<p>O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd. Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML. Começaremos pela maneira mais simples, utilizando a função <code>rmarkdown::html_document()</code> do pacote R <strong>rmarkdown</strong> <span class="citation" data-cites="R-rmarkdown">(<a href="referencias.html#ref-R-rmarkdown" role="doc-biblioref">Allaire et al. 2024</a>)</span>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Ricardinho</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="acrescentar-sumário" class="level3">
+<h3 class="anchored" data-anchor-id="acrescentar-sumário">Acrescentar sumário</h3>
+<p>Para acrescentar um sumário em seu documento, use o argumento <code>toc</code> e especifique a profundidade do sumário por meio do argumento <code>toc_depth</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Ricardinho</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Reparem que em metadados YAML, os espaços contam; isto é, a <a href="https://w2websites.com/glossario/o-que-e-indentacao/">indentação</a> é <strong>necessária</strong>!</p>
+<p>A profundidade do sumário diz respeito ao grau do cabeçalho que se deseja atingir, isto é, você deseja que seu sumário liste os cabeçalhos até o segundo grau (== “##”)? Ou até o terceiro grau (==“###”)? Ou até o quarto grau (=“####”) ?</p>
+<p>Para cada uma das respostas acima, teríamos o argumento <code>toc_depth</code> com as seguintes respostas:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se não desejarmos o sumário, podemos usar o argumento <code>toc: false</code> ou simplesmente não utilizá-lo.</p>
 </section>
-<section id="referência-cruzada-em-figuras-e-tabelas" class="level2">
-<h2 class="anchored" data-anchor-id="referência-cruzada-em-figuras-e-tabelas">Referência cruzada em figuras e tabelas</h2>
-<p>Disponível em: <a href=".\docs/exemplos/referencia_cruzada.Rmd">/docs/exemplos/referencia_cruzada.Rmd</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Ricardinho</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> bookdown::html_document2</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introdução</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Vejam a figura \@ref(fig:fig1).  </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="in">plot(mtcars)</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  </span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r minha-tabela}</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="in">kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="numerar-seções" class="level3">
+<h3 class="anchored" data-anchor-id="numerar-seções">Numerar seções</h3>
+<p>Você pode numerar seções utilizando o argumento <code>number_sections</code>, que habilita a numeração caso seja atribuído o valor <code>true</code> a ele:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Ricardinho</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number_sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se você desejar numerar todas as seções, excluindo alguma(s), você pode fazer acrescentar o valor <code>{-}</code> após o cabeçalho que você deseja não numerar. Por exemplo, suponha que a seção <code># Prefácio</code> não deva ser numerada por você. Você deve fazer então da seguinte maneira:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prefácio {-}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="referência-cruzada-de-figuras-e-tabelas" class="level3">
+<h3 class="anchored" data-anchor-id="referência-cruzada-de-figuras-e-tabelas">Referência cruzada de figuras e tabelas</h3>
+<p>Fazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento. Porém, este recurso só está disponível no pacote R <strong>bookdown</strong> <span class="citation" data-cites="R-bookdown">(<a href="referencias.html#ref-R-bookdown" role="doc-biblioref">Xie 2024</a>)</span>. Logo, será necessário mudar o valor atribuído ao argumento <code>output</code> nos metadados do seu arquivo. Em vez de <code>output: html_document</code>, usaremos <code>output: bookdown::html_document2</code>. Veja abaixo:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Ricardinho</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> bookdown::html_document2</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Em seguida, devemos nos preocupar com a referência em si. Para isso, precisaremos dos itens abaixo:</p>
+<ul>
+<li>Figuras ou tabelas deverão possuir uma legenda;</li>
+<li>Pedaços de código nomeados, pois esse nome será o código utilizado como identificador da referência.</li>
+</ul>
+<p>A referência cruzada é feita por meio da seguinte notação:</p>
+<blockquote class="blockquote">
+<p><code>\@ref(tipo:codigo)</code></p>
+</blockquote>
+<p>em que <code>tipo</code> se refere à figura <code>fig</code> ou tabela <code>tab</code>, e <code>codigo</code> se refere ao codigo identificador do pedaço de código em que faremos a inserção da figura ou tabela.</p>
+<p>Para ficar mais claro, vejam o exemplo abaixo:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Ricardinho</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> bookdown::html_document2</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introdução</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Vejam a figura \@ref(fig:fig1).  </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="in">plot(mtcars)</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r minha-tabela}</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="in">kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para mais possibilidades, veja a seção <a href="https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html">Update the date automatically</a> do livro <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">Rmarkdown cookbook</a> <span class="citation" data-cites="rmarkdown2020">(<a href="referencias.html#ref-rmarkdown2020" role="doc-biblioref">Xie, Dervieux, e Riederer 2020</a>)</span>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-R-rmarkdown" class="csl-entry" role="listitem">
+Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2024. <em>rmarkdown: Dynamic Documents for R</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry" role="listitem">
+Xie, Yihui. 2024. <em>bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
+<div id="ref-rmarkdown2020" class="csl-entry" role="listitem">
+Xie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. <em>R Markdown Cookbook</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook">https://bookdown.org/yihui/rmarkdown-cookbook</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -966,13 +1015,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark_dimmed">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./0_quarto.html" class="pagination-link" aria-label="O que é Quarto?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">O que é Quarto?</span></span>
+      <a href="./04_compilacao.html" class="pagination-link" aria-label="Compilação de arquivos Rmd">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Compilação de arquivos Rmd</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./referencias.html" class="pagination-link" aria-label="Referências">
-        <span class="nav-page-text"><span class="chapter-title">Referências</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./0_quarto.html" class="pagination-link" aria-label="O que é Quarto?">
+        <span class="nav-page-text"><span class="chapter-title">O que é Quarto?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,6 +2,11 @@
 title: "Modelos de arquivos"
 ---
 
+```{r}
+#| include: false
+source("R/utils.R")
+```
+
 Disponibilizo abaixo alguns arquivos Rmd que podem auxiliar você a produzir documentos contendo mapas, tabelas e outros, por meio de códigos em R.
 Pretendo disponibilizar arquivos variados para que eles possam ser mesclados e ajudar o praticante iniciante na produção do que ele desejar.  
 
@@ -9,21 +14,17 @@ Pretendo disponibilizar arquivos variados para que eles possam ser mesclados e a
 
 Disponível em: [/docs/exemplos/aed_iris.Rmd](/docs/exemplos/aed_iris.Rmd).  
 
-```{r}
-#| echo: false
-#| warning: false
-#| class-output: "sourceCode r"
-cat(readLines("docs/exemplos/aed_iris.Rmd"), sep = "\n")
-```
-
+`r import_example("aed_iris.Rmd")`
 
 ## Mapa interativo com pacote `leaflet`
 
 Disponível em: [/docs/exemplos/mapa1.Rmd](/docs/exemplos/mapa1.Rmd).  
 
-```{r}
-#| echo: false
-#| warning: false
-#| class-output: "sourceCode r"
-cat(readLines("docs/exemplos/mapa1.Rmd"), sep = "\n")
-```
+`r import_example("mapa1.Rmd")`
+
+## Referência cruzada em figuras e tabelas
+
+Disponível em: [/docs/exemplos/referencia_cruzada.Rmd](/docs/exemplos/referencia_cruzada.Rmd).  
+
+`r import_example("referencia_cruzada.Rmd")`
+

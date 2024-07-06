@@ -1,0 +1,59 @@
+---
+title: "Untitled"
+author: "R. O. Perdiz"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    pandoc_args: ["--extract-media", "."]
+---
+
+```{r}
+# Latex nao consegue baixar figuras hospedadas na web - entao temos que usar o argumento colocado no yaml, pandoc_args, para que o pandoc baixe as figuras para a pasta local automaticamente
+# solucao extraida daqui: <https://stackoverflow.com/questions/52558238/image-file-not-found-from-url-in-r-markdown>
+# Outra solucao possivel e esta: <https://forum.posit.co/t/not-able-to-get-an-image-into-word-pdf-from-url-in-rmarkdown/15855/10>
+knitr::include_graphics(
+  path = "https://www.ricardoperdiz.com/img/ROPerdiz_modif.jpg")
+```
+
+```{r}
+if (knitr:::is_latex_output()) {
+  knitr::asis_output('\\url{https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjEzY2JwMjhnMDhyMW5jZXV1ZjM2eGdvcTNuMHZ0dDZ6MnJkcnd0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S0jwNH8PLL3kM3A2bt/giphy.gif}')
+} else {
+  knitr::include_graphics("https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjEzY2JwMjhnMDhyMW5jZXV1ZjM2eGdvcTNuMHZ0dDZ6MnJkcnd0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S0jwNH8PLL3kM3A2bt/giphy.gif")
+}
+```
+
+![](C:/Users/ricop/OneDrive/Documentos/DOC/PROJETO_DOC/Dados_Complexo_Aracouchini/tese_defesa/figures/Amostras-NIR-CPA.png)
+
+<!-- esse e meu comentario, usando atalho do RStudio -->
+
+<!-- comeca meu comentario -->
+Hoje estamos felizes, alegres e satisfeitos.
+Eu gostaria que aqui fosse um novo parágrafo, isto é, que iniciasse em uma nova linha longe da primeira sentença.  
+
+Começa a nova sentença.                     isso aqui não vai dar em nada... o Knitr come os espaços pois podemos nos enganar. Agora se temos dois espaços ao fim de uma sentença seguido de uma nova linha, temos então um novo parágrafo.  
+
+
+Régua horizontal
+
+****
+
+![Aqui vai minha legenda.](figuras/capa.png)
+
+
+
+Uma nova figura vai abaixo (Figura \@ref(fig:mtcars)).  
+
+```{r mtcars, fig.cap="legenda vai aqui."}
+plot(mtcars)
+```
+
+
+
+
+Outra figura vai abaixo (Figura \@ref(fig:botao)).  
+
+```{r botao, fig.cap="Mais outra figura."}
+knitr::include_graphics("figuras/botao_knit.png")
+```
+

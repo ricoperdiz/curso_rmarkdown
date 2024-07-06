@@ -23,6 +23,7 @@ book:
         - 02_basico.qmd
         - 03_sintaxe.qmd
         - 04_compilacao.qmd
+        - 05_output.qmd
     - part: "Introdução ao Quarto"
       chapters: 
         - 0_quarto.qmd
@@ -90,6 +91,10 @@ encoding: "UTF-8"
 lang: pt
 language: 
   search-box-placeholder: Busque aqui
+
+highlight-style: github
+code-block-bg: true
+code-block-border-left: "#31BAE9"
 
 execute:
   freeze: auto
