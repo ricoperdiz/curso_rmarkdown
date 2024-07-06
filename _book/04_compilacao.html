@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./0_quarto.html" rel="next">
+<link href="./05_output.html" rel="next">
 <link href="./03_sintaxe.html" rel="prev">
 <link href="./figuras/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -233,6 +233,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./04_compilacao.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Compilação de arquivos Rmd</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -302,18 +307,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="objetivos-de-aprendizado" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h3>
+<section id="objetivos-de-aprendizado" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h2>
 <ul>
 <li>Ser capaz de renderizar um arquivo Rmd em diferentes formatos de saída;</li>
 <li>Conhecer os comandos e opções disponíveis para a renderização de documentos.</li>
 </ul>
-<!-- 6. **Aplicação Prática:** -->
-<!--    - Realizar exercícios práticos para criar documentos Rmd simples que integrem texto formatado com resultados de código R. -->
-<!--    - Praticar a incorporação de gráficos, tabelas e outras saídas geradas pelo R no documento Rmd. -->
-<!-- 7. **Melhores Práticas:** -->
-<!--    - Aprender sobre melhores práticas para escrever documentos Rmd claros, bem-organizados e reprodutíveis. -->
-<!--    - Conhecer técnicas para comentar e documentar o código dentro dos chunks. -->
 </section>
 <section id="o-que-significa-compilar-um-arquivo-rmd" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-significa-compilar-um-arquivo-rmd">O que significa compilar um arquivo Rmd?</h2>
@@ -340,7 +339,7 @@ Figura&nbsp;4.1: Botão “Knit” destacado com um retângulo verde. Este botã
 <section id="linha-de-comando" class="level3">
 <h3 class="anchored" data-anchor-id="linha-de-comando">Linha de comando</h3>
 <p>Para compilar um arquivo Rmd usando a linha de comando, você pode usar o seguinte comando no console do R:</p>
-<pre><code>rmarkdown::render("caminho/do/seu/arquivo.Rmd")</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">"caminho/do/seu/arquivo.Rmd"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Por exemplo, vamos imaginar que tenhamos um arquivo chamado “arq1.Rmd” em minha pasta de trabalho e desejo compilá-lo. Devemos executar o seguinte comando:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">"arq1.Rmd"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -940,8 +939,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./0_quarto.html" class="pagination-link" aria-label="O que é Quarto?">
-        <span class="nav-page-text"><span class="chapter-title">O que é Quarto?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05_output.html" class="pagination-link" aria-label="Tipos de produtos (='Output')">
+        <span class="nav-page-text"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

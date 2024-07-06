@@ -84,7 +84,7 @@
     "href": "index.html#convenções",
     "title": "Introdução ao Rmarkdown e Quarto",
     "section": "Convenções",
-    "text": "Convenções\nAdotamos o nome “Rmd” para se referir ao formato de arquivo Rmarkdown, cuja extensão é “.Rmd”. Vamos nos referir ao Rmarkdown ao longo deste livro como “Rmd”. Nomes de pacotes aparecerão em negrito (e.g., knitr, rmarkdown). Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação nomeDoPacote::nomeDaFuncao(), e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto.",
+    "text": "Convenções\nAdotamos o nome “Rmd” para se referir ao formato de arquivo Rmarkdown, cuja extensão é “.Rmd”. Vamos nos referir ao Rmarkdown ao longo deste livro como “Rmd”. Nomes de pacotes aparecerão em negrito (e.g., knitr, rmarkdown). Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação nomeDoPacote::nomeDaFuncao(), e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto. Argumentos do YAML aparecerão com a notação argumentoDeYAML, também com destaque quanto à cor do fundo.",
     "crumbs": [
       "Prefácio"
     ]
@@ -213,7 +213,7 @@
     "href": "02_basico.html#o-que-é-rmarkdown",
     "title": "Conceitos básicos",
     "section": "O que é Rmarkdown?",
-    "text": "O que é Rmarkdown?\nEsse tipo de documento foi introduzido inicialmente no pacote knitr (Xie 2014, 2015, 2023) no ano de 2012. A idéia era superar as limitações do Sweave, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmd (apesar de possuir o R no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, literate programming). A programação letrada foi introduzida por Donald Knuth em 1984 e consite em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.",
+    "text": "O que é Rmarkdown?\nEsse tipo de documento foi introduzido inicialmente no pacote knitr (Xie 2014, 2015, 2023) no ano de 2012. A idéia era superar as limitações do Sweave, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmd (apesar de possuir o R no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, literate programming). A programação letrada foi introduzida por Donald Knuth em 1984 e consiste em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
@@ -268,7 +268,7 @@
     "href": "02_basico.html#estrutura-de-um-documento-rmd",
     "title": "Conceitos básicos",
     "section": "Estrutura de um documento Rmd",
-    "text": "Estrutura de um documento Rmd\nUm arquivo Rmd é composto por três tipos principais de elementos:\n\nMetadados: também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.\nTexto formatado: texto normal que pode incluir formatação com Markdown para criar títulos, listas, links, entre outros.\nPedaço de código: são blocos de código delimitados por três crases (```). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.\n\n\n\n---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.\n\n```{r}\niris\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r}\nlibrary(\"ggplot2\")\ngplot(iris$Sepal.Length, iris$Sepal.Width)\n```\n\n\n\nYAML\n\n\n---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n\nYAML1 se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como html_document. Caso quiséssemos um arquivo no formato .docx (ou Word), o output deveria ser modificado para word_document. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do Rmd.\n\n\nTexto\nNo corpo do texto, você pode escrever normalmente, utilizando a sintaxe de Markdown para incluir elementos em itálico, negrito, incluir imagens, tabelas etc. Veja o aprofundamento deste tema no capítulo “Sintaxe”.\nPor exemplo, veja o texto escrito em Markdown abaixo:\n## Cabeçalho de nível 2\n\nEi, gente, __olhem__ aqui. Isso é um texto em Markdown.  \n\nTemos *itálico*, __negrito__, listas como a presente abaixo:\n  \n  + item 1\n  + item 2\n\nSe compilamos um arquivo Markdown contendo este texto, o produto final terá uma imagem como a evidenciada abaixo:\n\n\n\nTexto em Markdown compilado para um arquivo HTML. A aparência pode ser alterada, porém reparem em como o código exibido acima se transforma no texto exibido nesta imagem.\n\n\n\n\nPedaços de código\nOs pedaços de código em R (code chunks) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho CTRL + ALT + I no Windows/Linux e CMD + ALT + I no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.\n```{r}\nlibrary(\"ggplot2\")\ngplot(iris$Sepal.Length, iris$Sepal.Width)\n```\nIsso conclui nosso capítulo introdutório sobre arquivos Rmd. Nos próximos capítulos, vamos explorar a sintaxe utilizada em arquivos Rmd e tipos diferentes de produtos com o Rmd.\n\n\n\n\n\n\n\nXie, Yihui. 2014. «knitr: A Comprehensive Tool for Reproducible Research in R». Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2023. knitr: A General-Purpose Package for Dynamic Report Generation in R. https://yihui.org/knitr/.",
+    "text": "Estrutura de um documento Rmd\nUm arquivo Rmd é composto por três tipos principais de elementos:\n\nMetadados: também conhecido como cabeçalho YAML, este é um bloco de metadados no início do arquivo que fornece informações sobre o documento, como título, autor e formato de saída desejado.\nTexto formatado: texto normal que pode incluir formatação com Markdown para criar títulos, listas, links, entre outros.\nPedaço de código: são blocos de código delimitados por três crases (```). Esses blocos de código podem ser executados e os resultados são incorporados ao documento final.\n\n\n\n---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n```{r, include=FALSE}\n# estafuncao checa se os pacotes em `lista_de_pacotes` estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc\nlista_de_pacotes &lt;- c(\"ggplot2\")\npacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,\"Package\"])]\nif(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}\n```\n\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.\n\n```{r, echo=FALSE}\nhead(iris, 5)\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r, echo=TRUE}\nlibrary(\"ggplot2\")\niris |&gt; \n  ggplot(aes(Sepal.Length, Sepal.Width)) +\n  geom_point()\n```\n\n\n## Colocarei uma figura localizada em outra pasta\n\nUsarei o caminho relativo.  \n\n![](../../figuras/capa.png)\n\n\n\nYAML\n\n\n---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n\nYAML1 se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como html_document. Caso quiséssemos um arquivo no formato .docx (ou Word), o output deveria ser modificado para word_document. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do Rmd.\n\n\nTexto\nNo corpo do texto, você pode escrever normalmente, utilizando a sintaxe de Markdown para incluir elementos em itálico, negrito, incluir imagens, tabelas etc. Veja o aprofundamento deste tema no capítulo “Sintaxe”.\nPor exemplo, veja o texto escrito em Markdown abaixo:\n## Cabeçalho de nível 2\n\nEi, gente, __olhem__ aqui. Isso é um texto em Markdown.  \n\nTemos *itálico*, __negrito__, listas como a presente abaixo:\n  \n  + item 1\n  + item 2\nSe compilamos um arquivo Markdown contendo este texto, o produto final terá uma imagem como a evidenciada abaixo:\n\n\n\nTexto em Markdown compilado para um arquivo HTML. A aparência pode ser alterada, porém reparem em como o código exibido acima se transforma no texto exibido nesta imagem.\n\n\n\n\nPedaços de código\nOs pedaços de código em R (code chunks) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho CTRL + ALT + I no Windows/Linux e CMD + ALT + I no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.\n```{r}\nlibrary(\"ggplot2\")\ngplot(iris$Sepal.Length, iris$Sepal.Width)\n```\nIsso conclui nosso capítulo introdutório sobre arquivos Rmd. Nos próximos capítulos, vamos explorar a sintaxe utilizada em arquivos Rmd e tipos diferentes de produtos com o Rmd.\n\n\n\n\n\n\n\nXie, Yihui. 2014. «knitr: A Comprehensive Tool for Reproducible Research in R». Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2023. knitr: A General-Purpose Package for Dynamic Report Generation in R. https://yihui.org/knitr/.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conceitos básicos</span>"
@@ -312,7 +312,7 @@
     "href": "03_sintaxe.html#códigos-r-em-linha-inline-codes",
     "title": "Sintaxe",
     "section": "Códigos R em linha (“inline codes”)",
-    "text": "Códigos R em linha (“inline codes”)\nCódigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação r. Inserimos o pedaço de código após a letra r, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.\nTomando o conjunto de dados iris como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:\n\n150\n\nOu então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:\n+ Há dados para 3 espécies\n\n+ Os dados possuem 150 linhas e 5 colunas.",
+    "text": "Códigos R em linha (“inline codes”)\nCódigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação r. Inserimos o pedaço de código após a letra r, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.\nTomando o conjunto de dados iris como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:\nr nrow(iris)\nOu então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:\n\nHá dados para r length(unique(iris$Species)) espécies\nOs dados possuem r nrow(iris) linhas e r ncol(iris) colunas.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
@@ -334,7 +334,7 @@
     "href": "03_sintaxe.html#figuras",
     "title": "Sintaxe",
     "section": "Figuras",
-    "text": "Figuras\nA maneira mais simples de inserir uma figura é usando a notação abaixo:\n![Legenda da figura](endereco-da-figura)\nA figura pode estar gravada em seu computador, ou pode estar alojada na rede em algum sítio digital. O necessário é que o endereço esteja correto. Por exemplo, a figura “capa.png” está dentro de uma pasta “figuras/” dentro deste projeto. Vou colocá-la abaixo da seguinte maneira:\n![Capa deste livro](figuras/capa.png)\n\n\n\nCapa deste livro\n\n\nAs figuras inseridas podem ser de diversos formatos: jpeg, png, tiff etc. Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do arquivo. É importante então se atentar para este detalhe.\nOutra maneira de inserir figuras é por meio de funções dentro de blocos de código. Vamos incluir uma imagem usando a função knitr::include_graphics():\n```{r}\nknitr::include_graphics(\"figuras/capa.png\")\n```\n\nknitr::include_graphics(\"figuras/capa.png\")",
+    "text": "Figuras\nA maneira mais simples de inserir uma figura é usando a notação abaixo:\n![Legenda da figura](endereco-da-figura)\nA figura pode estar gravada em seu computador, ou pode estar alojada na rede em algum sítio digital. O necessário é que o endereço esteja correto. Por exemplo, a figura “capa.png” está dentro de uma pasta “figuras/” dentro deste projeto. Vou colocá-la abaixo da seguinte maneira:\n![Capa deste livro](figuras/capa.png)\n\n\n\nCapa deste livro\n\n\nAs figuras inseridas podem ser de diversos formatos: jpeg, png, tiff etc. Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do arquivo. É importante então se atentar para este detalhe.\nOutra maneira de inserir figuras é por meio de funções dentro de blocos de código. Vamos incluir uma imagem usando a função knitr::include_graphics():\n\nknitr::include_graphics(\"figuras/capa.png\")",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
@@ -345,7 +345,7 @@
     "href": "03_sintaxe.html#página-nova",
     "title": "Sintaxe",
     "section": "Página nova",
-    "text": "Página nova\nUm comando útil para inserir conteúdo em uma nova página é o comando \\newpage. Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.\nPara utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto. Então, o conteúdo após esse comando iniciará na nova página. Vejam:\n## Um cabeçalho qualquer\n\n\nAqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.\nPara isso, eu insiro o comando de *nova página* abaixo.  \n\n\\newpage\n\n## Esse cabeçalho aparecerá em uma nova página\n\nJá estando em uma nova página, podemos continuar a inserir mais conteúdo.  \n\n\n\n\n\n\n\n\nXie, Yihui. 2014. «knitr: A Comprehensive Tool for Reproducible Research in R». Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2023. knitr: A General-Purpose Package for Dynamic Report Generation in R. https://yihui.org/knitr/.\n\n\nXie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
+    "text": "Página nova\nUm comando útil para inserir conteúdo em uma nova página é o comando \\newpage. Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.\nPara utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto. Então, o conteúdo após esse comando iniciará na nova página. Vejam:\n## Um cabeçalho qualquer\n\n\nAqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.\nPara isso, eu insiro o comando de *nova página* abaixo.  \n\n\\newpage\n\n## Esse cabeçalho aparecerá em uma nova página\n\nJá estando em uma nova página, podemos continuar a inserir mais conteúdo.  \n\n\n\n\n\n\n\nXie, Yihui. 2014. «knitr: A Comprehensive Tool for Reproducible Research in R». Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and knitr. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2023. knitr: A General-Purpose Package for Dynamic Report Generation in R. https://yihui.org/knitr/.\n\n\nXie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
@@ -374,6 +374,17 @@
     ]
   },
   {
+    "objectID": "04_compilacao.html#objetivos-de-aprendizado",
+    "href": "04_compilacao.html#objetivos-de-aprendizado",
+    "title": "Compilação de arquivos Rmd",
+    "section": "",
+    "text": "Ser capaz de renderizar um arquivo Rmd em diferentes formatos de saída;\nConhecer os comandos e opções disponíveis para a renderização de documentos.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Compilação de arquivos Rmd</span>"
+    ]
+  },
+  {
     "objectID": "04_compilacao.html#o-que-significa-compilar-um-arquivo-rmd",
     "href": "04_compilacao.html#o-que-significa-compilar-um-arquivo-rmd",
     "title": "Compilação de arquivos Rmd",
@@ -396,6 +407,39 @@
     ]
   },
   {
+    "objectID": "05_output.html",
+    "href": "05_output.html",
+    "title": "Tipos de produtos (=‘Output’)",
+    "section": "",
+    "text": "Objetivos de aprendizado",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+    ]
+  },
+  {
+    "objectID": "05_output.html#objetivos-de-aprendizado",
+    "href": "05_output.html#objetivos-de-aprendizado",
+    "title": "Tipos de produtos (=‘Output’)",
+    "section": "",
+    "text": "Compilar um arquivo Rmd em HTML;\nCompilar um arquivo Rmd em PDF;\nCompilar um arquivo Rmd em DOCX;",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+    ]
+  },
+  {
+    "objectID": "05_output.html#html",
+    "href": "05_output.html#html",
+    "title": "Tipos de produtos (=‘Output’)",
+    "section": "HTML",
+    "text": "HTML\nO arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd. Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML. Começaremos pela maneira mais simples, utilizando a função rmarkdown::html_document() do pacote R rmarkdown (Allaire et al. 2024):\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: html_document\n---\n\nAcrescentar sumário\nPara acrescentar um sumário em seu documento, use o argumento toc e especifique a profundidade do sumário por meio do argumento toc_depth:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: \n  html_document:\n    toc: true\n    toc_depth: 3\n---\nReparem que em metadados YAML, os espaços contam; isto é, a indentação é necessária!\nA profundidade do sumário diz respeito ao grau do cabeçalho que se deseja atingir, isto é, você deseja que seu sumário liste os cabeçalhos até o segundo grau (== “##”)? Ou até o terceiro grau (==“###”)? Ou até o quarto grau (=“####”) ?\nPara cada uma das respostas acima, teríamos o argumento toc_depth com as seguintes respostas:\ntoc_depth: 2\ntoc_depth: 3\ntoc_depth: 4\nSe não desejarmos o sumário, podemos usar o argumento toc: false ou simplesmente não utilizá-lo.\n\n\nNumerar seções\nVocê pode numerar seções utilizando o argumento number_sections, que habilita a numeração caso seja atribuído o valor true a ele:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: \n  html_document:\n    number_sections: true\n---\nSe você desejar numerar todas as seções, excluindo alguma(s), você pode fazer acrescentar o valor {-} após o cabeçalho que você deseja não numerar. Por exemplo, suponha que a seção # Prefácio não deva ser numerada por você. Você deve fazer então da seguinte maneira:\n# Prefácio {-}\n\n\nReferência cruzada de figuras e tabelas\nFazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento. Porém, este recurso só está disponível no pacote R bookdown (Xie 2024). Logo, será necessário mudar o valor atribuído ao argumento output nos metadados do seu arquivo. Em vez de output: html_document, usaremos output: bookdown::html_document2. Veja abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: bookdown::html_document2\n---\nEm seguida, devemos nos preocupar com a referência em si. Para isso, precisaremos dos itens abaixo:\n\nFiguras ou tabelas deverão possuir uma legenda;\nPedaços de código nomeados, pois esse nome será o código utilizado como identificador da referência.\n\nA referência cruzada é feita por meio da seguinte notação:\n\n\\@ref(tipo:codigo)\n\nem que tipo se refere à figura fig ou tabela tab, e codigo se refere ao codigo identificador do pedaço de código em que faremos a inserção da figura ou tabela.\nPara ficar mais claro, vejam o exemplo abaixo:\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: bookdown::html_document2\n\n## Introdução\n\nAqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  \n\nVejam a figura \\@ref(fig:fig1).  \n\n```{r fig1, fig.cap = \"Aqui vai a legenda das figuras.\"}\nplot(mtcars)\n```\n\n\nA tabela \\@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  \n\n```{r minha-tabela}\nkable(head(mtcars), caption = \"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable\")\n```\nPara mais possibilidades, veja a seção Update the date automatically do livro Rmarkdown cookbook (Xie, Dervieux, e Riederer 2020).\n\n\n\n\nAllaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2024. rmarkdown: Dynamic Documents for R. https://github.com/rstudio/rmarkdown.\n\n\nXie, Yihui. 2024. bookdown: Authoring Books and Technical Documents with R Markdown. https://github.com/rstudio/bookdown.\n\n\nXie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+    ]
+  },
+  {
     "objectID": "0_quarto.html",
     "href": "0_quarto.html",
     "title": "O que é Quarto?",
@@ -403,7 +447,7 @@
     "text": "Nota\n\n\n\nLivro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.",
     "crumbs": [
       "Introdução ao Quarto",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>O que é Quarto?</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>O que é Quarto?</span>"
     ]
   },
   {
@@ -411,9 +455,9 @@
     "href": "exemplos.html",
     "title": "Modelos de arquivos",
     "section": "",
-    "text": "Análise exploratória de dados - Conjunto de dados iris\nDisponível em: /docs/exemplos/aed_iris.Rmd.\n---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.\n\n```{r}\niris\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r}\nlibrary(\"ggplot2\")\ngplot(iris$Sepal.Length, iris$Sepal.Width)\n```",
+    "text": "Análise exploratória de dados - Conjunto de dados iris\nDisponível em: /docs/exemplos/aed_iris.Rmd.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -421,9 +465,19 @@
     "href": "exemplos.html#mapa-interativo-com-pacote-leaflet",
     "title": "Modelos de arquivos",
     "section": "Mapa interativo com pacote leaflet",
-    "text": "Mapa interativo com pacote leaflet\nDisponível em: /docs/exemplos/mapa1.Rmd.\n\n\n---\ntitle: \"Exemplo - Mapa\"\nauthor: \"R. O. Perdiz\"\ndate: \"1 Jan 2024\"\noutput: html_document\n---\n\nUm mapa bonito para compartilhar.\n\n```{r}\nlibrary(\"leaflet\")\nleaflet() |&gt;\n  addTiles() |&gt;\n  setView(-60.691585, 2.834153, zoom = 19)\n```",
+    "text": "Mapa interativo com pacote leaflet\nDisponível em: /docs/exemplos/mapa1.Rmd.\n---\ntitle: \"Exemplo - Mapa\"\nauthor: \"R. O. Perdiz\"\ndate: \"1 Jan 2024\"\noutput: html_document\n---\n\nUm mapa bonito para compartilhar.\n\n```{r}\nlibrary(\"leaflet\")\nleaflet() |&gt;\n  addTiles() |&gt;\n  setView(-60.691585, 2.834153, zoom = 19)\n```",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+    ]
+  },
+  {
+    "objectID": "exemplos.html#referência-cruzada-em-figuras-e-tabelas",
+    "href": "exemplos.html#referência-cruzada-em-figuras-e-tabelas",
+    "title": "Modelos de arquivos",
+    "section": "Referência cruzada em figuras e tabelas",
+    "text": "Referência cruzada em figuras e tabelas\nDisponível em: /docs/exemplos/referencia_cruzada.Rmd.\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: bookdown::html_document2\n\n## Introdução\n\nAqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  \n\nVejam a figura \\@ref(fig:fig1).  \n\n```{r fig1, fig.cap = \"Aqui vai a legenda das figuras.\"}\nplot(mtcars)\n```\n\n\nA tabela \\@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  \n\n```{r minha-tabela}\nkable(head(mtcars), caption = \"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable\")\n```",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -431,9 +485,9 @@
     "href": "referencias.html",
     "title": "Referências",
     "section": "",
-    "text": "Wickham, Hadley, and Garrett Grolemund. 2017. R\nfor Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz.\n\n\nXie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible\nResearch in R.” In Implementing Reproducible\nComputational Research, edited by Victoria Stodden, Friedrich\nLeisch, and Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and Knitr. 2nd\ned. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2019. “TinyTeX: A Lightweight, Cross-Platform, and\nEasy-to-Maintain LaTeX Distribution Based on TeX Live.”\nTUGboat 40 (1): 30–32. https://tug.org/TUGboat/Contents/contents40-1.html.\n\n\n———. 2023. Knitr: A General-Purpose Package for Dynamic Report\nGeneration in r. https://yihui.org/knitr/.\n\n\nXie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. R\nMarkdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
+    "text": "Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier\nLuraschi, Kevin Ushey, Aron Atkins, et al. 2024. Rmarkdown: Dynamic\nDocuments for r. https://github.com/rstudio/rmarkdown.\n\n\nWickham, Hadley, and Garrett Grolemund. 2017. R\nfor Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz.\n\n\nXie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible\nResearch in R.” In Implementing Reproducible\nComputational Research, edited by Victoria Stodden, Friedrich\nLeisch, and Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and Knitr. 2nd\ned. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2019. “TinyTeX: A Lightweight, Cross-Platform, and\nEasy-to-Maintain LaTeX Distribution Based on TeX Live.”\nTUGboat 40 (1): 30–32. https://tug.org/TUGboat/Contents/contents40-1.html.\n\n\n———. 2023. Knitr: A General-Purpose Package for Dynamic Report\nGeneration in r. https://yihui.org/knitr/.\n\n\n———. 2024. Bookdown: Authoring Books and Technical Documents with r\nMarkdown. https://github.com/rstudio/bookdown.\n\n\nXie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. R\nMarkdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Referências</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Referências</span>"
     ]
   },
   {
@@ -442,5 +496,15 @@
     "title": "Perguntas mais frequentes",
     "section": "",
     "text": "O que é Rmarkdown?\nRmarkdown é uma implementação da linguagem de marcação Markdown, criada para mesclar texto formatado em Markdown junto a códigos de programação de diversas linguagens (e.g., R, Python, Julia etc).\n\n\nCom qual finalidade devo usar o Rmarkdown?\nRmarkdown pode ser utilizado para produzir artigos científicos, relatórios dinâmicos, apresentações, sítios web, livros etc. As possibilidades são inúmeras e dependem do desejo do usuário.\n\n\nComo eu posso usar o Rmarkdown?\nPara escrever usando o Rmarkdown, é necessário ter o R instalado, um editor de textos, e o pacote R rmarkdown instalado (saiba mais no capítulo “Instalação de programas”). Uma vez tendo isso instalado, você pode seguir os passos dados no capítulo “Compilação” deste livro."
+  },
+  {
+    "objectID": "exemplos.html#análise-exploratória-de-dados---conjunto-de-dados-iris",
+    "href": "exemplos.html#análise-exploratória-de-dados---conjunto-de-dados-iris",
+    "title": "Modelos de arquivos",
+    "section": "",
+    "text": "---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n```{r, include=FALSE}\n# estafuncao checa se os pacotes em `lista_de_pacotes` estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc\nlista_de_pacotes &lt;- c(\"ggplot2\")\npacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,\"Package\"])]\nif(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}\n```\n\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.\n\n```{r, echo=FALSE}\nhead(iris, 5)\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r, echo=TRUE}\nlibrary(\"ggplot2\")\niris |&gt; \n  ggplot(aes(Sepal.Length, Sepal.Width)) +\n  geom_point()\n```\n\n\n## Colocarei uma figura localizada em outra pasta\n\nUsarei o caminho relativo.  \n\n![](../../figuras/capa.png)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+    ]
   }
 ]
