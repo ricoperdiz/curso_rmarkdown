@@ -230,7 +230,8 @@ oracao <-
 Adotamos o nome "Rmd" para se referir ao formato de arquivo Rmarkdown, cuja extensão é ".Rmd".
 Vamos nos referir ao Rmarkdown ao longo deste livro como "Rmd".
 Nomes de pacotes aparecerão em negrito (e.g., __knitr__, __rmarkdown__).
-Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação `nomeDoPacote::nomeDaFuncao()`, e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto.  
+Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação `nomeDoPacote::nomeDaFuncao()`, e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto.
+Argumentos do YAML aparecerão com a notação `argumentoDeYAML`, também com destaque quanto à cor do fundo.  
 
 ## Agradecimentos {.unnumbered}
 

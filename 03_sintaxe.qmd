@@ -48,14 +48,19 @@ Testem em seus documentos.
 | `verbatim`                              |                                         |
 | ```                                     |                                         |
 +-----------------------------------------+-----------------------------------------+
+| ``` markdown                            |                                         |
 | Traço --                                | Traço --                                |
-|                                         |                                         |
+| ```                                     |                                         |
 +-----------------------------------------+-----------------------------------------+
+| ``` markdown                            |                                         |
 | Travessão ---                           | Travessão ---                           |
-|                                         |                                         |
+| ```                                     |                                         |
 +-----------------------------------------+-----------------------------------------+
+| ``` markdown                            |                                         |
 | Régua horizontal                        | Régua horizontal                        |
+|                                         |                                         |
 | ***                                     | ***                                     |
+| ```                                     |                                         |
 +-----------------------------------------+-----------------------------------------+
 
 ### Cabeçalho {#cabecalhos}
@@ -186,15 +191,39 @@ $$math-equation$$
 Citações podem ser feitas em blocos por meio do acento circunflexo, `>`.
 Basta inserir o `>` no início de uma linha e, em seguida, inserir text.  
 
+```md
+> Bloco de citação
+```
+
+O comando acima seria compilado e se tornaria o exibido abaixo:
+
 > Bloco de citação
 
+
 Outra opção é inserir o texto dentro de três crases:
+
+```{python}
+#| echo: false
+#| output: asis
+print("```")
+print("Este texto será apresentado com um destaque visual.\n")
+print("```")
+```
+
+
+Compilando o texto acima, teríamos:
 
 ```
 Este texto será apresentado com um destaque visual.
 ```
 
 Podemos também fazer uso de quatro espaços para destacar o texto:
+
+```md
+    Com quatro espaços, eu destaco o texto também.
+```
+
+Compilando o texto acima, teríamos:
 
     Com quatro espaços, eu destaco o texto também.
 
@@ -209,7 +238,6 @@ print("Olá, como vai?")
 ```
 
 Um código em Python:
-
 
 ```{{python}}
 print("OI")
@@ -233,17 +261,21 @@ Uma das implicações disso é permitir confiança na transmissão de informaç�
 
 Tomando o conjunto de dados `iris` como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:
 
-> `r nrow(iris)`
+```{python}
+#| echo: false
+#| output: asis
+print("`r nrow(iris)`\n")
+```
 
 Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados.
 Vejam:
 
-````
-+ Há dados para `r length(unique(iris$Species))` espécies
-
-+ Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.
-
-````
+```{python}
+#| echo: false
+#| output: asis
+print("+ Há dados para `r length(unique(iris$Species))` espécies\n")
+print("+ Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.\n")
+```
 
 ## Tabelas
 
@@ -291,7 +323,7 @@ knitr::kable(head(dad, 6))
 
 A maneira mais simples de inserir uma figura é usando a notação abaixo:
 
-```
+```md
 ![Legenda da figura](endereco-da-figura)
 ```
 
@@ -300,7 +332,7 @@ O necessário é que o endereço esteja correto.
 Por exemplo, a figura "capa.png" está dentro de uma pasta "figuras/" dentro deste projeto.
 Vou colocá-la abaixo da seguinte maneira:
 
-```
+```md
 ![Capa deste livro](figuras/capa.png)
 ```
 
@@ -312,10 +344,6 @@ Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do
 
 Outra maneira de inserir figuras é por meio de funções dentro de [blocos de código](#sec-blococodigo).
 Vamos incluir uma imagem usando a função `knitr::include_graphics()`:
-
-```{{r}}
-knitr::include_graphics("figuras/capa.png")
-```
 
 ```{r}
 #| echo: true
@@ -331,7 +359,7 @@ Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma 
 Então, o conteúdo após esse comando iniciará na nova página.
 Vejam:
 
-```
+```md
 ## Um cabeçalho qualquer
 
 

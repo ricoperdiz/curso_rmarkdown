@@ -5,18 +5,10 @@ aliases:
   - /compilacao/
 ---
 
-### Objetivos de aprendizado
+## Objetivos de aprendizado
 
 + Ser capaz de renderizar um arquivo Rmd em diferentes formatos de saída;
 + Conhecer os comandos e opções disponíveis para a renderização de documentos.
-
-<!-- 6. **Aplicação Prática:** -->
-<!--    - Realizar exercícios práticos para criar documentos Rmd simples que integrem texto formatado com resultados de código R. -->
-<!--    - Praticar a incorporação de gráficos, tabelas e outras saídas geradas pelo R no documento Rmd. -->
-
-<!-- 7. **Melhores Práticas:** -->
-<!--    - Aprender sobre melhores práticas para escrever documentos Rmd claros, bem-organizados e reprodutíveis. -->
-<!--    - Conhecer técnicas para comentar e documentar o código dentro dos chunks. -->
 
 ## O que significa compilar um arquivo Rmd?
 
@@ -34,7 +26,7 @@ Isso compilará o arquivo Rmd, executando o código (se presente!) e incorporand
 
 Para compilar um arquivo Rmd usando a linha de comando, você pode usar o seguinte comando no console do R:
 
-```
+```r
 rmarkdown::render("caminho/do/seu/arquivo.Rmd")
 ```
 
