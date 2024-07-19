@@ -1,0 +1,39 @@
+---
+title: "Controle de figuras"
+author: Guerreira Luaninha
+date: 4 Jun 2024
+output: 
+  bookdown::html_document2:
+    fig_width: 10
+    fig_height: 6
+    fig_caption: true
+---
+
+Podemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:
+
++ `fig_width` e `fig_height` controlam, respectivamente, a largura e altura da imagem;
+
++ `fig_caption` controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis `true` ou `false`)
+
++ `dev` controla qual dispositivo deve compilar as figuras, isto é, se `pdf`, `png`, ou outros (padrão é o `png`).  
+
+Vejam possibilidades abaixo e testem em seus arquivos:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guerreira Luaninha
+date: 4 Jun 2024
+output: 
+  html_document:
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+---
+```
+
+Vejam a figura \@ref(fig:fig1).  
+
+```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}
+plot(mtcars)
+```

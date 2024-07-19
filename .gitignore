@@ -18,3 +18,9 @@ incluir_giscus.md
 figuras/anatomia.png
 figuras/favicon_pre.png
 
+docs/exemplos/fotinha.JPG
+docs/exemplos/_bookdown.yml
+docs/exemplos/*.html
+docs/exemplos/exemplinho*
+docs/exemplos/*.pdf
+docs/exemplos/resumo_artigo_cientifico.Rmd

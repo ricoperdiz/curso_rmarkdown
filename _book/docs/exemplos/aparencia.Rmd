@@ -1,0 +1,60 @@
+---
+title: "Aparência"
+author: "Reginaldo"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: spacelab
+    highlight: textmate
+---
+
+
+## Controlando a aparência
+
+Por meio do argumento `theme` dentro do YAML, podemos controlar a aparência de seu arquivo HTML.
+Possíveis valores incluem:
+
+
+> default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti
+
+Teste cada uma dessas possibilidades e veja como fica a aparência de seu produto.
+Para testar, escreva dessa maneira no seu YAML:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guguinha
+output: 
+  html_document:
+    theme: journal
+---
+```
+
+## Como é a aparência do código presente em meu arquivo Rmd?
+
+
+Suponha que eu possua o código abaixo:
+
+```{r}
+1 + 1
+```
+
+Como ele vai aparecer no produto final?  
+
+Nós controlamos essa variável por meio do argumento `highlight`.
+As opções disponíevis incluem:
+
+> default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate
+
+Teste as opções em seu YAML escrevendo como abaixo:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guguinha
+output: 
+  html_document:
+    highlight: espresso
+---
+```
+

@@ -1,0 +1,39 @@
+---
+title: "Minha primeira vez usando arquivo Bib"
+author: "Mago Joãozinho"
+date: "`r Sys.Date()`"
+output: html_document
+bibliography:
+  - minhaprimeiraref.bib
+csl: associacao-brasileira-de-normas-tecnicas.csl
+---
+
+# Introdução
+
+Um artigo citado de maneira direta, @Cysneirosetal2024.  
+
+Um artigo citado de maneira indireta [@Cysneirosetal2024].  
+
+Um livro [@SenhorasSenhoras2020].  
+
+Uma base de dados [@ibge_producaoagricola].  
+
+Um pacote de R [@Xieetal2020].  
+
+R [@R2024].  
+
+Um livro na mão [@Meszaros2009].  
+
+Vamos supor que eu queira citar duas referências indiretamente de vez [@Meszaros2009;@R2024].  
+
+Direto @R2024.  
+
+Segundo fulano de tal: 
+
+*Essa é uma transcrição literal do que fulano falou* [@Yaoetal2024]  
+
+Eu vou citar uma ref do meu arquivo baixado do Web of Science [@Yaoetal2024].  
+
+Uma lista de refs [@Paiva_2021;@Xieetal2020;@Yaoetal2024].  
+
+# Referências

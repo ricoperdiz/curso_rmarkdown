@@ -1,7 +1,9 @@
+---
 title: "Análise exploratória de dados"
 author: Ricardinho
 date: 4 Jun 2024
 output: bookdown::html_document2
+---
 
 ## Introdução
 
