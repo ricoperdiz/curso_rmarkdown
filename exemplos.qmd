@@ -28,3 +28,30 @@ Disponível em: [/docs/exemplos/referencia_cruzada.Rmd](/docs/exemplos/referenci
 
 `r import_example("referencia_cruzada.Rmd")`
 
+## Aparência
+
+Disponível em: [/docs/exemplos/aparencia.Rmd](/docs/exemplos/aparencia.Rmd).  
+
+`r import_example("aparencia.Rmd")`
+
+## Controle de figuras
+
+Disponível em: [/docs/exemplos/controle_figuras.Rmd](/docs/exemplos/controle_figuras.Rmd).  
+
+`r import_example("controle_figuras.Rmd")`
+
+## Referências bib
+
+Disponível em: [/docs/exemplos/minhaprimeiralistadereferencia.Rmd](/docs/exemplos/minhaprimeiralistadereferencia.Rmd).  
+
+`r import_example("minhaprimeiralistadereferencia.Rmd")`
+
+Você pode baixar também um arquivo `.bib` como exemplo.
+Construímos este arquivo em sala de aula:
+
++ [/docs/exemplos/minhaprimeiraref.bib](/docs/exemplos/minhaprimeiraref.bib)  
+
+Temos também um arquivo `csl` com normas da ABNT. Baixe-o por meio do endereço abaixo:
+
++ [/docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl](/docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl)  
+

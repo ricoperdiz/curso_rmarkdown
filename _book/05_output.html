@@ -299,10 +299,13 @@ div.csl-indent {
   <li><a href="#objetivos-de-aprendizado" id="toc-objetivos-de-aprendizado" class="nav-link active" data-scroll-target="#objetivos-de-aprendizado">Objetivos de aprendizado</a></li>
   <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html">HTML</a>
   <ul class="collapse">
-  <li><a href="#acrescentar-sumário" id="toc-acrescentar-sumário" class="nav-link" data-scroll-target="#acrescentar-sumário">Acrescentar sumário</a></li>
-  <li><a href="#numerar-seções" id="toc-numerar-seções" class="nav-link" data-scroll-target="#numerar-seções">Numerar seções</a></li>
-  <li><a href="#referência-cruzada-de-figuras-e-tabelas" id="toc-referência-cruzada-de-figuras-e-tabelas" class="nav-link" data-scroll-target="#referência-cruzada-de-figuras-e-tabelas">Referência cruzada de figuras e tabelas</a></li>
+  <li><a href="#sec-sumario" id="toc-sec-sumario" class="nav-link" data-scroll-target="#sec-sumario">Acrescentar sumário</a></li>
+  <li><a href="#sec-num_secoes" id="toc-sec-num_secoes" class="nav-link" data-scroll-target="#sec-num_secoes">Numerar seções</a></li>
+  <li><a href="#sec-refcruz" id="toc-sec-refcruz" class="nav-link" data-scroll-target="#sec-refcruz">Referência cruzada de figuras e tabelas</a></li>
+  <li><a href="#sec-aparencia" id="toc-sec-aparencia" class="nav-link" data-scroll-target="#sec-aparencia">Aparência</a></li>
+  <li><a href="#sec-controlefigs" id="toc-sec-controlefigs" class="nav-link" data-scroll-target="#sec-controlefigs">Controle de figuras</a></li>
   </ul></li>
+  <li><a href="#pdf" id="toc-pdf" class="nav-link" data-scroll-target="#pdf">PDF</a></li>
   </ul>
 </nav>
     </div>
@@ -345,16 +348,16 @@ div.csl-indent {
 </section>
 <section id="html" class="level2">
 <h2 class="anchored" data-anchor-id="html">HTML</h2>
-<p>O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd. Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML. Começaremos pela maneira mais simples, utilizando a função <code>rmarkdown::html_document()</code> do pacote R <strong>rmarkdown</strong> <span class="citation" data-cites="R-rmarkdown">(<a href="referencias.html#ref-R-rmarkdown" role="doc-biblioref">Allaire et al. 2024</a>)</span>:</p>
+<p>O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd e, portanto, possui o maior número de funcionalidades disponíveis em comparação com os outros tipos de produtos possíveis (PDF e DOCX). Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML. Começaremos pela maneira mais simples, utilizando a função <code>rmarkdown::html_document()</code> do pacote R <strong>rmarkdown</strong> <span class="citation" data-cites="R-rmarkdown">(<a href="referencias.html#ref-R-rmarkdown" role="doc-biblioref">Allaire et al. 2024</a>)</span>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Ricardinho</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="acrescentar-sumário" class="level3">
-<h3 class="anchored" data-anchor-id="acrescentar-sumário">Acrescentar sumário</h3>
-<p>Para acrescentar um sumário em seu documento, use o argumento <code>toc</code> e especifique a profundidade do sumário por meio do argumento <code>toc_depth</code>:</p>
+<section id="sec-sumario" class="level3">
+<h3 class="anchored" data-anchor-id="sec-sumario">Acrescentar sumário</h3>
+<p>Para acrescentar um sumário (ou tabela de conteúdo) em seu documento, use o argumento <code>toc</code> e especifique a profundidade do sumário por meio do argumento <code>toc_depth</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Ricardinho</span></span>
@@ -372,8 +375,8 @@ div.csl-indent {
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">toc_depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se não desejarmos o sumário, podemos usar o argumento <code>toc: false</code> ou simplesmente não utilizá-lo.</p>
 </section>
-<section id="numerar-seções" class="level3">
-<h3 class="anchored" data-anchor-id="numerar-seções">Numerar seções</h3>
+<section id="sec-num_secoes" class="level3">
+<h3 class="anchored" data-anchor-id="sec-num_secoes">Numerar seções</h3>
 <p>Você pode numerar seções utilizando o argumento <code>number_sections</code>, que habilita a numeração caso seja atribuído o valor <code>true</code> a ele:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
@@ -386,8 +389,8 @@ div.csl-indent {
 <p>Se você desejar numerar todas as seções, excluindo alguma(s), você pode fazer acrescentar o valor <code>{-}</code> após o cabeçalho que você deseja não numerar. Por exemplo, suponha que a seção <code># Prefácio</code> não deva ser numerada por você. Você deve fazer então da seguinte maneira:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prefácio {-}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="referência-cruzada-de-figuras-e-tabelas" class="level3">
-<h3 class="anchored" data-anchor-id="referência-cruzada-de-figuras-e-tabelas">Referência cruzada de figuras e tabelas</h3>
+<section id="sec-refcruz" class="level3">
+<h3 class="anchored" data-anchor-id="sec-refcruz">Referência cruzada de figuras e tabelas</h3>
 <p>Fazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento. Porém, este recurso só está disponível no pacote R <strong>bookdown</strong> <span class="citation" data-cites="R-bookdown">(<a href="referencias.html#ref-R-bookdown" role="doc-biblioref">Xie 2024</a>)</span>. Logo, será necessário mudar o valor atribuído ao argumento <code>output</code> nos metadados do seu arquivo. Em vez de <code>output: html_document</code>, usaremos <code>output: bookdown::html_document2</code>. Veja abaixo:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
@@ -406,28 +409,90 @@ div.csl-indent {
 </blockquote>
 <p>em que <code>tipo</code> se refere à figura <code>fig</code> ou tabela <code>tab</code>, e <code>codigo</code> se refere ao codigo identificador do pedaço de código em que faremos a inserção da figura ou tabela.</p>
 <p>Para ficar mais claro, vejam o exemplo abaixo:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Ricardinho</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> bookdown::html_document2</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introdução</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Ricardinho</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> bookdown::html_document2</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introdução</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Vejam a figura \@ref(fig:fig1).  </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  </span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="in">plot(mtcars)</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>Vejam a figura \@ref(fig:fig1).  </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="in">plot(mtcars)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r minha-tabela}</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="in">kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r minha-tabela}</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="in">kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Para mais possibilidades, veja a seção <a href="https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html">Update the date automatically</a> do livro <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">Rmarkdown cookbook</a> <span class="citation" data-cites="rmarkdown2020">(<a href="referencias.html#ref-rmarkdown2020" role="doc-biblioref">Xie, Dervieux, e Riederer 2020</a>)</span>.</p>
+</section>
+<section id="sec-aparencia" class="level3">
+<h3 class="anchored" data-anchor-id="sec-aparencia">Aparência</h3>
+<p>Por meio do argumento <code>theme</code> dentro do YAML, podemos controlar a aparência de seu arquivo HTML. Possíveis valores incluem:</p>
+<blockquote class="blockquote">
+<p>default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti</p>
+</blockquote>
+<p>Teste cada uma dessas possibilidades e veja como fica a aparência de seu produto. Para testar, escreva dessa maneira no seu YAML, substituindo após <code>theme:</code> por cada uma das possibilidades acima:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guguinha</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> journal</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos mudar também a aparência dos pedaços de códigos em nossos produtos. Suponha que eu possua o código abaixo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Como ele vai aparecer no produto final?</p>
+<p>Nós controlamos essa variável por meio do argumento <code>highlight</code>. As opções disponíevis incluem:</p>
+<blockquote class="blockquote">
+<p>default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate</p>
+</blockquote>
+<p>Teste as opções acima em seu YAML escrevendo como abaixo:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guguinha</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> espresso</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-controlefigs" class="level3">
+<h3 class="anchored" data-anchor-id="sec-controlefigs">Controle de figuras</h3>
+<p>Podemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:</p>
+<ul>
+<li><p><code>fig_width</code> e <code>fig_height</code> controlam, respectivamente, a largura e altura da imagem;</p></li>
+<li><p><code>fig_caption</code> controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis <code>true</code> ou <code>false</code>)</p></li>
+<li><p><code>dev</code> controla qual dispositivo deve compilar as figuras, isto é, se <code>pdf</code>, <code>png</code>, ou outros (padrão é o <code>png</code>).</p></li>
+</ul>
+<p>Vejam possibilidades abaixo e testem em seus arquivos:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guerreira Luaninha</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_height</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="pdf" class="level2">
+<h2 class="anchored" data-anchor-id="pdf">PDF</h2>
+<p>O formato PDF possui opções não disponíveis para outros formatos, já que é o LaTeX que controla o produto final. Do que já vimos até então, as opções <a href="#sec-sumario" class="quarto-xref"><span>Acrescentar sumário</span></a>, <a href="#sec-num_secoes" class="quarto-xref"><span>Numerar seções</span></a>, <a href="#sec-refcruz" class="quarto-xref"><span>Referência cruzada de figuras e tabelas</span></a> e <a href="#sec-controlefigs" class="quarto-xref"><span>Controle de figuras</span></a> também são válidas no PDF.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -441,7 +506,6 @@ Xie, Yihui. 2024. <em>bookdown: Authoring Books and Technical Documents with R M
 Xie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. <em>R Markdown Cookbook</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook">https://bookdown.org/yihui/rmarkdown-cookbook</a>.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->

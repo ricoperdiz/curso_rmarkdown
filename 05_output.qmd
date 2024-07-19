@@ -31,7 +31,7 @@ Discorrerei sobre cada um deles, nas próximas seções.
 
 ## HTML
 
-O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd.
+O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd e, portanto, possui o maior número de funcionalidades disponíveis em comparação com os outros tipos de produtos possíveis (PDF e DOCX).
 Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML.
 Começaremos pela maneira mais simples, utilizando a função `rmarkdown::html_document()` do pacote R __rmarkdown__ [@R-rmarkdown]:
 
@@ -44,9 +44,9 @@ output: html_document
 ---
 ```
 
-### Acrescentar sumário
+### Acrescentar sumário {#sec-sumario}
 
-Para acrescentar um sumário em seu documento, use o argumento `toc` e especifique a profundidade do sumário por meio do argumento `toc_depth`:
+Para acrescentar um sumário (ou tabela de conteúdo) em seu documento, use o argumento `toc` e especifique a profundidade do sumário por meio do argumento `toc_depth`:
 
 ```yaml
 ---
@@ -74,7 +74,7 @@ toc_depth: 4
 
 Se não desejarmos o sumário, podemos usar o argumento `toc: false` ou simplesmente não utilizá-lo.  
 
-### Numerar seções
+### Numerar seções {#sec-num_secoes}
 
 Você pode numerar seções utilizando o argumento `number_sections`, que habilita a numeração caso seja atribuído o valor `true` a ele:
 
@@ -97,7 +97,7 @@ Você deve fazer então da seguinte maneira:
 # Prefácio {-}
 ```
 
-### Referência cruzada de figuras e tabelas
+### Referência cruzada de figuras e tabelas {#sec-refcruz}
 
 Fazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento.
 Porém, este recurso só está disponível no pacote R __bookdown__ [@R-bookdown].
@@ -132,5 +132,81 @@ Para ficar mais claro, vejam o exemplo abaixo:
 
 Para mais possibilidades, veja a seção [Update the date automatically](https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html) do livro [Rmarkdown cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) [@rmarkdown2020].  
 
+### Aparência {#sec-aparencia}
 
+Por meio do argumento `theme` dentro do YAML, podemos controlar a aparência de seu arquivo HTML.
+Possíveis valores incluem:
+
+
+> default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti
+
+Teste cada uma dessas possibilidades e veja como fica a aparência de seu produto.
+Para testar, escreva dessa maneira no seu YAML, substituindo após `theme: ` por cada uma das possibilidades acima:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guguinha
+output: 
+  html_document:
+    theme: journal
+---
+```
+
+Podemos mudar também a aparência dos pedaços de códigos em nossos produtos.
+Suponha que eu possua o código abaixo:
+
+```{r}
+#| echo: true
+1 + 1
+```
+
+Como ele vai aparecer no produto final?  
+
+Nós controlamos essa variável por meio do argumento `highlight`.
+As opções disponíevis incluem:
+
+> default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate
+
+Teste as opções acima em seu YAML escrevendo como abaixo:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guguinha
+output: 
+  html_document:
+    highlight: espresso
+---
+```
+
+### Controle de figuras {#sec-controlefigs}
+
+Podemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:
+
++ `fig_width` e `fig_height` controlam, respectivamente, a largura e altura da imagem;
+
++ `fig_caption` controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis `true` ou `false`)
+
++ `dev` controla qual dispositivo deve compilar as figuras, isto é, se `pdf`, `png`, ou outros (padrão é o `png`).  
+
+Vejam possibilidades abaixo e testem em seus arquivos:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guerreira Luaninha
+date: 4 Jun 2024
+output: 
+  html_document:
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+---
+```
+
+## PDF
+
+O formato PDF possui opções não disponíveis para outros formatos, já que é o LaTeX que controla o produto final.
+Do que já vimos até então, as opções @sec-sumario, @sec-num_secoes, @sec-refcruz e @sec-controlefigs também são válidas no PDF.  
 
