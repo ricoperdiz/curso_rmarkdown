@@ -5,7 +5,7 @@ aliases:
   - /basico/
 ---
 
-### Objetivos de aprendizado
+## Objetivos de aprendizado
 
 + Conhecer o que é Rmd e como ele se diferencia do Markdown simples;
 + Entender as vantagens de usar Rmd para relatórios reprodutíveis e documentos dinâmicos;

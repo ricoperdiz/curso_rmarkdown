@@ -1,0 +1,15 @@
+{
+  "hash": "09fa983863ef5d3cf82a74ca7eb58098",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Gerenciador de bibliografias e arquivos bib\"\n---\n\n\n\n\n## Objetivos de aprendizado\n\n+ Compreender o que é um gerenciador de bibliografias e qual é a sua utilidade;\n+ Entender o funcionamento básico do programa JabRef;\n+ Identificar e compreender a estrutura básica de um arquivo bib;\n\n## O que é um gerenciador de bibliografias?\n\n\n### Citações de referências bibliográficas\n\nEm construção.  \n\n## Como gerar entradas BIBTEX para as referências?\n\n### Na mão! - digitando dentro do `JabRef`\n\n### Através das páginas digitais dos artigos\n\n+ Elsevier\n+ Blackwell\n+ Springer\n+ Taylor & Francis\n+ American Chemical Society e Sage\n\nVamos trabalhar com um exemplo para cada editora!\n\n#### Elsevier\n\n\n\n\n::: {.cell}\n<iframe src=\"https://www.sciencedirect.com/science/article/pii/S0031942218302620?via%3Dihub\" width=\"672\" height=\"400px\" data-external=\"1\"></iframe>\n:::\n\n\n\n\n[Piva et al. 2019](https://www.sciencedirect.com/science/article/pii/S0031942218302620?via%3Dihub)\n\n\n#### Springer\n\n\n\n\n::: {.cell}\n<iframe src=\"https://link.springer.com/article/10.1007/s40415-021-00765-1\" width=\"672\" height=\"400px\" data-external=\"1\"></iframe>\n:::\n\n\n\n\n\n[Daly et al. 2022](https://link.springer.com/article/10.1007/s40415-021-00765-1)\n\n\n### Através do Google Acadêmico - [https://scholar.google.com/](https://scholar.google.com/)\n\n\n## Usando o JabRef\n\nUma das formas possíveis de gerar as referencias e citações em uma documento no LaTeX é através do uso de arquivos com as referencias todos formatadas em bibtex.\nUma breve listagem do tipos de formatos BibTeX pode ser encontrada neste link.  \n\nPara a geração automática dessas referencias, recomendamos utilizar o site Google Acadêmico para artigos e livros.\nUma vez encontrado o artigo, clique no ícone \" correspondente a [citar] e em seguida em BibTeX.\nCopie o texto para seu arquivo .bib e faça a citação do mesmo no texto usando o comando `\\cite`.  \n\nPor exemplo, ao procurar pelo artigo A generalization of the relativistic theory of gravitation de Albert Einstein, serão mostrados dois artigos. O BibTeX do segundo pode ser obtido conforme descrito acima.  \n\n# Referências úteis\n\n<!-- https://sites.usp.br/comcirp/o-gerenciador-de-referencias-gratuito-jabref/ -->\n\n<!-- https://wiki.sj.ifsc.edu.br/index.php/Dicas_de_LaTeX -->",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
