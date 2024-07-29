@@ -1,9 +1,18 @@
 ---
 title: "Análise exploratória de dados"
+subtitle: "Aqui vai o subtítulo"
 author: Ricardinho
 date: 4 Jun 2024
-output: bookdown::html_document2
+output: 
+  bookdown::pdf_document2:
+    toc: true
+    toc-title: Sumário
+bibliography: minhaprimeiraref.bib
 ---
+
+```{r}
+library("knitr")
+```
 
 ## Introdução
 
@@ -15,9 +24,17 @@ Vejam a figura \@ref(fig:fig1).
 plot(mtcars)
 ```
 
-
 A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  
 
 ```{r minha-tabela}
-kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")
+knitr::kable(head(mtcars), caption = "Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable")
 ```
+
+## Material e métodos
+
+Aqui eu discorro sobre os métodos utilizados para responder minhas perguntas.  
+
+Uma lista de refs [@Xieetal2020;@Yaoetal2024].  
+
+## Referências
+
