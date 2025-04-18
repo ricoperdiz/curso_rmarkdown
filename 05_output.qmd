@@ -310,6 +310,7 @@ Mais opções estão explicadas detalhadamente na seção [Plots](https://yihui.
 O formato PDF possui opções não disponíveis para outros formatos, já que é o LaTeX que controla o produto final.
 Do que já vimos até então, as opções @sec-sumario, @sec-num_secoes, @sec-refcruz e @sec-controlefigs também são válidas no PDF.  
 
+
 <!-- ## DOCX -->
 
 

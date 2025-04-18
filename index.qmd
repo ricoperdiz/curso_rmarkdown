@@ -31,7 +31,7 @@ Inicialmente, o livro focará mais em conteúdo para a primeira parte; a segunda
 
 Na parte 1, temos os seguintes capítulos:
 
-* **[Capítulo "Instalação de programas"](01_instalacao.qmd)** aborda a instalação de programas necessários para poder compilar arquivos Rmarkdown e poder fazer uso de suas funcionalides.
+* **[Capítulo "Instalação de programas"](01_instalacao.qmd)** aborda a instalação de programas necessários para poder compilar arquivos Rmarkdown e poder fazer uso de suas funcionalidades.
 * **[Capítulo "Conceitos básicos"](02_basico.qmd)** trata de explicar o que é o Rmarkdown, como se originou, e qual é a estrutura de um arquivo desse tipo, além de fornecer um breve histórico sobre essa ferramenta.
 * **[Capítulo "Sintaxe"](03_sintaxe.qmd)** trata da sintaxe em Markdown. Lá você aprenderá como escrever em itálico, negrito, inserir figuras, tabelas e outras coisas mais.
 * **[Capítulo "Compilação"](04_compilacao.qmd)** ensinará a compilar arquivos Rmarkdown usando o RStudio ou por meio de linhas de comando e ensinará o fluxo de trabalho por trás da compilação dos diferentes produtos.  

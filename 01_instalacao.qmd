@@ -26,7 +26,7 @@ Isso significa poder ver no Explorador de arquivos que tipo de arquivo você est
 Caso vocês não saibam como ativar essa opção, leiam como fazer neste endereço: <https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01>.
 :::
 
-## R
+## R {#instala-r}
 
 Acesse o sítio [https://www.r-project.org/](https://www.r-project.org/) (@fig-rproject).
 A depender do seu sistema operacional (SO), há maneiras diferentes de se instalar o R.  
@@ -151,6 +151,10 @@ Caso ainda não tenha, sugiro que instale o JabRef, seguindo os passos abaixo:
 #| echo: false
 knitr::include_graphics("figuras/jabref.png")
 ```
+
+Abaixo, segue um vídeo do [@cursodelatex](https://www.youtube.com/@cursodelatex7003) que explica muito brevemente como se instalar o JabRef em um sistema Windows:
+
+{{< video https://youtu.be/Bj0ga1VjyqM?si=DAB8PtepEu4XPrEW >}}
 
 ## Pandoc
 
