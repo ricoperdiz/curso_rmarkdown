@@ -1,0 +1,147 @@
+---
+title: "Gerenciador de bibliografias e arquivos bib"
+---
+
+## Objetivos de aprendizado
+
++ Compreender o que é um gerenciador de bibliografias, quais são suas funcionalidades e utilidades;
+
++ Entender o funcionamento básico do programa JabRef;
+
++ Identificar e compreender a estrutura básica de um arquivo bib.  
+
+## O que é um gerenciador de bibliografias?
+
+Um **gerenciador de bibliografias** é uma ferramenta desenvolvida para **organizar, armazenar e citar fontes bibliográficas** de maneira prática e automatizada.
+Exemplos populares incluem o **JabRef** e o **Zotero**.  
+
+## Principais funcionalidades:
+
++ Armazenamento e organização de referências (livros, artigos, sites, etc.);
+
++ Importação automática de dados de bases acadêmicas ([Google Scholar](https://scholar.google.com/), [Scopus](https://www.scopus.com/search/form.uri?display=basic#basic), [PubMed](https://pubmed.ncbi.nlm.nih.gov/) etc.);
+
++ Geração de citações e bibliografias em diversos estilos (ABNT, APA, MLA, Chicago etc.);
+
++ Integração com processadores de texto como **MS Word**, **LibreOffice** e **LaTeX**;
+
++ Anexação de arquivos (como PDFs dos artigos);
+
++ Sincronização em nuvem e colaboração em grupo (em alguns softwares, como o Zotero).  
+
+## Por que devo aprender a usar um gerenciador de bibliografia como o JabRef ou Zotero?
+
+Aprender a usar um gerenciador de bibliografia como **JabRef** ou **Zotero** pode facilitar muito a vida de quem trabalha com pesquisa, escrita acadêmica ou qualquer atividade que envolva o uso frequente de referências.
+Aqui estão alguns motivos para investir nesse aprendizado:
+
++ **Organização eficiente**: Em vez de perder tempo tentando lembrar onde você salvou um artigo ou livro, essas ferramentas permitem catalogar suas referências de maneira estruturada e acessível;
+
++ **Facilidade na citação**: Eles ajudam a gerar citações e bibliografias automaticamente, seguindo diversos estilos como APA, ABNT, MLA, entre outros;
+
++ **Integração com processadores de texto**: O Zotero, por exemplo, tem extensões para Word e LibreOffice, permitindo inserir citações diretamente enquanto escreve;
+
++ **Importação e sincronização**: Você pode importar referências de bases de dados online e sincronizar sua biblioteca entre dispositivos;
+
++ **Evita erros**: Automatizando a gestão das referências, reduz-se a chance de cometer erros ao formatar a bibliografia manualmente.  
+
+## O que é um arquivo `.bib`
+
+O arquivo `.bib` é um arquivo de **bibliografia no formato BibTeX**, muito usado em conjunto com **LaTeX** ou **Rmarkdown** para gerenciar referências bibliográficas de forma automatizada.
+Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros.
+Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.  
+
+Cada entrada de referência em um arquivo `.bib` começa com o símbolo `@`, seguido pelo **tipo de entrada** (por exemplo, `@article`, `@book`, `@inproceedings`, etc.).
+Logo após, entre chaves `{}`, está o **identificador** único da referência (chamado de *citation key*) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos **Rmarkdown**.
+Por exemplo:
+
+```bibtex
+@book{pires2020,
+  author    = {Carlos Pires},
+  title     = {Introdução ao LaTeX},
+  year      = {2020},
+  publisher = {Editora Acadêmica}
+}
+```
+
+Dentro das chaves, cada campo da referência é listado no formato `campo = {valor}`, separado por vírgulas.
+Os campos obrigatórios e opcionais variam conforme o tipo da entrada. Por exemplo, `@article` geralmente exige os campos `author`, `title`, `journal`, `year`, e `volume`, enquanto `@book` pode requerer `author`, `title`, `year`, e `publisher`.
+O conteúdo dos campos pode conter texto, números, nomes de autores, e até comandos **LaTeX**.  
+
+É importante manter o **formato sintático correto** do `.bib` para que o compilador LaTeX consiga interpretar e gerar as referências corretamente.
+Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador.
+Também é recomendável manter nomes de autores no formato "Sobrenome, Nome" para melhor ordenação e apresentação nos estilos bibliográficos.  
+
+Aprender a ler e editar arquivos `.bib` é essencial para quem trabalha com Rmarkdown e deseja ter total controle sobre suas referências.
+Isso também facilita a integração com gerenciadores como **JabRef**, que funcionam como uma interface gráfica para editar o arquivo `.bib` sem mexer diretamente no código.
+Com a prática, você será capaz de criar, editar e importar referências com facilidade, aumentando a produtividade e a qualidade dos seus trabalhos acadêmicos.  
+
+## Exemplos de diferentes tipos de bibliografias em formato `.bib`
+
+### 📄 Artigo em Periódico (`@article`)
+
+```bibtex
+@article{silva2021,
+  author  = {Maria da Silva},
+  title   = {Estudo sobre aprendizado automático},
+  journal = {Revista Brasileira de Computação},
+  year    = {2021},
+  volume  = {15},
+  number  = {2},
+  pages   = {45--60}
+}
+```
+
+## 📚 Livro (`@book`)
+
+```bibtex
+@book{pereira2019,
+  author    = {João Pereira},
+  title     = {Fundamentos da Física},
+  year      = {2019},
+  publisher = {Editora Ciência Viva}
+}
+```
+
+## 📘 Capítulo de Livro (`@incollection`)
+
+```bibtex
+@incollection{souza2020,
+  author    = {Ana Souza},
+  title     = {Redes Neurais Artificiais},
+  booktitle = {Inteligência Artificial: Teoria e Prática},
+  publisher = {Editora Acadêmica},
+  year      = {2020},
+  pages     = {123--145}
+}
+```
+
+## 🎓 Tese ou Dissertação (`@phdthesis` ou `@mastersthesis`)
+
+```bibtex
+@mastersthesis{almeida2018,
+  author = {Carlos Almeida},
+  title  = {Modelagem Estatística de Séries Temporais},
+  school = {Universidade Federal de Minas Gerais},
+  year   = {2018}
+}
+```
+
+## 🖥️ Artigo em Conferência (`@inproceedings`)
+
+```bibtex
+@inproceedings{melo2022,
+  author    = {Fernanda Melo},
+  title     = {Análise de Dados com Python},
+  booktitle = {Anais do Simpósio de Ciência de Dados},
+  year      = {2022},
+  pages     = {80--90}
+}
+```
+
+## Referências úteis
+
++ [O gerenciador de referências gratuito JabRef](https://sites.usp.br/comcirp/o-gerenciador-de-referencias-gratuito-jabref/);
+
++ [Gerenciando referências bibliográficas com o JabRef: inserindo referências manualmente](https://www.youtube.com/watch?v=30X70bBLVSw);
+
++ [Referências bibliográficas usando JabRef e bibtex no LaTeX](https://www.youtube.com/watch?v=DpGKProCmds).  

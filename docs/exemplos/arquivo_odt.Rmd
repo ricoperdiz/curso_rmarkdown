@@ -1,0 +1,26 @@
+---
+title: "Untitled"
+author: "R. O. Perdiz"
+date: "`r Sys.Date()`"
+output: 
+  odt_document:
+    reference_odt: modelo.odt
+---
+
+
+# Teste
+
+```{r}
+knitr::kable(mtcars, caption = "Legenda")
+```
+
+
+##  teste 2
+
+
+```{r fig.cap="Legenda"}
+plot(mtcars)
+```
+
+
+### teste 3

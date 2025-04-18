@@ -13,9 +13,7 @@ As possibilidades são inúmeras e dependem do desejo do usuário.
 
 ### Como eu posso usar o Rmarkdown?
 
-Para escrever usando o Rmarkdown, é necessário ter o R instalado, um editor de textos, e o pacote R rmarkdown instalado (saiba mais no **[capítulo "Instalação de programas"](01_instalacao.qmd)**).
+Para escrever usando o Rmarkdown, é necessário ter o [R instalado](01_instalacao.qmd#instala-r), um editor de textos (de preferência, um [IDE](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)), e o pacote R *rmarkdown* instalado (saiba mais no **[capítulo "Instalação de programas"](01_instalacao.qmd)**).
 Uma vez tendo isso instalado, você pode seguir os passos dados no **[capítulo "Compilação"](04_compilacao.qmd)** deste livro.  
-
-
 
 

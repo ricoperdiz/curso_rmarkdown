@@ -1,0 +1,56 @@
+---
+title: "Flextable no Word"
+author: "R. O. Perdiz"
+date: "`r Sys.Date()`"
+# output: bookdown::pdf_document2
+output: bookdown::word_document2
+# header-includes:
+#   - \usepackage{lscape}
+#   - \newcommand{\blandscape}{\begin{landscape}}
+#   - \newcommand{\elandscape}{\end{landscape}}
+lang: pt-br
+---
+
+```{r}
+#| include: false
+library("tidyverse")
+library("gt")
+knitr::opts_chunk$set(echo = FALSE, fig.pos = "H")
+```
+
+```{r dados, include=FALSE}
+exemplinho <- 
+  read.table("../exemplos/exemplinho.csv", sep = ",", header = TRUE) |> 
+  select(ID:Genus)
+exemplinho
+```
+
+# Usando flextable
+
+
+Meu exemplinho
+
+```{r}
+ft <- flextable::flextable(exemplinho)
+ft <- flextable::autofit(ft)
+# ft <- flextable::add_header(ft, values = list(
+#   teste = "teste",
+#   teste2 = "teste2",
+#   teste3 = "teste3"
+# ))
+ft
+ft
+```
+
+# Usando kable
+
+```{r}
+knitr::kable(exemplinho)
+```
+
+# Usando gt
+
+```{r}
+gt::gt(exemplinho)
+```
+
