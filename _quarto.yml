@@ -24,7 +24,7 @@ book:
         - 03_sintaxe.qmd
         - 04_compilacao.qmd
         - 05_output.qmd
-        # - 06_gerenciador_bib.qmd
+        - 06_gerenciador_bib.qmd
     - part: "Introdução ao Quarto"
       chapters: 
         - 0_quarto.qmd
@@ -89,7 +89,9 @@ book:
       # strict: true
 
 encoding: "UTF-8"
+
 lang: pt
+
 language: 
   search-box-placeholder: Busque aqui
 
