@@ -11,6 +11,15 @@ bibtex.qmd
 bib/bib.bib.sav
 bib/pkg-bib.bib.sav
 codigo/
+docs/texto_inacabado/
+
+docs/exemplos/docx_exemplos*
+docs/exemplos/modelo*
+docs/exemplos/paisagem*
+docs/exemplos/referencia_cruzada*
+docs/exemplos/relatorio_parametrizado*
+docs/exemplos/toc.tex
+
 
 figuras/anatomia.png
 figuras/favicon_pre.png
