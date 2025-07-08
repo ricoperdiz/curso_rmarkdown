@@ -1,0 +1,259 @@
+---
+title: "Controle de opções em pedaços de códigos"
+format: html
+aliases: 
+  - /code-chunk/
+---
+
+Quando utilizamos códigos R ou de qualquer outra linguagem passível de ser utilizada em documentos Rmd, temos a opção de controlar como esse código será processado durante a compilação.
+O responsável por esse controle é o pacote R [__knitr__](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html).
+Existem mais de 50 controles possíveis, dos quais apresentamos apenas os principais [a meu humilde ver] abaixo.  
+
+## Exibição do código {#sec-exibicao}
+
+Os códigos escritos nas diversas linguagens possíveis de serem utilizadas em arquivos Rmd podem ser controlados quanto à exibição no produto final e também quanto aos efeitos dos códigos.
+Exemplificarei alguns dos argumentos mais utilizados:
+
++ `echo`
+
++  `eval`
+
++ `include`
+
++ `message`
+
++ `warning`
+
+
+````md
+# echo
+```{{r echo = FALSE}}`r ''`
+library("MASS")
+```
+````
+
+````md
+# eval
+```{{r eval = FALSE}}`r ''`
+plot(long, lat, data = coordenadas)
+```
+````
+
+````md
+# include
+```{{r include = FALSE}}`r ''`
+library("dplyr")
+library("purrr")
+library("vegan")
+```
+````
+
+````md
+# message
+```{{r message = FALSE}}`r ''`
+library("dplyr")
+library("purrr")
+library("vegan")
+```
+````
+
+````md
+# warning
+```{{r warning = FALSE}}`r ''`
+library("palmerpenguins")
+library("ggplot2")
+
+ggplot(penguins) +
+  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  theme_bw()
+```
+````
+
+## Controle de figuras {#sec-controlefigs}
+
+Podemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:
+
++ `fig_width` e `fig_height` controlam, respectivamente, a largura e altura da imagem;
+
++ `fig_caption` controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis `true` ou `false`)
+
++ `dev` controla qual dispositivo deve compilar as figuras, isto é, se `pdf`, `png`, ou outros (padrão é o `png`).  
+
+Vejam possibilidades abaixo e testem em seus arquivos:
+
+```yaml
+---
+title: "Análise exploratória de dados"
+author: Guerreira Luaninha
+date: 4 Jun 2024
+output: 
+  html_document:
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+---
+```
+
+Outra maneira de controlar a aparência das figuras é por meio de argumentos dentro dos pedaços de código.
+Os argumentos disponíveis são escritos de maneira parecida com os argumentos utilizados no YAML, porém diferem quanto à inserção de um ponto (`.`) no lugar do subtraço (`_`).
+As opções mais populares são:
+
++ `fig.height` e `fig.width`, que determinam a altura e a largura da figura em polegadas, respectivamente. Os valores devem ser numéricos. Exemplo: `fig.width = 8`, `fig.height = 4`.
+
++ `fig.dim` que combina a largura e a altura da figura, respectivamente, na mesma função, também expressa em polegadas. Exemplo: `fig.dim = c(8, 4)` é o mesmo que ``fig.width = 8, fig.height = 4`.
+
++ `fig.cap`, que determina a legenda da figura. Deve apresentar sempre o texto que se deseja colocar entre aspas. Exemplo: `fig.cap = "Essa é a legenda de minha figura."`.
+
++ `out.width` e `out.height`, que expressa o tamanho da imagem no produto final, cujos valores são expressos em porcentagens, "50%", "70%" etc. Exemplo: `out.width = "50%"`, `out.height = "80%"`.  
+
+Exemplos de aplicação desses argumentos são expressos abaixo:
+
+````md
+# Usando fig.width e fig.height
+```{{r, fig.width = 12, fig.height = 10, fig.cap="Olha a legenda da figura"}}`r ''`
+knitr::include_graphics("fotinha.jpg")
+```
+````
+
+````md
+# out.width e out.height
+```{{r, out.width="50%", out.height = "50%"}}`r ''`
+knitr::include_graphics("fotinha.jpg")
+```
+````
+
+````md
+# fig.dim
+```{{r, fig.dim = c(12,10)}}`r ''`
+knitr::include_graphics("fotinha.jpg")
+```
+````
+
+Mais opções estão explicadas detalhadamente na seção [Plots](https://yihui.org/knitr/options/#plots) da página dedicada ao pacote __knitr__ [@knitr2014].  
+
+
+## Listagem dos principais argumentos disponíveis
+
+Disponibilizo abaixo uma lista de argumentos, com suas opções disponíveis e o que cada argumento é responsável.
+Agrupei-as em torno da ação executada referente ao código: [avaliação](#sec-avaliacao), [resultado](#sec-resultado), [decoração](#sec-decoracao), [cache](#sec-cache) e [controle de figuras](#sec-contfigs).  
+
+### Avaliação do código {#sec-avaliacao}
+
+```{r}
+tibble::tribble(
+  ~arg, ~opcoes, ~oque,
+  "child", "NULL", "Um vetor de nomes de arquivos `.Rmd`. O `knitr` compila esses arquivos e insere seu conteúdo no ponto correspondente do documento principal.",
+  "code", "NULL", "Permite substituir o código por outro fornecido como string. Útil para gerar código dinamicamente antes da execução.",
+  "engine", "Nome da linguagem", "Define a linguagem usada para executar o código. Por padrão é 'R', mas também pode ser 'python', 'bash', 'sql', entre outros.",
+  "eval", "TRUE ou FALSE", "Controla se o código deve ou não ser executado durante a renderização.",
+  "include", "TRUE ou FALSE", "Se `FALSE`, o código é executado, mas tanto o código quanto seus resultados são omitidos do documento final.",
+  "purl", "TRUE ou FALSE", "Se `FALSE`, este pedaço de código será ignorado quando o código for extraído usando `knitr::purl()`."
+) |> gt::gt() |> 
+  gt::cols_label(
+    arg = "Argumento",
+    opcoes = "Opções",
+    oque = "O que faz"
+  )
+```
+
+### Resultado {#sec-resultado}
+
+```{r}
+tibble::tribble(
+  ~arg,        ~opcoes,                              ~oque,
+  "collapse",  "TRUE ou FALSE",                      "Se `TRUE`, o código-fonte e os resultados gerados pelo pedaço de código serão agrupados em um único bloco no documento final.",
+  "echo",      "TRUE ou FALSE",                      "Controla se o código será exibido no documento. Se `FALSE`, o código é ocultado, mas ainda pode ser executado.",
+  "results",   "'markup', 'hide', 'hold', 'asis'",   "'hide': oculta os resultados do código; 'hold': exibe todos os resultados juntos ao final do pedaço; 'asis': insere os resultados diretamente, sem formatação adicional.",
+  "error",     "TRUE ou FALSE",                      "Se `TRUE`, mensagens de erro geradas durante a execução do código serão exibidas no documento.",
+  "message",   "TRUE ou FALSE",                      "Se `TRUE`, mensagens informativas (como as de pacotes carregados) serão exibidas no documento.",
+  "warning",   "TRUE ou FALSE",                      "Se `TRUE`, mensagens de alerta (warnings) geradas durante a execução do código serão mostradas no documento."
+) |> gt::gt() |> 
+  gt::cols_label(
+    arg = "Argumento",
+    opcoes = "Opções",
+    oque = "O que faz"
+  )
+```
+
+### Decoração {#sec-decoracao}
+
+```{r}
+tibble::tribble(
+  ~arg, ~opcoes, ~oque,
+  "comment", "'##'", "Texto que será inserido no início de cada linha dos resultados exibidos. Por exemplo, `comment = '##'` prefixa cada linha com '##'.",
+  "highlight", "TRUE ou FALSE", "Controla se o código será realçado (syntax highlighting) no documento final. Relevante apenas para alguns formatos de saída.",
+  "prompt", "TRUE ou FALSE", "Se `TRUE`, adiciona o símbolo `'>'` no início de cada linha de código, simulando o prompt interativo do R.",
+  "strip.white",  "TRUE ou FALSE", "Remove espaços em branco extras no início e/ou no fim do pedaço de código antes de ser exibido.",
+  "tidy", "TRUE ou FALSE", "Organiza (indenta) automaticamente o código para deixá-lo mais legível, usando a função `formatR::tidy_source()`."
+) |> gt::gt() |> 
+  gt::cols_label(
+    arg = "Argumento",
+    opcoes = "Opções",
+    oque = "O que faz"
+  )
+```
+
+### `Cache` {#sec-cache}
+
+```{r}
+tibble::tribble(
+  ~arg, ~opcoes, ~oque,
+  # "opts.label", "NULL", "Permite aplicar um conjunto de opções previamente definidas com `knitr::opts_template()`, usando um rótulo.",
+  # "R.options", "NULL", "Permite definir opções locais do R para o bloco. São definidas com `options()` no início do chunk e restauradas ao final.",
+  # "ref.label", "NULL", "Um vetor com os nomes de outros pedaços de código cujas instruções serão copiadas para este bloco atual.",
+  # "autodep", "TRUE ou FALSE", "Faz o `knitr` tentar identificar automaticamente dependências entre os blocos, analisando os objetos usados.",
+  "cache", "TRUE ou FALSE", "`knitr` armazena os resultados do bloco para reutilizá-los em futuras execuções, desde que o código não mude.",
+  "cache.comments", "NULL", "Se `FALSE`, comentários não são levados em conta e o pedaço de código não será reexecutado se apenas eles forem alterados.",
+  # "cache.lazy", "TRUE ou FALSE", "Se `TRUE`, `knitr` usa `lazyload()` para carregar objetos do cache. Se `FALSE`, usa `load()`.",
+  "cache.path", "'cache/'", "Diretório onde os resultados do cache serão salvos. Caminho relativo ao arquivo `.Rmd`.",
+  "cache.vars", "NULL", "Permite indicar nomes específicos de objetos a serem armazenados no cache, ao invés de todos.",
+  # "dependson", "NULL", "Define de quais chunks este bloco depende. Se um deles mudar, o cache deste será atualizado automaticamente."
+) |> gt::gt() |> 
+  gt::cols_label(
+    arg = "Argumento",
+    opcoes = "Opções",
+    oque = "O que faz"
+  )
+```
+
+### Controle de figuras {#sec-contfigs}
+
+```{r}
+tibble::tribble(
+  ~arg, ~opcoes, ~oque,
+  # "aniopts", "'controls,loop'", "Opções adicionais para animações (veja o pacote `animate`).",
+  # "interval", "1", "Intervalo (em segundos) entre quadros de uma animação.",
+  "dev", "'png'", "Nome da função gráfica usada para gerar imagens, como `png()` ou `CairoPDF()`.",
+  # "dev.args", "NULL", "Lista de argumentos passados para o dispositivo gráfico, como `list(bg='yellow')`.",
+  "dpi", "72", "Define a resolução (pontos por polegada) das imagens geradas.",
+  # "external", "TRUE ou FALSE", "Se `TRUE`, imagens TikZ são processadas externamente, acelerando a compilação em LaTeX.",
+  "fig.align", "'default'", "Alinhamento das figuras no documento final: 'left', 'right' ou 'center'.",
+  "fig.cap", "NULL", "Texto usado como legenda da figura em LaTeX.",
+  # "fig.env", "'figure'", "Ambiente LaTeX onde a figura será inserida.",
+  "fig.ext", "NULL", "Extensão do arquivo de imagem gerado, como 'png' ou 'pdf'.",
+  "fig.height", "7", "Altura da figura (em polegadas).",
+  "fig.width", "7", "Largura da figura (em polegadas).",
+  # "fig.keep", "'high'", "Define quais figuras devem ser mantidas: 'all', 'first', 'last', 'none' ou 'high' (padrão).",
+  # "fig.lp", "'fig:'", "Prefixo para rótulos de figuras em LaTeX.",
+  # "fig.path", "'figure/'", "Pasta onde as figuras geradas serão salvas.",
+  "fig.pos", "''", "Código LaTeX para definir a posição da figura no documento.",
+  # "fig.process", "NULL", "Função para pós-processar o arquivo de imagem (entrada e saída são nomes de arquivos).",
+  # "fig.retina", "1", "Fator de multiplicação de DPI para exibir imagens em telas retina (HTML).",
+  # "fig.scap", "NULL", "Legenda curta usada em LaTeX (opcional).",
+  # "fig.subcap", "NULL", "Legenda usada em subfiguras (LaTeX).",
+  "fig.show", "'asis'", "Controla quando e como as figuras são exibidas: 'hide', 'hold', 'animate' ou 'asis'.",
+  # "fig.showtext", "NULL", "Se `TRUE`, ativa `showtext::showtext.begin()` antes de desenhar a figura.",
+  # "out.extra", "NULL", "String com opções extras para imagens no HTML ou LaTeX.",
+  "out.height", "NULL", "Altura final da imagem no documento (pode usar unidades como '50px' ou '8\\linewidth').",
+  "out.width", "NULL", "Largura final da imagem no documento.",
+  # "resize.height", "NULL", "Altura para redimensionar a figura em LaTeX (usado com `\\resizebox`).",
+  # "resize.width", "NULL", "Largura para redimensionar a figura em LaTeX.",
+  # "sanitize", "TRUE ou FALSE", "Se `TRUE`, `knitr` aplica medidas de segurança nas figuras TikZ para LaTeX."
+) |> gt::gt() |> 
+  gt::cols_label(
+    arg = "Argumento",
+    opcoes = "Opções",
+    oque = "O que faz"
+  )
+
+```

@@ -26,15 +26,18 @@ A linguagem foi projetada para ser usada de três maneiras (veja capítulo [Intr
 # Estrutura do livro {.unnumbered}
 
 O livro está dividido em duas partes.
-A primeira parte foca no ensino do Rmarkdown, enquanto a segunda foca no ensino do Quarto.
-Inicialmente, o livro focará mais em conteúdo para a primeira parte; a segunda parte, futuramente, poderá ser desmembrada e virar um novo livro digital.  
+A primeira parte foca no ensino do Rmarkdown, enquanto a segunda focará no ensino do Quarto.
+Atualmente, dedico meu esforço em produzir conteúdo para a primeira parte; a segunda parte, futuramente, poderá ser desmembrada e virar um novo livro digital.  
 
 Na parte 1, temos os seguintes capítulos:
 
 * **[Capítulo "Instalação de programas"](01_instalacao.qmd)** aborda a instalação de programas necessários para poder compilar arquivos Rmarkdown e poder fazer uso de suas funcionalidades.
 * **[Capítulo "Conceitos básicos"](02_basico.qmd)** trata de explicar o que é o Rmarkdown, como se originou, e qual é a estrutura de um arquivo desse tipo, além de fornecer um breve histórico sobre essa ferramenta.
 * **[Capítulo "Sintaxe"](03_sintaxe.qmd)** trata da sintaxe em Markdown. Lá você aprenderá como escrever em itálico, negrito, inserir figuras, tabelas e outras coisas mais.
-* **[Capítulo "Compilação"](04_compilacao.qmd)** ensinará a compilar arquivos Rmarkdown usando o RStudio ou por meio de linhas de comando e ensinará o fluxo de trabalho por trás da compilação dos diferentes produtos.  
+* **[Capítulo "Compilação"](04_compilacao.qmd)** ensina a compilar arquivos Rmarkdown usando o RStudio ou por meio de linhas de comando. Explica também o fluxo de trabalho por trás da compilação dos diferentes tipos de produtos.  
+* **[Capítulo "Tipos de produtos"](05_output.qmd)** ensina quais são os principais tipos de produtos gerados a partir de arquivos Rmarkdown, e destrincha as principais funcionalidades de cada tipo.  
+* **[Capítulo "Controle de opções em pedaços de códigos"](055_controle_codigos.qmd)** exemplifica os principais controles de código disponíveis via pacote R __knitr__. Uma série de argumentos desse pacote permitem ao usuário controlar como esse código será processado durante a compilação dos diferentes produtos.  
+* **[Capítulo "Miscelânea"](056_funcoes.qmd)** é um compilado de diversas funcionalidades possíveis em arquivos Rmarkdown, ainda em fase de **(des)**organização.  
 
 Após a segunda parte, temos dois capítulos:
 
