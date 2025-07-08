@@ -10,16 +10,6 @@
     ]
   },
   {
-    "objectID": "index.html#o-que-é-rmarkdown",
-    "href": "index.html#o-que-é-rmarkdown",
-    "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "O que é Rmarkdown?",
-    "text": "O que é Rmarkdown?\nRMarkdown é uma linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica. Além disso, a linguagem é capaz de ser mesclada com códigos de programação, oferecendo então ao usuário a possibilidade de produzir documentos dinâmicos e interativos.",
-    "crumbs": [
-      "Prefácio"
-    ]
-  },
-  {
     "objectID": "index.html#por-que-usar-rmarkdown",
     "href": "index.html#por-que-usar-rmarkdown",
     "title": "Introdução ao Rmarkdown e Quarto",
@@ -30,71 +20,21 @@
     ]
   },
   {
-    "objectID": "index.html#estrutura-do-livro",
-    "href": "index.html#estrutura-do-livro",
+    "objectID": "index.html#caso-você-possua-um-computador",
+    "href": "index.html#caso-você-possua-um-computador",
     "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Estrutura do livro",
-    "text": "Estrutura do livro\nO livro está dividido em duas partes. A primeira parte foca no ensino do Rmarkdown, enquanto a segunda foca no ensino do Quarto. Inicialmente, o livro focará mais em conteúdo para a primeira parte; a segunda parte, futuramente, poderá ser desmembrada e virar um novo livro digital.\nNa parte 1, temos os seguintes capítulos:\n\nCapítulo “Instalação de programas” aborda a instalação de programas necessários para poder compilar arquivos Rmarkdown e poder fazer uso de suas funcionalidades.\nCapítulo “Conceitos básicos” trata de explicar o que é o Rmarkdown, como se originou, e qual é a estrutura de um arquivo desse tipo, além de fornecer um breve histórico sobre essa ferramenta.\nCapítulo “Sintaxe” trata da sintaxe em Markdown. Lá você aprenderá como escrever em itálico, negrito, inserir figuras, tabelas e outras coisas mais.\nCapítulo “Compilação” ensinará a compilar arquivos Rmarkdown usando o RStudio ou por meio de linhas de comando e ensinará o fluxo de trabalho por trás da compilação dos diferentes produtos.\n\nApós a segunda parte, temos dois capítulos:\n\nCapítulo “Exemplos” que disponibiliza alguns arquivos em Rmarkdown contendo códigos, que podem ser mesclados de forma a facilitar a produção de documentos contendo figuras, tabelas, mapas e afins, por estudantes iniciantes.\nCapítulo “Referências” lista as referências citadas ao longo deste trabalho.\n\nA parte 2 ainda não começou a ser construída, possui apenas o capítulo “Quarto” disponível até o momento e sem conteúdo.\n\n\n\n\n\n\nNota\n\n\n\nVocê pode encontrar os arquivos .qmd que geraram este livro neste endereço: https://github.com/ricoperdiz/curso_rmarkdown/tree/main.",
+    "section": "Caso você possua um computador",
+    "text": "Caso você possua um computador\nSe você tiver um computador em mãos, proceda para o capítulo “Instalação de programas” para instalar todos os programas necessários para executar arquivos escritos em Rmarkdown.",
     "crumbs": [
       "Prefácio"
     ]
   },
   {
-    "objectID": "index.html#contribuições",
-    "href": "index.html#contribuições",
+    "objectID": "index.html#caso-você-não-possua-um-computador",
+    "href": "index.html#caso-você-não-possua-um-computador",
     "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Contribuições",
-    "text": "Contribuições\nEstas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização. Sua contribuição é muito importante, então sinta-se à vontade para deixar sua opinião e sugestão. Caso encontre algum erro tipográfico, caso possua sugestões de melhora, tenha o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=“issues”) no repositório do livro, disponível neste endereço https://github.com/ricoperdiz/curso_rmarkdown/issues, e deixe lá sua contribuição/observação.",
-    "crumbs": [
-      "Prefácio"
-    ]
-  },
-  {
-    "objectID": "index.html#comentários",
-    "href": "index.html#comentários",
-    "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Comentários",
-    "text": "Comentários\nUma outra forma de participar é você deixar comentários diretamente no livro, ao fim de cada página principal (Figura 1). Para isso, é necessário que você possua uma conta no GitHub, faça o login e, uma vez logado, deixe seu comentário. Todos os comentários podem ser observados dentro da aba Discussions na página do repositório: https://github.com/ricoperdiz/curso_rmarkdown/discussions.\n\n\n\n\n\n\n\n\nVocê pode deixar comentários ao fim de cada página principal. Porém, o login em uma conta GitHub é necessário. Veja a solicitação de login na conta GitHub no canto direito da imagem. Além de escrever a mensagem, usando a linguagem Markdown, você pode verificar como ficaria o texto, usando a opção ‘Preview’, exibida no canto superior esquerdo.\n\n\n\n\n\n\n\n\n\nAo estar logado em uma conta GitHub, somente é necessária a adição do comentário e o envio do comentário.\n\n\n\n\n\n\nFigura 1: Imagens de caixas de comentário ao fim de cada página principal. A primeira imagem mostra a visão da caixa de comentário sem estar logado no GitHub; a segunda imagem mostra a visão de quem está logado. É necessário estar logado para deixar comentários.\n\n\n\n\n\n\n\n\n\nDica\n\n\n\nPara deixar uma contribuição, observação, reclamação e afins, no endereço citado acima, é necessário que você possua uma conta no GitHub. O mesmo vale para o caso de você desejar deixar um comentário em cada página deste livro, ao fim do corpo do texto (Figura 1).",
-    "crumbs": [
-      "Prefácio"
-    ]
-  },
-  {
-    "objectID": "index.html#pré-requisitos",
-    "href": "index.html#pré-requisitos",
-    "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Pré-requisitos",
-    "text": "Pré-requisitos\nDevido ao modo como foi construído, este livro pode ser tanto lido quanto “executado”, uma vez que seus arquivos são o que chamamos de Rmarkdown, uma linguagem que mistura texto com código. Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos, e em tablets. É importante que o usuário possua uma noção básica sobre o funcionamento da linguagem R. Caso você não tenha, busque saber o básico. Há muito material disponível na rede, dentre os quais sugiro o livro Curso básico de introdução à linguagem R, escrito em português e de livre acesso.\nPensando na possibilidade de os leitores deste livro possuírem ou não um computador em mãos, disponibilizo abaixo instruções para que vocês possam aproveitar as lições deste livro usando um celular moderno ou tablet. Espero que as instruções sejam úteis e possam abranger um maior número de pessoas.\n\nCaso você possua um computador\nSe você tiver um computador em mãos, proceda para o capítulo “Instalação de programas” para instalar todos os programas necessários para executar arquivos escritos em Rmarkdown.\n\n\nCaso você não possua um computador\nSe você tiver apenas um celular moderno ou um tablet em mãos, sugiro que você faça uso da infraestrutura fornecida pela Posit, a criadora e mantenedora do RStudio. A Posit disponibiliza de graça (com limitações) o Posit Cloud, uma versão online do RStudio. Uma vez tendo uma conta na Posit Cloud, você pode importar o conteúdo deste livro na forma de um Projeto, e executar todo o conteúdo do livro na rede, estando conectado na Posit. Que tal?\nPara poder fazer isso, siga os passos abaixo:\n\nVisite o sítio da Posit Cloud: https://posit.cloud/ (Figura 2).\n\n\n\n\n\n\n\nFigura 2: Página inicial da Posit Cloud.\n\n\n\n\nConecte-se à Posit Cloud clicando no botão Login. Lá você verá várias opções de login. Sugiro que use ou sua conta Gmail ou sua conta GitHub para logar (Figura 3).\n\n\n\n\n\n\n\nFigura 3: Página para se conectar à Posit Cloud.\n\n\n\n\nUma vez conectado à Posit Cloud, a tela inicial será parecida com a exibida na Figura 4.\n\n\n\n\n\n\n\nFigura 4: Página de entrada no Posit Cloud, estando conectado.\n\n\n\n\nCrie um projeto clicando no botão New project (Figura 5).\n\n\n\n\n\n\n\nFigura 5: Botão New project fica localizado no canto superior direito da página de entrada do Posit Cloud.\n\n\n\n\nAo clicar no no botão New project, selecione a opção New Project from Git Repository (Figura 7).\n\n\n\n\n\n\n\nFigura 6: Opções disponíveis ao clicar no botão New project. Selecione a última opção, New Project from Git Repository.\n\n\n\n\nDigite na caixa URL of your Git Repository o endereço do repositório GitHub deste livro: https://github.com/ricoperdiz/curso_rmarkdown. Em seguida, clique no botão Ok.\n\n\n\n\n\n\n\nFigura 7: Espaço para inserir o endereço do repositório GitHub que se pretende importar ao Posit Cloud. É necessário que o repositório seja de acesso público.\n\n\n\n\nEm seguida, o Posit Cloud se conectará ao repositório e importará o conteúdo como se contra no momento da importação ao seu espaço Posit Cloud. Ao finalizar a importação, o RStudio em versão virtual se abrirá e apresentará um conteúdo similar ao apresentado na Figura 8.\n\n\n\n\n\n\n\nFigura 8: Tela mostrando o conteúdo deste livro, importado ao Posit Cloud.\n\n\n\nPronto! Agora você poderá ver o conteúdo bruto deste livro no seu telefone/tablet, além de poder ter acesso ao conteúdo das páginas em HTML, geradas por meio de arquivos qmd do Quarto. As páginas em HTML estão disponíveis na pasta _book (Figura 9).\n\n\n\n\n\n\nFigura 9: Tela destacando a pasta _book/, que contem as páginas em HTML deste livro. Esta pasta fica disponível no Posit Cloud, após você importar o conteúdo do repositório onde se encontra todos os capítulos deste livro, disponíveis no endereço https://github.com/ricoperdiz/curso_rmarkdown.\n\n\n\n\nConectar mouse e teclado a um telefone Android\nPensando na dificuldade de estudar as aulas do livro usando somente a tela pequena de um celular, é necessário pensar em otimizar o tamanho da tela para que você possa ler o conteúdo e também escrever. Para isso, seria bom considerar a possibilidade de conectar um teclado e um mouse ao telefone. Para isso, é necessário saber se o seu telefone é compatível com um adaptador OTG.\nSendo compatível, obtenha um adaptador OTG e o conecte ao seu celular. Em seguida, você conecta o teclado ou o mouse no adaptador. Caso você deseje utilizar tanto o mouse quanto o teclado, você também necessitará de um hub USB.\nCom um hub USB em mãos, você conecta o mouse e o teclado no hub USB e, em seguida, conecta o hub ao adaptador OTG, que já estará conectado ao telefone. Pronto, agora é curtir as aulas deste livro.\nPara facilitar o entendimento das instruções acima, veja o vídeo abaixo com essas instruções:",
-    "crumbs": [
-      "Prefácio"
-    ]
-  },
-  {
-    "objectID": "index.html#informações-sobre-a-compilação-deste-livro",
-    "href": "index.html#informações-sobre-a-compilação-deste-livro",
-    "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Informações sobre a compilação deste livro",
-    "text": "Informações sobre a compilação deste livro\nEste livro foi construído por meio da plataforma Quarto 1, versão 1.7.26, dentro do ambiente R versão 4.5.0 (2025-04-11 ucrt). Utilizei o RStudio, versão 2024.4.2.764, dentro do sistema operacional Windows 11 x64 (build 26100). Abaixo disponibilizo as informações sobre os pacotes utilizados durante a construção deste livro:\n\n\n\n\n\n\n\n\n\n\nPacote\nVersão\nFonte\n\n\n\n\nblogdown\n1.21\nCRAN (R 4.5.0)\n\n\nbookdown\n0.43\nCRAN (R 4.5.0)\n\n\nknitr\n1.50\nCRAN (R 4.5.0)\n\n\nleaflet\n2.2.2\nCRAN (R 4.5.0)\n\n\nofficedown\n0.4.0\nGithub (davidgohel/officedown@10d14c7bced360fb2eee33344b46ce8e6eccfb6c)\n\n\nofficer\n0.6.8\nCRAN (R 4.5.0)\n\n\nquarto\n1.4.4\nCRAN (R 4.5.0)\n\n\nrmarkdown\n2.29\nCRAN (R 4.5.0)\n\n\ntinytex\n0.57\nCRAN (R 4.5.0)\n\n\nwebshot2\n0.1.1.9000\nGithub (rstudio/webshot2@72a90a84ba8c22a4dedf1b3dde7dd637c1846c07)\n\n\nxaringan\n0.30.1\nGithub (yihui/xaringan@0f942ca1ee772944f23b4bb2f550a376053e4e9a)",
-    "crumbs": [
-      "Prefácio"
-    ]
-  },
-  {
-    "objectID": "index.html#convenções",
-    "href": "index.html#convenções",
-    "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Convenções",
-    "text": "Convenções\nAdotamos o nome “Rmd” para se referir ao formato de arquivo Rmarkdown, cuja extensão é “.Rmd”. Vamos nos referir ao Rmarkdown ao longo deste livro como “Rmd”. Nomes de pacotes aparecerão em negrito (e.g., knitr, rmarkdown). Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação nomeDoPacote::nomeDaFuncao(), e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto. Argumentos do YAML aparecerão com a notação argumentoDeYAML, também com destaque quanto à cor do fundo.",
-    "crumbs": [
-      "Prefácio"
-    ]
-  },
-  {
-    "objectID": "index.html#agradecimentos",
-    "href": "index.html#agradecimentos",
-    "title": "Introdução ao Rmarkdown e Quarto",
-    "section": "Agradecimentos",
-    "text": "Agradecimentos\nO presente trabalho foi realizado com apoio da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Código de Financiamento 001.\nEste livro é produto de anos se dedicando a aprender programação e novas formas de apresentar e visualizar dados e resultados. Então, é natural deixar meus agradecimentos a todos que passaram, passam e continuarão a passar por minha vida, sempre a me ensinar algo ou a me inspirar.\nNaturalmente, por ter tido a decisão de escrever um livro sobre Rmarkdown, cabe aqui meu agradecimento ao criador da linguagem Markdown, John Gruber, e um agradecimento especial, como admirador e fã de seu trabalho, ao criador dos pacotes mais interessantes, a meu ver, da última década no ambiente R, o Yihui Xie; eu passei a usar Rmarkdown por inspiração em suas postagens, ele criou vários pacotes importantes para o desenvolvimento da linguagem 2, e tem vídeos interessantíssimos que divulgam vários desses pacotes e suas funcionalidades.\nPara finalizar, agradeço à minha filha por ser minha inspiração diária.\nAo PRONAT UFRR, por me oferecer um espaço para eu realizar minha pesquisa, e dar a oportunidade de ensinar.\nE ao Divino, sempre 🙏.\n\n\n\n\nWickham, Hadley, e Garrett Grolemund. 2017. R for Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz.",
+    "section": "Caso você não possua um computador",
+    "text": "Caso você não possua um computador\nSe você tiver apenas um celular moderno ou um tablet em mãos, sugiro que você faça uso da infraestrutura fornecida pela Posit, a criadora e mantenedora do RStudio. A Posit disponibiliza de graça (com limitações) o Posit Cloud, uma versão online do RStudio. Uma vez tendo uma conta na Posit Cloud, você pode importar o conteúdo deste livro na forma de um Projeto, e executar todo o conteúdo do livro na rede, estando conectado na Posit. Que tal?\nPara poder fazer isso, siga os passos abaixo:\n\nVisite o sítio da Posit Cloud: https://posit.cloud/ (Figura 1.2).\n\n\n\n\n\n\n\nFigura 1.2: Página inicial da Posit Cloud.\n\n\n\n\nConecte-se à Posit Cloud clicando no botão Login. Lá você verá várias opções de login. Sugiro que use ou sua conta Gmail ou sua conta GitHub para logar (Figura 1.3).\n\n\n\n\n\n\n\nFigura 1.3: Página para se conectar à Posit Cloud.\n\n\n\n\nUma vez conectado à Posit Cloud, a tela inicial será parecida com a exibida na Figura 1.4.\n\n\n\n\n\n\n\nFigura 1.4: Página de entrada no Posit Cloud, estando conectado.\n\n\n\n\nCrie um projeto clicando no botão New project (Figura 1.5).\n\n\n\n\n\n\n\nFigura 1.5: Botão New project fica localizado no canto superior direito da página de entrada do Posit Cloud.\n\n\n\n\nAo clicar no no botão New project, selecione a opção New Project from Git Repository (Figura 1.7).\n\n\n\n\n\n\n\nFigura 1.6: Opções disponíveis ao clicar no botão New project. Selecione a última opção, New Project from Git Repository.\n\n\n\n\nDigite na caixa URL of your Git Repository o endereço do repositório GitHub deste livro: https://github.com/ricoperdiz/curso_rmarkdown. Em seguida, clique no botão Ok.\n\n\n\n\n\n\n\nFigura 1.7: Espaço para inserir o endereço do repositório GitHub que se pretende importar ao Posit Cloud. É necessário que o repositório seja de acesso público.\n\n\n\n\nEm seguida, o Posit Cloud se conectará ao repositório e importará o conteúdo como se contra no momento da importação ao seu espaço Posit Cloud. Ao finalizar a importação, o RStudio em versão virtual se abrirá e apresentará um conteúdo similar ao apresentado na Figura 1.8.\n\n\n\n\n\n\n\nFigura 1.8: Tela mostrando o conteúdo deste livro, importado ao Posit Cloud.\n\n\n\nPronto! Agora você poderá ver o conteúdo bruto deste livro no seu telefone/tablet, além de poder ter acesso ao conteúdo das páginas em HTML, geradas por meio de arquivos qmd do Quarto. As páginas em HTML estão disponíveis na pasta _book (Figura 1.9).\n\n\n\n\n\n\nFigura 1.9: Tela destacando a pasta _book/, que contem as páginas em HTML deste livro. Esta pasta fica disponível no Posit Cloud, após você importar o conteúdo do repositório onde se encontra todos os capítulos deste livro, disponíveis no endereço https://github.com/ricoperdiz/curso_rmarkdown.\n\n\n\n\nConectar mouse e teclado a um telefone Android\nPensando na dificuldade de estudar as aulas do livro usando somente a tela pequena de um celular, é necessário pensar em otimizar o tamanho da tela para que você possa ler o conteúdo e também escrever. Para isso, seria bom considerar a possibilidade de conectar um teclado e um mouse ao telefone. Para isso, é necessário saber se o seu telefone é compatível com um adaptador OTG.\nSendo compatível, obtenha um adaptador OTG e o conecte ao seu celular. Em seguida, você conecta o teclado ou o mouse no adaptador. Caso você deseje utilizar tanto o mouse quanto o teclado, você também necessitará de um hub USB.\nCom um hub USB em mãos, você conecta o mouse e o teclado no hub USB e, em seguida, conecta o hub ao adaptador OTG, que já estará conectado ao telefone. Pronto, agora é curtir as aulas deste livro.\nPara facilitar o entendimento das instruções acima, veja o vídeo abaixo com essas instruções:",
     "crumbs": [
       "Prefácio"
     ]
@@ -125,7 +65,7 @@
     "href": "01_instalacao.html#objetivos-de-aprendizado",
     "title": "Instalação de programas",
     "section": "",
-    "text": "Instalar o R e pacotes necessários\nInstalar o Rtools\nInstalar distribuição LaTeX\nInstalar um IDE\nInstalar um organizador de bibliografias\n\n\n\n\n\n\n\nDica de OURO!\n\n\n\nUsuários Windows, sugiro fortemente que vocês busquem a configuração do sistema para ativar a VISUALIZAÇÃO DE EXTENSÕES DE ARQUIVOS O que é isso???\nIsso significa poder ver no Explorador de arquivos que tipo de arquivo você está observando. Por exemplo, arquivos do programa Word terminam geralmente ou em .doc ou em .docx; arquivos Excel, .xlsx; arquivos Rmarkdown, .rmd, e assim por diante. Caso vocês não saibam como ativar essa opção, leiam como fazer neste endereço: https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01.",
+    "text": "Instalar o R e pacotes necessários\nInstalar o Rtools\nInstalar distribuição LaTeX\nInstalar um IDE\nInstalar um organizador de bibliografias\n\n\n\n\n\n\n\nDicaDica de OURO!\n\n\n\nUsuários Windows, sugiro fortemente que vocês busquem a configuração do sistema para ativar a VISUALIZAÇÃO DE EXTENSÕES DE ARQUIVOS O que é isso???\nIsso significa poder ver no Explorador de arquivos que tipo de arquivo você está observando. Por exemplo, arquivos do programa Word terminam geralmente ou em .doc ou em .docx; arquivos Excel, .xlsx; arquivos Rmarkdown, .rmd, e assim por diante. Caso vocês não saibam como ativar essa opção, leiam como fazer neste endereço: https://support.microsoft.com/pt-br/windows/extens%C3%B5es-de-nome-de-arquivo-comuns-no-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
@@ -169,7 +109,7 @@
     "href": "01_instalacao.html#organizador-de-bibliografias",
     "title": "Instalação de programas",
     "section": "Organizador de bibliografias",
-    "text": "Organizador de bibliografias\nExistem vários organizadores de bibliografia. Eu utilizo o JabRef. Caso você já faça uso de um e consiga gerar arquivos bib, ótimo. Prossiga nele!\nCaso ainda não tenha, sugiro que instale o JabRef, seguindo os passos abaixo:\n\nVisite o site do JabRef (Figura 1.6) e baixe a versão mais recente para o seu sistema operacional;\nApós o download, execute o instalador e siga as instruções do assistente para concluir a instalação.\n\n\n\n\n\n\n\n\n\nFigura 1.6: Página inicial do sítio de instalação do JabRef: https://www.jabref.org/#downloads.\n\n\n\n\n\nAbaixo, segue um vídeo do (cursodelatex?) que explica muito brevemente como se instalar o JabRef em um sistema Windows:",
+    "text": "Organizador de bibliografias\nExistem vários organizadores de bibliografia. Eu utilizo o JabRef. Caso você já faça uso de um e consiga gerar arquivos bib, ótimo. Prossiga nele!\nCaso ainda não tenha, sugiro que instale o JabRef, seguindo os passos abaixo:\n\nVisite o site do JabRef (Figura 1.6) e baixe a versão mais recente para o seu sistema operacional;\nApós o download, execute o instalador e siga as instruções do assistente para concluir a instalação.\n\n\n\n\n\n\n\n\n\nFigura 1.6: Página inicial do sítio de instalação do JabRef: https://www.jabref.org/#downloads.\n\n\n\n\n\nAbaixo, segue um vídeo do @cursodelatex que explica muito brevemente como se instalar o JabRef em um sistema Windows:",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalação de programas</span>"
@@ -689,6 +629,34 @@
     "href": "perguntas_frequentes.html",
     "title": "Perguntas mais frequentes",
     "section": "",
-    "text": "O que é Rmarkdown?\nRmarkdown é uma implementação da linguagem de marcação Markdown, criada para mesclar texto formatado em Markdown junto a códigos de programação de diversas linguagens (e.g., R, Python, Julia etc).\n\n\nCom qual finalidade devo usar o Rmarkdown?\nRmarkdown pode ser utilizado para produzir artigos científicos, relatórios dinâmicos, apresentações, sítios web, livros etc. As possibilidades são inúmeras e dependem do desejo do usuário.\n\n\nComo eu posso usar o Rmarkdown?\nPara escrever usando o Rmarkdown, é necessário ter o R instalado, um editor de textos (de preferência, um IDE), e o pacote R rmarkdown instalado (saiba mais no capítulo “Instalação de programas”). Uma vez tendo isso instalado, você pode seguir os passos dados no capítulo “Compilação” deste livro."
+    "text": "O que é Markdown?\nMarkdown é uma linguagem de marcação simples originalmente criada por John Gruber e Aaron Swartz. Markdown converte seu texto em HTML válido. Markdown é frequentemente usado para formatar arquivos README, para escrever mensagens em fóruns de discussão online e para criar rich text usando um editor de texto simples1."
+  },
+  {
+    "objectID": "perguntas_frequentes.html#o-que-é-rmarkdown",
+    "href": "perguntas_frequentes.html#o-que-é-rmarkdown",
+    "title": "Perguntas mais frequentes",
+    "section": "O que é Rmarkdown?",
+    "text": "O que é Rmarkdown?\nRmarkdown é uma implementação da linguagem de marcação Markdown, criada para mesclar texto formatado em Markdown junto a códigos de programação de diversas linguagens (e.g., R, Python, Julia etc)."
+  },
+  {
+    "objectID": "perguntas_frequentes.html#com-qual-finalidade-devo-usar-o-rmarkdown",
+    "href": "perguntas_frequentes.html#com-qual-finalidade-devo-usar-o-rmarkdown",
+    "title": "Perguntas mais frequentes",
+    "section": "Com qual finalidade devo usar o Rmarkdown?",
+    "text": "Com qual finalidade devo usar o Rmarkdown?\nRmarkdown pode ser utilizado para produzir artigos científicos, relatórios dinâmicos, apresentações, sítios web, livros etc. As possibilidades são inúmeras e dependem do desejo do usuário."
+  },
+  {
+    "objectID": "perguntas_frequentes.html#como-eu-posso-usar-o-rmarkdown",
+    "href": "perguntas_frequentes.html#como-eu-posso-usar-o-rmarkdown",
+    "title": "Perguntas mais frequentes",
+    "section": "Como eu posso usar o Rmarkdown?",
+    "text": "Como eu posso usar o Rmarkdown?\nPara escrever usando o Rmarkdown, é necessário ter o R instalado, um editor de textos (de preferência, um IDE), e o pacote R rmarkdown instalado (saiba mais no capítulo “Instalação de programas”). Uma vez tendo isso instalado, você pode seguir os passos dados no capítulo “Compilação” deste livro."
+  },
+  {
+    "objectID": "perguntas_frequentes.html#footnotes",
+    "href": "perguntas_frequentes.html#footnotes",
+    "title": "Perguntas mais frequentes",
+    "section": "",
+    "text": "Extraído da definição de Markdown na Wikipedia.↩︎"
   }
 ]
