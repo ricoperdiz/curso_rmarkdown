@@ -152,7 +152,7 @@ Caso ainda não tenha, sugiro que instale o JabRef, seguindo os passos abaixo:
 knitr::include_graphics("figuras/jabref.png")
 ```
 
-Abaixo, segue um vídeo do [@cursodelatex](https://www.youtube.com/@cursodelatex7003) que explica muito brevemente como se instalar o JabRef em um sistema Windows:
+Abaixo, segue um vídeo do [\@cursodelatex](https://www.youtube.com/@cursodelatex7003) que explica muito brevemente como se instalar o JabRef em um sistema Windows:
 
 {{< video https://youtu.be/Bj0ga1VjyqM?si=DAB8PtepEu4XPrEW >}}
 

@@ -2,16 +2,22 @@
 title: "Perguntas mais frequentes"
 ---
 
-### O que é Rmarkdown?
+## O que é Markdown?
+
+Markdown é uma linguagem de marcação simples originalmente criada por John Gruber e Aaron Swartz. Markdown converte seu texto em HTML válido. Markdown é frequentemente usado para formatar arquivos README, para escrever mensagens em fóruns de discussão online e para criar rich text usando um editor de texto simples[^1].  
+
+[^1]: Extraído da [definição de Markdown na Wikipedia](https://pt.wikipedia.org/wiki/Markdown).  
+
+## O que é Rmarkdown?
 
 Rmarkdown é uma implementação da linguagem de marcação Markdown, criada para mesclar texto formatado em Markdown junto a códigos de programação de diversas linguagens (e.g., R, Python, Julia etc).  
 
-### Com qual finalidade devo usar o Rmarkdown?
+## Com qual finalidade devo usar o Rmarkdown?
 
 Rmarkdown pode ser utilizado para produzir artigos científicos, relatórios dinâmicos, apresentações, sítios web, livros etc.
 As possibilidades são inúmeras e dependem do desejo do usuário.  
 
-### Como eu posso usar o Rmarkdown?
+## Como eu posso usar o Rmarkdown?
 
 Para escrever usando o Rmarkdown, é necessário ter o [R instalado](01_instalacao.qmd#instala-r), um editor de textos (de preferência, um [IDE](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)), e o pacote R *rmarkdown* instalado (saiba mais no **[capítulo "Instalação de programas"](01_instalacao.qmd)**).
 Uma vez tendo isso instalado, você pode seguir os passos dados no **[capítulo "Compilação"](04_compilacao.qmd)** deste livro.  

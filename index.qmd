@@ -6,7 +6,7 @@ Este livro compreende conceitos básicos sobre o uso de [Rmarkdown](https://rmar
 O objetivo primário deste livro é servir como material de apoio para os discentes da disciplina "Produção de documentos científicos com a linguagem Rmarkdown", oferecida no Programa de Pós-graduação em Recursos Naturais (PRONAT) da Universidade Federal de Roraima (UFRR), com previsão de início em julho de 2024.
 Além disso, outro objetivo é poder disponibilizar um material em português de qualidade, de forma a aumentar a acessibilidade e abrangência de uso desta ferramenta, visto que a maioria dos livros e tutoriais que tratam de Rmarkdown são disponibilizados na língua inglesa.  
 
-## O que é Rmarkdown?
+# O que é Rmarkdown?
 
 RMarkdown é uma linguagem de marcação simples e poderosa, capaz de gerar diferentes tipos de documentos com elevada qualidade gráfica.
 Além disso, a linguagem é capaz de ser mesclada com códigos de programação, oferecendo então ao usuário a possibilidade de produzir documentos dinâmicos e interativos.  
@@ -23,7 +23,7 @@ A linguagem foi projetada para ser usada de três maneiras (veja capítulo [Intr
 
 <!-- Dentro desse contexto, Rmarkdown se encaixa na academia, em ambientes profissionais, em ambientes de tomadas de decisão. -->
 
-## Estrutura do livro {.unnumbered}
+# Estrutura do livro {.unnumbered}
 
 O livro está dividido em duas partes.
 A primeira parte foca no ensino do Rmarkdown, enquanto a segunda foca no ensino do Quarto.
@@ -49,13 +49,13 @@ Você pode encontrar os arquivos `.qmd` que geraram este livro neste endereço:
 :::
 
 
-## Contribuições {.unnumbered}
+# Contribuições {.unnumbered}
 
 Estas páginas são tanto um sítio digital como um livro, e ele se encontra em constante atualização.
 Sua contribuição é muito importante, então sinta-se à vontade para deixar sua opinião e sugestão.
 Caso encontre algum erro tipográfico, caso possua sugestões de melhora, tenha o desejo de ser um colaborador, permanente ou eventual, entre em contato comigo ou visite a seção de problemas (=**"issues"**) no repositório do livro, disponível neste endereço <https://github.com/ricoperdiz/curso_rmarkdown/issues>, e deixe lá sua contribuição/observação.  
 
-## Comentários {.unnumbered}
+# Comentários {.unnumbered}
 
 Uma outra forma de participar é você deixar comentários diretamente no livro, ao fim de cada página principal (@fig-comentarios).
 Para isso, é necessário que você possua uma conta no [GitHub](https://github.com/), faça o login e, uma vez logado, deixe seu comentário.
@@ -77,7 +77,7 @@ O mesmo vale para o caso de você desejar deixar um comentário em cada página 
 
 :::
 
-## Pré-requisitos {.unnumbered}
+# Pré-requisitos {.unnumbered}
 
 Devido ao modo como foi construído, este livro pode ser tanto lido quanto "executado", uma vez que seus arquivos são o que chamamos de *Rmarkdown*, uma linguagem que mistura texto com código.
 Sendo assim, o livro pode ser visualizado em computadores, em celulares modernos, e em *tablets*.
@@ -88,11 +88,11 @@ Há muito material disponível na rede, dentre os quais sugiro o livro [Curso b�
 Pensando na possibilidade de os leitores deste livro possuírem ou não um computador em mãos, disponibilizo abaixo instruções para que vocês possam aproveitar as lições deste livro usando um celular moderno ou tablet.
 Espero que as instruções sejam úteis e possam abranger um maior número de pessoas.  
 
-### Caso você possua um computador
+## Caso você possua um computador
 
 Se você tiver um computador em mãos, proceda para o **[capítulo "Instalação de programas"](01_instalacao.qmd)** para instalar todos os programas necessários para executar arquivos escritos em Rmarkdown.  
 
-### Caso você não possua um computador
+## Caso você não possua um computador
 
 Se você tiver apenas um celular moderno ou um tablet em mãos, sugiro que você faça uso da infraestrutura fornecida pela [Posit](https://posit.co/), a criadora e mantenedora do [RStudio](https://posit.co/products/open-source/rstudio/).
 A Posit disponibiliza de graça (com limitações) o [Posit Cloud](https://posit.cloud/), uma versão online do RStudio.
@@ -137,7 +137,7 @@ As páginas em HTML estão disponíveis na pasta `_book` (@fig-positcloud_book).
 
 ![Tela destacando a pasta `_book/`, que contem as páginas em HTML deste livro. Esta pasta fica disponível no Posit Cloud, após você importar o conteúdo do repositório onde se encontra todos os capítulos deste livro, disponíveis no endereço <https://github.com/ricoperdiz/curso_rmarkdown>.](figuras/posit_cloud_repoimported.png){#fig-positcloud_book}
 
-#### Conectar mouse e teclado a um telefone Android
+### Conectar mouse e teclado a um telefone Android
 
 Pensando na dificuldade de estudar as aulas do livro usando somente a tela pequena de um celular, é necessário pensar em otimizar o tamanho da tela para que você possa ler o conteúdo e também escrever.
 Para isso, seria bom considerar a possibilidade de conectar um teclado e um mouse ao telefone.
@@ -153,7 +153,7 @@ Para facilitar o entendimento das instruções acima, veja o vídeo abaixo com e
 
 {{< video https://www.youtube.com/watch?v=MfrORhUK6Lk >}}
 
-## Informações sobre a compilação deste livro {.unnumbered}
+# Informações sobre a compilação deste livro {.unnumbered}
 
 ```{r}
 #| echo: false
@@ -166,7 +166,7 @@ rstudio <- gsub("RStudio", "RStudio, versão", so_dad[2])
 ```
 
 Este livro foi construído por meio da plataforma Quarto [^quarto], versão `r quarto::quarto_version()`, dentro do ambiente `r gsub("version", "versão", R.version.string)`.
-Utilizei o RStudio, versão 2024.4.2.764, dentro do sistema operacional `r so_dad[1]`.
+Utilizei o RStudio, versão 2025.05.0+496 "Mariposa Orchid", dentro do sistema operacional `r so_dad[1]`.
 Abaixo disponibilizo as informações sobre os pacotes utilizados durante a construção deste livro: 
 
 [^quarto]: O Quarto é uma reimaginação multilínguas e multifuncionalidades do Rmarkdown. Para saber mais, visite <https://quarto.org/>.  
@@ -225,7 +225,7 @@ oracao <-
   .[["emoji"]]
 ```
 
-## Convenções {.unnumbered}
+# Convenções {.unnumbered}
 
 Adotamos o nome "Rmd" para se referir ao formato de arquivo Rmarkdown, cuja extensão é ".Rmd".
 Vamos nos referir ao Rmarkdown ao longo deste livro como "Rmd".
@@ -233,7 +233,7 @@ Nomes de pacotes aparecerão em negrito (e.g., __knitr__, __rmarkdown__).
 Quando fizermos referência a uma função de um determinado pacote, adotaremos a notação `nomeDoPacote::nomeDaFuncao()`, e a mesma aparecerá com uma coloração no fundo diferente da do corpo do texto.
 Argumentos do YAML aparecerão com a notação `argumentoDeYAML`, também com destaque quanto à cor do fundo.  
 
-## Agradecimentos {.unnumbered}
+# Agradecimentos {.unnumbered}
 
 O presente trabalho foi realizado com apoio da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Código de Financiamento 001.  
 
