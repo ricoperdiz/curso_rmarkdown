@@ -46,12 +46,12 @@ Aqui estão alguns motivos para investir nesse aprendizado:
 
 ## O que é um arquivo `.bib`
 
-O arquivo `.bib` é um arquivo de **bibliografia no formato BibTeX**, muito usado em conjunto com **LaTeX** ou **Rmarkdown** para gerenciar referências bibliográficas de forma automatizada.
+O arquivo `.bib` é um arquivo de **bibliografia no formato BibTeX**, muito usado em conjunto com **LaTeX** ou Rmd para gerenciar referências bibliográficas de forma automatizada.
 Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros.
 Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.  
 
 Cada entrada de referência em um arquivo `.bib` começa com o símbolo `@`, seguido pelo **tipo de entrada** (por exemplo, `@article`, `@book`, `@inproceedings`, etc.).
-Logo após, entre chaves `{}`, está o **identificador** único da referência (chamado de *citation key*) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos **Rmarkdown**.
+Logo após, entre chaves `{}`, está o **identificador** único da referência (chamado de *citation key*) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos Rmd.
 Por exemplo:
 
 ```bibtex
@@ -67,7 +67,7 @@ Dentro das chaves, cada campo da referência é listado no formato `campo = {val
 Os campos obrigatórios e opcionais variam conforme o tipo da entrada. Por exemplo, `@article` geralmente exige os campos `author`, `title`, `journal`, `year`, e `volume`, enquanto `@book` pode requerer `author`, `title`, `year`, e `publisher`.
 O conteúdo dos campos pode conter texto, números, nomes de autores, e até comandos **LaTeX**.  
 
-É importante manter o **formato sintático correto** do `.bib` para que o compilador LaTeX consiga interpretar e gerar as referências corretamente.
+É importante manter o **formato sintático correto** do `.bib` para que o compilador **LaTeX** consiga interpretar e gerar as referências corretamente.
 Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador.
 Também é recomendável manter nomes de autores no formato "Sobrenome, Nome" para melhor ordenação e apresentação nos estilos bibliográficos.  
 
@@ -77,7 +77,7 @@ Com a prática, você será capaz de criar, editar e importar referências com f
 
 ## Exemplos de diferentes tipos de bibliografias em formato `.bib`
 
-### 📄 Artigo em Periódico (`@article`)
+### Artigo em periódico (`@article`)
 
 ```bibtex
 @article{silva2021,
@@ -91,7 +91,7 @@ Com a prática, você será capaz de criar, editar e importar referências com f
 }
 ```
 
-## 📚 Livro (`@book`)
+## Livro (`@book`)
 
 ```bibtex
 @book{pereira2019,
@@ -102,7 +102,7 @@ Com a prática, você será capaz de criar, editar e importar referências com f
 }
 ```
 
-## 📘 Capítulo de Livro (`@incollection`)
+## Capítulo de livro (`@incollection`)
 
 ```bibtex
 @incollection{souza2020,
@@ -115,7 +115,7 @@ Com a prática, você será capaz de criar, editar e importar referências com f
 }
 ```
 
-## 🎓 Tese ou Dissertação (`@phdthesis` ou `@mastersthesis`)
+## Tese ou dissertação (`@phdthesis` ou `@mastersthesis`)
 
 ```bibtex
 @mastersthesis{almeida2018,
@@ -126,7 +126,7 @@ Com a prática, você será capaz de criar, editar e importar referências com f
 }
 ```
 
-## 🖥️ Artigo em Conferência (`@inproceedings`)
+## Artigo em conferência (`@inproceedings`)
 
 ```bibtex
 @inproceedings{melo2022,

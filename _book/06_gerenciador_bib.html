@@ -466,12 +466,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#o-que-é-um-arquivo-.bib" id="toc-o-que-é-um-arquivo-.bib" class="nav-link" data-scroll-target="#o-que-é-um-arquivo-.bib">O que é um arquivo <code>.bib</code></a></li>
   <li><a href="#exemplos-de-diferentes-tipos-de-bibliografias-em-formato-.bib" id="toc-exemplos-de-diferentes-tipos-de-bibliografias-em-formato-.bib" class="nav-link" data-scroll-target="#exemplos-de-diferentes-tipos-de-bibliografias-em-formato-.bib">Exemplos de diferentes tipos de bibliografias em formato <code>.bib</code></a>
   <ul class="collapse">
-  <li><a href="#artigo-em-periódico-article" id="toc-artigo-em-periódico-article" class="nav-link" data-scroll-target="#artigo-em-periódico-article">📄 Artigo em Periódico (<code>@article</code>)</a></li>
+  <li><a href="#artigo-em-periódico-article" id="toc-artigo-em-periódico-article" class="nav-link" data-scroll-target="#artigo-em-periódico-article">Artigo em periódico (<code>@article</code>)</a></li>
   </ul></li>
-  <li><a href="#livro-book" id="toc-livro-book" class="nav-link" data-scroll-target="#livro-book">📚 Livro (<code>@book</code>)</a></li>
-  <li><a href="#capítulo-de-livro-incollection" id="toc-capítulo-de-livro-incollection" class="nav-link" data-scroll-target="#capítulo-de-livro-incollection">📘 Capítulo de Livro (<code>@incollection</code>)</a></li>
-  <li><a href="#tese-ou-dissertação-phdthesis-ou-mastersthesis" id="toc-tese-ou-dissertação-phdthesis-ou-mastersthesis" class="nav-link" data-scroll-target="#tese-ou-dissertação-phdthesis-ou-mastersthesis">🎓 Tese ou Dissertação (<code>@phdthesis</code> ou <code>@mastersthesis</code>)</a></li>
-  <li><a href="#artigo-em-conferência-inproceedings" id="toc-artigo-em-conferência-inproceedings" class="nav-link" data-scroll-target="#artigo-em-conferência-inproceedings">🖥️ Artigo em Conferência (<code>@inproceedings</code>)</a></li>
+  <li><a href="#livro-book" id="toc-livro-book" class="nav-link" data-scroll-target="#livro-book">Livro (<code>@book</code>)</a></li>
+  <li><a href="#capítulo-de-livro-incollection" id="toc-capítulo-de-livro-incollection" class="nav-link" data-scroll-target="#capítulo-de-livro-incollection">Capítulo de livro (<code>@incollection</code>)</a></li>
+  <li><a href="#tese-ou-dissertação-phdthesis-ou-mastersthesis" id="toc-tese-ou-dissertação-phdthesis-ou-mastersthesis" class="nav-link" data-scroll-target="#tese-ou-dissertação-phdthesis-ou-mastersthesis">Tese ou dissertação (<code>@phdthesis</code> ou <code>@mastersthesis</code>)</a></li>
+  <li><a href="#artigo-em-conferência-inproceedings" id="toc-artigo-em-conferência-inproceedings" class="nav-link" data-scroll-target="#artigo-em-conferência-inproceedings">Artigo em conferência (<code>@inproceedings</code>)</a></li>
   <li><a href="#referências-úteis" id="toc-referências-úteis" class="nav-link" data-scroll-target="#referências-úteis">Referências úteis</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/edit/main/06_gerenciador_bib.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/blob/main/06_gerenciador_bib.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
@@ -535,8 +535,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="o-que-é-um-arquivo-.bib" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-é-um-arquivo-.bib">O que é um arquivo <code>.bib</code></h2>
-<p>O arquivo <code>.bib</code> é um arquivo de <strong>bibliografia no formato BibTeX</strong>, muito usado em conjunto com <strong>LaTeX</strong> ou <strong>Rmarkdown</strong> para gerenciar referências bibliográficas de forma automatizada. Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros. Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.</p>
-<p>Cada entrada de referência em um arquivo <code>.bib</code> começa com o símbolo <code>@</code>, seguido pelo <strong>tipo de entrada</strong> (por exemplo, <code>@article</code>, <code>@book</code>, <code>@inproceedings</code>, etc.). Logo após, entre chaves <code>{}</code>, está o <strong>identificador</strong> único da referência (chamado de <em>citation key</em>) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos <strong>Rmarkdown</strong>. Por exemplo:</p>
+<p>O arquivo <code>.bib</code> é um arquivo de <strong>bibliografia no formato BibTeX</strong>, muito usado em conjunto com <strong>LaTeX</strong> ou Rmd para gerenciar referências bibliográficas de forma automatizada. Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros. Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.</p>
+<p>Cada entrada de referência em um arquivo <code>.bib</code> começa com o símbolo <code>@</code>, seguido pelo <strong>tipo de entrada</strong> (por exemplo, <code>@article</code>, <code>@book</code>, <code>@inproceedings</code>, etc.). Logo após, entre chaves <code>{}</code>, está o <strong>identificador</strong> único da referência (chamado de <em>citation key</em>) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos Rmd. Por exemplo:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">pires2020</span>,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Carlos Pires},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Introdução ao LaTeX},</span>
@@ -544,13 +544,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Editora Acadêmica}</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Dentro das chaves, cada campo da referência é listado no formato <code>campo = {valor}</code>, separado por vírgulas. Os campos obrigatórios e opcionais variam conforme o tipo da entrada. Por exemplo, <code>@article</code> geralmente exige os campos <code>author</code>, <code>title</code>, <code>journal</code>, <code>year</code>, e <code>volume</code>, enquanto <code>@book</code> pode requerer <code>author</code>, <code>title</code>, <code>year</code>, e <code>publisher</code>. O conteúdo dos campos pode conter texto, números, nomes de autores, e até comandos <strong>LaTeX</strong>.</p>
-<p>É importante manter o <strong>formato sintático correto</strong> do <code>.bib</code> para que o compilador LaTeX consiga interpretar e gerar as referências corretamente. Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador. Também é recomendável manter nomes de autores no formato “Sobrenome, Nome” para melhor ordenação e apresentação nos estilos bibliográficos.</p>
+<p>É importante manter o <strong>formato sintático correto</strong> do <code>.bib</code> para que o compilador <strong>LaTeX</strong> consiga interpretar e gerar as referências corretamente. Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador. Também é recomendável manter nomes de autores no formato “Sobrenome, Nome” para melhor ordenação e apresentação nos estilos bibliográficos.</p>
 <p>Aprender a ler e editar arquivos <code>.bib</code> é essencial para quem trabalha com Rmarkdown e deseja ter total controle sobre suas referências. Isso também facilita a integração com gerenciadores como <strong>JabRef</strong>, que funcionam como uma interface gráfica para editar o arquivo <code>.bib</code> sem mexer diretamente no código. Com a prática, você será capaz de criar, editar e importar referências com facilidade, aumentando a produtividade e a qualidade dos seus trabalhos acadêmicos.</p>
 </section>
 <section id="exemplos-de-diferentes-tipos-de-bibliografias-em-formato-.bib" class="level2">
 <h2 class="anchored" data-anchor-id="exemplos-de-diferentes-tipos-de-bibliografias-em-formato-.bib">Exemplos de diferentes tipos de bibliografias em formato <code>.bib</code></h2>
 <section id="artigo-em-periódico-article" class="level3">
-<h3 class="anchored" data-anchor-id="artigo-em-periódico-article">📄 Artigo em Periódico (<code>@article</code>)</h3>
+<h3 class="anchored" data-anchor-id="artigo-em-periódico-article">Artigo em periódico (<code>@article</code>)</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">silva2021</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>  = {Maria da Silva},</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>   = {Estudo sobre aprendizado automático},</span>
@@ -563,7 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="livro-book" class="level2">
-<h2 class="anchored" data-anchor-id="livro-book">📚 Livro (<code>@book</code>)</h2>
+<h2 class="anchored" data-anchor-id="livro-book">Livro (<code>@book</code>)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">pereira2019</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {João Pereira},</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Fundamentos da Física},</span>
@@ -572,7 +572,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="capítulo-de-livro-incollection" class="level2">
-<h2 class="anchored" data-anchor-id="capítulo-de-livro-incollection">📘 Capítulo de Livro (<code>@incollection</code>)</h2>
+<h2 class="anchored" data-anchor-id="capítulo-de-livro-incollection">Capítulo de livro (<code>@incollection</code>)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@incollection</span>{<span class="ot">souza2020</span>,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Ana Souza},</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Redes Neurais Artificiais},</span>
@@ -583,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tese-ou-dissertação-phdthesis-ou-mastersthesis" class="level2">
-<h2 class="anchored" data-anchor-id="tese-ou-dissertação-phdthesis-ou-mastersthesis">🎓 Tese ou Dissertação (<code>@phdthesis</code> ou <code>@mastersthesis</code>)</h2>
+<h2 class="anchored" data-anchor-id="tese-ou-dissertação-phdthesis-ou-mastersthesis">Tese ou dissertação (<code>@phdthesis</code> ou <code>@mastersthesis</code>)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">@mastersthesis</span>{<span class="ot">almeida2018</span>,</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = {Carlos Almeida},</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>  = {Modelagem Estatística de Séries Temporais},</span>
@@ -592,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="artigo-em-conferência-inproceedings" class="level2">
-<h2 class="anchored" data-anchor-id="artigo-em-conferência-inproceedings">🖥️ Artigo em Conferência (<code>@inproceedings</code>)</h2>
+<h2 class="anchored" data-anchor-id="artigo-em-conferência-inproceedings">Artigo em conferência (<code>@inproceedings</code>)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inproceedings</span>{<span class="ot">melo2022</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Fernanda Melo},</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Análise de Dados com Python},</span>

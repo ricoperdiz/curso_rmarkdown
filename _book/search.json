@@ -527,7 +527,7 @@
     "href": "06_gerenciador_bib.html#o-que-é-um-arquivo-.bib",
     "title": "Gerenciador de bibliografias e arquivos bib",
     "section": "O que é um arquivo .bib",
-    "text": "O que é um arquivo .bib\nO arquivo .bib é um arquivo de bibliografia no formato BibTeX, muito usado em conjunto com LaTeX ou Rmarkdown para gerenciar referências bibliográficas de forma automatizada. Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros. Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.\nCada entrada de referência em um arquivo .bib começa com o símbolo @, seguido pelo tipo de entrada (por exemplo, @article, @book, @inproceedings, etc.). Logo após, entre chaves {}, está o identificador único da referência (chamado de citation key) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos Rmarkdown. Por exemplo:\n@book{pires2020,\n  author    = {Carlos Pires},\n  title     = {Introdução ao LaTeX},\n  year      = {2020},\n  publisher = {Editora Acadêmica}\n}\nDentro das chaves, cada campo da referência é listado no formato campo = {valor}, separado por vírgulas. Os campos obrigatórios e opcionais variam conforme o tipo da entrada. Por exemplo, @article geralmente exige os campos author, title, journal, year, e volume, enquanto @book pode requerer author, title, year, e publisher. O conteúdo dos campos pode conter texto, números, nomes de autores, e até comandos LaTeX.\nÉ importante manter o formato sintático correto do .bib para que o compilador LaTeX consiga interpretar e gerar as referências corretamente. Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador. Também é recomendável manter nomes de autores no formato “Sobrenome, Nome” para melhor ordenação e apresentação nos estilos bibliográficos.\nAprender a ler e editar arquivos .bib é essencial para quem trabalha com Rmarkdown e deseja ter total controle sobre suas referências. Isso também facilita a integração com gerenciadores como JabRef, que funcionam como uma interface gráfica para editar o arquivo .bib sem mexer diretamente no código. Com a prática, você será capaz de criar, editar e importar referências com facilidade, aumentando a produtividade e a qualidade dos seus trabalhos acadêmicos.",
+    "text": "O que é um arquivo .bib\nO arquivo .bib é um arquivo de bibliografia no formato BibTeX, muito usado em conjunto com LaTeX ou Rmd para gerenciar referências bibliográficas de forma automatizada. Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros. Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.\nCada entrada de referência em um arquivo .bib começa com o símbolo @, seguido pelo tipo de entrada (por exemplo, @article, @book, @inproceedings, etc.). Logo após, entre chaves {}, está o identificador único da referência (chamado de citation key) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos Rmd. Por exemplo:\n@book{pires2020,\n  author    = {Carlos Pires},\n  title     = {Introdução ao LaTeX},\n  year      = {2020},\n  publisher = {Editora Acadêmica}\n}\nDentro das chaves, cada campo da referência é listado no formato campo = {valor}, separado por vírgulas. Os campos obrigatórios e opcionais variam conforme o tipo da entrada. Por exemplo, @article geralmente exige os campos author, title, journal, year, e volume, enquanto @book pode requerer author, title, year, e publisher. O conteúdo dos campos pode conter texto, números, nomes de autores, e até comandos LaTeX.\nÉ importante manter o formato sintático correto do .bib para que o compilador LaTeX consiga interpretar e gerar as referências corretamente. Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador. Também é recomendável manter nomes de autores no formato “Sobrenome, Nome” para melhor ordenação e apresentação nos estilos bibliográficos.\nAprender a ler e editar arquivos .bib é essencial para quem trabalha com Rmarkdown e deseja ter total controle sobre suas referências. Isso também facilita a integração com gerenciadores como JabRef, que funcionam como uma interface gráfica para editar o arquivo .bib sem mexer diretamente no código. Com a prática, você será capaz de criar, editar e importar referências com facilidade, aumentando a produtividade e a qualidade dos seus trabalhos acadêmicos.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
@@ -538,7 +538,7 @@
     "href": "06_gerenciador_bib.html#exemplos-de-diferentes-tipos-de-bibliografias-em-formato-.bib",
     "title": "Gerenciador de bibliografias e arquivos bib",
     "section": "Exemplos de diferentes tipos de bibliografias em formato .bib",
-    "text": "Exemplos de diferentes tipos de bibliografias em formato .bib\n\n📄 Artigo em Periódico (@article)\n@article{silva2021,\n  author  = {Maria da Silva},\n  title   = {Estudo sobre aprendizado automático},\n  journal = {Revista Brasileira de Computação},\n  year    = {2021},\n  volume  = {15},\n  number  = {2},\n  pages   = {45--60}\n}",
+    "text": "Exemplos de diferentes tipos de bibliografias em formato .bib\n\nArtigo em periódico (@article)\n@article{silva2021,\n  author  = {Maria da Silva},\n  title   = {Estudo sobre aprendizado automático},\n  journal = {Revista Brasileira de Computação},\n  year    = {2021},\n  volume  = {15},\n  number  = {2},\n  pages   = {45--60}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
@@ -548,8 +548,8 @@
     "objectID": "06_gerenciador_bib.html#livro-book",
     "href": "06_gerenciador_bib.html#livro-book",
     "title": "Gerenciador de bibliografias e arquivos bib",
-    "section": "📚 Livro (@book)",
-    "text": "📚 Livro (@book)\n@book{pereira2019,\n  author    = {João Pereira},\n  title     = {Fundamentos da Física},\n  year      = {2019},\n  publisher = {Editora Ciência Viva}\n}",
+    "section": "Livro (@book)",
+    "text": "Livro (@book)\n@book{pereira2019,\n  author    = {João Pereira},\n  title     = {Fundamentos da Física},\n  year      = {2019},\n  publisher = {Editora Ciência Viva}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
@@ -559,8 +559,8 @@
     "objectID": "06_gerenciador_bib.html#capítulo-de-livro-incollection",
     "href": "06_gerenciador_bib.html#capítulo-de-livro-incollection",
     "title": "Gerenciador de bibliografias e arquivos bib",
-    "section": "📘 Capítulo de Livro (@incollection)",
-    "text": "📘 Capítulo de Livro (@incollection)\n@incollection{souza2020,\n  author    = {Ana Souza},\n  title     = {Redes Neurais Artificiais},\n  booktitle = {Inteligência Artificial: Teoria e Prática},\n  publisher = {Editora Acadêmica},\n  year      = {2020},\n  pages     = {123--145}\n}",
+    "section": "Capítulo de livro (@incollection)",
+    "text": "Capítulo de livro (@incollection)\n@incollection{souza2020,\n  author    = {Ana Souza},\n  title     = {Redes Neurais Artificiais},\n  booktitle = {Inteligência Artificial: Teoria e Prática},\n  publisher = {Editora Acadêmica},\n  year      = {2020},\n  pages     = {123--145}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
@@ -570,8 +570,8 @@
     "objectID": "06_gerenciador_bib.html#tese-ou-dissertação-phdthesis-ou-mastersthesis",
     "href": "06_gerenciador_bib.html#tese-ou-dissertação-phdthesis-ou-mastersthesis",
     "title": "Gerenciador de bibliografias e arquivos bib",
-    "section": "🎓 Tese ou Dissertação (@phdthesis ou @mastersthesis)",
-    "text": "🎓 Tese ou Dissertação (@phdthesis ou @mastersthesis)\n@mastersthesis{almeida2018,\n  author = {Carlos Almeida},\n  title  = {Modelagem Estatística de Séries Temporais},\n  school = {Universidade Federal de Minas Gerais},\n  year   = {2018}\n}",
+    "section": "Tese ou dissertação (@phdthesis ou @mastersthesis)",
+    "text": "Tese ou dissertação (@phdthesis ou @mastersthesis)\n@mastersthesis{almeida2018,\n  author = {Carlos Almeida},\n  title  = {Modelagem Estatística de Séries Temporais},\n  school = {Universidade Federal de Minas Gerais},\n  year   = {2018}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
@@ -581,8 +581,8 @@
     "objectID": "06_gerenciador_bib.html#artigo-em-conferência-inproceedings",
     "href": "06_gerenciador_bib.html#artigo-em-conferência-inproceedings",
     "title": "Gerenciador de bibliografias e arquivos bib",
-    "section": "🖥️ Artigo em Conferência (@inproceedings)",
-    "text": "🖥️ Artigo em Conferência (@inproceedings)\n@inproceedings{melo2022,\n  author    = {Fernanda Melo},\n  title     = {Análise de Dados com Python},\n  booktitle = {Anais do Simpósio de Ciência de Dados},\n  year      = {2022},\n  pages     = {80--90}\n}",
+    "section": "Artigo em conferência (@inproceedings)",
+    "text": "Artigo em conferência (@inproceedings)\n@inproceedings{melo2022,\n  author    = {Fernanda Melo},\n  title     = {Análise de Dados com Python},\n  booktitle = {Anais do Simpósio de Ciência de Dados},\n  year      = {2022},\n  pages     = {80--90}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
