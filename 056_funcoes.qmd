@@ -1,0 +1,21 @@
+---
+title: "Miscelâneas"
+format: html
+aliases: 
+  - /miscelanea/
+---
+
+### Atualização de data automática
+
+Uma opção interessante em arquivos Rmd é a possibilidade de usar funções em R nos metadados YAML.
+Por exemplo, se desejamos que a data seja continuamente atualizada, isto é, se a toda vez que compilamos um arquivos, tivermos o desejo de que a data seja a do dia em que compilamos o mesmo, podemos usar a seguinte notação no argumento `date`:
+
+```{python}
+#| echo: false
+#| output: asis
+print("---\n")
+print("author: Ricardinho\n")
+print('date: "\`r Sys.Date()\`"\n')
+print("output: html_document\n")
+print("---\n")
+```

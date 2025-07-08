@@ -456,7 +456,17 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tipos de produtos (=‘Output’)</span></a>
+  <a href="./05_output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tipos de produtos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./055_controle_codigos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Controle de opções em pedaços de códigos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./056_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Miscelâneas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -831,13 +841,13 @@ definição
 </section>
 <section id="códigos-r-em-linha-inline-codes" class="level2">
 <h2 class="anchored" data-anchor-id="códigos-r-em-linha-inline-codes">Códigos R em linha (“inline codes”)</h2>
-<p>Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação <code>r</code>. Inserimos o pedaço de código após a letra <code>r</code>, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.</p>
+<p>Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação `<code>{r} códigoVaiAqui</code>`. Inserimos o pedaço de código após a letra `<code>{r} códigoVaiAqui</code>`, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.</p>
 <p>Tomando o conjunto de dados <code>iris</code> como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:</p>
-<p><code>r nrow(iris)</code></p>
+<p>`r nrow(iris)`</p>
 <p>Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:</p>
 <ul>
-<li>Há dados para <code>r length(unique(iris$Species))</code> espécies</li>
-<li>Os dados possuem <code>r nrow(iris)</code> linhas e <code>r ncol(iris)</code> colunas.</li>
+<li>Há dados para `r length(unique(iris$Species))` espécies</li>
+<li>Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.</li>
 </ul>
 </section>
 <section id="tabelas" class="level2">

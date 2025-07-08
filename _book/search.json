@@ -263,7 +263,7 @@
     "href": "03_sintaxe.html#códigos-r-em-linha-inline-codes",
     "title": "Sintaxe",
     "section": "Códigos R em linha (“inline codes”)",
-    "text": "Códigos R em linha (“inline codes”)\nCódigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação r. Inserimos o pedaço de código após a letra r, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.\nTomando o conjunto de dados iris como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:\nr nrow(iris)\nOu então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:\n\nHá dados para r length(unique(iris$Species)) espécies\nOs dados possuem r nrow(iris) linhas e r ncol(iris) colunas.",
+    "text": "Códigos R em linha (“inline codes”)\nCódigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação `{r} códigoVaiAqui`. Inserimos o pedaço de código após a letra `{r} códigoVaiAqui`, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.\nTomando o conjunto de dados iris como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:\n`r nrow(iris)`\nOu então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:\n\nHá dados para `r length(unique(iris$Species))` espécies\nOs dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.",
     "crumbs": [
       "Introdução ao Rmarkdown",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sintaxe</span>"
@@ -360,45 +360,111 @@
   {
     "objectID": "05_output.html",
     "href": "05_output.html",
-    "title": "Tipos de produtos (=‘Output’)",
+    "title": "Tipos de produtos",
     "section": "",
-    "text": "Objetivos de aprendizado\nPodemos produzir diferentes tipos de produtos utilizando arquivos Rmd: documentos, apresentações, sítios web, e painéis de gestão (conhecidos como dashboard na língua inglesa). Discorrerei sobre cada um deles, nas próximas seções.",
+    "text": "Possibilidades\nA linguagem Rmarkdown possibilita a produção de inúmeros tipos de conteúdos diferentes em distintos formatos (HTML, PDF, DOCX, ODT etc). Vejam abaixo algumas dessas possibilidades:",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos</span>"
+    ]
+  },
+  {
+    "objectID": "05_output.html#possibilidades",
+    "href": "05_output.html#possibilidades",
+    "title": "Tipos de produtos",
+    "section": "",
+    "text": "Apresentação\nEsta é uma apresentação criada por meio do pacote R xaringan.\n\n\n\n\n\n\n\n\n\n\nPágina pessoal\nEssa é minha página pessoal, criada por meio do pacote R blogdown.\n\n\n\n\n\nDiscorro abaixo sobre os principais formatos (HTML, PDF, e DOCX) e sobre algumas funcionalidades específicas de determinados pacotes R.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos</span>"
     ]
   },
   {
     "objectID": "05_output.html#objetivos-de-aprendizado",
     "href": "05_output.html#objetivos-de-aprendizado",
-    "title": "Tipos de produtos (=‘Output’)",
-    "section": "",
-    "text": "Compilar um arquivo Rmd em HTML;\nCompilar um arquivo Rmd em PDF;\nCompilar um arquivo Rmd em DOCX;",
+    "title": "Tipos de produtos",
+    "section": "Objetivos de aprendizado",
+    "text": "Objetivos de aprendizado\n\nCompilar um arquivo Rmd em HTML;\nCompilar um arquivo Rmd em PDF;\nCompilar um arquivo Rmd em DOCX;",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos</span>"
     ]
   },
   {
-    "objectID": "05_output.html#html",
-    "href": "05_output.html#html",
-    "title": "Tipos de produtos (=‘Output’)",
+    "objectID": "05_output.html#sec-html",
+    "href": "05_output.html#sec-html",
+    "title": "Tipos de produtos",
     "section": "HTML",
-    "text": "HTML\nO arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd e, portanto, possui o maior número de funcionalidades disponíveis em comparação com os outros tipos de produtos possíveis (PDF e DOCX). Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML. Começaremos pela maneira mais simples, utilizando a função rmarkdown::html_document() do pacote R rmarkdown (Allaire et al. 2024):\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: html_document\n---\n\nAcrescentar sumário\nPara acrescentar um sumário (ou tabela de conteúdo) em seu documento, use o argumento toc e especifique a profundidade do sumário por meio do argumento toc_depth:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: \n  html_document:\n    toc: true\n    toc_depth: 3\n---\nReparem que em metadados YAML, os espaços contam; isto é, a indentação é necessária!\nA profundidade do sumário diz respeito ao grau do cabeçalho que se deseja atingir, isto é, você deseja que seu sumário liste os cabeçalhos até o segundo grau (== “##”)? Ou até o terceiro grau (==“###”)? Ou até o quarto grau (=“####”) ?\nPara cada uma das respostas acima, teríamos o argumento toc_depth com as seguintes respostas:\ntoc_depth: 2\ntoc_depth: 3\ntoc_depth: 4\nSe não desejarmos o sumário, podemos usar o argumento toc: false ou simplesmente não utilizá-lo.\n\n\nNumerar seções\nVocê pode numerar seções utilizando o argumento number_sections, que habilita a numeração caso seja atribuído o valor true a ele:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: \n  html_document:\n    number_sections: true\n---\nSe você desejar numerar todas as seções, excluindo alguma(s), você pode fazer acrescentar o valor {-} após o cabeçalho que você deseja não numerar. Por exemplo, suponha que a seção # Prefácio não deva ser numerada por você. Você deve fazer então da seguinte maneira:\n# Prefácio {-}\n\n\nReferência cruzada de figuras e tabelas\nFazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento. Porém, este recurso só está disponível no pacote R bookdown (Xie 2025). Logo, será necessário mudar o valor atribuído ao argumento output nos metadados do seu arquivo. Em vez de output: html_document, usaremos output: bookdown::html_document2. Veja abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: bookdown::html_document2\n---\nEm seguida, devemos nos preocupar com a referência em si. Para isso, precisaremos dos itens abaixo:\n\nFiguras ou tabelas deverão possuir uma legenda;\nPedaços de código nomeados, pois esse nome será o código utilizado como identificador da referência.\n\nA referência cruzada é feita por meio da seguinte notação:\n\n\\@ref(tipo:codigo)\n\nem que tipo se refere à figura fig ou tabela tab, e codigo se refere ao codigo identificador do pedaço de código em que faremos a inserção da figura ou tabela.\nPara ficar mais claro, vejam o exemplo abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nsubtitle: \"Aqui vai o subtítulo\"\nauthor: Ricardinho\ndate: 4 Jun 2024\n# documentclass: book\noutput: \n  bookdown::pdf_document2:\n    toc: true\n    # includes:\n    #   in_header: \"header.tex\"\n    #   before_body: \"before-body.tex\"\n  # bookdown::word_document2:\n  #   reference_docx: modelo.docx\n  #   theme: cerulean\n  #   fig_width: 12\n  #   fig_height: 10\n# lof: yes\n# lot: yes\nbibliography: minhaprimeiraref.bib\ncsl: associacao-brasileira-de-normas-tecnicas.csl\n---\n\n```{r, echo=FALSE, eval=TRUE, message=FALSE}\nlibrary(\"knitr\")\nvariavel1 &lt;- 5+2\nvariavel2 &lt;- variavel1 +2\n\nlibrary(\"dplyr\")\n\nexemplinho &lt;- read.table(\"exemplinho.csv\", sep = \",\", header = TRUE)\n```\n\n\\newpage\n\n```{r, echo=FALSE, eval=FALSE}\n1+1+1+1+1+2\n```\n\n\n```{r}\n#| echo: true\n#| eval: false\n#| include: false\n#| message: false\n#| warning: false\n5+2\n```\n\n# Introdução\n\n## Subintrodução\n\nAqui está a variável 1: `r variavel1`.  \n\n\nAqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  \n\nVejam a figura \\@ref(fig:fig1).  \n\n```{r fig1, fig.cap = \"Aqui vai a legenda das figuras.\", out.width=\"120%\"}\nplot(mtcars)\n```\n\nOlha a fotinha \\@ref(fig:fotinha).  \n\n```{r fotinha, fig.cap= \"Fotinha\", out.width=\"50%\"}\n#| echo: false\nknitr::include_graphics(\"fotinha.JPG\")\n```\n\n```{r}\nmagick::image_read(\"../fotinha.JPG\") |&gt; \n  magick::image_scale(\"x700\")\n```\n\n\nA tabela \\@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  \n\n```{r minha-tabela}\nknitr::kable(head(mtcars), caption = \"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable\")\n```\n\n\n\n# Material e métodos\n\nAqui eu discorro sobre os métodos utilizados para responder minhas perguntas.  \n\nUma lista de refs [@Xieetal2020;@Yaoetal2024].  \n\n\n## Localidades\n\n## Análise de dados\n\n```{r, echo=FALSE, warning=FALSE}\nlibrary(\"palmerpenguins\")\nlibrary(\"ggplot2\")\nggplot(penguins) +\n  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  theme_bw()\n\n```\n\n# Resultados\n\n## Genética\n\n### ddradSEQ\n\n## Morfologia\n\nReunimos um conjunto de `r nrow(mtcars)` observações e `r ncol(mtcars)` variáveis.  \n\n```{r}\nmtcars2 &lt;- dplyr::bind_rows(mtcars, mtcars)\n```\n\nNa série temporal do ano de 2019, houve `r nrow(mtcars2)` observações e `r ncol(mtcars2)` variáveis para estimar o traço funcional do solo papapa.  \n\nA tabela \\@ref(tab:tab2) evidencia as seis primeiras linhas de nosso conjunto de dados.  \n\n```{r tab2}\n#| echo: false\ndados = read.table(\"exemplinho.csv\", header = TRUE, sep = \",\")\nknitr::kable(dados, caption = \"Seis primeiras linhas do conjunto de dados iris.\")\n```\n\nColetamos `r length(unique(dados$Species))` espécies diferentes.  \n\nAs espécies coletadas foram `r glue::glue_collapse(x = sort(unique(dados$Species)), sep = \", \", last = \" e \")`.  \n\n`r 1+1`\n\n| Nome    | Altura |\n|---------|--------|\n| Lysne   | `r 1+1`|\n| Luciana | `r 1+2`|\n| Rhaylla | 1,68   |\n| José    | 1,82   |\n| Sylvio  | 1,73   |\n| Carlos  | 1,75   |\n| Ricardo | 1,79   |\n\n: https://www.tablesgenerator.com/\n\n\n# Referências\nPara mais possibilidades, veja a seção Update the date automatically do livro Rmarkdown cookbook (Xie, Dervieux, e Riederer 2020).\n\n\nAparência\nPor meio do argumento theme dentro do YAML, podemos controlar a aparência de seu arquivo HTML. Possíveis valores incluem:\n\ndefault, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti\n\nTeste cada uma dessas possibilidades e veja como fica a aparência de seu produto. Para testar, escreva dessa maneira no seu YAML, substituindo após theme: por cada uma das possibilidades acima:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guguinha\noutput: \n  html_document:\n    theme: journal\n---\nPodemos mudar também a aparência dos pedaços de códigos em nossos produtos. Suponha que eu possua o código abaixo:\n\n1 + 1\n\n[1] 2\n\n\nComo ele vai aparecer no produto final?\nNós controlamos essa variável por meio do argumento highlight. As opções disponíevis incluem:\n\ndefault, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate\n\nTeste as opções acima em seu YAML escrevendo como abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guguinha\noutput: \n  html_document:\n    highlight: espresso\n---\n\n\nControle de pedaços de código\nOs códigos escritos nas diversas linguagens possíveis de serem utilizadas em arquivos Rmd podem ser controlados quanto à exibição no produto final e também quanto aos efeitos dos códigos. Exemplificarei alguns dos argumentos mais utilizados:\n\necho\neval\ninclude\nmessage\nwarning\n\n# echo\n```{r echo = FALSE}\nlibrary(\"MASS\")\n```\n# eval\n```{r eval = FALSE}\nplot(long, lat, data = coordenadas)\n```\n# include\n```{r include = FALSE}\nlibrary(\"dplyr\")\nlibrary(\"purrr\")\nlibrary(\"vegan\")\n```\n# message\n```{r message = FALSE}\nlibrary(\"dplyr\")\nlibrary(\"purrr\")\nlibrary(\"vegan\")\n```\n# warning\n```{r warning = FALSE}\nlibrary(\"palmerpenguins\")\nlibrary(\"ggplot2\")\n\nggplot(penguins) +\n  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  theme_bw()\n```\n\n\nControle de figuras\nPodemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:\n\nfig_width e fig_height controlam, respectivamente, a largura e altura da imagem;\nfig_caption controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis true ou false)\ndev controla qual dispositivo deve compilar as figuras, isto é, se pdf, png, ou outros (padrão é o png).\n\nVejam possibilidades abaixo e testem em seus arquivos:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guerreira Luaninha\ndate: 4 Jun 2024\noutput: \n  html_document:\n    fig_width: 7\n    fig_height: 6\n    fig_caption: true\n---\nOutra maneira de controlar a aparência das figuras é por meio de argumentos dentro dos pedaços de código. Os argumentos disponíveis são escritos de maneira parecida com os argumentos utilizados no YAML, porém diferem quanto à inserção de um ponto (.) no lugar do subtraço (_). As opções mais populares são:\n\nfig.height e fig.width, que determinam a altura e a largura da figura em polegadas, respectivamente. Os valores devem ser numéricos. Exemplo: fig.width = 8, fig.height = 4.\nfig.dim que combina a largura e a altura da figura, respectivamente, na mesma função, também expressa em polegadas. Exemplo: fig.dim = c(8, 4) é o mesmo que `fig.width = 8, fig.height = 4.\nfig.cap, que determina a legenda da figura. Deve apresentar sempre o texto que se deseja colocar entre aspas. Exemplo: fig.cap = \"Essa é a legenda de minha figura.\".\nout.width e out.height, que expressa o tamanho da imagem no produto final, cujos valores são expressos em porcentagens, “50%”, “70%” etc. Exemplo: out.width = \"50%\", out.height = \"80%\".\n\nExemplos de aplicação desses argumentos são expressos abaixo:\n# Usando fig.width e fig.height\n```{r, fig.width = 12, fig.height = 10, fig.cap=\"Olha a legenda da figura\"}\nknitr::include_graphics(\"fotinha.jpg\")\n```\n# out.width e out.height\n```{r, out.width=\"50%\", out.height = \"50%\"}\nknitr::include_graphics(\"fotinha.jpg\")\n```\n# fig.dim\n```{r, fig.dim = c(12,10)}\nknitr::include_graphics(\"fotinha.jpg\")\n```\nMais opções estão explicadas detalhadamente na seção Plots da página dedicada ao pacote knitr (Xie 2014).",
+    "text": "HTML\nO arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd e, portanto, possui o maior número de funcionalidades disponíveis em comparação com os outros tipos de produtos possíveis (PDF e DOCX). Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML. Começaremos pela maneira mais simples, utilizando a função rmarkdown::html_document() do pacote R rmarkdown (Allaire et al. 2024):\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: html_document\n---\n\nAcrescentar sumário\nPara acrescentar um sumário (ou tabela de conteúdo) em seu documento, use o argumento toc e especifique a profundidade do sumário por meio do argumento toc_depth:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: \n  html_document:\n    toc: true\n    toc_depth: 3\n---\nReparem que em metadados YAML, os espaços contam; isto é, a indentação é necessária!\nA profundidade do sumário diz respeito ao grau do cabeçalho que se deseja atingir, isto é, você deseja que seu sumário liste os cabeçalhos até o segundo grau (== “##”)? Ou até o terceiro grau (==“###”)? Ou até o quarto grau (=“####”) ?\nPara cada uma das respostas acima, teríamos o argumento toc_depth com as seguintes respostas:\ntoc_depth: 2\ntoc_depth: 3\ntoc_depth: 4\nSe não desejarmos o sumário, podemos usar o argumento toc: false ou simplesmente não utilizá-lo.\n\n\nNumerar seções\nVocê pode numerar seções utilizando o argumento number_sections, que habilita a numeração caso seja atribuído o valor true a ele:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: \n  html_document:\n    number_sections: true\n---\nSe você desejar numerar todas as seções, excluindo alguma(s), você pode fazer acrescentar o valor {-} após o cabeçalho que você deseja não numerar. Por exemplo, suponha que a seção # Prefácio não deva ser numerada por você. Você deve fazer então da seguinte maneira:\n# Prefácio {-}\n\n\nReferência cruzada de figuras e tabelas\nFazer referência de figuras e tabelas no texto é um recurso muito útil em qualquer tipo de documento. Porém, este recurso só está disponível no pacote R bookdown (Xie 2025). Logo, será necessário mudar o valor atribuído ao argumento output nos metadados do seu arquivo. Em vez de output: html_document, usaremos output: bookdown::html_document2. Veja abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Ricardinho\ndate: 4 Jun 2024\noutput: bookdown::html_document2\n---\nEm seguida, devemos nos preocupar com a referência em si. Para isso, precisaremos dos itens abaixo:\n\nFiguras ou tabelas deverão possuir uma legenda;\nPedaços de código nomeados, pois esse nome será o código utilizado como identificador da referência.\n\nA referência cruzada é feita por meio da seguinte notação:\n\n\\@ref(tipo:codigo)\n\nem que tipo se refere à figura fig ou tabela tab, e codigo se refere ao codigo identificador do pedaço de código em que faremos a inserção da figura ou tabela.\nPara ficar mais claro, vejam o exemplo abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nsubtitle: \"Aqui vai o subtítulo\"\nauthor: Ricardinho\ndate: 4 Jun 2024\n# documentclass: book\noutput: \n  bookdown::pdf_document2:\n    toc: true\n    # includes:\n    #   in_header: \"header.tex\"\n    #   before_body: \"before-body.tex\"\n  # bookdown::word_document2:\n  #   reference_docx: modelo.docx\n  #   theme: cerulean\n  #   fig_width: 12\n  #   fig_height: 10\n# lof: yes\n# lot: yes\nbibliography: minhaprimeiraref.bib\ncsl: associacao-brasileira-de-normas-tecnicas.csl\n---\n\n```{r, echo=FALSE, eval=TRUE, message=FALSE}\nlibrary(\"knitr\")\nvariavel1 &lt;- 5+2\nvariavel2 &lt;- variavel1 +2\n\nlibrary(\"dplyr\")\n\nexemplinho &lt;- read.table(\"exemplinho.csv\", sep = \",\", header = TRUE)\n```\n\n\\newpage\n\n```{r, echo=FALSE, eval=FALSE}\n1+1+1+1+1+2\n```\n\n\n```{r}\n#| echo: true\n#| eval: false\n#| include: false\n#| message: false\n#| warning: false\n5+2\n```\n\n# Introdução\n\n## Subintrodução\n\nAqui está a variável 1: `r variavel1`.  \n\n\nAqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  \n\nVejam a figura \\@ref(fig:fig1).  \n\n```{r fig1, fig.cap = \"Aqui vai a legenda das figuras.\", out.width=\"120%\"}\nplot(mtcars)\n```\n\nOlha a fotinha \\@ref(fig:fotinha).  \n\n```{r fotinha, fig.cap= \"Fotinha\", out.width=\"50%\"}\n#| echo: false\nknitr::include_graphics(\"fotinha.JPG\")\n```\n\n```{r}\nmagick::image_read(\"../fotinha.JPG\") |&gt; \n  magick::image_scale(\"x700\")\n```\n\n\nA tabela \\@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  \n\n```{r minha-tabela}\nknitr::kable(head(mtcars), caption = \"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable\")\n```\n\n\n\n# Material e métodos\n\nAqui eu discorro sobre os métodos utilizados para responder minhas perguntas.  \n\nUma lista de refs [@Xieetal2020;@Yaoetal2024].  \n\n\n## Localidades\n\n## Análise de dados\n\n```{r, echo=FALSE, warning=FALSE}\nlibrary(\"palmerpenguins\")\nlibrary(\"ggplot2\")\nggplot(penguins) +\n  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  theme_bw()\n\n```\n\n# Resultados\n\n## Genética\n\n### ddradSEQ\n\n## Morfologia\n\nReunimos um conjunto de `r nrow(mtcars)` observações e `r ncol(mtcars)` variáveis.  \n\n```{r}\nmtcars2 &lt;- dplyr::bind_rows(mtcars, mtcars)\n```\n\nNa série temporal do ano de 2019, houve `r nrow(mtcars2)` observações e `r ncol(mtcars2)` variáveis para estimar o traço funcional do solo papapa.  \n\nA tabela \\@ref(tab:tab2) evidencia as seis primeiras linhas de nosso conjunto de dados.  \n\n```{r tab2}\n#| echo: false\ndados = read.table(\"exemplinho.csv\", header = TRUE, sep = \",\")\nknitr::kable(dados, caption = \"Seis primeiras linhas do conjunto de dados iris.\")\n```\n\nColetamos `r length(unique(dados$Species))` espécies diferentes.  \n\nAs espécies coletadas foram `r glue::glue_collapse(x = sort(unique(dados$Species)), sep = \", \", last = \" e \")`.  \n\n`r 1+1`\n\n| Nome    | Altura |\n|---------|--------|\n| Lysne   | `r 1+1`|\n| Luciana | `r 1+2`|\n| Rhaylla | 1,68   |\n| José    | 1,82   |\n| Sylvio  | 1,73   |\n| Carlos  | 1,75   |\n| Ricardo | 1,79   |\n\n: https://www.tablesgenerator.com/\n\n\n# Referências\nPara mais possibilidades, veja a seção Update the date automatically do livro Rmarkdown cookbook (Xie, Dervieux, e Riederer 2020).\n\n\nAparência\nPor meio do argumento theme dentro do YAML, podemos controlar a aparência de seu arquivo HTML. Possíveis valores incluem:\n\ndefault, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti\n\nTeste cada uma dessas possibilidades e veja como fica a aparência de seu produto. Para testar, escreva dessa maneira no seu YAML, substituindo após theme: por cada uma das possibilidades acima:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guguinha\noutput: \n  html_document:\n    theme: journal\n---\nPodemos mudar também a aparência dos pedaços de códigos em nossos produtos. Suponha que eu possua o código abaixo:\n\n1 + 1\n\n[1] 2\n\n\nComo ele vai aparecer no produto final?\nNós controlamos essa variável por meio do argumento highlight. As opções disponíveis incluem:\n\ndefault, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate\n\nTeste as opções acima em seu YAML escrevendo como abaixo:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guguinha\noutput: \n  html_document:\n    highlight: espresso\n---",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos</span>"
     ]
   },
   {
-    "objectID": "05_output.html#pdf",
-    "href": "05_output.html#pdf",
-    "title": "Tipos de produtos (=‘Output’)",
+    "objectID": "05_output.html#sec-pdf",
+    "href": "05_output.html#sec-pdf",
+    "title": "Tipos de produtos",
     "section": "PDF",
-    "text": "PDF\nO formato PDF possui opções não disponíveis para outros formatos, já que é o LaTeX que controla o produto final. Do que já vimos até então, as opções Acrescentar sumário, Numerar seções, Referência cruzada de figuras e tabelas e Controle de figuras também são válidas no PDF.\n\n\n\n\n\nAllaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2024. rmarkdown: Dynamic Documents for R. https://github.com/rstudio/rmarkdown.\n\n\nXie, Yihui. 2014. «knitr: A Comprehensive Tool for Reproducible Research in R». Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2025. bookdown: Authoring Books and Technical Documents with R Markdown. https://github.com/rstudio/bookdown.\n\n\nXie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
+    "text": "PDF\nO formato PDF possui opções não disponíveis para outros formatos, já que é o LaTeX que controla o produto final. Do que já vimos até então, as opções Acrescentar sumário, Numerar seções, Referência cruzada de figuras e tabelas e Controle de figuras também são válidas no PDF.\n\n\n\n\n\nAllaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2024. rmarkdown: Dynamic Documents for R. https://github.com/rstudio/rmarkdown.\n\n\nXie, Yihui. 2025. bookdown: Authoring Books and Technical Documents with R Markdown. https://github.com/rstudio/bookdown.\n\n\nXie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. R Markdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos (='Output')</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Tipos de produtos</span>"
+    ]
+  },
+  {
+    "objectID": "055_controle_codigos.html",
+    "href": "055_controle_codigos.html",
+    "title": "Controle de opções em pedaços de códigos",
+    "section": "",
+    "text": "Exibição do código\nQuando utilizamos códigos R ou de qualquer outra linguagem passível de ser utilizada em documentos Rmd, temos a opção de controlar como esse código será processado durante a compilação. O responsável por esse controle é o pacote R knitr. Existem mais de 50 controles possíveis, dos quais apresentamos apenas os principais [a meu humilde ver] abaixo.\nOs códigos escritos nas diversas linguagens possíveis de serem utilizadas em arquivos Rmd podem ser controlados quanto à exibição no produto final e também quanto aos efeitos dos códigos. Exemplificarei alguns dos argumentos mais utilizados:",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Controle de opções em pedaços de códigos</span>"
+    ]
+  },
+  {
+    "objectID": "055_controle_codigos.html#sec-exibicao",
+    "href": "055_controle_codigos.html#sec-exibicao",
+    "title": "Controle de opções em pedaços de códigos",
+    "section": "",
+    "text": "echo\neval\ninclude\nmessage\nwarning\n\n# echo\n```{r echo = FALSE}\nlibrary(\"MASS\")\n```\n# eval\n```{r eval = FALSE}\nplot(long, lat, data = coordenadas)\n```\n# include\n```{r include = FALSE}\nlibrary(\"dplyr\")\nlibrary(\"purrr\")\nlibrary(\"vegan\")\n```\n# message\n```{r message = FALSE}\nlibrary(\"dplyr\")\nlibrary(\"purrr\")\nlibrary(\"vegan\")\n```\n# warning\n```{r warning = FALSE}\nlibrary(\"palmerpenguins\")\nlibrary(\"ggplot2\")\n\nggplot(penguins) +\n  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  theme_bw()\n```",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Controle de opções em pedaços de códigos</span>"
+    ]
+  },
+  {
+    "objectID": "055_controle_codigos.html#sec-controlefigs",
+    "href": "055_controle_codigos.html#sec-controlefigs",
+    "title": "Controle de opções em pedaços de códigos",
+    "section": "Controle de figuras",
+    "text": "Controle de figuras\nPodemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:\n\nfig_width e fig_height controlam, respectivamente, a largura e altura da imagem;\nfig_caption controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis true ou false)\ndev controla qual dispositivo deve compilar as figuras, isto é, se pdf, png, ou outros (padrão é o png).\n\nVejam possibilidades abaixo e testem em seus arquivos:\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guerreira Luaninha\ndate: 4 Jun 2024\noutput: \n  html_document:\n    fig_width: 7\n    fig_height: 6\n    fig_caption: true\n---\nOutra maneira de controlar a aparência das figuras é por meio de argumentos dentro dos pedaços de código. Os argumentos disponíveis são escritos de maneira parecida com os argumentos utilizados no YAML, porém diferem quanto à inserção de um ponto (.) no lugar do subtraço (_). As opções mais populares são:\n\nfig.height e fig.width, que determinam a altura e a largura da figura em polegadas, respectivamente. Os valores devem ser numéricos. Exemplo: fig.width = 8, fig.height = 4.\nfig.dim que combina a largura e a altura da figura, respectivamente, na mesma função, também expressa em polegadas. Exemplo: fig.dim = c(8, 4) é o mesmo que `fig.width = 8, fig.height = 4.\nfig.cap, que determina a legenda da figura. Deve apresentar sempre o texto que se deseja colocar entre aspas. Exemplo: fig.cap = \"Essa é a legenda de minha figura.\".\nout.width e out.height, que expressa o tamanho da imagem no produto final, cujos valores são expressos em porcentagens, “50%”, “70%” etc. Exemplo: out.width = \"50%\", out.height = \"80%\".\n\nExemplos de aplicação desses argumentos são expressos abaixo:\n# Usando fig.width e fig.height\n```{r, fig.width = 12, fig.height = 10, fig.cap=\"Olha a legenda da figura\"}\nknitr::include_graphics(\"fotinha.jpg\")\n```\n# out.width e out.height\n```{r, out.width=\"50%\", out.height = \"50%\"}\nknitr::include_graphics(\"fotinha.jpg\")\n```\n# fig.dim\n```{r, fig.dim = c(12,10)}\nknitr::include_graphics(\"fotinha.jpg\")\n```\nMais opções estão explicadas detalhadamente na seção Plots da página dedicada ao pacote knitr (Xie 2014).",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Controle de opções em pedaços de códigos</span>"
+    ]
+  },
+  {
+    "objectID": "055_controle_codigos.html#listagem-dos-principais-argumentos-disponíveis",
+    "href": "055_controle_codigos.html#listagem-dos-principais-argumentos-disponíveis",
+    "title": "Controle de opções em pedaços de códigos",
+    "section": "Listagem dos principais argumentos disponíveis",
+    "text": "Listagem dos principais argumentos disponíveis\nDisponibilizo abaixo uma lista de argumentos, com suas opções disponíveis e o que cada argumento é responsável. Agrupei-as em torno da ação executada referente ao código: avaliação, resultado, decoração, cache e controle de figuras.\n\nAvaliação do código\n\n\n\n\n\n\n\n\nArgumento\nOpções\nO que faz\n\n\n\n\nchild\nNULL\nUm vetor de nomes de arquivos `.Rmd`. O `knitr` compila esses arquivos e insere seu conteúdo no ponto correspondente do documento principal.\n\n\ncode\nNULL\nPermite substituir o código por outro fornecido como string. Útil para gerar código dinamicamente antes da execução.\n\n\nengine\nNome da linguagem\nDefine a linguagem usada para executar o código. Por padrão é 'R', mas também pode ser 'python', 'bash', 'sql', entre outros.\n\n\neval\nTRUE ou FALSE\nControla se o código deve ou não ser executado durante a renderização.\n\n\ninclude\nTRUE ou FALSE\nSe `FALSE`, o código é executado, mas tanto o código quanto seus resultados são omitidos do documento final.\n\n\npurl\nTRUE ou FALSE\nSe `FALSE`, este pedaço de código será ignorado quando o código for extraído usando `knitr::purl()`.\n\n\n\n\n\n\n\n\n\nResultado\n\n\n\n\n\n\n\n\nArgumento\nOpções\nO que faz\n\n\n\n\ncollapse\nTRUE ou FALSE\nSe `TRUE`, o código-fonte e os resultados gerados pelo pedaço de código serão agrupados em um único bloco no documento final.\n\n\necho\nTRUE ou FALSE\nControla se o código será exibido no documento. Se `FALSE`, o código é ocultado, mas ainda pode ser executado.\n\n\nresults\n'markup', 'hide', 'hold', 'asis'\n'hide': oculta os resultados do código; 'hold': exibe todos os resultados juntos ao final do pedaço; 'asis': insere os resultados diretamente, sem formatação adicional.\n\n\nerror\nTRUE ou FALSE\nSe `TRUE`, mensagens de erro geradas durante a execução do código serão exibidas no documento.\n\n\nmessage\nTRUE ou FALSE\nSe `TRUE`, mensagens informativas (como as de pacotes carregados) serão exibidas no documento.\n\n\nwarning\nTRUE ou FALSE\nSe `TRUE`, mensagens de alerta (warnings) geradas durante a execução do código serão mostradas no documento.\n\n\n\n\n\n\n\n\n\nDecoração\n\n\n\n\n\n\n\n\nArgumento\nOpções\nO que faz\n\n\n\n\ncomment\n'##'\nTexto que será inserido no início de cada linha dos resultados exibidos. Por exemplo, `comment = '##'` prefixa cada linha com '##'.\n\n\nhighlight\nTRUE ou FALSE\nControla se o código será realçado (syntax highlighting) no documento final. Relevante apenas para alguns formatos de saída.\n\n\nprompt\nTRUE ou FALSE\nSe `TRUE`, adiciona o símbolo `'&gt;'` no início de cada linha de código, simulando o prompt interativo do R.\n\n\nstrip.white\nTRUE ou FALSE\nRemove espaços em branco extras no início e/ou no fim do pedaço de código antes de ser exibido.\n\n\ntidy\nTRUE ou FALSE\nOrganiza (indenta) automaticamente o código para deixá-lo mais legível, usando a função `formatR::tidy_source()`.\n\n\n\n\n\n\n\n\n\nCache\n\n\n\n\n\n\n\n\nArgumento\nOpções\nO que faz\n\n\n\n\ncache\nTRUE ou FALSE\n`knitr` armazena os resultados do bloco para reutilizá-los em futuras execuções, desde que o código não mude.\n\n\ncache.comments\nNULL\nSe `FALSE`, comentários não são levados em conta e o pedaço de código não será reexecutado se apenas eles forem alterados.\n\n\ncache.path\n'cache/'\nDiretório onde os resultados do cache serão salvos. Caminho relativo ao arquivo `.Rmd`.\n\n\ncache.vars\nNULL\nPermite indicar nomes específicos de objetos a serem armazenados no cache, ao invés de todos.\n\n\n\n\n\n\n\n\n\nControle de figuras\n\n\n\n\n\n\n\n\nArgumento\nOpções\nO que faz\n\n\n\n\ndev\n'png'\nNome da função gráfica usada para gerar imagens, como `png()` ou `CairoPDF()`.\n\n\ndpi\n72\nDefine a resolução (pontos por polegada) das imagens geradas.\n\n\nfig.align\n'default'\nAlinhamento das figuras no documento final: 'left', 'right' ou 'center'.\n\n\nfig.cap\nNULL\nTexto usado como legenda da figura em LaTeX.\n\n\nfig.ext\nNULL\nExtensão do arquivo de imagem gerado, como 'png' ou 'pdf'.\n\n\nfig.height\n7\nAltura da figura (em polegadas).\n\n\nfig.width\n7\nLargura da figura (em polegadas).\n\n\nfig.pos\n''\nCódigo LaTeX para definir a posição da figura no documento.\n\n\nfig.show\n'asis'\nControla quando e como as figuras são exibidas: 'hide', 'hold', 'animate' ou 'asis'.\n\n\nout.height\nNULL\nAltura final da imagem no documento (pode usar unidades como '50px' ou '8\\linewidth').\n\n\nout.width\nNULL\nLargura final da imagem no documento.\n\n\n\n\n\n\n\n\n\n\n\nXie, Yihui. 2014. «knitr: A Comprehensive Tool for Reproducible Research in R». Em Implementing Reproducible Computational Research, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Controle de opções em pedaços de códigos</span>"
+    ]
+  },
+  {
+    "objectID": "056_funcoes.html",
+    "href": "056_funcoes.html",
+    "title": "Miscelâneas",
+    "section": "",
+    "text": "Atualização de data automática\nUma opção interessante em arquivos Rmd é a possibilidade de usar funções em R nos metadados YAML. Por exemplo, se desejamos que a data seja continuamente atualizada, isto é, se a toda vez que compilamos um arquivos, tivermos o desejo de que a data seja a do dia em que compilamos o mesmo, podemos usar a seguinte notação no argumento date:\n\nauthor: Ricardinho\ndate: “`r Sys.Date()`”\noutput: html_document",
+    "crumbs": [
+      "Introdução ao Rmarkdown",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Miscelâneas</span>"
     ]
   },
   {
@@ -409,7 +475,7 @@
     "text": "Objetivos de aprendizado",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -420,7 +486,7 @@
     "text": "Compreender o que é um gerenciador de bibliografias, quais são suas funcionalidades e utilidades;\nEntender o funcionamento básico do programa JabRef;\nIdentificar e compreender a estrutura básica de um arquivo bib.",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -431,7 +497,7 @@
     "text": "O que é um gerenciador de bibliografias?\nUm gerenciador de bibliografias é uma ferramenta desenvolvida para organizar, armazenar e citar fontes bibliográficas de maneira prática e automatizada. Exemplos populares incluem o JabRef e o Zotero.",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -442,7 +508,7 @@
     "text": "Principais funcionalidades:\n\nArmazenamento e organização de referências (livros, artigos, sites, etc.);\nImportação automática de dados de bases acadêmicas (Google Scholar, Scopus, PubMed etc.);\nGeração de citações e bibliografias em diversos estilos (ABNT, APA, MLA, Chicago etc.);\nIntegração com processadores de texto como MS Word, LibreOffice e LaTeX;\nAnexação de arquivos (como PDFs dos artigos);\nSincronização em nuvem e colaboração em grupo (em alguns softwares, como o Zotero).",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -453,7 +519,7 @@
     "text": "Por que devo aprender a usar um gerenciador de bibliografia como o JabRef ou Zotero?\nAprender a usar um gerenciador de bibliografia como JabRef ou Zotero pode facilitar muito a vida de quem trabalha com pesquisa, escrita acadêmica ou qualquer atividade que envolva o uso frequente de referências. Aqui estão alguns motivos para investir nesse aprendizado:\n\nOrganização eficiente: Em vez de perder tempo tentando lembrar onde você salvou um artigo ou livro, essas ferramentas permitem catalogar suas referências de maneira estruturada e acessível;\nFacilidade na citação: Eles ajudam a gerar citações e bibliografias automaticamente, seguindo diversos estilos como APA, ABNT, MLA, entre outros;\nIntegração com processadores de texto: O Zotero, por exemplo, tem extensões para Word e LibreOffice, permitindo inserir citações diretamente enquanto escreve;\nImportação e sincronização: Você pode importar referências de bases de dados online e sincronizar sua biblioteca entre dispositivos;\nEvita erros: Automatizando a gestão das referências, reduz-se a chance de cometer erros ao formatar a bibliografia manualmente.",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -464,7 +530,7 @@
     "text": "O que é um arquivo .bib\nO arquivo .bib é um arquivo de bibliografia no formato BibTeX, muito usado em conjunto com LaTeX ou Rmarkdown para gerenciar referências bibliográficas de forma automatizada. Esse tipo de arquivo é composto por entradas bibliográficas que descrevem diferentes tipos de fontes, como artigos, livros, teses, capítulos, entre outros. Cada entrada segue um padrão definido pelo tipo de publicação e contém campos específicos com informações como autor, título, ano, editora etc.\nCada entrada de referência em um arquivo .bib começa com o símbolo @, seguido pelo tipo de entrada (por exemplo, @article, @book, @inproceedings, etc.). Logo após, entre chaves {}, está o identificador único da referência (chamado de citation key) — esse identificador será usado para citar essa fonte no corpo do texto de nossos arquivos Rmarkdown. Por exemplo:\n@book{pires2020,\n  author    = {Carlos Pires},\n  title     = {Introdução ao LaTeX},\n  year      = {2020},\n  publisher = {Editora Acadêmica}\n}\nDentro das chaves, cada campo da referência é listado no formato campo = {valor}, separado por vírgulas. Os campos obrigatórios e opcionais variam conforme o tipo da entrada. Por exemplo, @article geralmente exige os campos author, title, journal, year, e volume, enquanto @book pode requerer author, title, year, e publisher. O conteúdo dos campos pode conter texto, números, nomes de autores, e até comandos LaTeX.\nÉ importante manter o formato sintático correto do .bib para que o compilador LaTeX consiga interpretar e gerar as referências corretamente. Um erro comum é esquecer uma vírgula, usar aspas erradas, ou repetir o identificador. Também é recomendável manter nomes de autores no formato “Sobrenome, Nome” para melhor ordenação e apresentação nos estilos bibliográficos.\nAprender a ler e editar arquivos .bib é essencial para quem trabalha com Rmarkdown e deseja ter total controle sobre suas referências. Isso também facilita a integração com gerenciadores como JabRef, que funcionam como uma interface gráfica para editar o arquivo .bib sem mexer diretamente no código. Com a prática, você será capaz de criar, editar e importar referências com facilidade, aumentando a produtividade e a qualidade dos seus trabalhos acadêmicos.",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -475,7 +541,7 @@
     "text": "Exemplos de diferentes tipos de bibliografias em formato .bib\n\n📄 Artigo em Periódico (@article)\n@article{silva2021,\n  author  = {Maria da Silva},\n  title   = {Estudo sobre aprendizado automático},\n  journal = {Revista Brasileira de Computação},\n  year    = {2021},\n  volume  = {15},\n  number  = {2},\n  pages   = {45--60}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -486,7 +552,7 @@
     "text": "📚 Livro (@book)\n@book{pereira2019,\n  author    = {João Pereira},\n  title     = {Fundamentos da Física},\n  year      = {2019},\n  publisher = {Editora Ciência Viva}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -497,7 +563,7 @@
     "text": "📘 Capítulo de Livro (@incollection)\n@incollection{souza2020,\n  author    = {Ana Souza},\n  title     = {Redes Neurais Artificiais},\n  booktitle = {Inteligência Artificial: Teoria e Prática},\n  publisher = {Editora Acadêmica},\n  year      = {2020},\n  pages     = {123--145}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -508,7 +574,7 @@
     "text": "🎓 Tese ou Dissertação (@phdthesis ou @mastersthesis)\n@mastersthesis{almeida2018,\n  author = {Carlos Almeida},\n  title  = {Modelagem Estatística de Séries Temporais},\n  school = {Universidade Federal de Minas Gerais},\n  year   = {2018}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -519,7 +585,7 @@
     "text": "🖥️ Artigo em Conferência (@inproceedings)\n@inproceedings{melo2022,\n  author    = {Fernanda Melo},\n  title     = {Análise de Dados com Python},\n  booktitle = {Anais do Simpósio de Ciência de Dados},\n  year      = {2022},\n  pages     = {80--90}\n}",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -530,7 +596,7 @@
     "text": "Referências úteis\n\nO gerenciador de referências gratuito JabRef;\nGerenciando referências bibliográficas com o JabRef: inserindo referências manualmente;\nReferências bibliográficas usando JabRef e bibtex no LaTeX.",
     "crumbs": [
       "Introdução ao Rmarkdown",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gerenciador de bibliografias e arquivos bib</span>"
     ]
   },
   {
@@ -541,7 +607,7 @@
     "text": "Nota\n\n\n\nLivro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.",
     "crumbs": [
       "Introdução ao Quarto",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>O que é Quarto?</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>O que é Quarto?</span>"
     ]
   },
   {
@@ -551,7 +617,7 @@
     "section": "",
     "text": "Análise exploratória de dados - Conjunto de dados iris\nDisponibilizo abaixo alguns arquivos Rmd que podem auxiliar você a produzir documentos contendo mapas, tabelas e outros, por meio de códigos em R. Pretendo disponibilizar arquivos variados para que eles possam ser mesclados e ajudar o praticante iniciante na produção do que ele desejar.\nDisponível em: /docs/exemplos/aed_iris.Rmd.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -561,7 +627,7 @@
     "section": "",
     "text": "---\ntitle: \"Análise exploratória de dados - iris\"\nauthor: \"Euzinho Euzo Euzão\"\ndate: \"15 Maio 2024\"\n---\n\n```{r, include=FALSE}\n# estafuncao checa se os pacotes em `lista_de_pacotes` estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc\nlista_de_pacotes &lt;- c(\"ggplot2\")\npacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,\"Package\"])]\nif(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}\n```\n\n\n## Análise exploratória de dados\n\nVou analisar o conjunto de dados chamado `iris`.\n\n```{r, echo=FALSE}\nhead(iris, 5)\n```\n\nAqui escrevo mais texto sobre meu conjunto de dados.\n\n### Gráficos\n\n```{r, echo=TRUE}\nlibrary(\"ggplot2\")\niris |&gt; \n  ggplot(aes(Sepal.Length, Sepal.Width)) +\n  geom_point()\n```\n\n\n## Colocarei uma figura localizada em outra pasta\n\nUsarei o caminho relativo.  \n\n![](../../figuras/capa.png)",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -571,7 +637,7 @@
     "section": "Mapa interativo com pacote leaflet",
     "text": "Mapa interativo com pacote leaflet\nDisponível em: /docs/exemplos/mapa1.Rmd.\n---\ntitle: \"Exemplo - Mapa\"\nauthor: \"R. O. Perdiz\"\ndate: \"1 Jan 2024\"\noutput: html_document\n---\n\nUm mapa bonito para compartilhar.\n\n```{r}\nlibrary(\"leaflet\")\nleaflet() |&gt;\n  addTiles() |&gt;\n  setView(-60.691585, 2.834153, zoom = 19)\n```",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -581,7 +647,7 @@
     "section": "Referência cruzada em figuras e tabelas",
     "text": "Referência cruzada em figuras e tabelas\nDisponível em: /docs/exemplos/referencia_cruzada.Rmd.\n---\ntitle: \"Análise exploratória de dados\"\nsubtitle: \"Aqui vai o subtítulo\"\nauthor: Ricardinho\ndate: 4 Jun 2024\n# documentclass: book\noutput: \n  bookdown::pdf_document2:\n    toc: true\n    # includes:\n    #   in_header: \"header.tex\"\n    #   before_body: \"before-body.tex\"\n  # bookdown::word_document2:\n  #   reference_docx: modelo.docx\n  #   theme: cerulean\n  #   fig_width: 12\n  #   fig_height: 10\n# lof: yes\n# lot: yes\nbibliography: minhaprimeiraref.bib\ncsl: associacao-brasileira-de-normas-tecnicas.csl\n---\n\n```{r, echo=FALSE, eval=TRUE, message=FALSE}\nlibrary(\"knitr\")\nvariavel1 &lt;- 5+2\nvariavel2 &lt;- variavel1 +2\n\nlibrary(\"dplyr\")\n\nexemplinho &lt;- read.table(\"exemplinho.csv\", sep = \",\", header = TRUE)\n```\n\n\\newpage\n\n```{r, echo=FALSE, eval=FALSE}\n1+1+1+1+1+2\n```\n\n\n```{r}\n#| echo: true\n#| eval: false\n#| include: false\n#| message: false\n#| warning: false\n5+2\n```\n\n# Introdução\n\n## Subintrodução\n\nAqui está a variável 1: `r variavel1`.  \n\n\nAqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  \n\nVejam a figura \\@ref(fig:fig1).  \n\n```{r fig1, fig.cap = \"Aqui vai a legenda das figuras.\", out.width=\"120%\"}\nplot(mtcars)\n```\n\nOlha a fotinha \\@ref(fig:fotinha).  \n\n```{r fotinha, fig.cap= \"Fotinha\", out.width=\"50%\"}\n#| echo: false\nknitr::include_graphics(\"fotinha.JPG\")\n```\n\n```{r}\nmagick::image_read(\"../fotinha.JPG\") |&gt; \n  magick::image_scale(\"x700\")\n```\n\n\nA tabela \\@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  \n\n```{r minha-tabela}\nknitr::kable(head(mtcars), caption = \"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable\")\n```\n\n\n\n# Material e métodos\n\nAqui eu discorro sobre os métodos utilizados para responder minhas perguntas.  \n\nUma lista de refs [@Xieetal2020;@Yaoetal2024].  \n\n\n## Localidades\n\n## Análise de dados\n\n```{r, echo=FALSE, warning=FALSE}\nlibrary(\"palmerpenguins\")\nlibrary(\"ggplot2\")\nggplot(penguins) +\n  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +\n  theme_bw()\n\n```\n\n# Resultados\n\n## Genética\n\n### ddradSEQ\n\n## Morfologia\n\nReunimos um conjunto de `r nrow(mtcars)` observações e `r ncol(mtcars)` variáveis.  \n\n```{r}\nmtcars2 &lt;- dplyr::bind_rows(mtcars, mtcars)\n```\n\nNa série temporal do ano de 2019, houve `r nrow(mtcars2)` observações e `r ncol(mtcars2)` variáveis para estimar o traço funcional do solo papapa.  \n\nA tabela \\@ref(tab:tab2) evidencia as seis primeiras linhas de nosso conjunto de dados.  \n\n```{r tab2}\n#| echo: false\ndados = read.table(\"exemplinho.csv\", header = TRUE, sep = \",\")\nknitr::kable(dados, caption = \"Seis primeiras linhas do conjunto de dados iris.\")\n```\n\nColetamos `r length(unique(dados$Species))` espécies diferentes.  \n\nAs espécies coletadas foram `r glue::glue_collapse(x = sort(unique(dados$Species)), sep = \", \", last = \" e \")`.  \n\n`r 1+1`\n\n| Nome    | Altura |\n|---------|--------|\n| Lysne   | `r 1+1`|\n| Luciana | `r 1+2`|\n| Rhaylla | 1,68   |\n| José    | 1,82   |\n| Sylvio  | 1,73   |\n| Carlos  | 1,75   |\n| Ricardo | 1,79   |\n\n: https://www.tablesgenerator.com/\n\n\n# Referências",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -591,7 +657,7 @@
     "section": "Aparência",
     "text": "Aparência\nDisponível em: /docs/exemplos/aparencia.Rmd.\n---\ntitle: \"Aparência\"\nauthor: \"Reginaldo\"\ndate: \"`r Sys.Date()`\"\noutput: \n  html_document:\n    theme: spacelab\n    highlight: textmate\n---\n\n\n## Controlando a aparência\n\nPor meio do argumento `theme` dentro do YAML, podemos controlar a aparência de seu arquivo HTML.\nPossíveis valores incluem:\n\n\n&gt; default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti\n\nTeste cada uma dessas possibilidades e veja como fica a aparência de seu produto.\nPara testar, escreva dessa maneira no seu YAML:\n\n```yaml\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guguinha\noutput: \n  html_document:\n    theme: journal\n---\n```\n\n## Como é a aparência do código presente em meu arquivo Rmd?\n\n\nSuponha que eu possua o código abaixo:\n\n```{r}\n1 + 1\n```\n\nComo ele vai aparecer no produto final?  \n\nNós controlamos essa variável por meio do argumento `highlight`.\nAs opções disponíevis incluem:\n\n&gt; default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate\n\nTeste as opções em seu YAML escrevendo como abaixo:\n\n```yaml\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guguinha\noutput: \n  html_document:\n    highlight: espresso\n---\n```",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -601,7 +667,7 @@
     "section": "Controle de figuras",
     "text": "Controle de figuras\nDisponível em: /docs/exemplos/controle_figuras.Rmd.\n---\ntitle: \"Controle de figuras\"\nauthor: Guerreira Luaninha\ndate: 4 Jun 2024\noutput: \n  bookdown::html_document2:\n    fig_width: 10\n    fig_height: 6\n    fig_caption: true\n---\n\nPodemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:\n\n+ `fig_width` e `fig_height` controlam, respectivamente, a largura e altura da imagem;\n\n+ `fig_caption` controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis `true` ou `false`)\n\n+ `dev` controla qual dispositivo deve compilar as figuras, isto é, se `pdf`, `png`, ou outros (padrão é o `png`).  \n\nVejam possibilidades abaixo e testem em seus arquivos:\n\n```yaml\n---\ntitle: \"Análise exploratória de dados\"\nauthor: Guerreira Luaninha\ndate: 4 Jun 2024\noutput: \n  html_document:\n    fig_width: 7\n    fig_height: 6\n    fig_caption: true\n---\n```\n\nVejam a figura \\@ref(fig:fig1).  \n\n```{r fig1, fig.cap = \"Aqui vai a legenda das figuras.\"}\nplot(mtcars)\n```",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -611,7 +677,7 @@
     "section": "Referências bib",
     "text": "Referências bib\nDisponível em: /docs/exemplos/minhaprimeiralistadereferencia.Rmd.\n---\ntitle: \"Minha primeira vez usando arquivo Bib\"\nauthor: \"Mago Joãozinho\"\ndate: \"`r Sys.Date()`\"\noutput: html_document\nbibliography:\n  - minhaprimeiraref.bib\ncsl: associacao-brasileira-de-normas-tecnicas.csl\n---\n\n# Introdução\n\nUm artigo citado de maneira direta, @Cysneirosetal2024.  \n\nUm artigo citado de maneira indireta [@Cysneirosetal2024].  \n\nUm livro [@SenhorasSenhoras2020].  \n\nUma base de dados [@ibge_producaoagricola].  \n\nUm pacote de R [@Xieetal2020].  \n\nR [@R2024].  \n\nUm livro na mão [@Meszaros2009].  \n\nVamos supor que eu queira citar duas referências indiretamente de vez [@Meszaros2009;@R2024].  \n\nDireto @R2024.  \n\nSegundo fulano de tal: \n\n*Essa é uma transcrição literal do que fulano falou* [@Yaoetal2024]  \n\nEu vou citar uma ref do meu arquivo baixado do Web of Science [@Yaoetal2024].  \n\nUma lista de refs [@Paiva_2021;@Xieetal2020;@Yaoetal2024].  \n\n# Referências\nVocê pode baixar também um arquivo .bib como exemplo. Construímos este arquivo em sala de aula:\n\n/docs/exemplos/minhaprimeiraref.bib\n\nTemos também um arquivo csl com normas da ABNT. Baixe-o por meio do endereço abaixo:\n\n/docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modelos de arquivos</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Modelos de arquivos</span>"
     ]
   },
   {
@@ -621,7 +687,7 @@
     "section": "",
     "text": "Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier\nLuraschi, Kevin Ushey, Aron Atkins, et al. 2024. Rmarkdown: Dynamic\nDocuments for r. https://github.com/rstudio/rmarkdown.\n\n\nWickham, Hadley, and Garrett Grolemund. 2017. R\nfor Data Science. Sebastopol, California: O’Reilly Media. https://r4ds.had.co.nz.\n\n\nXie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible\nResearch in R.” In Implementing Reproducible\nComputational Research, edited by Victoria Stodden, Friedrich\nLeisch, and Roger D. Peng. Chapman; Hall/CRC.\n\n\n———. 2015. Dynamic Documents with R and Knitr. 2nd\ned. Boca Raton, Florida: Chapman; Hall/CRC. https://yihui.org/knitr/.\n\n\n———. 2019. “TinyTeX: A Lightweight, Cross-Platform, and\nEasy-to-Maintain LaTeX Distribution Based on TeX Live.”\nTUGboat 40 (1): 30–32. https://tug.org/TUGboat/Contents/contents40-1.html.\n\n\n———. 2025a. Bookdown: Authoring Books and Technical Documents with r\nMarkdown. https://github.com/rstudio/bookdown.\n\n\n———. 2025b. Knitr: A General-Purpose Package for Dynamic Report\nGeneration in r. https://yihui.org/knitr/.\n\n\nXie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. R\nMarkdown Cookbook. Boca Raton, Florida: Chapman; Hall/CRC. https://bookdown.org/yihui/rmarkdown-cookbook.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Referências</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Referências</span>"
     ]
   },
   {

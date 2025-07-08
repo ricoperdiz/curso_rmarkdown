@@ -254,8 +254,8 @@ Para mais exemplos, veja a [seção "Other Languages"](https://bookdown.org/yihu
 
 ## Códigos R em linha ("inline codes")
 
-Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em "code chuncks", podem ser feitos utilizando a notação `r `.
-Inserimos o pedaço de código após a letra `r `, e antes da crase.
+Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em "code chuncks", podem ser feitos utilizando a notação \``{{r}} códigoVaiAqui`\`.
+Inserimos o pedaço de código após a letra \``{{r}} códigoVaiAqui`\`, e antes da crase.
 O resultado será exposto como um texto normal, e não será distinto do texto circundante.
 Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.  
 
@@ -264,7 +264,7 @@ Tomando o conjunto de dados `iris` como exemplo, podemos informar quantas linhas
 ```{python}
 #| echo: false
 #| output: asis
-print("`r nrow(iris)`\n")
+print("\`r nrow(iris)\`\n")
 ```
 
 Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados.
@@ -273,8 +273,8 @@ Vejam:
 ```{python}
 #| echo: false
 #| output: asis
-print("+ Há dados para `r length(unique(iris$Species))` espécies\n")
-print("+ Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.\n")
+print("+ Há dados para \`r length(unique(iris$Species))\` espécies\n")
+print("+ Os dados possuem \`r nrow(iris)\` linhas e \`r ncol(iris)\` colunas.\n")
 ```
 
 ## Tabelas

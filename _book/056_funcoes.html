@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>O que é Quarto? – Introdução ao Rmarkdown e Quarto</title>
+<title>Miscelâneas – Introdução ao Rmarkdown e Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./exemplos.html" rel="next">
-<link href="./06_gerenciador_bib.html" rel="prev">
+<link href="./06_gerenciador_bib.html" rel="next">
+<link href="./055_controle_codigos.html" rel="prev">
 <link href="./figuras/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -75,7 +75,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="O que é Quarto? – Introdução ao Rmarkdown e Quarto">
+<meta property="og:title" content="Miscelâneas – Introdução ao Rmarkdown e Quarto">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:description" content="Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.">
@@ -306,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./0_quarto.html">Introdução ao Quarto</a></li><li class="breadcrumb-item"><a href="./0_quarto.html"><span class="chapter-title">O que é Quarto?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./056_funcoes.html"><span class="chapter-title">Miscelâneas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -377,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./056_funcoes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Miscelâneas</span></a>
+  <a href="./056_funcoes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Miscelâneas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -398,7 +399,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0_quarto.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">O que é Quarto?</span></a>
+  <a href="./0_quarto.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">O que é Quarto?</span></a>
   </div>
 </li>
       </ul>
@@ -418,16 +419,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#atualização-de-data-automática" id="toc-atualização-de-data-automática" class="nav-link active" data-scroll-target="#atualização-de-data-automática">Atualização de data automática</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/edit/main/056_funcoes.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/blob/main/056_funcoes.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./0_quarto.html">Introdução ao Quarto</a></li><li class="breadcrumb-item"><a href="./0_quarto.html"><span class="chapter-title">O que é Quarto?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_instalacao.html">Introdução ao Rmarkdown</a></li><li class="breadcrumb-item"><a href="./056_funcoes.html"><span class="chapter-title">Miscelâneas</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">O que é Quarto?</span></h1>
+<h1 class="title"><span class="chapter-title">Miscelâneas</span></h1>
 </div>
 
 
@@ -444,21 +451,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Livro em construção. Em breve, teremos atualizações. Caso queira deixar um recado, fazer sugestões, entre em contato via email ou deixe seu recado na seção de comentários ao fim desta página.</p>
-</div>
-</div>
+<section id="atualização-de-data-automática" class="level3">
+<h3 class="anchored" data-anchor-id="atualização-de-data-automática">Atualização de data automática</h3>
+<p>Uma opção interessante em arquivos Rmd é a possibilidade de usar funções em R nos metadados YAML. Por exemplo, se desejamos que a data seja continuamente atualizada, isto é, se a toda vez que compilamos um arquivos, tivermos o desejo de que a data seja a do dia em que compilamos o mesmo, podemos usar a seguinte notação no argumento <code>date</code>:</p>
+<hr>
+<p>author: Ricardinho</p>
+<p>date: “`r Sys.Date()`”</p>
+<p>output: html_document</p>
+<hr>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -907,13 +910,13 @@ Nota
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06_gerenciador_bib.html" class="pagination-link" aria-label="Gerenciador de bibliografias e arquivos bib">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Gerenciador de bibliografias e arquivos bib</span></span>
+      <a href="./055_controle_codigos.html" class="pagination-link" aria-label="Controle de opções em pedaços de códigos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Controle de opções em pedaços de códigos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exemplos.html" class="pagination-link" aria-label="Modelos de arquivos">
-        <span class="nav-page-text"><span class="chapter-title">Modelos de arquivos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06_gerenciador_bib.html" class="pagination-link" aria-label="Gerenciador de bibliografias e arquivos bib">
+        <span class="nav-page-text"><span class="chapter-title">Gerenciador de bibliografias e arquivos bib</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -936,7 +939,7 @@ Nota
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/edit/main/0_quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/blob/main/0_quarto.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/edit/main/056_funcoes.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/blob/main/056_funcoes.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -29,6 +29,8 @@ book:
         - 03_sintaxe.qmd
         - 04_compilacao.qmd
         - 05_output.qmd
+        - 055_controle_codigos.qmd
+        - 056_funcoes.qmd
         - 06_gerenciador_bib.qmd
     - part: "Introdução ao Quarto"
       chapters: 
@@ -88,6 +90,8 @@ book:
           - 03_sintaxe.qmd
           - 04_compilacao.qmd
           - 05_output.qmd
+          - 055_controle_codigos.qmd
+          - 056_funcoes.qmd
           - 06_gerenciador_bib.qmd
       - section: "Quarto"
         contents:
