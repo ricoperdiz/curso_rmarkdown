@@ -7,11 +7,16 @@ book:
     - name: "Ricardo de Oliveira Perdiz"
       orcid: "https://orcid.org/0000-0002-2333-6549"
       email: ricoperdiz@gmail.com
+      url: "https://www.ricardoperdiz.com/"
       affiliation:
+        - name: "Professor substituto no Centro de Estudos da Biodiversidade (CBIO), Universidade Federal de Roraima (UFRR)"
+          city: Boa Vista
+          state: RR
+          url: "https://ufrr.br/biologia/"
         - name: "Pós-doutorando no Programa de pós-graduação em Recursos Naturais (PRONAT), Universidade Federal de Roraima (UFRR)"
           city: Boa Vista
           state: RR
-          url: "https://www.ricardoperdiz.com/"
+          url: "https://ufrr.br/pronat/"
   date: last-modified
   date-format: "[Última atualização:] DD/MMM/YYYY"
   cover-image: "figuras/capa.png"
@@ -43,18 +48,14 @@ book:
     creator: "ricoperdiz"
     site: "ricoperdiz"
   site-url: "https://intrormarkdown.netlify.app/"
-  # repo-url: https://github.com/ricoperdiz/curso_rmarkdown/
-  # repo-actions: [edit, issue]
-  # issue-url: https://github.com/ricoperdiz/curso_rmarkdown/issues
-  # Search tools
-  search:
-    location: sidebar
-    type: textbox
-  # Sidebar tools:
-  sidebar:
-    style: "docked"
-    search: true
-    collapse-level: 3
+  issue-url: https://github.com/ricoperdiz/curso_rmarkdown/issues
+  repo-url: https://github.com/ricoperdiz/curso_rmarkdown/
+  repo-actions: [edit, source, issue]
+  
+  navbar: 
+    logo: "figuras/favicon.png"
+    pinned: false
+    # background: "dark"
     tools:
       - icon: github
         menu:
@@ -64,6 +65,36 @@ book:
             href: https://github.com/ricoperdiz/curso_rmarkdown/issues
           - text: Deixe seu comentário
             href: https://github.com/ricoperdiz/curso_rmarkdown/discussions
+  
+  # Search tools
+  search:
+    location: sidebar
+    type: textbox
+  
+  
+  # Sidebar tools:
+  sidebar:
+    style: "docked"
+    search: true
+    collapse-level: 3
+    pinned: true
+    contents:
+      - text: "Prefácio"
+        href: index.qmd
+      - section: "Rmarkdown"
+        contents:
+          - 01_instalacao.qmd
+          - 02_basico.qmd
+          - 03_sintaxe.qmd
+          - 04_compilacao.qmd
+          - 05_output.qmd
+          - 06_gerenciador_bib.qmd
+      - section: "Quarto"
+        contents:
+          - 0_quarto.qmd
+      - exemplos.qmd
+      - referencias.qmd
+  
   page-footer:
     center:
       - text: "Licença"
@@ -86,7 +117,6 @@ book:
         light: "light"
         dark: "dark_dimmed"
       language: pt
-      # strict: true
 
 encoding: "UTF-8"
 
@@ -116,17 +146,19 @@ bibliography:
 
 format:
   html:
-    # toc: true
-    # toc-depth: 3
-    # toc-expand: 2
-    # toc-title: "Conteúdo"
-    # toc-location: left
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-title: "Conteúdo"
+    toc-location: right
     number-sections: false
     # number-depth: 1
     fontsize: 1.1em
+    respect-user-color-scheme: true
     theme: 
-      light: zephyr
-      dark: darkly
+      light: cosmo
+      dark: solar
+    anchor-sections: true
     code-copy: "hover"
     code-overflow: wrap
 
