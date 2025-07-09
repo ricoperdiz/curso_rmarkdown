@@ -1,0 +1,38 @@
+---
+title: "Powerpoint"
+author: Bruninha
+date: 1 Dez 2031
+output: powerpoint_presentation
+---
+
+# Cabeçalho de primeiro grau cria um slide a parte
+
+## Cabeçalho de segundo grau é inserido no topo do slide em uma nova página
+
+- item de lista não numerada
+- outro item
+
+## Quarto slide
+
+- Mais uma lista
+- Outro item
+
+# Mais um slide solitário, como uma quebra de conteúdo
+
+## Outro slide
+
+1. Lista numerada
+2. Outro item
+
+---
+
+O separador `---` pode ser utilizado para separar slides também.  
+
+```{r, cars, fig.cap="Um plot.", echo=FALSE}
+plot(cars)
+```
+
+## Mais outro slide para finalizar
+
+2. Lista numerada
+3. Outro item

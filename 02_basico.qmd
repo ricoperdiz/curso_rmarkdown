@@ -165,9 +165,19 @@ cat(readLines("docs/exemplos/aed_iris.Rmd", n = 5), sep = "\n")
 YAML[^yaml] se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento.
 Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos.
 No exemplo acima, definimos o produto como `html_document`.
-Caso quiséssemos um arquivo no formato `.docx` (ou Word), o output deveria ser modificado para `word_document`.
+Caso quiséssemos um arquivo no formato [DOCX](05_output.qmd#sec-docx) (ou também chamado popularmente de [Word](https://pt.wikipedia.org/wiki/Microsoft_Word)), o _output_ deveria ser modificado para `word_document`.
 Cada formato possui um conjunto de opções disponíveis.
-Nesse caso, é importante consultar a página de cada formato disponível na documentação do Rmd.  
+Nesse caso, é importante consultar as páginas dos pacotes R listados abaixo pois cada um possui funcionalidades específicas para alguns tipos de formatos de arquivos:
+
+* para formatos [PDF], HTML, DOCX e ODT básicos, visitar a página que trata do pacote __Rmarkdown__ [@R-rmarkdown]: <https://bookdown.org/yihui/rmarkdown>;  
+
+* para criar livros com a linguagem, visite a página que trata do pacote __bookdown__ [@R-bookdown]: <https://bookdown.org/yihui/bookdown>;  
+
+* para criar apresentações com a linguagem, visite a página do pacote R __xaringan__ [@R-xaringan]: <https://github.com/yihui/xaringan>;  
+
+* caso as apresentações do pacote R citado anteriormente sejam muito complicadas e você deseje fazer apresentações mais simples, visite a seção de [Apresentações](https://bookdown.org/yihui/rmarkdown/presentations.html) do livro que trata da linguagem como um todo [**R Markdown: The Definitive Guide**: <https://bookdown.org/yihui/rmarkdown/>]. Lá você terá acesso a uma visão geral de diversos pacotes de R que podem gerar apresentações mais simples que as do pacote __xaringan__;  
+
+* para criar documentos DOCX e PPTX com maior número de funcionalidades, busque o pacote __officedown__ [@R-officedown]: <https://ardata-fr.github.io/officeverse/>;  
 
 
 [^yaml]: YAML vem do inglês **Y**AML **A**in’t **M**arkup **L**anguage, que significa *YAML não é uma linguagem de marcação*.  

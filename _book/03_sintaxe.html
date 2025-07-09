@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.15">
+<meta name="generator" content="quarto-1.8.16">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,9 +94,9 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fa280324d2a536d992f3c15d8f2ee39b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f472ab96d2a3c0ccfa9925ee9dc5ed7e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fa280324d2a536d992f3c15d8f2ee39b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-50a6adf84115c145d18121a4a81cbcfe.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b1ccfc91e9a27938a49a770e6131bfa2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -844,22 +844,26 @@ definição
 <p>Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação `<code>{r} códigoVaiAqui</code>`. Inserimos o pedaço de código após a letra `<code>{r} códigoVaiAqui</code>`, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.</p>
 <p>Tomando o conjunto de dados <code>iris</code> como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:</p>
 <p>`r nrow(iris)`</p>
-<p>Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Vejam:</p>
+<p>Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados. Isso é uma estratégia para nos poupar tempo em casos de repetitivos comandos feitos sempre que atualizamos nossos dados. Se deixamos o esqueleto pronto dos cálculos a serem realizados constantemente, não precisamos mais nos preocupar com isso. Vejam:</p>
 <ul>
 <li>Há dados para `r length(unique(iris$Species))` espécies</li>
 <li>Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.</li>
 </ul>
+<p>Ao compilarmos este texto, teríamos o seguinte resultado:</p>
+<pre><code>+ Há dados para 3 espécies
+
++ Os dados possuem 150 linhas e 5 colunas.</code></pre>
 </section>
 <section id="tabelas" class="level2">
 <h2 class="anchored" data-anchor-id="tabelas">Tabelas</h2>
 <p>Tabelas podem ser inclusas de diversas maneiras em documentos com Rmarkdown. A maneira mais comum de incluir tabelas é usar código Markdown. Por exemplo, o código abaixo cria uma tabela:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Var1 <span class="pp">|</span> Var2 <span class="pp">|</span> Nome <span class="pp">|</span> </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|:-----|------:|</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10      <span class="pp">|</span> 9   <span class="pp">|</span>  Joana <span class="pp">|</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 15     <span class="pp">|</span> 7  <span class="pp">|</span>   João <span class="pp">|</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 20       <span class="pp">|</span> 4    <span class="pp">|</span>  Jaci <span class="pp">|</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>: Demonstração de sintaxe de tabela em Markdown</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Var1 <span class="pp">|</span> Var2 <span class="pp">|</span> Nome <span class="pp">|</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|:-----|------:|</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10      <span class="pp">|</span> 9   <span class="pp">|</span>  Joana <span class="pp">|</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 15     <span class="pp">|</span> 7  <span class="pp">|</span>   João <span class="pp">|</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 20       <span class="pp">|</span> 4    <span class="pp">|</span>  Jaci <span class="pp">|</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>: Demonstração de sintaxe de tabela em Markdown</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <caption>Demonstração de sintaxe de tabela em Markdown</caption>
 <thead>
@@ -889,8 +893,8 @@ definição
 </table>
 <p>Outra maneira de criar tabelas é através da importação de arquivos por meio de códigos. Tomemos por exemplo os comandos necessários para importar uma tabela de extensão CSV e dados separados por tabulação (“\t”) contendo informação sopre municípios do Brasil: <a href="https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv" class="uri">https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv</a>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>dad <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dad, <span class="dv">6</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dad <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dad, <span class="dv">6</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Country Province Regiao            Municipio Latitude Longitude
 1  Brasil     Acre  Norte          Mâncio Lima   -7.614   -72.896
@@ -903,7 +907,7 @@ definição
 </div>
 <p>Para deixar a tabela mais elegante visualmente, uma dica é utilizar a função <code>knitr::kable()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dad, <span class="dv">6</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dad, <span class="dv">6</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -973,9 +977,9 @@ definição
 <section id="figuras" class="level2">
 <h2 class="anchored" data-anchor-id="figuras">Figuras</h2>
 <p>A maneira mais simples de inserir uma figura é usando a notação abaixo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Legenda da figura](endereco-da-figura)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Legenda da figura](endereco-da-figura)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A figura pode estar gravada em seu computador, ou pode estar alojada na rede em algum sítio digital. O necessário é que o endereço esteja correto. Por exemplo, a figura “capa.png” está dentro de uma pasta “figuras/” dentro deste projeto. Vou colocá-la abaixo da seguinte maneira:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Capa deste livro](figuras/capa.png)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Capa deste livro](figuras/capa.png)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figuras/capa.png" class="img-fluid figure-img"></p>
@@ -985,7 +989,7 @@ definição
 <p>As figuras inseridas podem ser de diversos formatos: jpeg, png, tiff etc. Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do arquivo. É importante então se atentar para este detalhe.</p>
 <p>Outra maneira de inserir figuras é por meio de funções dentro de <a href="#sec-blococodigo">blocos de código</a>. Vamos incluir uma imagem usando a função <code>knitr::include_graphics()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figuras/capa.png"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figuras/capa.png"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -999,18 +1003,18 @@ definição
 <h2 class="anchored" data-anchor-id="página-nova">Página nova</h2>
 <p>Um comando útil para inserir conteúdo em uma nova página é o comando <code>\newpage</code>. Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.</p>
 <p>Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto. Então, o conteúdo após esse comando iniciará na nova página. Vejam:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Um cabeçalho qualquer</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>Para isso, eu insiro o comando de *nova página* abaixo.  </span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>\newpage</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esse cabeçalho aparecerá em uma nova página</span></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  </span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Um cabeçalho qualquer</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>Para isso, eu insiro o comando de *nova página* abaixo.  </span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>\newpage</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esse cabeçalho aparecerá em uma nova página</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  </span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- ## Parágrafos -->
 <!-- XXX -->
 

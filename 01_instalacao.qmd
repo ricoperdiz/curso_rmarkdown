@@ -7,19 +7,19 @@ aliases:
 
 Este capítulo fornece instruções sobre como instalar os programas necessários para se trabalhar com o *Rmarkdown*.
 Em primeiro lugar, é necessário ter o ambiente R instalado.
-Em seguida, necessitamos de um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, **IDE**; [acesse este link para saber o que é um IDE e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)), que será onde o usuário poderá escrever seus textos.
+Em seguida, necessitamos de um ambiente de desenvolvimento integrado (do inglês *Integrated Development Environment*, *IDE*; [acesse este link para saber o que é um _IDE_ e quais as vantagens de se utilizá-lo](https://www.redhat.com/pt-br/topics/middleware/what-is-ide)), que será onde o usuário poderá escrever seus textos.
 Também deve-se instalar um ambiente LaTeX para poder gerar arquivos em formato *pdf*, e, por fim, deve-se instalar um organizador de bibliografias, *JabRef*, para lidar com arquivos em formato *bib* ([veja aqui o que é um arquivo bib](https://www.reviversoft.com/pt/file-extensions/bib)).  
 
 ## Objetivos de aprendizado
 
-+ Instalar o R e pacotes necessários
-+ Instalar o Rtools
-+ Instalar distribuição LaTeX
-+ Instalar um IDE
-+ Instalar um organizador de bibliografias
++ Instalar o [R e pacotes necessários](#instala-r)
++ Instalar o [Rtools](#sec-rtools)
++ Instalar [distribuição LaTeX](#sec-latex)
++ Instalar um [IDE](#sec-ide)
++ Instalar um organizador[ de bibliografias](#sec-orgabib)
 
 ::: {.callout-tip}
-## Dica de OURO!
+### Dica de OURO!
 __Usuários Windows__, sugiro fortemente que vocês busquem a configuração do sistema para ativar a __VISUALIZAÇÃO DE EXTENSÕES DE ARQUIVOS__
 O que é isso???  
 Isso significa poder ver no Explorador de arquivos que tipo de arquivo você está observando. Por exemplo, arquivos do programa Word terminam geralmente ou em `.doc` ou em `.docx`; arquivos Excel, `.xlsx`; arquivos Rmarkdown, `.rmd`, e assim por diante.
@@ -65,7 +65,7 @@ install.packages("xaringan") # Apresentações
 install.packages("officer") # Produtos Word, Powerpoint, Excel
 ```
 
-### Rtools para usuários Windows
+### Rtools para usuários Windows {#sec-rtools}
 
 Em teoria, não deveria ser necessário instalar o Rtools, um conjunto de ferramentas para compilar pacotes R do código fonte (os pacotes geralmente são instalados a partir do arquivo já compilado, o chamado arquivo binário).
 Porém, já vi pessoas tendo problemas para fazer o Rmarkdown funcionar em função de não conseguirem instalar o pacote `stringi` no Windows.
@@ -88,7 +88,7 @@ Se o R que você possui é a versão 4.4.x, instale o **Rtools** 4.4; se é a ve
 
 4) Após baixar o instalador do **Rtools**, execute o arquivo e siga as instruções do assistente de instalação.  
 
-## Distribuição LaTeX
+## Distribuição LaTeX {#sec-latex}
 
 Para poder gerar um arquivo PDF, é necessário possuir uma distribuição LaTeX no seu sistema.
 A maneira mais fácil de ter uma distribuição LateX atualmente é por meio da instalação do pacote R `tinytex` [@tinytex2019].
@@ -104,10 +104,10 @@ install.packages('tinytex')
 tinytex::install_tinytex()
 ```
 
-## Ambiente de desenvolvimento integrado - IDE
+## Ambiente de desenvolvimento integrado - _IDE_ {#sec-ide}
 
-Recomenda-se que o IDE [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes [rmarkdown](https://github.com/rstudio/rmarkdown) e [bookdown](https://github.com/rstudio/bookdown).
-Ademais, **IDE**s  como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.  
+Recomenda-se que o _IDE_ [RStudio](https://posit.co/download/rstudio-desktop/) seja instalado no seu computador, pois ele melhora a experiência da interação do usuário com os múltiplos recursos oferecidos pela linguagem *Rmarkdown*, em especial os inúmeros pacotes desenvolvidos por funcionários desta empresa, os pacotes [rmarkdown](https://github.com/rstudio/rmarkdown) e [bookdown](https://github.com/rstudio/bookdown).
+Ademais, *IDE*s  como este software têm o objetivo de prover ao usuário mais ferramentas na interação entre o código e o resultado da execução do código, além de facilitar o uso de ferramentas alternativas para construção de texto mesclado com códigos (e.g., LaTeX, Markdown etc), o que permite uma dinamicidade na construção de textos acadêmicos.  
 
 1) Acesse o site da [RStudio](https://posit.co/download/rstudio-desktop/) (@fig-rstudio) e baixe a versão mais recente do RStudio Desktop para o seu sistema operacional;
 
@@ -120,7 +120,7 @@ Ademais, **IDE**s  como este software têm o objetivo de prover ao usuário mais
 knitr::include_graphics("figuras/rstudio.png")
 ```
 
-Existem outras alternativas de **IDE**.
+Existem outras alternativas de *IDE*.
 Fique à vontade para escolher.
 Listo algumas alternativas abaixo:
 
@@ -132,10 +132,10 @@ Listo algumas alternativas abaixo:
 
 + Rkward - [https://rkward.kde.org/Download_RKWard.html](https://rkward.kde.org/Download_RKWard.html)
 
-## Organizador de bibliografias
+## Organizador de bibliografias {#sec-orgabib}
 
 Existem vários organizadores de bibliografia.
-Eu utilizo o JabRef.
+Eu utilizo o [JabRef](https://www.jabref.org/#downloads).
 Caso você já faça uso de um e consiga gerar arquivos [bib](https://www.reviversoft.com/pt/file-extensions/bib?alid=120423556.1719964778), ótimo.
 Prossiga nele!
 
@@ -159,7 +159,7 @@ Abaixo, segue um vídeo do [\@cursodelatex](https://www.youtube.com/@cursodelate
 ## Pandoc
 
 ::: {.callout-warning}
-Caso o usuário tenha optado por utilizar um IDE **diferente** do RStudio, será necessária a instalação do *Pandoc*.  
+Caso o usuário tenha optado por utilizar um _IDE_ **diferente** do RStudio, será necessária a instalação do *Pandoc*.  
 :::
 
 1) Visite o site oficial do [Pandoc](https://pandoc.org/installing.html) (@fig-pandoc) e encontre as instruções de instalação específicas para o seu sistema operacional;
@@ -174,7 +174,7 @@ Caso o usuário tenha optado por utilizar um IDE **diferente** do RStudio, será
 knitr::include_graphics("figuras/pandoc.png")
 ```
 
-# Verificação da instalação
+## Verificação da instalação
 
 Após a conclusão das instalações, você pode verificar se já está apto a escrever em Rmd se o procedimento abaixo funcionar.
 Caso não funcione, cheque se o passo a passo acima foi seguido corretamente, cheque as mensagens que o computador informa.

@@ -22,7 +22,7 @@ Isso compilará o arquivo Rmd, executando o código (se presente!) e incorporand
 
 ![Botão "Knit" destacado com um retângulo verde. Este botão está localizado em uma barra abaixo dos nomes de arquivos abertos dentro do RStudio. Clicando neste botão, você compila o arquivo para o formato especificado no próprio arquivo. Caso clique em uma seta ao lado do nome "Knit", outras opções de formato final são apresentadas, como mostra esta figura.](figuras/botao_knit.png){#fig-botaoknit}
 
-### Linha de comando
+### Linha de comando {#sec-compilacomando}
 
 Para compilar um arquivo Rmd usando a linha de comando, você pode usar o seguinte comando no console do R:
 

@@ -268,6 +268,7 @@ print("\`r nrow(iris)\`\n")
 ```
 
 Ou então, podemos deixar escrito em nosso arquivo comandos específicos de cálculos de determinadas viaráveis para que os valores estejam sempre de acordo com nosso conjunto de dados.
+Isso é uma estratégia para nos poupar tempo em casos de repetitivos comandos feitos sempre que atualizamos nossos dados. Se deixamos o esqueleto pronto dos cálculos a serem realizados constantemente, não precisamos mais nos preocupar com isso. 
 Vejam:
 
 ```{python}
@@ -276,6 +277,15 @@ Vejam:
 print("+ Há dados para \`r length(unique(iris$Species))\` espécies\n")
 print("+ Os dados possuem \`r nrow(iris)\` linhas e \`r ncol(iris)\` colunas.\n")
 ```
+
+Ao compilarmos este texto, teríamos o seguinte resultado:  
+
+```
++ Há dados para `r length(unique(iris$Species))` espécies
+
++ Os dados possuem `r nrow(iris)` linhas e `r ncol(iris)` colunas.
+```
+
 
 ## Tabelas
 

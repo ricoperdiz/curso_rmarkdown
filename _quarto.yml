@@ -159,12 +159,11 @@ format:
     # number-depth: 1
     fontsize: 1.1em
     respect-user-color-scheme: true
+    code-line-numbers: false
+    code-overflow: wrap
+    code-copy: "hover"
+    anchor-sections: true
     theme: 
       light: cosmo
       dark: solar
-    anchor-sections: true
-    code-copy: "hover"
-    code-overflow: wrap
-
-# editor: visual
 

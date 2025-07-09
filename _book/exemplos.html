@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.15">
+<meta name="generator" content="quarto-1.8.16">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,9 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fa280324d2a536d992f3c15d8f2ee39b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f472ab96d2a3c0ccfa9925ee9dc5ed7e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fa280324d2a536d992f3c15d8f2ee39b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-50a6adf84115c145d18121a4a81cbcfe.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b1ccfc91e9a27938a49a770e6131bfa2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -495,374 +495,1146 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="análise-exploratória-de-dados---conjunto-de-dados-iris" class="level2">
 <h2 class="anchored" data-anchor-id="análise-exploratória-de-dados---conjunto-de-dados-iris">Análise exploratória de dados - Conjunto de dados <code>iris</code></h2>
 <p>Disponível em: <a href=".\docs/exemplos/aed_iris.Rmd">/docs/exemplos/aed_iris.Rmd</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados - iris"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Euzinho Euzo Euzão"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "15 Maio 2024"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include=FALSE}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># estafuncao checa se os pacotes em `lista_de_pacotes` estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>lista_de_pacotes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pacote_nao_instalado <span class="ot">&lt;-</span> lista_de_pacotes[<span class="sc">!</span>(lista_de_pacotes <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>])]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(pacote_nao_instalado)) {<span class="fu">install.packages</span>(pacote_nao_instalado)}</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análise exploratória de dados</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Vou analisar o conjunto de dados chamado <span class="in">`iris`</span>.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">5</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráficos</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=TRUE}</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">|&gt;</span> </span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width)) <span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colocarei uma figura localizada em outra pasta</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Usarei o caminho relativo.  </span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="al">![](../../figuras/capa.png)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados - iris"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">author:</span><span class="co"> "Euzinho Euzo Euzão"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="an">date:</span><span class="co"> "15 Maio 2024"</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="in">```{r, include=FALSE}</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># estafuncao checa se os pacotes em `lista_de_pacotes` estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>lista_de_pacotes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>pacote_nao_instalado <span class="ot">&lt;-</span> lista_de_pacotes[<span class="sc">!</span>(lista_de_pacotes <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>])]</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="cf">if</span>(<span class="fu">length</span>(pacote_nao_instalado)) {<span class="fu">install.packages</span>(pacote_nao_instalado)}</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="in">```</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="fu">## Análise exploratória de dados</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>Vou analisar o conjunto de dados chamado <span class="in">`iris`</span>.</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="fu">head</span>(iris, <span class="dv">5</span>)</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="in">```</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
+<span id="cb1-24"><a href="#cb1-24"></a></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">### Gráficos</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="in">```{r, echo=TRUE}</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29"></a>iris <span class="sc">|&gt;</span> </span>
+<span id="cb1-30"><a href="#cb1-30"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sepal.Length, Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="in">```</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a></span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="fu">## Colocarei uma figura localizada em outra pasta</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a>Usarei o caminho relativo.  </span>
+<span id="cb1-38"><a href="#cb1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="al">![](../../figuras/capa.png)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="mapa-interativo-com-pacote-leaflet" class="level2">
 <h2 class="anchored" data-anchor-id="mapa-interativo-com-pacote-leaflet">Mapa interativo com pacote <code>leaflet</code></h2>
 <p>Disponível em: <a href=".\docs/exemplos/mapa1.Rmd">/docs/exemplos/mapa1.Rmd</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exemplo - Mapa"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "R. O. Perdiz"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "1 Jan 2024"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Um mapa bonito para compartilhar.</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"leaflet"</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setView</span>(<span class="sc">-</span><span class="fl">60.691585</span>, <span class="fl">2.834153</span>, <span class="at">zoom =</span> <span class="dv">19</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Exemplo - Mapa"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">author:</span><span class="co"> "R. O. Perdiz"</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="an">date:</span><span class="co"> "1 Jan 2024"</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">---</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a>Um mapa bonito para compartilhar.</span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="in">```{r}</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="fu">library</span>(<span class="st">"leaflet"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>  <span class="fu">setView</span>(<span class="sc">-</span><span class="fl">60.691585</span>, <span class="fl">2.834153</span>, <span class="at">zoom =</span> <span class="dv">19</span>)</span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="referência-cruzada-em-figuras-e-tabelas" class="level2">
 <h2 class="anchored" data-anchor-id="referência-cruzada-em-figuras-e-tabelas">Referência cruzada em figuras e tabelas</h2>
 <p>Disponível em: <a href=".\docs/exemplos/referencia_cruzada.Rmd">/docs/exemplos/referencia_cruzada.Rmd</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Aqui vai o subtítulo"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Ricardinho</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># documentclass: book</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">  bookdown::pdf_document2:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">    # includes:</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    #   in_header: "header.tex"</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    #   before_body: "before-body.tex"</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">  # bookdown::word_document2:</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">  #   reference_docx: modelo.docx</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">  #   theme: cerulean</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">  #   fig_width: 12</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">  #   fig_height: 10</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># lof: yes</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># lot: yes</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> minhaprimeiraref.bib</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> associacao-brasileira-de-normas-tecnicas.csl</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, eval=TRUE, message=FALSE}</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"knitr"</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>variavel1 <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>variavel2 <span class="ot">&lt;-</span> variavel1 <span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>exemplinho <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"exemplinho.csv"</span>, <span class="at">sep =</span> <span class="st">","</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>\newpage</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, eval=FALSE}</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introdução</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subintrodução</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>Aqui está a variável 1: <span class="in">`r variavel1`</span>.  </span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  </span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>Vejam a figura \@ref(fig:fig1).  </span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras.", out.width="120%"}</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars)</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>Olha a fotinha \@ref(fig:fotinha).  </span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fotinha, fig.cap= "Fotinha", out.width="50%"}</span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"fotinha.JPG"</span>)</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>magick<span class="sc">::</span><span class="fu">image_read</span>(<span class="st">"../fotinha.JPG"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>  magick<span class="sc">::</span><span class="fu">image_scale</span>(<span class="st">"x700"</span>)</span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  </span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r minha-tabela}</span></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(mtcars), <span class="at">caption =</span> <span class="st">"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable"</span>)</span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="fu"># Material e métodos</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>Aqui eu discorro sobre os métodos utilizados para responder minhas perguntas.  </span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>Uma lista de refs <span class="co">[</span><span class="ot">@Xieetal2020;@Yaoetal2024</span><span class="co">]</span>.  </span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Localidades</span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análise de dados</span></span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, warning=FALSE}</span></span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"palmerpenguins"</span>)</span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="fu"># Resultados</span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Genética</span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### ddradSEQ</span></span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## Morfologia</span></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>Reunimos um conjunto de <span class="in">`r nrow(mtcars)`</span> observações e <span class="in">`r ncol(mtcars)`</span> variáveis.  </span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>mtcars2 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(mtcars, mtcars)</span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>Na série temporal do ano de 2019, houve <span class="in">`r nrow(mtcars2)`</span> observações e <span class="in">`r ncol(mtcars2)`</span> variáveis para estimar o traço funcional do solo papapa.  </span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>A tabela \@ref(tab:tab2) evidencia as seis primeiras linhas de nosso conjunto de dados.  </span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r tab2}</span></span>
-<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"exemplinho.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>)</span>
-<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">caption =</span> <span class="st">"Seis primeiras linhas do conjunto de dados iris."</span>)</span>
-<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>Coletamos <span class="in">`r length(unique(dados$Species))`</span> espécies diferentes.  </span>
-<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>As espécies coletadas foram <span class="in">`r glue::glue_collapse(x = sort(unique(dados$Species)), sep = ", ", last = " e ")`</span>.  </span>
-<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="in">`r 1+1`</span></span>
-<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Nome    <span class="pp">|</span> Altura <span class="pp">|</span></span>
-<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|--------|</span></span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lysne   <span class="pp">|</span> <span class="in">`r 1+1`</span><span class="pp">|</span></span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Luciana <span class="pp">|</span> <span class="in">`r 1+2`</span><span class="pp">|</span></span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Rhaylla <span class="pp">|</span> 1,68   <span class="pp">|</span></span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> José    <span class="pp">|</span> 1,82   <span class="pp">|</span></span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sylvio  <span class="pp">|</span> 1,73   <span class="pp">|</span></span>
-<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Carlos  <span class="pp">|</span> 1,75   <span class="pp">|</span></span>
-<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Ricardo <span class="pp">|</span> 1,79   <span class="pp">|</span></span>
-<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>: https://www.tablesgenerator.com/</span>
-<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referências</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="an">title:</span><span class="co"> "Análise exploratória de dados"</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="an">subtitle:</span><span class="co"> "Aqui vai o subtítulo"</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="an">author:</span><span class="co"> Ricardinho</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># documentclass: book</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">  bookdown::pdf_document2:</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">    toc: true</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">    # includes:</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">    #   in_header: "header.tex"</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">    #   before_body: "before-body.tex"</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">  # bookdown::word_document2:</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">  #   reference_docx: modelo.docx</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">  #   theme: cerulean</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co">  #   fig_width: 12</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">  #   fig_height: 10</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co"># lof: yes</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co"># lot: yes</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="an">bibliography:</span><span class="co"> minhaprimeiraref.bib</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="an">csl:</span><span class="co"> associacao-brasileira-de-normas-tecnicas.csl</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">---</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="in">```{r, echo=FALSE, eval=TRUE, message=FALSE}</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="fu">library</span>(<span class="st">"knitr"</span>)</span>
+<span id="cb3-26"><a href="#cb3-26"></a>variavel1 <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a>variavel2 <span class="ot">&lt;-</span> variavel1 <span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30"></a></span>
+<span id="cb3-31"><a href="#cb3-31"></a>exemplinho <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"exemplinho.csv"</span>, <span class="at">sep =</span> <span class="st">","</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-32"><a href="#cb3-32"></a><span class="in">```</span></span>
+<span id="cb3-33"><a href="#cb3-33"></a></span>
+<span id="cb3-34"><a href="#cb3-34"></a>\newpage</span>
+<span id="cb3-35"><a href="#cb3-35"></a></span>
+<span id="cb3-36"><a href="#cb3-36"></a><span class="in">```{r, echo=FALSE, eval=FALSE}</span></span>
+<span id="cb3-37"><a href="#cb3-37"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb3-38"><a href="#cb3-38"></a><span class="in">```</span></span>
+<span id="cb3-39"><a href="#cb3-39"></a></span>
+<span id="cb3-40"><a href="#cb3-40"></a></span>
+<span id="cb3-41"><a href="#cb3-41"></a><span class="in">```{r}</span></span>
+<span id="cb3-42"><a href="#cb3-42"></a><span class="co">#| echo: true</span></span>
+<span id="cb3-43"><a href="#cb3-43"></a><span class="co">#| eval: false</span></span>
+<span id="cb3-44"><a href="#cb3-44"></a><span class="co">#| include: false</span></span>
+<span id="cb3-45"><a href="#cb3-45"></a><span class="co">#| message: false</span></span>
+<span id="cb3-46"><a href="#cb3-46"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-47"><a href="#cb3-47"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb3-48"><a href="#cb3-48"></a><span class="in">```</span></span>
+<span id="cb3-49"><a href="#cb3-49"></a></span>
+<span id="cb3-50"><a href="#cb3-50"></a><span class="fu"># Introdução</span></span>
+<span id="cb3-51"><a href="#cb3-51"></a></span>
+<span id="cb3-52"><a href="#cb3-52"></a><span class="fu">## Subintrodução</span></span>
+<span id="cb3-53"><a href="#cb3-53"></a></span>
+<span id="cb3-54"><a href="#cb3-54"></a>Aqui está a variável 1: <span class="in">`r variavel1`</span>.  </span>
+<span id="cb3-55"><a href="#cb3-55"></a></span>
+<span id="cb3-56"><a href="#cb3-56"></a></span>
+<span id="cb3-57"><a href="#cb3-57"></a>Aqui eu tenho um texto introdutório sobre minha análise exploratória de dados (AED) referentes a carros.  </span>
+<span id="cb3-58"><a href="#cb3-58"></a></span>
+<span id="cb3-59"><a href="#cb3-59"></a>Vejam a figura \@ref(fig:fig1).  </span>
+<span id="cb3-60"><a href="#cb3-60"></a></span>
+<span id="cb3-61"><a href="#cb3-61"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras.", out.width="120%"}</span></span>
+<span id="cb3-62"><a href="#cb3-62"></a><span class="fu">plot</span>(mtcars)</span>
+<span id="cb3-63"><a href="#cb3-63"></a><span class="in">```</span></span>
+<span id="cb3-64"><a href="#cb3-64"></a></span>
+<span id="cb3-65"><a href="#cb3-65"></a>Olha a fotinha \@ref(fig:fotinha).  </span>
+<span id="cb3-66"><a href="#cb3-66"></a></span>
+<span id="cb3-67"><a href="#cb3-67"></a><span class="in">```{r fotinha, fig.cap= "Fotinha", out.width="50%"}</span></span>
+<span id="cb3-68"><a href="#cb3-68"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-69"><a href="#cb3-69"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"fotinha.JPG"</span>)</span>
+<span id="cb3-70"><a href="#cb3-70"></a><span class="in">```</span></span>
+<span id="cb3-71"><a href="#cb3-71"></a></span>
+<span id="cb3-72"><a href="#cb3-72"></a><span class="in">```{r}</span></span>
+<span id="cb3-73"><a href="#cb3-73"></a>magick<span class="sc">::</span><span class="fu">image_read</span>(<span class="st">"../fotinha.JPG"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-74"><a href="#cb3-74"></a>  magick<span class="sc">::</span><span class="fu">image_scale</span>(<span class="st">"x700"</span>)</span>
+<span id="cb3-75"><a href="#cb3-75"></a><span class="in">```</span></span>
+<span id="cb3-76"><a href="#cb3-76"></a></span>
+<span id="cb3-77"><a href="#cb3-77"></a></span>
+<span id="cb3-78"><a href="#cb3-78"></a>A tabela \@ref(tab:minha-tabela) expõe as primeiras 6 linhas do conjunto de dados 'mtcars'.  </span>
+<span id="cb3-79"><a href="#cb3-79"></a></span>
+<span id="cb3-80"><a href="#cb3-80"></a><span class="in">```{r minha-tabela}</span></span>
+<span id="cb3-81"><a href="#cb3-81"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(mtcars), <span class="at">caption =</span> <span class="st">"Aqui vai a legenda de tabelas, isto é, dentro do argumento 'caption' da função knitr::kable"</span>)</span>
+<span id="cb3-82"><a href="#cb3-82"></a><span class="in">```</span></span>
+<span id="cb3-83"><a href="#cb3-83"></a></span>
+<span id="cb3-84"><a href="#cb3-84"></a></span>
+<span id="cb3-85"><a href="#cb3-85"></a></span>
+<span id="cb3-86"><a href="#cb3-86"></a><span class="fu"># Material e métodos</span></span>
+<span id="cb3-87"><a href="#cb3-87"></a></span>
+<span id="cb3-88"><a href="#cb3-88"></a>Aqui eu discorro sobre os métodos utilizados para responder minhas perguntas.  </span>
+<span id="cb3-89"><a href="#cb3-89"></a></span>
+<span id="cb3-90"><a href="#cb3-90"></a>Uma lista de refs <span class="co">[</span><span class="ot">@Xieetal2020;@Yaoetal2024</span><span class="co">]</span>.  </span>
+<span id="cb3-91"><a href="#cb3-91"></a></span>
+<span id="cb3-92"><a href="#cb3-92"></a></span>
+<span id="cb3-93"><a href="#cb3-93"></a><span class="fu">## Localidades</span></span>
+<span id="cb3-94"><a href="#cb3-94"></a></span>
+<span id="cb3-95"><a href="#cb3-95"></a><span class="fu">## Análise de dados</span></span>
+<span id="cb3-96"><a href="#cb3-96"></a></span>
+<span id="cb3-97"><a href="#cb3-97"></a><span class="in">```{r, echo=FALSE, warning=FALSE}</span></span>
+<span id="cb3-98"><a href="#cb3-98"></a><span class="fu">library</span>(<span class="st">"palmerpenguins"</span>)</span>
+<span id="cb3-99"><a href="#cb3-99"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb3-100"><a href="#cb3-100"></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb3-101"><a href="#cb3-101"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb3-102"><a href="#cb3-102"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb3-103"><a href="#cb3-103"></a></span>
+<span id="cb3-104"><a href="#cb3-104"></a><span class="in">```</span></span>
+<span id="cb3-105"><a href="#cb3-105"></a></span>
+<span id="cb3-106"><a href="#cb3-106"></a><span class="fu"># Resultados</span></span>
+<span id="cb3-107"><a href="#cb3-107"></a></span>
+<span id="cb3-108"><a href="#cb3-108"></a><span class="fu">## Genética</span></span>
+<span id="cb3-109"><a href="#cb3-109"></a></span>
+<span id="cb3-110"><a href="#cb3-110"></a><span class="fu">### ddradSEQ</span></span>
+<span id="cb3-111"><a href="#cb3-111"></a></span>
+<span id="cb3-112"><a href="#cb3-112"></a><span class="fu">## Morfologia</span></span>
+<span id="cb3-113"><a href="#cb3-113"></a></span>
+<span id="cb3-114"><a href="#cb3-114"></a>Reunimos um conjunto de <span class="in">`r nrow(mtcars)`</span> observações e <span class="in">`r ncol(mtcars)`</span> variáveis.  </span>
+<span id="cb3-115"><a href="#cb3-115"></a></span>
+<span id="cb3-116"><a href="#cb3-116"></a><span class="in">```{r}</span></span>
+<span id="cb3-117"><a href="#cb3-117"></a>mtcars2 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(mtcars, mtcars)</span>
+<span id="cb3-118"><a href="#cb3-118"></a><span class="in">```</span></span>
+<span id="cb3-119"><a href="#cb3-119"></a></span>
+<span id="cb3-120"><a href="#cb3-120"></a>Na série temporal do ano de 2019, houve <span class="in">`r nrow(mtcars2)`</span> observações e <span class="in">`r ncol(mtcars2)`</span> variáveis para estimar o traço funcional do solo papapa.  </span>
+<span id="cb3-121"><a href="#cb3-121"></a></span>
+<span id="cb3-122"><a href="#cb3-122"></a>A tabela \@ref(tab:tab2) evidencia as seis primeiras linhas de nosso conjunto de dados.  </span>
+<span id="cb3-123"><a href="#cb3-123"></a></span>
+<span id="cb3-124"><a href="#cb3-124"></a><span class="in">```{r tab2}</span></span>
+<span id="cb3-125"><a href="#cb3-125"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-126"><a href="#cb3-126"></a>dados <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"exemplinho.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb3-127"><a href="#cb3-127"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">caption =</span> <span class="st">"Seis primeiras linhas do conjunto de dados iris."</span>)</span>
+<span id="cb3-128"><a href="#cb3-128"></a><span class="in">```</span></span>
+<span id="cb3-129"><a href="#cb3-129"></a></span>
+<span id="cb3-130"><a href="#cb3-130"></a>Coletamos <span class="in">`r length(unique(dados$Species))`</span> espécies diferentes.  </span>
+<span id="cb3-131"><a href="#cb3-131"></a></span>
+<span id="cb3-132"><a href="#cb3-132"></a>As espécies coletadas foram <span class="in">`r glue::glue_collapse(x = sort(unique(dados$Species)), sep = ", ", last = " e ")`</span>.  </span>
+<span id="cb3-133"><a href="#cb3-133"></a></span>
+<span id="cb3-134"><a href="#cb3-134"></a><span class="in">`r 1+1`</span></span>
+<span id="cb3-135"><a href="#cb3-135"></a></span>
+<span id="cb3-136"><a href="#cb3-136"></a><span class="pp">|</span> Nome    <span class="pp">|</span> Altura <span class="pp">|</span></span>
+<span id="cb3-137"><a href="#cb3-137"></a><span class="pp">|---------|--------|</span></span>
+<span id="cb3-138"><a href="#cb3-138"></a><span class="pp">|</span> Lysne   <span class="pp">|</span> <span class="in">`r 1+1`</span><span class="pp">|</span></span>
+<span id="cb3-139"><a href="#cb3-139"></a><span class="pp">|</span> Luciana <span class="pp">|</span> <span class="in">`r 1+2`</span><span class="pp">|</span></span>
+<span id="cb3-140"><a href="#cb3-140"></a><span class="pp">|</span> Rhaylla <span class="pp">|</span> 1,68   <span class="pp">|</span></span>
+<span id="cb3-141"><a href="#cb3-141"></a><span class="pp">|</span> José    <span class="pp">|</span> 1,82   <span class="pp">|</span></span>
+<span id="cb3-142"><a href="#cb3-142"></a><span class="pp">|</span> Sylvio  <span class="pp">|</span> 1,73   <span class="pp">|</span></span>
+<span id="cb3-143"><a href="#cb3-143"></a><span class="pp">|</span> Carlos  <span class="pp">|</span> 1,75   <span class="pp">|</span></span>
+<span id="cb3-144"><a href="#cb3-144"></a><span class="pp">|</span> Ricardo <span class="pp">|</span> 1,79   <span class="pp">|</span></span>
+<span id="cb3-145"><a href="#cb3-145"></a></span>
+<span id="cb3-146"><a href="#cb3-146"></a>: https://www.tablesgenerator.com/</span>
+<span id="cb3-147"><a href="#cb3-147"></a></span>
+<span id="cb3-148"><a href="#cb3-148"></a></span>
+<span id="cb3-149"><a href="#cb3-149"></a><span class="fu"># Referências</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="aparência" class="level2">
 <h2 class="anchored" data-anchor-id="aparência">Aparência</h2>
 <p>Disponível em: <a href=".\docs/exemplos/aparencia.Rmd">/docs/exemplos/aparencia.Rmd</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Aparência"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Reginaldo"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: spacelab</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight: textmate</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Controlando a aparência</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>Por meio do argumento <span class="in">`theme`</span> dentro do YAML, podemos controlar a aparência de seu arquivo HTML.</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>Possíveis valores incluem:</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Teste cada uma dessas possibilidades e veja como fica a aparência de seu produto.</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>Para testar, escreva dessa maneira no seu YAML:</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guguinha</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> journal</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Como é a aparência do código presente em meu arquivo Rmd?</span></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>Suponha que eu possua o código abaixo:</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>Como ele vai aparecer no produto final?  </span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>Nós controlamos essa variável por meio do argumento <span class="in">`highlight`</span>.</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>As opções disponíevis incluem:</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>Teste as opções em seu YAML escrevendo como abaixo:</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guguinha</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> espresso</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> "Aparência"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="an">author:</span><span class="co"> "Reginaldo"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co">  html_document:</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">    theme: spacelab</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">    highlight: textmate</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">---</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="fu">## Controlando a aparência</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a>Por meio do argumento <span class="in">`theme`</span> dentro do YAML, podemos controlar a aparência de seu arquivo HTML.</span>
+<span id="cb4-15"><a href="#cb4-15"></a>Possíveis valores incluem:</span>
+<span id="cb4-16"><a href="#cb4-16"></a></span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="at">&gt; default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a></span>
+<span id="cb4-20"><a href="#cb4-20"></a>Teste cada uma dessas possibilidades e veja como fica a aparência de seu produto.</span>
+<span id="cb4-21"><a href="#cb4-21"></a>Para testar, escreva dessa maneira no seu YAML:</span>
+<span id="cb4-22"><a href="#cb4-22"></a></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="in">```yaml</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="pp">---</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guguinha</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> journal</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="pp">---</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a><span class="in">```</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a></span>
+<span id="cb4-33"><a href="#cb4-33"></a><span class="fu">## Como é a aparência do código presente em meu arquivo Rmd?</span></span>
+<span id="cb4-34"><a href="#cb4-34"></a></span>
+<span id="cb4-35"><a href="#cb4-35"></a></span>
+<span id="cb4-36"><a href="#cb4-36"></a>Suponha que eu possua o código abaixo:</span>
+<span id="cb4-37"><a href="#cb4-37"></a></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="in">```{r}</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb4-40"><a href="#cb4-40"></a><span class="in">```</span></span>
+<span id="cb4-41"><a href="#cb4-41"></a></span>
+<span id="cb4-42"><a href="#cb4-42"></a>Como ele vai aparecer no produto final?  </span>
+<span id="cb4-43"><a href="#cb4-43"></a></span>
+<span id="cb4-44"><a href="#cb4-44"></a>Nós controlamos essa variável por meio do argumento <span class="in">`highlight`</span>.</span>
+<span id="cb4-45"><a href="#cb4-45"></a>As opções disponíevis incluem:</span>
+<span id="cb4-46"><a href="#cb4-46"></a></span>
+<span id="cb4-47"><a href="#cb4-47"></a><span class="at">&gt; default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a></span>
+<span id="cb4-49"><a href="#cb4-49"></a>Teste as opções em seu YAML escrevendo como abaixo:</span>
+<span id="cb4-50"><a href="#cb4-50"></a></span>
+<span id="cb4-51"><a href="#cb4-51"></a><span class="in">```yaml</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a><span class="pp">---</span></span>
+<span id="cb4-53"><a href="#cb4-53"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb4-54"><a href="#cb4-54"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guguinha</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-56"><a href="#cb4-56"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb4-57"><a href="#cb4-57"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> espresso</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a><span class="pp">---</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="controle-de-figuras" class="level2">
 <h2 class="anchored" data-anchor-id="controle-de-figuras">Controle de figuras</h2>
 <p>Disponível em: <a href=".\docs/exemplos/controle_figuras.Rmd">/docs/exemplos/controle_figuras.Rmd</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Controle de figuras"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Guerreira Luaninha</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">  bookdown::html_document2:</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_width: 10</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_height: 6</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_caption: true</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>Podemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span><span class="in">`fig_width`</span> e <span class="in">`fig_height`</span> controlam, respectivamente, a largura e altura da imagem;</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span><span class="in">`fig_caption`</span> controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis <span class="in">`true`</span> ou <span class="in">`false`</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span><span class="in">`dev`</span> controla qual dispositivo deve compilar as figuras, isto é, se <span class="in">`pdf`</span>, <span class="in">`png`</span>, ou outros (padrão é o <span class="in">`png`</span>).  </span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>Vejam possibilidades abaixo e testem em seus arquivos:</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guerreira Luaninha</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_height</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>Vejam a figura \@ref(fig:fig1).  </span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars)</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "Controle de figuras"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="an">author:</span><span class="co"> Guerreira Luaninha</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="an">date:</span><span class="co"> 4 Jun 2024</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">  bookdown::html_document2:</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">    fig_width: 10</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">    fig_height: 6</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">    fig_caption: true</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co">---</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a>Podemos controlar como as figuras aparecerão em nossos produtos por meio dos argumentos YAML a seguir:</span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="ss">+ </span><span class="in">`fig_width`</span> e <span class="in">`fig_height`</span> controlam, respectivamente, a largura e altura da imagem;</span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="ss">+ </span><span class="in">`fig_caption`</span> controla se as figuras devem ser compiladas com ou sem legendas (valores possíveis <span class="in">`true`</span> ou <span class="in">`false`</span>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="ss">+ </span><span class="in">`dev`</span> controla qual dispositivo deve compilar as figuras, isto é, se <span class="in">`pdf`</span>, <span class="in">`png`</span>, ou outros (padrão é o <span class="in">`png`</span>).  </span>
+<span id="cb5-19"><a href="#cb5-19"></a></span>
+<span id="cb5-20"><a href="#cb5-20"></a>Vejam possibilidades abaixo e testem em seus arquivos:</span>
+<span id="cb5-21"><a href="#cb5-21"></a></span>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="in">```yaml</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="pp">---</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análise exploratória de dados"</span></span>
+<span id="cb5-25"><a href="#cb5-25"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Guerreira Luaninha</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 4 Jun 2024</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="at">    </span><span class="fu">fig_width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="at">    </span><span class="fu">fig_height</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="at">    </span><span class="fu">fig_caption</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a><span class="pp">---</span></span>
+<span id="cb5-33"><a href="#cb5-33"></a><span class="in">```</span></span>
+<span id="cb5-34"><a href="#cb5-34"></a></span>
+<span id="cb5-35"><a href="#cb5-35"></a>Vejam a figura \@ref(fig:fig1).  </span>
+<span id="cb5-36"><a href="#cb5-36"></a></span>
+<span id="cb5-37"><a href="#cb5-37"></a><span class="in">```{r fig1, fig.cap = "Aqui vai a legenda das figuras."}</span></span>
+<span id="cb5-38"><a href="#cb5-38"></a><span class="fu">plot</span>(mtcars)</span>
+<span id="cb5-39"><a href="#cb5-39"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="referências-bib" class="level2">
 <h2 class="anchored" data-anchor-id="referências-bib">Referências bib</h2>
 <p>Disponível em: <a href=".\docs/exemplos/minhaprimeiralistadereferencia.Rmd">/docs/exemplos/minhaprimeiralistadereferencia.Rmd</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Minha primeira vez usando arquivo Bib"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mago Joãozinho"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - minhaprimeiraref.bib</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> associacao-brasileira-de-normas-tecnicas.csl</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introdução</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Um artigo citado de maneira direta, @Cysneirosetal2024.  </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>Um artigo citado de maneira indireta <span class="co">[</span><span class="ot">@Cysneirosetal2024</span><span class="co">]</span>.  </span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>Um livro <span class="co">[</span><span class="ot">@SenhorasSenhoras2020</span><span class="co">]</span>.  </span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>Uma base de dados <span class="co">[</span><span class="ot">@ibge_producaoagricola</span><span class="co">]</span>.  </span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>Um pacote de R <span class="co">[</span><span class="ot">@Xieetal2020</span><span class="co">]</span>.  </span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>R <span class="co">[</span><span class="ot">@R2024</span><span class="co">]</span>.  </span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>Um livro na mão <span class="co">[</span><span class="ot">@Meszaros2009</span><span class="co">]</span>.  </span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>Vamos supor que eu queira citar duas referências indiretamente de vez <span class="co">[</span><span class="ot">@Meszaros2009;@R2024</span><span class="co">]</span>.  </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>Direto @R2024.  </span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>Segundo fulano de tal: </span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>*Essa é uma transcrição literal do que fulano falou* <span class="co">[</span><span class="ot">@Yaoetal2024</span><span class="co">]</span>  </span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>Eu vou citar uma ref do meu arquivo baixado do Web of Science <span class="co">[</span><span class="ot">@Yaoetal2024</span><span class="co">]</span>.  </span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>Uma lista de refs <span class="co">[</span><span class="ot">@Paiva_2021;@Xieetal2020;@Yaoetal2024</span><span class="co">]</span>.  </span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referências</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="an">title:</span><span class="co"> "Minha primeira vez usando arquivo Bib"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="an">author:</span><span class="co"> "Mago Joãozinho"</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="an">bibliography:</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">  - minhaprimeiraref.bib</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="an">csl:</span><span class="co"> associacao-brasileira-de-normas-tecnicas.csl</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">---</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="fu"># Introdução</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>Um artigo citado de maneira direta, @Cysneirosetal2024.  </span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a>Um artigo citado de maneira indireta <span class="co">[</span><span class="ot">@Cysneirosetal2024</span><span class="co">]</span>.  </span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a>Um livro <span class="co">[</span><span class="ot">@SenhorasSenhoras2020</span><span class="co">]</span>.  </span>
+<span id="cb6-18"><a href="#cb6-18"></a></span>
+<span id="cb6-19"><a href="#cb6-19"></a>Uma base de dados <span class="co">[</span><span class="ot">@ibge_producaoagricola</span><span class="co">]</span>.  </span>
+<span id="cb6-20"><a href="#cb6-20"></a></span>
+<span id="cb6-21"><a href="#cb6-21"></a>Um pacote de R <span class="co">[</span><span class="ot">@Xieetal2020</span><span class="co">]</span>.  </span>
+<span id="cb6-22"><a href="#cb6-22"></a></span>
+<span id="cb6-23"><a href="#cb6-23"></a>R <span class="co">[</span><span class="ot">@R2024</span><span class="co">]</span>.  </span>
+<span id="cb6-24"><a href="#cb6-24"></a></span>
+<span id="cb6-25"><a href="#cb6-25"></a>Um livro na mão <span class="co">[</span><span class="ot">@Meszaros2009</span><span class="co">]</span>.  </span>
+<span id="cb6-26"><a href="#cb6-26"></a></span>
+<span id="cb6-27"><a href="#cb6-27"></a>Vamos supor que eu queira citar duas referências indiretamente de vez <span class="co">[</span><span class="ot">@Meszaros2009;@R2024</span><span class="co">]</span>.  </span>
+<span id="cb6-28"><a href="#cb6-28"></a></span>
+<span id="cb6-29"><a href="#cb6-29"></a>Direto @R2024.  </span>
+<span id="cb6-30"><a href="#cb6-30"></a></span>
+<span id="cb6-31"><a href="#cb6-31"></a>Segundo fulano de tal: </span>
+<span id="cb6-32"><a href="#cb6-32"></a></span>
+<span id="cb6-33"><a href="#cb6-33"></a>*Essa é uma transcrição literal do que fulano falou* <span class="co">[</span><span class="ot">@Yaoetal2024</span><span class="co">]</span>  </span>
+<span id="cb6-34"><a href="#cb6-34"></a></span>
+<span id="cb6-35"><a href="#cb6-35"></a>Eu vou citar uma ref do meu arquivo baixado do Web of Science <span class="co">[</span><span class="ot">@Yaoetal2024</span><span class="co">]</span>.  </span>
+<span id="cb6-36"><a href="#cb6-36"></a></span>
+<span id="cb6-37"><a href="#cb6-37"></a>Uma lista de refs <span class="co">[</span><span class="ot">@Paiva_2021;@Xieetal2020;@Yaoetal2024</span><span class="co">]</span>.  </span>
+<span id="cb6-38"><a href="#cb6-38"></a></span>
+<span id="cb6-39"><a href="#cb6-39"></a><span class="fu"># Referências</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Você pode baixar também um arquivo <code>.bib</code> como exemplo. Construímos este arquivo em sala de aula:</p>
 <ul>
 <li><a href=".\docs/exemplos/minhaprimeiraref.bib">/docs/exemplos/minhaprimeiraref.bib</a></li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bib number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb7-1"><a href="#cb7-1"></a><span class="va">@Article</span>{<span class="ot">Cysneirosetal2024</span>,</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="dt">author</span>           = {Cysneiros, Vinicius Costa and Pelissari, Allan Libanio and Nascimento, Rodrigo Geroni Mendes and MACHADO, Sebastião Amaral},</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="dt">journal</span>          = {Acta Amazonica},</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="dt">title</span>            = {Multilevel mixed-effect models to predict wood volume in a hyperdiverse Amazon forest},</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="dt">year</span>             = {2024},</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="dt">issn</span>             = {0044-5967},</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="dt">number</span>           = {1},</span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="dt">volume</span>           = {54},</span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="dt">comment</span>          = {Eu li e gostei, achei isso, achei aquilo.},</span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="dt">creationdate</span>     = {2024-07-16T09:16:41},</span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="dt">doi</span>              = {10.1590/1809-4392202302081},</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="dt">modificationdate</span> = {2024-07-16T10:01:37},</span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="dt">publisher</span>        = {FapUNIFESP (SciELO)},</span>
+<span id="cb7-14"><a href="#cb7-14"></a>}</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="va">@Book</span>{<span class="ot">SenhorasSenhoras2020</span>,</span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="dt">author</span>           = {SENHORAS, Elói Martins and SENHORAS, Cândida Alzira Bentes de Magalhães},</span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="dt">publisher</span>        = {Zenodo},</span>
+<span id="cb7-19"><a href="#cb7-19"></a>  <span class="dt">title</span>            = {Políticas Públicas: Agendas em Tempos de Crise},</span>
+<span id="cb7-20"><a href="#cb7-20"></a>  <span class="dt">year</span>             = {2020},</span>
+<span id="cb7-21"><a href="#cb7-21"></a>  <span class="dt">copyright</span>        = {Creative Commons Attribution 4.0 International},</span>
+<span id="cb7-22"><a href="#cb7-22"></a>  <span class="dt">creationdate</span>     = {2024-07-16T09:39:53},</span>
+<span id="cb7-23"><a href="#cb7-23"></a>  <span class="dt">doi</span>              = {10.5281/ZENODO.3901672},</span>
+<span id="cb7-24"><a href="#cb7-24"></a>  <span class="dt">keywords</span>         = {Boa Vista; Brasil; Políticas Públicas; Roraima},</span>
+<span id="cb7-25"><a href="#cb7-25"></a>  <span class="dt">language</span>         = {pt},</span>
+<span id="cb7-26"><a href="#cb7-26"></a>  <span class="dt">modificationdate</span> = {2024-07-16T09:53:59},</span>
+<span id="cb7-27"><a href="#cb7-27"></a>}</span>
+<span id="cb7-28"><a href="#cb7-28"></a></span>
+<span id="cb7-29"><a href="#cb7-29"></a><span class="va">@Misc</span>{<span class="ot">ibge_producaoagricola</span>,</span>
+<span id="cb7-30"><a href="#cb7-30"></a>  <span class="dt">author</span>           = {{Instituto Brasileiro de Geografia e Estatística (IBGE)}},</span>
+<span id="cb7-31"><a href="#cb7-31"></a>  <span class="dt">howpublished</span>     = {digital},</span>
+<span id="cb7-32"><a href="#cb7-32"></a>  <span class="dt">note</span>             = {Acesso em 2024-07-16.},</span>
+<span id="cb7-33"><a href="#cb7-33"></a>  <span class="dt">title</span>            = {Produção Agropecuária},</span>
+<span id="cb7-34"><a href="#cb7-34"></a>  <span class="dt">year</span>             = {2024},</span>
+<span id="cb7-35"><a href="#cb7-35"></a>  <span class="dt">creationdate</span>     = {2024-07-16T09:48:41},</span>
+<span id="cb7-36"><a href="#cb7-36"></a>  <span class="dt">modificationdate</span> = {2024-07-16T09:56:53},</span>
+<span id="cb7-37"><a href="#cb7-37"></a>  <span class="dt">url</span>              = {https://www.ibge.gov.br/explica/producao-agropecuaria/},</span>
+<span id="cb7-38"><a href="#cb7-38"></a>}</span>
+<span id="cb7-39"><a href="#cb7-39"></a></span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="va">@Book</span>{<span class="ot">Xieetal2020</span>,</span>
+<span id="cb7-41"><a href="#cb7-41"></a>  <span class="dt">author</span>           = {Yihui Xie and Christophe Dervieux and Emily Riederer},</span>
+<span id="cb7-42"><a href="#cb7-42"></a>  <span class="dt">publisher</span>        = {Chapman and Hall/CRC},</span>
+<span id="cb7-43"><a href="#cb7-43"></a>  <span class="dt">title</span>            = {R Markdown Cookbook},</span>
+<span id="cb7-44"><a href="#cb7-44"></a>  <span class="dt">year</span>             = {2020},</span>
+<span id="cb7-45"><a href="#cb7-45"></a>  <span class="dt">address</span>          = {Boca Raton, Florida},</span>
+<span id="cb7-46"><a href="#cb7-46"></a>  <span class="dt">isbn</span>             = {9780367563837},</span>
+<span id="cb7-47"><a href="#cb7-47"></a>  <span class="dt">modificationdate</span> = {2024-07-16T10:32:20},</span>
+<span id="cb7-48"><a href="#cb7-48"></a>  <span class="dt">url</span>              = {https://bookdown.org/yihui/rmarkdown-cookbook},</span>
+<span id="cb7-49"><a href="#cb7-49"></a>}</span>
+<span id="cb7-50"><a href="#cb7-50"></a></span>
+<span id="cb7-51"><a href="#cb7-51"></a><span class="va">@Manual</span>{<span class="ot">R2024</span>,</span>
+<span id="cb7-52"><a href="#cb7-52"></a>  <span class="dt">title</span>            = {R: A Language and Environment for Statistical Computing},</span>
+<span id="cb7-53"><a href="#cb7-53"></a>  <span class="dt">address</span>          = {Vienna, Austria},</span>
+<span id="cb7-54"><a href="#cb7-54"></a>  <span class="dt">author</span>           = {{R Core Team}},</span>
+<span id="cb7-55"><a href="#cb7-55"></a>  <span class="dt">organization</span>     = {R Foundation for Statistical Computing},</span>
+<span id="cb7-56"><a href="#cb7-56"></a>  <span class="dt">year</span>             = {2024},</span>
+<span id="cb7-57"><a href="#cb7-57"></a>  <span class="dt">modificationdate</span> = {2024-07-18T09:25:15},</span>
+<span id="cb7-58"><a href="#cb7-58"></a>  <span class="dt">url</span>              = {https://www.R-project.org/},</span>
+<span id="cb7-59"><a href="#cb7-59"></a>}</span>
+<span id="cb7-60"><a href="#cb7-60"></a></span>
+<span id="cb7-61"><a href="#cb7-61"></a><span class="va">@Article</span>{<span class="ot">Rossietal2020</span>,</span>
+<span id="cb7-62"><a href="#cb7-62"></a>  <span class="dt">author</span>           = {Sebastian Dario Rossi and Agustina Barros and Chelsey Walden-Schreiner and Catherine Pickering},</span>
+<span id="cb7-63"><a href="#cb7-63"></a>  <span class="dt">journal</span>          = {Ambio},</span>
+<span id="cb7-64"><a href="#cb7-64"></a>  <span class="dt">title</span>            = {Using social media images to assess ecosystem services in a remote protected area in the Argentinean Andes},</span>
+<span id="cb7-65"><a href="#cb7-65"></a>  <span class="dt">year</span>             = {2020},</span>
+<span id="cb7-66"><a href="#cb7-66"></a>  <span class="dt">issn</span>             = {00447447, 16547209},</span>
+<span id="cb7-67"><a href="#cb7-67"></a>  <span class="dt">number</span>           = {6},</span>
+<span id="cb7-68"><a href="#cb7-68"></a>  <span class="dt">pages</span>            = {pp. 1146--1160},</span>
+<span id="cb7-69"><a href="#cb7-69"></a>  <span class="dt">volume</span>           = {49},</span>
+<span id="cb7-70"><a href="#cb7-70"></a>  <span class="dt">abstract</span>         = {Social media images are a novel source of data to assess how people view and value the environment. Access to these images is often free, the volume and spread of images is expanding rapidly and hence they are an increasingly valuable source of data complementing and expanding on other data. Recently, coding images has been used to assess sociocultural values relating to ecosystem services including those provided by national parks. To further explore the use of social media images, including for remote environments, we analysed the content of images posted to Flickr by people visiting a national park that contains the highest mountain in the southern hemisphere, Mt. Aconcagua, in Argentina, South America. The saliency of aesthetic landscapes, recreation, social relations and fresh-water provisioning was high across the 334 images posted to Flickr by 104 visitors to the Park, but location mattered. Images from visitors in easily accessible day-use areas were significantly more likely to include content that reflects biodiversityexistence, geology, culture and education services, while the content of images from remote areas was more likely to reflect social relations and fresh-water provision services. Comparisons of the content of images from Mt. Aconcagua with other studies in Europe, South America, Asia, Africa and Australia highlight similarities and differences in people’s views of the diversity of locations, but also the benefits and limitations of user-generated social media content when assessing environmental and management issues.},</span>
+<span id="cb7-71"><a href="#cb7-71"></a>  <span class="dt">modificationdate</span> = {2024-07-16T10:55:19},</span>
+<span id="cb7-72"><a href="#cb7-72"></a>  <span class="dt">publisher</span>        = {[Springer, Royal Swedish Academy of Sciences]},</span>
+<span id="cb7-73"><a href="#cb7-73"></a>  <span class="dt">url</span>              = {https://www.jstor.org/stable/48727232},</span>
+<span id="cb7-74"><a href="#cb7-74"></a>  <span class="dt">urldate</span>          = {2024-07-16},</span>
+<span id="cb7-75"><a href="#cb7-75"></a>}</span>
+<span id="cb7-76"><a href="#cb7-76"></a></span>
+<span id="cb7-77"><a href="#cb7-77"></a><span class="va">@Article</span>{<span class="ot">FerreiraSilvaetal2024</span>,</span>
+<span id="cb7-78"><a href="#cb7-78"></a>  <span class="dt">author</span>           = {Ferreira-Silva, Silvia Larissa and Marinho, Lucas C. and Mouzinho, Thiago M. and Hopkins, Michael J. G.},</span>
+<span id="cb7-79"><a href="#cb7-79"></a>  <span class="dt">journal</span>          = {Brittonia},</span>
+<span id="cb7-80"><a href="#cb7-80"></a>  <span class="dt">title</span>            = {A new species of Lorostemon (Clusiaceae) from the eastern Amazonia},</span>
+<span id="cb7-81"><a href="#cb7-81"></a>  <span class="dt">year</span>             = {2024},</span>
+<span id="cb7-82"><a href="#cb7-82"></a>  <span class="dt">issn</span>             = {1938-436X},</span>
+<span id="cb7-83"><a href="#cb7-83"></a>  <span class="dt">month</span>            = <span class="st">jun</span>,</span>
+<span id="cb7-84"><a href="#cb7-84"></a>  <span class="dt">creationdate</span>     = {2024-07-16T10:57:17},</span>
+<span id="cb7-85"><a href="#cb7-85"></a>  <span class="dt">doi</span>              = {10.1007/s12228-024-09791-1},</span>
+<span id="cb7-86"><a href="#cb7-86"></a>  <span class="dt">modificationdate</span> = {2024-07-16T11:03:00},</span>
+<span id="cb7-87"><a href="#cb7-87"></a>  <span class="dt">publisher</span>        = {Springer Science and Business Media LLC},</span>
+<span id="cb7-88"><a href="#cb7-88"></a>}</span>
+<span id="cb7-89"><a href="#cb7-89"></a></span>
+<span id="cb7-90"><a href="#cb7-90"></a><span class="va">@Article</span>{<span class="ot">Yaoetal2024</span>,</span>
+<span id="cb7-91"><a href="#cb7-91"></a>  <span class="dt">author</span>           = {Yi-Fei Yao and Wei Ni and Yong-Sheng Zhou and Huan Yan and Hai-Yang Liu},</span>
+<span id="cb7-92"><a href="#cb7-92"></a>  <span class="dt">journal</span>          = {Phytochemistry Letters},</span>
+<span id="cb7-93"><a href="#cb7-93"></a>  <span class="dt">title</span>            = {Three new dammarane-type triterpenoid saponins and their cytotoxicity from steamed Panax notoginseng},</span>
+<span id="cb7-94"><a href="#cb7-94"></a>  <span class="dt">year</span>             = {2024},</span>
+<span id="cb7-95"><a href="#cb7-95"></a>  <span class="dt">issn</span>             = {1874-3900},</span>
+<span id="cb7-96"><a href="#cb7-96"></a>  <span class="dt">pages</span>            = {1-5},</span>
+<span id="cb7-97"><a href="#cb7-97"></a>  <span class="dt">volume</span>           = {62},</span>
+<span id="cb7-98"><a href="#cb7-98"></a>  <span class="dt">abstract</span>         = {Three new dammarane-type triterpenoid saponins, namely 6′-crotonyl-(20 S)-ginsenoside Rg3 (1), 6′-crotonyl-(20 R)-ginsenoside Rg3 (2), and notoginsenolide A (3), were isolated from the steamed Panax notoginseng. Among them, 3 is the first tetranordamarane triterpenoid glucoside with an α, β-unsaturated γ-lactone group. The three isolates were evaluated for their cytotoxicities against five human cancer cell lines (HL-60, A-549, SMMC-7721, MDA-MB-231, and SW480). The results showed that compound 1 had moderate cytotoxicity against HL-60 cell line with an IC50 value of 23.39 μM.},</span>
+<span id="cb7-99"><a href="#cb7-99"></a>  <span class="dt">doi</span>              = {https://doi.org/10.1016/j.phytol.2024.06.001},</span>
+<span id="cb7-100"><a href="#cb7-100"></a>  <span class="dt">keywords</span>         = {Steamed , Dammarane triterpenoid saponins, 6'-crotonyl-(20 )-ginsenoside Rg3, 6'-crotonyl-(20 )-ginsenoside Rg3, Notoginsenolide A, Cytotoxicity},</span>
+<span id="cb7-101"><a href="#cb7-101"></a>  <span class="dt">modificationdate</span> = {2024-07-16T11:08:38},</span>
+<span id="cb7-102"><a href="#cb7-102"></a>  <span class="dt">url</span>              = {https://www.sciencedirect.com/science/article/pii/S1874390024000867},</span>
+<span id="cb7-103"><a href="#cb7-103"></a>}</span>
+<span id="cb7-104"><a href="#cb7-104"></a></span>
+<span id="cb7-105"><a href="#cb7-105"></a><span class="va">@Manual</span>{<span class="ot">dplyr</span>,</span>
+<span id="cb7-106"><a href="#cb7-106"></a>  <span class="dt">title</span>            = {dplyr: A Grammar of Data Manipulation},</span>
+<span id="cb7-107"><a href="#cb7-107"></a>  <span class="dt">author</span>           = {Hadley Wickham and Romain François and Lionel Henry and Kirill Müller and Davis Vaughan},</span>
+<span id="cb7-108"><a href="#cb7-108"></a>  <span class="dt">note</span>             = {R package version 1.1.4},</span>
+<span id="cb7-109"><a href="#cb7-109"></a>  <span class="dt">year</span>             = {2023},</span>
+<span id="cb7-110"><a href="#cb7-110"></a>  <span class="dt">modificationdate</span> = {2024-07-18T09:30:18},</span>
+<span id="cb7-111"><a href="#cb7-111"></a>  <span class="dt">url</span>              = {https://CRAN.R-project.org/package=dplyr},</span>
+<span id="cb7-112"><a href="#cb7-112"></a>}</span>
+<span id="cb7-113"><a href="#cb7-113"></a></span>
+<span id="cb7-114"><a href="#cb7-114"></a><span class="va">@Article</span>{<span class="ot">ipyrad</span>,</span>
+<span id="cb7-115"><a href="#cb7-115"></a>  <span class="dt">author</span>           = {Eaton, Deren A R and Overcast, Isaac},</span>
+<span id="cb7-116"><a href="#cb7-116"></a>  <span class="dt">journal</span>          = {Bioinformatics},</span>
+<span id="cb7-117"><a href="#cb7-117"></a>  <span class="dt">title</span>            = {{ipyrad: Interactive assembly and analysis of RADseq datasets}},</span>
+<span id="cb7-118"><a href="#cb7-118"></a>  <span class="dt">year</span>             = {2020},</span>
+<span id="cb7-119"><a href="#cb7-119"></a>  <span class="dt">issn</span>             = {1367-4803},</span>
+<span id="cb7-120"><a href="#cb7-120"></a>  <span class="dt">month</span>            = {01},</span>
+<span id="cb7-121"><a href="#cb7-121"></a>  <span class="dt">note</span>             = {btz966},</span>
+<span id="cb7-122"><a href="#cb7-122"></a>  <span class="dt">abstract</span>         = {{ipyrad is a free and open source tool for assembling and analyzing restriction site-associated DNA sequence datasets using de novo and/or reference-based approaches. It is designed to be massively scalable to hundreds of taxa and thousands of samples, and can be efficiently parallelized on high performance computing clusters. It is available both as a command line interface and as a Python package with an application programming interface, the latter of which can be used interactively to write complex, reproducible scripts and implement a suite of downstream analysis tools.ipyrad is a free and open source program written in Python. Source code is available from the GitHub repository (https://github.com/dereneaton/ipyrad/), and Linux and MacOS installs are distributed through the conda package manager. Complete documentation, including numerous tutorials, and Jupyter notebooks demonstrating example assemblies and applications of downstream analysis tools are available online: https://ipyrad.readthedocs.io/.}},</span>
+<span id="cb7-123"><a href="#cb7-123"></a>  <span class="dt">doi</span>              = {10.1093/bioinformatics/btz966},</span>
+<span id="cb7-124"><a href="#cb7-124"></a>  <span class="dt">eprint</span>           = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btz966/31875323/btz966.pdf},</span>
+<span id="cb7-125"><a href="#cb7-125"></a>  <span class="dt">file</span>             = {:C<span class="ch">\:</span>/Users/ricop/OneDrive/Documentos/DOC/PROJETO<span class="ch">\_</span>DOC/PAPERS_SUPORTE_TESE/EatonOvercast2020.pdf:PDF},</span>
+<span id="cb7-126"><a href="#cb7-126"></a>  <span class="dt">modificationdate</span> = {2024-07-27T11:02:29},</span>
+<span id="cb7-127"><a href="#cb7-127"></a>  <span class="dt">url</span>              = {https://doi.org/10.1093/bioinformatics/btz966},</span>
+<span id="cb7-128"><a href="#cb7-128"></a>}</span>
+<span id="cb7-129"><a href="#cb7-129"></a></span>
+<span id="cb7-130"><a href="#cb7-130"></a><span class="co">@Comment{jabref-meta: databaseType:bibtex;}</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Temos também um arquivo <code>csl</code> com normas da ABNT. Baixe-o por meio do endereço abaixo:</p>
 <ul>
 <li><a href=".\docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl">/docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl</a></li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource csl number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span id="cb8-2"><a href="#cb8-2"></a>&lt;style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" demote-non-dropping-particle="never" default-locale="pt-BR"&gt;</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  &lt;!--Em caso de sobrenome composto, este nao sera desmontado para a montagem da citacao ou bibliografia como no caso de L. Van Der Pijl--&gt;</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  &lt;info&gt;</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    &lt;title&gt;Associação Brasileira de Normas Técnicas (Português - Brasil)&lt;/title&gt;</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    &lt;title-short&gt;ABNT&lt;/title-short&gt;</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    &lt;id&gt;http://www.zotero.org/styles/associacao-brasileira-de-normas-tecnicas&lt;/id&gt;</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    &lt;link href="http://www.zotero.org/styles/associacao-brasileira-de-normas-tecnicas" rel="self"/&gt;</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    &lt;link href="https://forums.zotero.org/discussion/22148/how-to-apply-disambiguation-in-citation-just-when-works-of-different-authors-are-in-the-same-year/?Focus=147094#Comment_147094" rel="documentation"/&gt;</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    &lt;author&gt;</span>
+<span id="cb8-11"><a href="#cb8-11"></a>      &lt;name&gt;Juliana Geyna Régis&lt;/name&gt;</span>
+<span id="cb8-12"><a href="#cb8-12"></a>      &lt;email&gt;juliana.regis@ipea.gov.br&lt;/email&gt;</span>
+<span id="cb8-13"><a href="#cb8-13"></a>    &lt;/author&gt;</span>
+<span id="cb8-14"><a href="#cb8-14"></a>    &lt;contributor&gt;</span>
+<span id="cb8-15"><a href="#cb8-15"></a>      &lt;name&gt;Lucas Mation&lt;/name&gt;</span>
+<span id="cb8-16"><a href="#cb8-16"></a>      &lt;email&gt;lucas.mation@ipea.gov.br&lt;/email&gt;</span>
+<span id="cb8-17"><a href="#cb8-17"></a>    &lt;/contributor&gt;</span>
+<span id="cb8-18"><a href="#cb8-18"></a>    &lt;contributor&gt;</span>
+<span id="cb8-19"><a href="#cb8-19"></a>      &lt;name&gt;Eduardo Michelotti Bettoni&lt;/name&gt;</span>
+<span id="cb8-20"><a href="#cb8-20"></a>      &lt;email&gt;webtur@ufpr.br&lt;/email&gt;</span>
+<span id="cb8-21"><a href="#cb8-21"></a>    &lt;/contributor&gt;</span>
+<span id="cb8-22"><a href="#cb8-22"></a>    &lt;contributor&gt;</span>
+<span id="cb8-23"><a href="#cb8-23"></a>      &lt;name&gt;Paulo Augusto Nascimento&lt;/name&gt;</span>
+<span id="cb8-24"><a href="#cb8-24"></a>      &lt;email&gt;paulo.nascimento@ipea.gov.br&lt;/email&gt;</span>
+<span id="cb8-25"><a href="#cb8-25"></a>    &lt;/contributor&gt;</span>
+<span id="cb8-26"><a href="#cb8-26"></a>    &lt;contributor&gt;</span>
+<span id="cb8-27"><a href="#cb8-27"></a>      &lt;name&gt;Iuri Gavronski&lt;/name&gt;</span>
+<span id="cb8-28"><a href="#cb8-28"></a>      &lt;email&gt;iuri at ufrgs dot br&lt;/email&gt;</span>
+<span id="cb8-29"><a href="#cb8-29"></a>    &lt;/contributor&gt;</span>
+<span id="cb8-30"><a href="#cb8-30"></a>    &lt;contributor&gt;</span>
+<span id="cb8-31"><a href="#cb8-31"></a>      &lt;name&gt;José Antonio Meira da Rocha&lt;/name&gt;</span>
+<span id="cb8-32"><a href="#cb8-32"></a>      &lt;email&gt;joseantoniorocha@gmail.com&lt;/email&gt;</span>
+<span id="cb8-33"><a href="#cb8-33"></a>      &lt;uri&gt;http://meiradarocha.jor.br&lt;/uri&gt;</span>
+<span id="cb8-34"><a href="#cb8-34"></a>    &lt;/contributor&gt;</span>
+<span id="cb8-35"><a href="#cb8-35"></a>    &lt;contributor&gt;</span>
+<span id="cb8-36"><a href="#cb8-36"></a>      &lt;name&gt;Mario José&lt;/name&gt;</span>
+<span id="cb8-37"><a href="#cb8-37"></a>      &lt;email&gt;gnumario [at-mark] gmail [dot-mark] com&lt;/email&gt;</span>
+<span id="cb8-38"><a href="#cb8-38"></a>    &lt;/contributor&gt;</span>
+<span id="cb8-39"><a href="#cb8-39"></a>    &lt;category citation-format="author-date"/&gt;</span>
+<span id="cb8-40"><a href="#cb8-40"></a>    &lt;category field="generic-base"/&gt;</span>
+<span id="cb8-41"><a href="#cb8-41"></a>    &lt;summary&gt;The Brazilian Standard Style in accordance with ABNT-NBR 10520.2002 and ABNT-NBR 6023.2002&lt;/summary&gt;</span>
+<span id="cb8-42"><a href="#cb8-42"></a>    &lt;updated&gt;2022-07-11T17:15:26+00:00&lt;/updated&gt;</span>
+<span id="cb8-43"><a href="#cb8-43"></a>    &lt;rights license="http://creativecommons.org/licenses/by-sa/3.0/"&gt;This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License&lt;/rights&gt;</span>
+<span id="cb8-44"><a href="#cb8-44"></a>  &lt;/info&gt;</span>
+<span id="cb8-45"><a href="#cb8-45"></a>  &lt;locale xml:lang="pt-BR"&gt;</span>
+<span id="cb8-46"><a href="#cb8-46"></a>    &lt;terms&gt;</span>
+<span id="cb8-47"><a href="#cb8-47"></a>      &lt;!--Abreviacoes meses "Forma Curta"--&gt;</span>
+<span id="cb8-48"><a href="#cb8-48"></a>      &lt;term name="month-01" form="short"&gt;jan.&lt;/term&gt;</span>
+<span id="cb8-49"><a href="#cb8-49"></a>      &lt;term name="month-02" form="short"&gt;fev.&lt;/term&gt;</span>
+<span id="cb8-50"><a href="#cb8-50"></a>      &lt;term name="month-03" form="short"&gt;mar.&lt;/term&gt;</span>
+<span id="cb8-51"><a href="#cb8-51"></a>      &lt;term name="month-04" form="short"&gt;abr.&lt;/term&gt;</span>
+<span id="cb8-52"><a href="#cb8-52"></a>      &lt;term name="month-05" form="short"&gt;maio&lt;/term&gt;</span>
+<span id="cb8-53"><a href="#cb8-53"></a>      &lt;term name="month-06" form="short"&gt;jun.&lt;/term&gt;</span>
+<span id="cb8-54"><a href="#cb8-54"></a>      &lt;term name="month-07" form="short"&gt;jul.&lt;/term&gt;</span>
+<span id="cb8-55"><a href="#cb8-55"></a>      &lt;term name="month-08" form="short"&gt;ago.&lt;/term&gt;</span>
+<span id="cb8-56"><a href="#cb8-56"></a>      &lt;term name="month-09" form="short"&gt;set.&lt;/term&gt;</span>
+<span id="cb8-57"><a href="#cb8-57"></a>      &lt;term name="month-10" form="short"&gt;out.&lt;/term&gt;</span>
+<span id="cb8-58"><a href="#cb8-58"></a>      &lt;term name="month-11" form="short"&gt;nov.&lt;/term&gt;</span>
+<span id="cb8-59"><a href="#cb8-59"></a>      &lt;term name="month-12" form="short"&gt;dez.&lt;/term&gt;</span>
+<span id="cb8-60"><a href="#cb8-60"></a>      &lt;!--Os termos abaixo serao utilizados quando houverem nomes de editores. Apos a citacao dos nomes, eles irao aparecer entre parenteses.--&gt;</span>
+<span id="cb8-61"><a href="#cb8-61"></a>      &lt;term name="editor" form="short"&gt;</span>
+<span id="cb8-62"><a href="#cb8-62"></a>        &lt;single&gt;ed&lt;/single&gt;</span>
+<span id="cb8-63"><a href="#cb8-63"></a>        &lt;multiple&gt;eds&lt;/multiple&gt;</span>
+<span id="cb8-64"><a href="#cb8-64"></a>      &lt;/term&gt;</span>
+<span id="cb8-65"><a href="#cb8-65"></a>      &lt;term name="container-author" form="short"&gt;</span>
+<span id="cb8-66"><a href="#cb8-66"></a>        &lt;single&gt;ed&lt;/single&gt;</span>
+<span id="cb8-67"><a href="#cb8-67"></a>        &lt;multiple&gt;eds&lt;/multiple&gt;</span>
+<span id="cb8-68"><a href="#cb8-68"></a>      &lt;/term&gt;</span>
+<span id="cb8-69"><a href="#cb8-69"></a>      &lt;term name="collection-editor" form="short"&gt;</span>
+<span id="cb8-70"><a href="#cb8-70"></a>        &lt;single&gt;ed&lt;/single&gt;</span>
+<span id="cb8-71"><a href="#cb8-71"></a>        &lt;multiple&gt;eds&lt;/multiple&gt;</span>
+<span id="cb8-72"><a href="#cb8-72"></a>      &lt;/term&gt;</span>
+<span id="cb8-73"><a href="#cb8-73"></a>    &lt;/terms&gt;</span>
+<span id="cb8-74"><a href="#cb8-74"></a>  &lt;/locale&gt;</span>
+<span id="cb8-75"><a href="#cb8-75"></a>  &lt;!--A macro 'container-contribuitor' e responsavel por mostrar os nomes dos editores, serao apresentados SOBRENOME, INICIAIS PRENOMES </span>
+<span id="cb8-76"><a href="#cb8-76"></a>tendo as inicias separadas por ponto.--&gt;</span>
+<span id="cb8-77"><a href="#cb8-77"></a>  &lt;macro name="container-contributors"&gt;</span>
+<span id="cb8-78"><a href="#cb8-78"></a>    &lt;choose&gt;</span>
+<span id="cb8-79"><a href="#cb8-79"></a>      &lt;if type="chapter"&gt;</span>
+<span id="cb8-80"><a href="#cb8-80"></a>        &lt;names variable="container-author" delimiter=", "&gt;</span>
+<span id="cb8-81"><a href="#cb8-81"></a>          &lt;name name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter="; " delimiter-precedes-last="always"&gt;</span>
+<span id="cb8-82"><a href="#cb8-82"></a>            &lt;name-part name="family" text-case="uppercase"/&gt;</span>
+<span id="cb8-83"><a href="#cb8-83"></a>            &lt;name-part name="given" text-case="uppercase"/&gt;</span>
+<span id="cb8-84"><a href="#cb8-84"></a>          &lt;/name&gt;</span>
+<span id="cb8-85"><a href="#cb8-85"></a>          &lt;label form="short" prefix=" (" suffix=".)" text-case="capitalize-first"/&gt;</span>
+<span id="cb8-86"><a href="#cb8-86"></a>          &lt;substitute&gt;</span>
+<span id="cb8-87"><a href="#cb8-87"></a>            &lt;names variable="editor"/&gt;</span>
+<span id="cb8-88"><a href="#cb8-88"></a>            &lt;names variable="collection-editor"/&gt;</span>
+<span id="cb8-89"><a href="#cb8-89"></a>          &lt;/substitute&gt;</span>
+<span id="cb8-90"><a href="#cb8-90"></a>        &lt;/names&gt;</span>
+<span id="cb8-91"><a href="#cb8-91"></a>      &lt;/if&gt;</span>
+<span id="cb8-92"><a href="#cb8-92"></a>    &lt;/choose&gt;</span>
+<span id="cb8-93"><a href="#cb8-93"></a>  &lt;/macro&gt;</span>
+<span id="cb8-94"><a href="#cb8-94"></a>  &lt;!--A macro 'secundary-contribuitor' e responsavel por mostrar os nomes dos organizadores, serao apresentados SOBRENOME, INICIAIS PRENOMES</span>
+<span id="cb8-95"><a href="#cb8-95"></a>tendo as inicias separadas por ponto.--&gt;</span>
+<span id="cb8-96"><a href="#cb8-96"></a>  &lt;macro name="secondary-contributors"&gt;</span>
+<span id="cb8-97"><a href="#cb8-97"></a>    &lt;choose&gt;</span>
+<span id="cb8-98"><a href="#cb8-98"></a>      &lt;if type="chapter" match="none"&gt;</span>
+<span id="cb8-99"><a href="#cb8-99"></a>        &lt;names variable="editor" delimiter="; " prefix=" (" suffix=")"&gt;</span>
+<span id="cb8-100"><a href="#cb8-100"></a>          &lt;name initialize-with=". " delimiter=", "/&gt;</span>
+<span id="cb8-101"><a href="#cb8-101"></a>          &lt;label form="short" prefix=", " text-case="capitalize-first" suffix="."/&gt;</span>
+<span id="cb8-102"><a href="#cb8-102"></a>        &lt;/names&gt;</span>
+<span id="cb8-103"><a href="#cb8-103"></a>      &lt;/if&gt;</span>
+<span id="cb8-104"><a href="#cb8-104"></a>    &lt;/choose&gt;</span>
+<span id="cb8-105"><a href="#cb8-105"></a>  &lt;/macro&gt;</span>
+<span id="cb8-106"><a href="#cb8-106"></a>  &lt;!--A macro 'translator' e responsavel por mostrar os nomes dos tradutores, serao apresentados SOBRENOME, INICIAIS PRENOMES</span>
+<span id="cb8-107"><a href="#cb8-107"></a>tendo as inicias separadas por ponto. --&gt;</span>
+<span id="cb8-108"><a href="#cb8-108"></a>  &lt;macro name="translator"&gt;</span>
+<span id="cb8-109"><a href="#cb8-109"></a>    &lt;names variable="translator" delimiter="; "&gt;</span>
+<span id="cb8-110"><a href="#cb8-110"></a>      &lt;name delimiter="; " sort-separator=" " delimiter-precedes-last="always" prefix="Tradução: "&gt;</span>
+<span id="cb8-111"><a href="#cb8-111"></a>        &lt;name-part name="given" text-case="capitalize-first"/&gt;</span>
+<span id="cb8-112"><a href="#cb8-112"></a>        &lt;name-part name="family" text-case="capitalize-first"/&gt;</span>
+<span id="cb8-113"><a href="#cb8-113"></a>      &lt;/name&gt;</span>
+<span id="cb8-114"><a href="#cb8-114"></a>    &lt;/names&gt;</span>
+<span id="cb8-115"><a href="#cb8-115"></a>  &lt;/macro&gt;</span>
+<span id="cb8-116"><a href="#cb8-116"></a>  &lt;!--A macro 'author' e responsavel por mostrar os nomes dos autores na bibliografia, serao no formato SOBRENOME, INICIAIS PRENOMES, tendo </span>
+<span id="cb8-117"><a href="#cb8-117"></a>as inicias separadas por ponto. Quando houver mais de tres autores, somente o primeiro sera mostrado e no lugar dos outros</span>
+<span id="cb8-118"><a href="#cb8-118"></a>aparecera a expess o 'et. al.'. Na regra da ABNT essa expressao deve aparecer em fonte normal--&gt;</span>
+<span id="cb8-119"><a href="#cb8-119"></a>  &lt;macro name="author"&gt;</span>
+<span id="cb8-120"><a href="#cb8-120"></a>    &lt;names variable="author"&gt;</span>
+<span id="cb8-121"><a href="#cb8-121"></a>      &lt;name name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter="; " delimiter-precedes-last="always"&gt;</span>
+<span id="cb8-122"><a href="#cb8-122"></a>        &lt;name-part name="family" text-case="uppercase"/&gt;</span>
+<span id="cb8-123"><a href="#cb8-123"></a>        &lt;name-part name="given" text-case="uppercase"/&gt;</span>
+<span id="cb8-124"><a href="#cb8-124"></a>      &lt;/name&gt;</span>
+<span id="cb8-125"><a href="#cb8-125"></a>      &lt;label form="short" prefix=" (" suffix=".)" text-case="uppercase"/&gt;</span>
+<span id="cb8-126"><a href="#cb8-126"></a>      &lt;substitute&gt;</span>
+<span id="cb8-127"><a href="#cb8-127"></a>        &lt;names variable="editor"/&gt;</span>
+<span id="cb8-128"><a href="#cb8-128"></a>        &lt;names variable="translator"/&gt;</span>
+<span id="cb8-129"><a href="#cb8-129"></a>        &lt;text macro="title"/&gt;</span>
+<span id="cb8-130"><a href="#cb8-130"></a>      &lt;/substitute&gt;</span>
+<span id="cb8-131"><a href="#cb8-131"></a>    &lt;/names&gt;</span>
+<span id="cb8-132"><a href="#cb8-132"></a>  &lt;/macro&gt;</span>
+<span id="cb8-133"><a href="#cb8-133"></a>  &lt;!--A macro 'author-short' e responsavel por mostrar os nomes dos autores na citacao (no meio do texto). Nela aparecera apenas o ultimo nome</span>
+<span id="cb8-134"><a href="#cb8-134"></a>do autor. Na regra da ABNT o sobrenome deve aparecer com todas as letras em caixa alta--&gt;</span>
+<span id="cb8-135"><a href="#cb8-135"></a>  &lt;macro name="author-short"&gt;</span>
+<span id="cb8-136"><a href="#cb8-136"></a>    &lt;names variable="author"&gt;</span>
+<span id="cb8-137"><a href="#cb8-137"></a>      &lt;name form="short" name-as-sort-order="all" sort-separator=", " initialize-with=". " delimiter="; " delimiter-precedes-last="never"&gt;</span>
+<span id="cb8-138"><a href="#cb8-138"></a>        &lt;name-part name="family" text-case="uppercase"/&gt;</span>
+<span id="cb8-139"><a href="#cb8-139"></a>        &lt;name-part name="given" text-case="uppercase"/&gt;</span>
+<span id="cb8-140"><a href="#cb8-140"></a>      &lt;/name&gt;</span>
+<span id="cb8-141"><a href="#cb8-141"></a>      &lt;substitute&gt;</span>
+<span id="cb8-142"><a href="#cb8-142"></a>        &lt;names variable="editor"/&gt;</span>
+<span id="cb8-143"><a href="#cb8-143"></a>        &lt;names variable="translator"/&gt;</span>
+<span id="cb8-144"><a href="#cb8-144"></a>        &lt;choose&gt;</span>
+<span id="cb8-145"><a href="#cb8-145"></a>          &lt;if type="book"&gt;</span>
+<span id="cb8-146"><a href="#cb8-146"></a>            &lt;text variable="title" form="short"/&gt;</span>
+<span id="cb8-147"><a href="#cb8-147"></a>          &lt;/if&gt;</span>
+<span id="cb8-148"><a href="#cb8-148"></a>          &lt;else&gt;</span>
+<span id="cb8-149"><a href="#cb8-149"></a>            &lt;text variable="title" form="short" quotes="true"/&gt;</span>
+<span id="cb8-150"><a href="#cb8-150"></a>          &lt;/else&gt;</span>
+<span id="cb8-151"><a href="#cb8-151"></a>        &lt;/choose&gt;</span>
+<span id="cb8-152"><a href="#cb8-152"></a>      &lt;/substitute&gt;</span>
+<span id="cb8-153"><a href="#cb8-153"></a>    &lt;/names&gt;</span>
+<span id="cb8-154"><a href="#cb8-154"></a>  &lt;/macro&gt;</span>
+<span id="cb8-155"><a href="#cb8-155"></a>  &lt;!--A macro 'access' e utilizada em arquivos de paginas da web. Ela e responsavel por mostrar a URL do site pesquisado e a data do acesso--&gt;</span>
+<span id="cb8-156"><a href="#cb8-156"></a>  &lt;macro name="access"&gt;</span>
+<span id="cb8-157"><a href="#cb8-157"></a>    &lt;text variable="URL" prefix="Disponível em: &amp;lt;" suffix="&amp;gt;"/&gt;</span>
+<span id="cb8-158"><a href="#cb8-158"></a>    &lt;date variable="accessed" prefix=". Acesso em: "&gt;</span>
+<span id="cb8-159"><a href="#cb8-159"></a>      &lt;date-part name="day" suffix=" "/&gt;</span>
+<span id="cb8-160"><a href="#cb8-160"></a>      &lt;date-part name="month" form="short" suffix=". " text-case="lowercase"/&gt;</span>
+<span id="cb8-161"><a href="#cb8-161"></a>      &lt;date-part name="year"/&gt;</span>
+<span id="cb8-162"><a href="#cb8-162"></a>    &lt;/date&gt;</span>
+<span id="cb8-163"><a href="#cb8-163"></a>  &lt;/macro&gt;</span>
+<span id="cb8-164"><a href="#cb8-164"></a>  &lt;!--A macro 'title' e responsavel por mostrar o titulo principal do arquivo. Em todos os tipos ele aparecera em negrito logo apos os nomes dos</span>
+<span id="cb8-165"><a href="#cb8-165"></a>autores, exceto em arquivos do tipo 'artigo de jornal, artigo de revista, artigo de periodico', nesses arquivos eles irao aparecer em fonte normal.--&gt;</span>
+<span id="cb8-166"><a href="#cb8-166"></a>  &lt;macro name="title"&gt;</span>
+<span id="cb8-167"><a href="#cb8-167"></a>    &lt;choose&gt;</span>
+<span id="cb8-168"><a href="#cb8-168"></a>      &lt;if type="chapter bill" match="any"&gt;</span>
+<span id="cb8-169"><a href="#cb8-169"></a>        &lt;text variable="title"/&gt;</span>
+<span id="cb8-170"><a href="#cb8-170"></a>      &lt;/if&gt;</span>
+<span id="cb8-171"><a href="#cb8-171"></a>      &lt;else-if type="book thesis" match="any"&gt;</span>
+<span id="cb8-172"><a href="#cb8-172"></a>        &lt;text variable="title" font-weight="bold"/&gt;</span>
+<span id="cb8-173"><a href="#cb8-173"></a>      &lt;/else-if&gt;</span>
+<span id="cb8-174"><a href="#cb8-174"></a>      &lt;else-if type="article-newspaper article-magazine article-journal" match="any"&gt;</span>
+<span id="cb8-175"><a href="#cb8-175"></a>        &lt;text variable="title"/&gt;</span>
+<span id="cb8-176"><a href="#cb8-176"></a>      &lt;/else-if&gt;</span>
+<span id="cb8-177"><a href="#cb8-177"></a>      &lt;else&gt;</span>
+<span id="cb8-178"><a href="#cb8-178"></a>        &lt;text variable="title" font-weight="bold"/&gt;</span>
+<span id="cb8-179"><a href="#cb8-179"></a>      &lt;/else&gt;</span>
+<span id="cb8-180"><a href="#cb8-180"></a>    &lt;/choose&gt;</span>
+<span id="cb8-181"><a href="#cb8-181"></a>  &lt;/macro&gt;</span>
+<span id="cb8-182"><a href="#cb8-182"></a>  &lt;!-- Titulo dos Anais--&gt;</span>
+<span id="cb8-183"><a href="#cb8-183"></a>  &lt;macro name="container-title"&gt;</span>
+<span id="cb8-184"><a href="#cb8-184"></a>    &lt;choose&gt;</span>
+<span id="cb8-185"><a href="#cb8-185"></a>      &lt;if type="paper-conference" match="any"&gt;</span>
+<span id="cb8-186"><a href="#cb8-186"></a>        &lt;text variable="container-title" suffix=". "/&gt;</span>
+<span id="cb8-187"><a href="#cb8-187"></a>        &lt;text value="Anais" font-weight="bold"/&gt;</span>
+<span id="cb8-188"><a href="#cb8-188"></a>        &lt;text value="..."/&gt;</span>
+<span id="cb8-189"><a href="#cb8-189"></a>      &lt;/if&gt;</span>
+<span id="cb8-190"><a href="#cb8-190"></a>      &lt;else&gt;</span>
+<span id="cb8-191"><a href="#cb8-191"></a>        &lt;text variable="container-title" font-weight="bold"/&gt;</span>
+<span id="cb8-192"><a href="#cb8-192"></a>      &lt;/else&gt;</span>
+<span id="cb8-193"><a href="#cb8-193"></a>    &lt;/choose&gt;</span>
+<span id="cb8-194"><a href="#cb8-194"></a>  &lt;/macro&gt;</span>
+<span id="cb8-195"><a href="#cb8-195"></a>  &lt;!--A macro 'publisher' e responsavel por mostrar o nome da editora responsavel pela publicacao--&gt;</span>
+<span id="cb8-196"><a href="#cb8-196"></a>  &lt;macro name="publisher"&gt;</span>
+<span id="cb8-197"><a href="#cb8-197"></a>    &lt;choose&gt;</span>
+<span id="cb8-198"><a href="#cb8-198"></a>      &lt;if match="any" variable="publisher-place publisher"&gt;</span>
+<span id="cb8-199"><a href="#cb8-199"></a>        &lt;choose&gt;</span>
+<span id="cb8-200"><a href="#cb8-200"></a>          &lt;if variable="publisher-place"&gt;</span>
+<span id="cb8-201"><a href="#cb8-201"></a>            &lt;text variable="publisher-place" suffix=": "/&gt;</span>
+<span id="cb8-202"><a href="#cb8-202"></a>          &lt;/if&gt;</span>
+<span id="cb8-203"><a href="#cb8-203"></a>          &lt;else-if type="entry-encyclopedia"/&gt;</span>
+<span id="cb8-204"><a href="#cb8-204"></a>          &lt;else&gt;</span>
+<span id="cb8-205"><a href="#cb8-205"></a>            &lt;text value="[s.l.] "/&gt;</span>
+<span id="cb8-206"><a href="#cb8-206"></a>          &lt;/else&gt;</span>
+<span id="cb8-207"><a href="#cb8-207"></a>        &lt;/choose&gt;</span>
+<span id="cb8-208"><a href="#cb8-208"></a>        &lt;choose&gt;</span>
+<span id="cb8-209"><a href="#cb8-209"></a>          &lt;if variable="publisher"&gt;</span>
+<span id="cb8-210"><a href="#cb8-210"></a>            &lt;text variable="publisher" suffix=", "/&gt;</span>
+<span id="cb8-211"><a href="#cb8-211"></a>            &lt;text macro="issued"/&gt;</span>
+<span id="cb8-212"><a href="#cb8-212"></a>          &lt;/if&gt;</span>
+<span id="cb8-213"><a href="#cb8-213"></a>          &lt;else&gt;</span>
+<span id="cb8-214"><a href="#cb8-214"></a>            &lt;text value="[s.n.]"/&gt;</span>
+<span id="cb8-215"><a href="#cb8-215"></a>          &lt;/else&gt;</span>
+<span id="cb8-216"><a href="#cb8-216"></a>        &lt;/choose&gt;</span>
+<span id="cb8-217"><a href="#cb8-217"></a>      &lt;/if&gt;</span>
+<span id="cb8-218"><a href="#cb8-218"></a>      &lt;else&gt;</span>
+<span id="cb8-219"><a href="#cb8-219"></a>        &lt;text value="[s.l: s.n.]"/&gt;</span>
+<span id="cb8-220"><a href="#cb8-220"></a>      &lt;/else&gt;</span>
+<span id="cb8-221"><a href="#cb8-221"></a>    &lt;/choose&gt;</span>
+<span id="cb8-222"><a href="#cb8-222"></a>  &lt;/macro&gt;</span>
+<span id="cb8-223"><a href="#cb8-223"></a>  &lt;!--A macro 'event' sera utilizada em arquivos do tipo Evento/Conferencia. Ela e responsavel por mostrar o nome da conferencia, que tera formatacao</span>
+<span id="cb8-224"><a href="#cb8-224"></a>em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo a regra da ABNT ela deve ser em fonte normal--&gt;</span>
+<span id="cb8-225"><a href="#cb8-225"></a>  &lt;macro name="event"&gt;</span>
+<span id="cb8-226"><a href="#cb8-226"></a>    &lt;choose&gt;</span>
+<span id="cb8-227"><a href="#cb8-227"></a>      &lt;if variable="event"&gt;</span>
+<span id="cb8-228"><a href="#cb8-228"></a>        &lt;choose&gt;</span>
+<span id="cb8-229"><a href="#cb8-229"></a>          &lt;if variable="genre" match="none"&gt;</span>
+<span id="cb8-230"><a href="#cb8-230"></a>            &lt;text term="in" text-case="capitalize-first" suffix=": "/&gt;</span>
+<span id="cb8-231"><a href="#cb8-231"></a>            &lt;text variable="event" text-case="uppercase"/&gt;</span>
+<span id="cb8-232"><a href="#cb8-232"></a>          &lt;/if&gt;</span>
+<span id="cb8-233"><a href="#cb8-233"></a>          &lt;else&gt;</span>
+<span id="cb8-234"><a href="#cb8-234"></a>            &lt;group delimiter=" "&gt;</span>
+<span id="cb8-235"><a href="#cb8-235"></a>              &lt;text variable="genre" text-case="capitalize-first"/&gt;</span>
+<span id="cb8-236"><a href="#cb8-236"></a>              &lt;text term="presented at"/&gt;</span>
+<span id="cb8-237"><a href="#cb8-237"></a>              &lt;text variable="event"/&gt;</span>
+<span id="cb8-238"><a href="#cb8-238"></a>            &lt;/group&gt;</span>
+<span id="cb8-239"><a href="#cb8-239"></a>          &lt;/else&gt;</span>
+<span id="cb8-240"><a href="#cb8-240"></a>        &lt;/choose&gt;</span>
+<span id="cb8-241"><a href="#cb8-241"></a>      &lt;/if&gt;</span>
+<span id="cb8-242"><a href="#cb8-242"></a>    &lt;/choose&gt;</span>
+<span id="cb8-243"><a href="#cb8-243"></a>  &lt;/macro&gt;</span>
+<span id="cb8-244"><a href="#cb8-244"></a>  &lt;!--A macro 'issued' e utilizada quando devemos mostrar a data completa exemplo: 03 mar. 2011.--&gt;</span>
+<span id="cb8-245"><a href="#cb8-245"></a>  &lt;macro name="issued"&gt;</span>
+<span id="cb8-246"><a href="#cb8-246"></a>    &lt;choose&gt;</span>
+<span id="cb8-247"><a href="#cb8-247"></a>      &lt;if variable="issued" match="any"&gt;</span>
+<span id="cb8-248"><a href="#cb8-248"></a>        &lt;group&gt;</span>
+<span id="cb8-249"><a href="#cb8-249"></a>          &lt;choose&gt;</span>
+<span id="cb8-250"><a href="#cb8-250"></a>            &lt;if type="book chapter" match="none"&gt;</span>
+<span id="cb8-251"><a href="#cb8-251"></a>              &lt;date variable="issued"&gt;</span>
+<span id="cb8-252"><a href="#cb8-252"></a>                &lt;date-part name="day" suffix=" "/&gt;</span>
+<span id="cb8-253"><a href="#cb8-253"></a>                &lt;date-part name="month" form="short" suffix=" "/&gt;</span>
+<span id="cb8-254"><a href="#cb8-254"></a>              &lt;/date&gt;</span>
+<span id="cb8-255"><a href="#cb8-255"></a>            &lt;/if&gt;</span>
+<span id="cb8-256"><a href="#cb8-256"></a>          &lt;/choose&gt;</span>
+<span id="cb8-257"><a href="#cb8-257"></a>          &lt;date variable="issued"&gt;</span>
+<span id="cb8-258"><a href="#cb8-258"></a>            &lt;date-part name="year"/&gt;</span>
+<span id="cb8-259"><a href="#cb8-259"></a>          &lt;/date&gt;</span>
+<span id="cb8-260"><a href="#cb8-260"></a>        &lt;/group&gt;</span>
+<span id="cb8-261"><a href="#cb8-261"></a>      &lt;/if&gt;</span>
+<span id="cb8-262"><a href="#cb8-262"></a>      &lt;else&gt;</span>
+<span id="cb8-263"><a href="#cb8-263"></a>        &lt;text value="[s.d.]"/&gt;</span>
+<span id="cb8-264"><a href="#cb8-264"></a>      &lt;/else&gt;</span>
+<span id="cb8-265"><a href="#cb8-265"></a>    &lt;/choose&gt;</span>
+<span id="cb8-266"><a href="#cb8-266"></a>  &lt;/macro&gt;</span>
+<span id="cb8-267"><a href="#cb8-267"></a>  &lt;!--A macro 'issued' e utilizada quando desejamos que apareca apenas o ano--&gt;</span>
+<span id="cb8-268"><a href="#cb8-268"></a>  &lt;macro name="issued-year"&gt;</span>
+<span id="cb8-269"><a href="#cb8-269"></a>    &lt;choose&gt;</span>
+<span id="cb8-270"><a href="#cb8-270"></a>      &lt;if variable="issued" match="any"&gt;</span>
+<span id="cb8-271"><a href="#cb8-271"></a>        &lt;date variable="issued"&gt;</span>
+<span id="cb8-272"><a href="#cb8-272"></a>          &lt;date-part name="year"/&gt;</span>
+<span id="cb8-273"><a href="#cb8-273"></a>        &lt;/date&gt;</span>
+<span id="cb8-274"><a href="#cb8-274"></a>      &lt;/if&gt;</span>
+<span id="cb8-275"><a href="#cb8-275"></a>      &lt;else&gt;</span>
+<span id="cb8-276"><a href="#cb8-276"></a>        &lt;text value="[s.d.]"/&gt;</span>
+<span id="cb8-277"><a href="#cb8-277"></a>      &lt;/else&gt;</span>
+<span id="cb8-278"><a href="#cb8-278"></a>    &lt;/choose&gt;</span>
+<span id="cb8-279"><a href="#cb8-279"></a>  &lt;/macro&gt;</span>
+<span id="cb8-280"><a href="#cb8-280"></a>  &lt;!--A macro 'edition' e responsavel por mostrar o numero da edicao.--&gt;</span>
+<span id="cb8-281"><a href="#cb8-281"></a>  &lt;macro name="edition"&gt;</span>
+<span id="cb8-282"><a href="#cb8-282"></a>    &lt;choose&gt;</span>
+<span id="cb8-283"><a href="#cb8-283"></a>      &lt;!--Se for capitulo de livro aparecera somente o numero--&gt;</span>
+<span id="cb8-284"><a href="#cb8-284"></a>      &lt;if type="book chapter" match="any"&gt;</span>
+<span id="cb8-285"><a href="#cb8-285"></a>        &lt;choose&gt;</span>
+<span id="cb8-286"><a href="#cb8-286"></a>          &lt;if is-numeric="edition"&gt;</span>
+<span id="cb8-287"><a href="#cb8-287"></a>            &lt;group delimiter=" "&gt;</span>
+<span id="cb8-288"><a href="#cb8-288"></a>              &lt;number variable="edition" form="numeric" suffix="."/&gt;</span>
+<span id="cb8-289"><a href="#cb8-289"></a>              &lt;text term="edition" form="short" suffix="."/&gt;</span>
+<span id="cb8-290"><a href="#cb8-290"></a>            &lt;/group&gt;</span>
+<span id="cb8-291"><a href="#cb8-291"></a>          &lt;/if&gt;</span>
+<span id="cb8-292"><a href="#cb8-292"></a>          &lt;else&gt;</span>
+<span id="cb8-293"><a href="#cb8-293"></a>            &lt;!--Se for outro tipo de documento aparera o numero e depois a descricao "ed."--&gt;</span>
+<span id="cb8-294"><a href="#cb8-294"></a>            &lt;text variable="edition" suffix=" ed."/&gt;</span>
+<span id="cb8-295"><a href="#cb8-295"></a>          &lt;/else&gt;</span>
+<span id="cb8-296"><a href="#cb8-296"></a>        &lt;/choose&gt;</span>
+<span id="cb8-297"><a href="#cb8-297"></a>      &lt;/if&gt;</span>
+<span id="cb8-298"><a href="#cb8-298"></a>    &lt;/choose&gt;</span>
+<span id="cb8-299"><a href="#cb8-299"></a>  &lt;/macro&gt;</span>
+<span id="cb8-300"><a href="#cb8-300"></a>  &lt;!--A macro 'locators'tem como funcao mostrar os dados complementares do arquivo (paginas, secao, volume, etc)--&gt;</span>
+<span id="cb8-301"><a href="#cb8-301"></a>  &lt;macro name="locators"&gt;</span>
+<span id="cb8-302"><a href="#cb8-302"></a>    &lt;choose&gt;</span>
+<span id="cb8-303"><a href="#cb8-303"></a>      &lt;!--Se for projeto de lei mostrara o dia, mes "forma curta", ano, secao "Sec." e pagina "p."--&gt;</span>
+<span id="cb8-304"><a href="#cb8-304"></a>      &lt;if type="bill"&gt;</span>
+<span id="cb8-305"><a href="#cb8-305"></a>        &lt;group prefix=". " delimiter=", "&gt;</span>
+<span id="cb8-306"><a href="#cb8-306"></a>          &lt;date variable="issued"&gt;</span>
+<span id="cb8-307"><a href="#cb8-307"></a>            &lt;date-part name="day"/&gt;</span>
+<span id="cb8-308"><a href="#cb8-308"></a>            &lt;date-part prefix=" " name="month" form="short"/&gt;</span>
+<span id="cb8-309"><a href="#cb8-309"></a>            &lt;date-part prefix=" " name="year"/&gt;</span>
+<span id="cb8-310"><a href="#cb8-310"></a>          &lt;/date&gt;</span>
+<span id="cb8-311"><a href="#cb8-311"></a>          &lt;text variable="section" prefix="Sec. "/&gt;</span>
+<span id="cb8-312"><a href="#cb8-312"></a>          &lt;text variable="page" prefix="p. " suffix="."/&gt;</span>
+<span id="cb8-313"><a href="#cb8-313"></a>        &lt;/group&gt;</span>
+<span id="cb8-314"><a href="#cb8-314"></a>      &lt;/if&gt;</span>
+<span id="cb8-315"><a href="#cb8-315"></a>      &lt;!--Se for artigos de jornal, revista, etc. Aparecera o volume "v.", edicao "n." e a pagina do artigo "p."--&gt;</span>
+<span id="cb8-316"><a href="#cb8-316"></a>      &lt;else-if match="any" type="article-journal article-magazine article-newspaper"&gt;</span>
+<span id="cb8-317"><a href="#cb8-317"></a>        &lt;group delimiter=", "&gt;</span>
+<span id="cb8-318"><a href="#cb8-318"></a>          &lt;group delimiter=", "&gt;</span>
+<span id="cb8-319"><a href="#cb8-319"></a>            &lt;text variable="volume" prefix="v. "/&gt;</span>
+<span id="cb8-320"><a href="#cb8-320"></a>            &lt;text variable="issue" prefix="n. "/&gt;</span>
+<span id="cb8-321"><a href="#cb8-321"></a>          &lt;/group&gt;</span>
+<span id="cb8-322"><a href="#cb8-322"></a>          &lt;text variable="page" prefix="p. "/&gt;</span>
+<span id="cb8-323"><a href="#cb8-323"></a>        &lt;/group&gt;</span>
+<span id="cb8-324"><a href="#cb8-324"></a>      &lt;/else-if&gt;</span>
+<span id="cb8-325"><a href="#cb8-325"></a>      &lt;!--Se for capitulo de livro aparecera o volume "v." e a pagina "p."--&gt;</span>
+<span id="cb8-326"><a href="#cb8-326"></a>      &lt;else-if match="any" type="book chapter"&gt;</span>
+<span id="cb8-327"><a href="#cb8-327"></a>        &lt;group delimiter=", "&gt;</span>
+<span id="cb8-328"><a href="#cb8-328"></a>          &lt;group&gt;</span>
+<span id="cb8-329"><a href="#cb8-329"></a>            &lt;text variable="volume" prefix="v. "/&gt;</span>
+<span id="cb8-330"><a href="#cb8-330"></a>            &lt;text variable="page" prefix="p. "/&gt;</span>
+<span id="cb8-331"><a href="#cb8-331"></a>          &lt;/group&gt;</span>
+<span id="cb8-332"><a href="#cb8-332"></a>        &lt;/group&gt;</span>
+<span id="cb8-333"><a href="#cb8-333"></a>      &lt;/else-if&gt;</span>
+<span id="cb8-334"><a href="#cb8-334"></a>    &lt;/choose&gt;</span>
+<span id="cb8-335"><a href="#cb8-335"></a>  &lt;/macro&gt;</span>
+<span id="cb8-336"><a href="#cb8-336"></a>  &lt;macro name="collection-title"&gt;</span>
+<span id="cb8-337"><a href="#cb8-337"></a>    &lt;text variable="collection-title"/&gt;</span>
+<span id="cb8-338"><a href="#cb8-338"></a>    &lt;text variable="collection-number" prefix=" "/&gt;</span>
+<span id="cb8-339"><a href="#cb8-339"></a>  &lt;/macro&gt;</span>
+<span id="cb8-340"><a href="#cb8-340"></a>  &lt;macro name="genre"&gt;</span>
+<span id="cb8-341"><a href="#cb8-341"></a>    &lt;text variable="genre"/&gt;</span>
+<span id="cb8-342"><a href="#cb8-342"></a>  &lt;/macro&gt;</span>
+<span id="cb8-343"><a href="#cb8-343"></a>  &lt;macro name="citation-locator"&gt;</span>
+<span id="cb8-344"><a href="#cb8-344"></a>    &lt;group&gt;</span>
+<span id="cb8-345"><a href="#cb8-345"></a>      &lt;label variable="locator" form="short"/&gt;</span>
+<span id="cb8-346"><a href="#cb8-346"></a>      &lt;text variable="locator" prefix=" "/&gt;</span>
+<span id="cb8-347"><a href="#cb8-347"></a>    &lt;/group&gt;</span>
+<span id="cb8-348"><a href="#cb8-348"></a>  &lt;/macro&gt;</span>
+<span id="cb8-349"><a href="#cb8-349"></a>  &lt;macro name="place"&gt;</span>
+<span id="cb8-350"><a href="#cb8-350"></a>    &lt;choose&gt;</span>
+<span id="cb8-351"><a href="#cb8-351"></a>      &lt;if match="any" variable="publisher-place"&gt;</span>
+<span id="cb8-352"><a href="#cb8-352"></a>        &lt;text variable="publisher-place"/&gt;</span>
+<span id="cb8-353"><a href="#cb8-353"></a>      &lt;/if&gt;</span>
+<span id="cb8-354"><a href="#cb8-354"></a>    &lt;/choose&gt;</span>
+<span id="cb8-355"><a href="#cb8-355"></a>  &lt;/macro&gt;</span>
+<span id="cb8-356"><a href="#cb8-356"></a>  &lt;macro name="archive"&gt;</span>
+<span id="cb8-357"><a href="#cb8-357"></a>    &lt;group&gt;</span>
+<span id="cb8-358"><a href="#cb8-358"></a>      &lt;text variable="archive" prefix=" "/&gt;</span>
+<span id="cb8-359"><a href="#cb8-359"></a>    &lt;/group&gt;</span>
+<span id="cb8-360"><a href="#cb8-360"></a>  &lt;/macro&gt;</span>
+<span id="cb8-361"><a href="#cb8-361"></a>  &lt;!--Citacao--&gt;</span>
+<span id="cb8-362"><a href="#cb8-362"></a>  &lt;!--et al. aparece a partir de 04 autores--&gt;</span>
+<span id="cb8-363"><a href="#cb8-363"></a>  &lt;citation et-al-min="4" et-al-use-first="1" collapse="year" disambiguate-add-year-suffix="true"&gt;</span>
+<span id="cb8-364"><a href="#cb8-364"></a>    &lt;sort&gt;</span>
+<span id="cb8-365"><a href="#cb8-365"></a>      &lt;key macro="author"/&gt;</span>
+<span id="cb8-366"><a href="#cb8-366"></a>      &lt;!--Puxa o autor primeiro--&gt;</span>
+<span id="cb8-367"><a href="#cb8-367"></a>      &lt;key variable="issued"/&gt;</span>
+<span id="cb8-368"><a href="#cb8-368"></a>      &lt;!--Depois o ano--&gt;</span>
+<span id="cb8-369"><a href="#cb8-369"></a>    &lt;/sort&gt;</span>
+<span id="cb8-370"><a href="#cb8-370"></a>    &lt;layout prefix="(" suffix=")" delimiter="; "&gt;</span>
+<span id="cb8-371"><a href="#cb8-371"></a>      &lt;!--Entre parenteses separando os autores com ponto-e-virgula--&gt;</span>
+<span id="cb8-372"><a href="#cb8-372"></a>      &lt;group&gt;</span>
+<span id="cb8-373"><a href="#cb8-373"></a>        &lt;text suffix=", " macro="author-short"/&gt;</span>
+<span id="cb8-374"><a href="#cb8-374"></a>        &lt;!--Seperando os autores das datas usando virgula--&gt;</span>
+<span id="cb8-375"><a href="#cb8-375"></a>        &lt;text macro="issued-year"/&gt;</span>
+<span id="cb8-376"><a href="#cb8-376"></a>        &lt;text prefix=", " macro="citation-locator"/&gt;</span>
+<span id="cb8-377"><a href="#cb8-377"></a>      &lt;/group&gt;</span>
+<span id="cb8-378"><a href="#cb8-378"></a>    &lt;/layout&gt;</span>
+<span id="cb8-379"><a href="#cb8-379"></a>  &lt;/citation&gt;</span>
+<span id="cb8-380"><a href="#cb8-380"></a>  &lt;!--Bibliografia--&gt;</span>
+<span id="cb8-381"><a href="#cb8-381"></a>  &lt;!--et al. aparece a partir de 04 autores--&gt;</span>
+<span id="cb8-382"><a href="#cb8-382"></a>  &lt;bibliography hanging-indent="false" et-al-min="4" et-al-use-first="1" entry-spacing="1"&gt;</span>
+<span id="cb8-383"><a href="#cb8-383"></a>    &lt;sort&gt;</span>
+<span id="cb8-384"><a href="#cb8-384"></a>      &lt;key macro="author"/&gt;</span>
+<span id="cb8-385"><a href="#cb8-385"></a>      &lt;!--Puxa o autor primeiro--&gt;</span>
+<span id="cb8-386"><a href="#cb8-386"></a>      &lt;key variable="issued"/&gt;</span>
+<span id="cb8-387"><a href="#cb8-387"></a>      &lt;!--Depois o ano--&gt;</span>
+<span id="cb8-388"><a href="#cb8-388"></a>    &lt;/sort&gt;</span>
+<span id="cb8-389"><a href="#cb8-389"></a>    &lt;layout&gt;</span>
+<span id="cb8-390"><a href="#cb8-390"></a>      &lt;choose&gt;</span>
+<span id="cb8-391"><a href="#cb8-391"></a>        &lt;!--Projeto de lei--&gt;</span>
+<span id="cb8-392"><a href="#cb8-392"></a>        &lt;if type="bill"&gt;</span>
+<span id="cb8-393"><a href="#cb8-393"></a>          &lt;group&gt;</span>
+<span id="cb8-394"><a href="#cb8-394"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-395"><a href="#cb8-395"></a>            &lt;!--autor--&gt;</span>
+<span id="cb8-396"><a href="#cb8-396"></a>            &lt;text variable="number" suffix=". "/&gt;</span>
+<span id="cb8-397"><a href="#cb8-397"></a>            &lt;!--Numero da lei--&gt;</span>
+<span id="cb8-398"><a href="#cb8-398"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-399"><a href="#cb8-399"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-400"><a href="#cb8-400"></a>            &lt;text variable="references" font-weight="bold"/&gt;</span>
+<span id="cb8-401"><a href="#cb8-401"></a>            &lt;!--Historico em negrito--&gt;</span>
+<span id="cb8-402"><a href="#cb8-402"></a>            &lt;text variable="note"/&gt;</span>
+<span id="cb8-403"><a href="#cb8-403"></a>            &lt;!--Campo 'extra' caso queira colocar alguma observacao--&gt;</span>
+<span id="cb8-404"><a href="#cb8-404"></a>            &lt;text macro="locators" suffix=". "/&gt;</span>
+<span id="cb8-405"><a href="#cb8-405"></a>            &lt;!--Dados complementares "secao, pagina"--&gt;</span>
+<span id="cb8-406"><a href="#cb8-406"></a>          &lt;/group&gt;</span>
+<span id="cb8-407"><a href="#cb8-407"></a>        &lt;/if&gt;</span>
+<span id="cb8-408"><a href="#cb8-408"></a>        &lt;!--Mapa--&gt;</span>
+<span id="cb8-409"><a href="#cb8-409"></a>        &lt;else-if type="map"&gt;</span>
+<span id="cb8-410"><a href="#cb8-410"></a>          &lt;group&gt;</span>
+<span id="cb8-411"><a href="#cb8-411"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-412"><a href="#cb8-412"></a>            &lt;!--autor--&gt;</span>
+<span id="cb8-413"><a href="#cb8-413"></a>            &lt;text macro="title" suffix=", "/&gt;</span>
+<span id="cb8-414"><a href="#cb8-414"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-415"><a href="#cb8-415"></a>            &lt;text macro="issued" suffix=". "/&gt;</span>
+<span id="cb8-416"><a href="#cb8-416"></a>            &lt;!--data--&gt;</span>
+<span id="cb8-417"><a href="#cb8-417"></a>            &lt;text variable="note" suffix=". "/&gt;</span>
+<span id="cb8-418"><a href="#cb8-418"></a>            &lt;!--Campo 'extra' caso queira colocar alguma observacao--&gt;</span>
+<span id="cb8-419"><a href="#cb8-419"></a>          &lt;/group&gt;</span>
+<span id="cb8-420"><a href="#cb8-420"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-421"><a href="#cb8-421"></a>        &lt;!--Livro--&gt;</span>
+<span id="cb8-422"><a href="#cb8-422"></a>        &lt;else-if type="book"&gt;</span>
+<span id="cb8-423"><a href="#cb8-423"></a>          &lt;group&gt;</span>
+<span id="cb8-424"><a href="#cb8-424"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-425"><a href="#cb8-425"></a>            &lt;!--autor--&gt;</span>
+<span id="cb8-426"><a href="#cb8-426"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-427"><a href="#cb8-427"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-428"><a href="#cb8-428"></a>            &lt;text macro="translator" suffix=". "/&gt;</span>
+<span id="cb8-429"><a href="#cb8-429"></a>            &lt;!--Traducao--&gt;</span>
+<span id="cb8-430"><a href="#cb8-430"></a>            &lt;text macro="edition" suffix=". "/&gt;</span>
+<span id="cb8-431"><a href="#cb8-431"></a>            &lt;!--Edicao--&gt;</span>
+<span id="cb8-432"><a href="#cb8-432"></a>            &lt;text macro="publisher" suffix=". "/&gt;</span>
+<span id="cb8-433"><a href="#cb8-433"></a>            &lt;!--Local, data, etc--&gt;</span>
+<span id="cb8-434"><a href="#cb8-434"></a>            &lt;text macro="locators"/&gt;</span>
+<span id="cb8-435"><a href="#cb8-435"></a>            &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-436"><a href="#cb8-436"></a>          &lt;/group&gt;</span>
+<span id="cb8-437"><a href="#cb8-437"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-438"><a href="#cb8-438"></a>        &lt;!--Conferencia--&gt;</span>
+<span id="cb8-439"><a href="#cb8-439"></a>        &lt;else-if type="chapter"&gt;</span>
+<span id="cb8-440"><a href="#cb8-440"></a>          &lt;group&gt;</span>
+<span id="cb8-441"><a href="#cb8-441"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-442"><a href="#cb8-442"></a>            &lt;!--autor--&gt;</span>
+<span id="cb8-443"><a href="#cb8-443"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-444"><a href="#cb8-444"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-445"><a href="#cb8-445"></a>            &lt;text macro="secondary-contributors" suffix=". "/&gt;</span>
+<span id="cb8-446"><a href="#cb8-446"></a>            &lt;text term="in" text-case="capitalize-first" suffix=": "/&gt;</span>
+<span id="cb8-447"><a href="#cb8-447"></a>            &lt;!--In:--&gt;</span>
+<span id="cb8-448"><a href="#cb8-448"></a>            &lt;text macro="container-contributors" suffix=". "/&gt;</span>
+<span id="cb8-449"><a href="#cb8-449"></a>            &lt;!--Nomes de editores--&gt;</span>
+<span id="cb8-450"><a href="#cb8-450"></a>            &lt;text macro="container-title" suffix=". "/&gt;</span>
+<span id="cb8-451"><a href="#cb8-451"></a>            &lt;!--Titulo da conferencia--&gt;</span>
+<span id="cb8-452"><a href="#cb8-452"></a>            &lt;text variable="collection-title" suffix=". "/&gt;</span>
+<span id="cb8-453"><a href="#cb8-453"></a>            &lt;text macro="translator" suffix=". "/&gt;</span>
+<span id="cb8-454"><a href="#cb8-454"></a>            &lt;!--Traducao--&gt;</span>
+<span id="cb8-455"><a href="#cb8-455"></a>            &lt;text macro="edition" suffix=". "/&gt;</span>
+<span id="cb8-456"><a href="#cb8-456"></a>            &lt;!--Edicao--&gt;</span>
+<span id="cb8-457"><a href="#cb8-457"></a>            &lt;text macro="publisher" suffix=". "/&gt;</span>
+<span id="cb8-458"><a href="#cb8-458"></a>            &lt;!--Local, data, etc--&gt;</span>
+<span id="cb8-459"><a href="#cb8-459"></a>            &lt;text macro="locators" suffix=". "/&gt;</span>
+<span id="cb8-460"><a href="#cb8-460"></a>            &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-461"><a href="#cb8-461"></a>          &lt;/group&gt;</span>
+<span id="cb8-462"><a href="#cb8-462"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-463"><a href="#cb8-463"></a>        &lt;!--Artigo de revista, jornal, etc--&gt;</span>
+<span id="cb8-464"><a href="#cb8-464"></a>        &lt;else-if type="article-newspaper article-magazine article-journal" match="any"&gt;</span>
+<span id="cb8-465"><a href="#cb8-465"></a>          &lt;group&gt;</span>
+<span id="cb8-466"><a href="#cb8-466"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-467"><a href="#cb8-467"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-468"><a href="#cb8-468"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-469"><a href="#cb8-469"></a>            &lt;!--Titulo do artigo--&gt;</span>
+<span id="cb8-470"><a href="#cb8-470"></a>            &lt;text macro="container-title" suffix=", "/&gt;</span>
+<span id="cb8-471"><a href="#cb8-471"></a>            &lt;!--Titulo da publicacao--&gt;</span>
+<span id="cb8-472"><a href="#cb8-472"></a>            &lt;text variable="collection-title" suffix=". "/&gt;</span>
+<span id="cb8-473"><a href="#cb8-473"></a>            &lt;!--Titulo da serie--&gt;</span>
+<span id="cb8-474"><a href="#cb8-474"></a>            &lt;text macro="edition" suffix=", "/&gt;</span>
+<span id="cb8-475"><a href="#cb8-475"></a>            &lt;!--Edicao--&gt;</span>
+<span id="cb8-476"><a href="#cb8-476"></a>            &lt;text macro="locators" suffix=", "/&gt;</span>
+<span id="cb8-477"><a href="#cb8-477"></a>            &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-478"><a href="#cb8-478"></a>            &lt;text macro="issued" suffix=". "/&gt;</span>
+<span id="cb8-479"><a href="#cb8-479"></a>            &lt;!--Data--&gt;</span>
+<span id="cb8-480"><a href="#cb8-480"></a>          &lt;/group&gt;</span>
+<span id="cb8-481"><a href="#cb8-481"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-482"><a href="#cb8-482"></a>        &lt;!--Tese--&gt;</span>
+<span id="cb8-483"><a href="#cb8-483"></a>        &lt;else-if type="thesis"&gt;</span>
+<span id="cb8-484"><a href="#cb8-484"></a>          &lt;group&gt;</span>
+<span id="cb8-485"><a href="#cb8-485"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-486"><a href="#cb8-486"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-487"><a href="#cb8-487"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-488"><a href="#cb8-488"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-489"><a href="#cb8-489"></a>            &lt;text macro="genre" suffix="&amp;#8212;"/&gt;</span>
+<span id="cb8-490"><a href="#cb8-490"></a>            &lt;!--Tipo--&gt;</span>
+<span id="cb8-491"><a href="#cb8-491"></a>            &lt;text macro="publisher" suffix="."/&gt;</span>
+<span id="cb8-492"><a href="#cb8-492"></a>            &lt;!--Local, data, etc--&gt;</span>
+<span id="cb8-493"><a href="#cb8-493"></a>          &lt;/group&gt;</span>
+<span id="cb8-494"><a href="#cb8-494"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-495"><a href="#cb8-495"></a>        &lt;!-- Nao ha norma ABNT para manuscritos --&gt;</span>
+<span id="cb8-496"><a href="#cb8-496"></a>        &lt;else-if type="manuscript"&gt;</span>
+<span id="cb8-497"><a href="#cb8-497"></a>          &lt;group&gt;</span>
+<span id="cb8-498"><a href="#cb8-498"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-499"><a href="#cb8-499"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-500"><a href="#cb8-500"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-501"><a href="#cb8-501"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-502"><a href="#cb8-502"></a>            &lt;text macro="edition" suffix=". "/&gt;</span>
+<span id="cb8-503"><a href="#cb8-503"></a>            &lt;!--Edicao--&gt;</span>
+<span id="cb8-504"><a href="#cb8-504"></a>            &lt;text macro="place" suffix=", "/&gt;</span>
+<span id="cb8-505"><a href="#cb8-505"></a>            &lt;text macro="issued" suffix=". "/&gt;</span>
+<span id="cb8-506"><a href="#cb8-506"></a>            &lt;!--Data--&gt;</span>
+<span id="cb8-507"><a href="#cb8-507"></a>            &lt;text macro="access" suffix=". "/&gt;</span>
+<span id="cb8-508"><a href="#cb8-508"></a>            &lt;!--URL, data do acesso--&gt;</span>
+<span id="cb8-509"><a href="#cb8-509"></a>            &lt;text macro="archive" suffix=". "/&gt;</span>
+<span id="cb8-510"><a href="#cb8-510"></a>            &lt;!--Arquive--&gt;</span>
+<span id="cb8-511"><a href="#cb8-511"></a>          &lt;/group&gt;</span>
+<span id="cb8-512"><a href="#cb8-512"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-513"><a href="#cb8-513"></a>        &lt;!--Pagina da WEB--&gt;</span>
+<span id="cb8-514"><a href="#cb8-514"></a>        &lt;else-if type="webpage"&gt;</span>
+<span id="cb8-515"><a href="#cb8-515"></a>          &lt;group&gt;</span>
+<span id="cb8-516"><a href="#cb8-516"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-517"><a href="#cb8-517"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-518"><a href="#cb8-518"></a>            &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-519"><a href="#cb8-519"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-520"><a href="#cb8-520"></a>            &lt;text macro="genre" suffix=". "/&gt;</span>
+<span id="cb8-521"><a href="#cb8-521"></a>            &lt;text macro="access" suffix=". "/&gt;</span>
+<span id="cb8-522"><a href="#cb8-522"></a>            &lt;!--URL, data do acesso--&gt;</span>
+<span id="cb8-523"><a href="#cb8-523"></a>          &lt;/group&gt;</span>
+<span id="cb8-524"><a href="#cb8-524"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-525"><a href="#cb8-525"></a>        &lt;!--Relatorio--&gt;</span>
+<span id="cb8-526"><a href="#cb8-526"></a>        &lt;else-if type="report"&gt;</span>
+<span id="cb8-527"><a href="#cb8-527"></a>          &lt;group&gt;</span>
+<span id="cb8-528"><a href="#cb8-528"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-529"><a href="#cb8-529"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-530"><a href="#cb8-530"></a>            &lt;text macro="title"/&gt;</span>
+<span id="cb8-531"><a href="#cb8-531"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-532"><a href="#cb8-532"></a>            &lt;text macro="container-contributors"/&gt;</span>
+<span id="cb8-533"><a href="#cb8-533"></a>            &lt;!--Nomes de editores--&gt;</span>
+<span id="cb8-534"><a href="#cb8-534"></a>            &lt;text macro="secondary-contributors"/&gt;</span>
+<span id="cb8-535"><a href="#cb8-535"></a>            &lt;text macro="container-title"/&gt;</span>
+<span id="cb8-536"><a href="#cb8-536"></a>            &lt;!--Titulo da publicacao--&gt;</span>
+<span id="cb8-537"><a href="#cb8-537"></a>            &lt;text variable="collection-title" prefix=": "/&gt;</span>
+<span id="cb8-538"><a href="#cb8-538"></a>            &lt;text macro="locators"/&gt;</span>
+<span id="cb8-539"><a href="#cb8-539"></a>            &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-540"><a href="#cb8-540"></a>            &lt;text macro="event"/&gt;</span>
+<span id="cb8-541"><a href="#cb8-541"></a>            &lt;!--Nome do evento, conferencia--&gt;</span>
+<span id="cb8-542"><a href="#cb8-542"></a>            &lt;text macro="publisher" prefix=". " suffix=". "/&gt;</span>
+<span id="cb8-543"><a href="#cb8-543"></a>            &lt;!--Local, data, etc--&gt;</span>
+<span id="cb8-544"><a href="#cb8-544"></a>            &lt;text macro="access" suffix="."/&gt;</span>
+<span id="cb8-545"><a href="#cb8-545"></a>            &lt;!--URL, data do acesso--&gt;</span>
+<span id="cb8-546"><a href="#cb8-546"></a>          &lt;/group&gt;</span>
+<span id="cb8-547"><a href="#cb8-547"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-548"><a href="#cb8-548"></a>        &lt;!--Texto para Discussao (Verbete de Dicionario)--&gt;</span>
+<span id="cb8-549"><a href="#cb8-549"></a>        &lt;else-if type="entry-dictionary"&gt;</span>
+<span id="cb8-550"><a href="#cb8-550"></a>          &lt;group&gt;</span>
+<span id="cb8-551"><a href="#cb8-551"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-552"><a href="#cb8-552"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-553"><a href="#cb8-553"></a>            &lt;text macro="title"/&gt;</span>
+<span id="cb8-554"><a href="#cb8-554"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-555"><a href="#cb8-555"></a>            &lt;text macro="container-contributors"/&gt;</span>
+<span id="cb8-556"><a href="#cb8-556"></a>            &lt;!--Nomes de editores--&gt;</span>
+<span id="cb8-557"><a href="#cb8-557"></a>            &lt;text macro="secondary-contributors"/&gt;</span>
+<span id="cb8-558"><a href="#cb8-558"></a>            &lt;text macro="container-title"/&gt;</span>
+<span id="cb8-559"><a href="#cb8-559"></a>            &lt;!--Titulo da publicacao--&gt;</span>
+<span id="cb8-560"><a href="#cb8-560"></a>            &lt;text variable="collection-title" prefix=": " suffix=". "/&gt;</span>
+<span id="cb8-561"><a href="#cb8-561"></a>            &lt;text macro="locators"/&gt;</span>
+<span id="cb8-562"><a href="#cb8-562"></a>            &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-563"><a href="#cb8-563"></a>            &lt;text macro="event"/&gt;</span>
+<span id="cb8-564"><a href="#cb8-564"></a>            &lt;!--Nome do evento, conferencia--&gt;</span>
+<span id="cb8-565"><a href="#cb8-565"></a>            &lt;text macro="publisher" prefix=". " suffix=". "/&gt;</span>
+<span id="cb8-566"><a href="#cb8-566"></a>            &lt;!--Local, data, etc--&gt;</span>
+<span id="cb8-567"><a href="#cb8-567"></a>            &lt;text macro="collection-title" prefix="(Texto para discussao, n. " suffix=")."/&gt;</span>
+<span id="cb8-568"><a href="#cb8-568"></a>            &lt;text macro="access"/&gt;</span>
+<span id="cb8-569"><a href="#cb8-569"></a>            &lt;!--URL, data do acesso--&gt;</span>
+<span id="cb8-570"><a href="#cb8-570"></a>          &lt;/group&gt;</span>
+<span id="cb8-571"><a href="#cb8-571"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-572"><a href="#cb8-572"></a>        &lt;!--Nota Tecnica (Verbete de Enciclopedia)--&gt;</span>
+<span id="cb8-573"><a href="#cb8-573"></a>        &lt;else-if type="entry-encyclopedia"&gt;</span>
+<span id="cb8-574"><a href="#cb8-574"></a>          &lt;group&gt;</span>
+<span id="cb8-575"><a href="#cb8-575"></a>            &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-576"><a href="#cb8-576"></a>            &lt;!--Autor--&gt;</span>
+<span id="cb8-577"><a href="#cb8-577"></a>            &lt;text macro="title"/&gt;</span>
+<span id="cb8-578"><a href="#cb8-578"></a>            &lt;!--Titulo--&gt;</span>
+<span id="cb8-579"><a href="#cb8-579"></a>            &lt;text variable="publisher-place" prefix=". " suffix=": "/&gt;</span>
+<span id="cb8-580"><a href="#cb8-580"></a>            &lt;!--Local--&gt;</span>
+<span id="cb8-581"><a href="#cb8-581"></a>            &lt;text variable="publisher" suffix=", "/&gt;</span>
+<span id="cb8-582"><a href="#cb8-582"></a>            &lt;!--Editor--&gt;</span>
+<span id="cb8-583"><a href="#cb8-583"></a>            &lt;text macro="issued" prefix=", " suffix=". (Nota técnica)."/&gt;</span>
+<span id="cb8-584"><a href="#cb8-584"></a>            &lt;!--Data--&gt;</span>
+<span id="cb8-585"><a href="#cb8-585"></a>          &lt;/group&gt;</span>
+<span id="cb8-586"><a href="#cb8-586"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-587"><a href="#cb8-587"></a>        &lt;else-if type="paper-conference"&gt;</span>
+<span id="cb8-588"><a href="#cb8-588"></a>          &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-589"><a href="#cb8-589"></a>          &lt;!--Autor--&gt;</span>
+<span id="cb8-590"><a href="#cb8-590"></a>          &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-591"><a href="#cb8-591"></a>          &lt;!--Titulo--&gt;</span>
+<span id="cb8-592"><a href="#cb8-592"></a>          &lt;text macro="container-contributors"/&gt;</span>
+<span id="cb8-593"><a href="#cb8-593"></a>          &lt;!--Nomes de editore--&gt;</span>
+<span id="cb8-594"><a href="#cb8-594"></a>          &lt;text macro="secondary-contributors"/&gt;</span>
+<span id="cb8-595"><a href="#cb8-595"></a>          &lt;text macro="container-title"/&gt;</span>
+<span id="cb8-596"><a href="#cb8-596"></a>          &lt;!--Titulo da publicacao--&gt;</span>
+<span id="cb8-597"><a href="#cb8-597"></a>          &lt;text variable="collection-title" prefix=": " suffix="."/&gt;</span>
+<span id="cb8-598"><a href="#cb8-598"></a>          &lt;text macro="locators"/&gt;</span>
+<span id="cb8-599"><a href="#cb8-599"></a>          &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-600"><a href="#cb8-600"></a>          &lt;group delimiter=". " prefix=". " suffix=". "&gt;</span>
+<span id="cb8-601"><a href="#cb8-601"></a>            &lt;text macro="event"/&gt;</span>
+<span id="cb8-602"><a href="#cb8-602"></a>            &lt;!--Nome do evento, conferencia--&gt;</span>
+<span id="cb8-603"><a href="#cb8-603"></a>          &lt;/group&gt;</span>
+<span id="cb8-604"><a href="#cb8-604"></a>          &lt;text variable="publisher-place" suffix=": "/&gt;</span>
+<span id="cb8-605"><a href="#cb8-605"></a>          &lt;!--Local--&gt;</span>
+<span id="cb8-606"><a href="#cb8-606"></a>          &lt;text variable="publisher" suffix=", "/&gt;</span>
+<span id="cb8-607"><a href="#cb8-607"></a>          &lt;!--Editor--&gt;</span>
+<span id="cb8-608"><a href="#cb8-608"></a>          &lt;text macro="issued" suffix=". "/&gt;</span>
+<span id="cb8-609"><a href="#cb8-609"></a>          &lt;!--Data--&gt;</span>
+<span id="cb8-610"><a href="#cb8-610"></a>          &lt;text macro="access"/&gt;</span>
+<span id="cb8-611"><a href="#cb8-611"></a>          &lt;!--URL, data do acesso--&gt;</span>
+<span id="cb8-612"><a href="#cb8-612"></a>        &lt;/else-if&gt;</span>
+<span id="cb8-613"><a href="#cb8-613"></a>        &lt;else&gt;</span>
+<span id="cb8-614"><a href="#cb8-614"></a>          &lt;text macro="author" suffix=". "/&gt;</span>
+<span id="cb8-615"><a href="#cb8-615"></a>          &lt;!--Autor--&gt;</span>
+<span id="cb8-616"><a href="#cb8-616"></a>          &lt;text macro="title" suffix=". "/&gt;</span>
+<span id="cb8-617"><a href="#cb8-617"></a>          &lt;!--Titulo--&gt;</span>
+<span id="cb8-618"><a href="#cb8-618"></a>          &lt;text macro="container-contributors"/&gt;</span>
+<span id="cb8-619"><a href="#cb8-619"></a>          &lt;!--Nomes de editore--&gt;</span>
+<span id="cb8-620"><a href="#cb8-620"></a>          &lt;text macro="secondary-contributors"/&gt;</span>
+<span id="cb8-621"><a href="#cb8-621"></a>          &lt;text macro="container-title"/&gt;</span>
+<span id="cb8-622"><a href="#cb8-622"></a>          &lt;!--Titulo da publicacao--&gt;</span>
+<span id="cb8-623"><a href="#cb8-623"></a>          &lt;text variable="collection-title" prefix=": " suffix="."/&gt;</span>
+<span id="cb8-624"><a href="#cb8-624"></a>          &lt;text macro="locators"/&gt;</span>
+<span id="cb8-625"><a href="#cb8-625"></a>          &lt;!--Dados complementares "pagina, volume"--&gt;</span>
+<span id="cb8-626"><a href="#cb8-626"></a>          &lt;group delimiter=". " prefix=". " suffix=". "&gt;</span>
+<span id="cb8-627"><a href="#cb8-627"></a>            &lt;text macro="event"/&gt;</span>
+<span id="cb8-628"><a href="#cb8-628"></a>            &lt;!--Nome do evento, conferencia--&gt;</span>
+<span id="cb8-629"><a href="#cb8-629"></a>          &lt;/group&gt;</span>
+<span id="cb8-630"><a href="#cb8-630"></a>          &lt;text variable="publisher-place"/&gt;</span>
+<span id="cb8-631"><a href="#cb8-631"></a>          &lt;!--Local--&gt;</span>
+<span id="cb8-632"><a href="#cb8-632"></a>          &lt;text variable="publisher" suffix=", "/&gt;</span>
+<span id="cb8-633"><a href="#cb8-633"></a>          &lt;!--Editor--&gt;</span>
+<span id="cb8-634"><a href="#cb8-634"></a>          &lt;text macro="issued" prefix=", " suffix=". "/&gt;</span>
+<span id="cb8-635"><a href="#cb8-635"></a>          &lt;!--Data--&gt;</span>
+<span id="cb8-636"><a href="#cb8-636"></a>          &lt;text macro="access"/&gt;</span>
+<span id="cb8-637"><a href="#cb8-637"></a>          &lt;!--URL, data do acesso--&gt;</span>
+<span id="cb8-638"><a href="#cb8-638"></a>        &lt;/else&gt;</span>
+<span id="cb8-639"><a href="#cb8-639"></a>      &lt;/choose&gt;</span>
+<span id="cb8-640"><a href="#cb8-640"></a>    &lt;/layout&gt;</span>
+<span id="cb8-641"><a href="#cb8-641"></a>  &lt;/bibliography&gt;</span>
+<span id="cb8-642"><a href="#cb8-642"></a>&lt;/style&gt;</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

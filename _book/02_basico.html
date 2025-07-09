@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.15">
+<meta name="generator" content="quarto-1.8.16">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,9 +94,9 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fa280324d2a536d992f3c15d8f2ee39b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f472ab96d2a3c0ccfa9925ee9dc5ed7e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fa280324d2a536d992f3c15d8f2ee39b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-50a6adf84115c145d18121a4a81cbcfe.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b1ccfc91e9a27938a49a770e6131bfa2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -539,7 +539,7 @@ div.csl-indent {
 </section>
 <section id="o-que-é-rmarkdown" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-é-rmarkdown">O que é Rmarkdown?</h2>
-<p>Esse tipo de documento foi introduzido inicialmente no pacote <code>knitr</code> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="referencias.html#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="referencias.html#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="referencias.html#ref-R-knitr" role="doc-biblioref">2025</a>)</span> no ano de 2012. A idéia era superar as limitações do <a href="https://en.wikipedia.org/wiki/Sweave">Sweave</a>, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmd (apesar de possuir o <strong>R</strong> no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, <a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada">literate programming</a>). A programação letrada foi introduzida por Donald Knuth em 1984 e consiste em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.</p>
+<p>Esse tipo de documento foi introduzido inicialmente no pacote <code>knitr</code> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="referencias.html#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="referencias.html#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="referencias.html#ref-R-knitr" role="doc-biblioref">2025b</a>)</span> no ano de 2012. A idéia era superar as limitações do <a href="https://en.wikipedia.org/wiki/Sweave">Sweave</a>, uma ferramenta que permite a integração de código R com documentos LaTeX. Em seu desenho, o Rmd (apesar de possuir o <strong>R</strong> no nome) foi pensado em ser livre para mesclar qualquer linguagem de programação com texto, isto é, uma implementação moderna e prática da filosofia de programação letrada (em inglês, <a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_letrada">literate programming</a>). A programação letrada foi introduzida por Donald Knuth em 1984 e consiste em combinar código e documentação em um único documento para criar relatórios que são compreensíveis tanto para humanos quanto para máquinas. Trata-se de escrever programas que são explicados em linguagem natural, acompanhados pelo código-fonte. A idéia é que a lógica e a intenção por trás do código sejam claramente comunicadas.</p>
 <!-- R Markdown was designed for easier reproducibility, since both the computing code and narratives are in the same document, and results are automatically generated from the source code. R Markdown supports dozens of static and dynamic/interactive output formats. -->
 </section>
 <section id="para-que-serve-o-rmd" class="level2">
@@ -696,72 +696,79 @@ Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no 
 </ol>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, include=FALSE}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at"># estafuncao checa se os pacotes em </span><span class="st">`</span>lista_de_pacotes<span class="st">`</span><span class="at"> estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">lista_de_pacotes &lt;- c("ggplot2")</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">pacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,"Package"])]</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">if(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Análise exploratória de dados</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Vou analisar o conjunto de dados chamado <span class="st">`</span><span class="at">iris</span><span class="st">`</span>.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, echo=FALSE}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">head(iris, 5)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">### Gráficos</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, echo=TRUE}</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="at">library("ggplot2")</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="at">iris |&gt; </span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">  ggplot(aes(Sepal.Length, Sepal.Width)) +</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="at">  geom_point()</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Colocarei uma figura localizada em outra pasta</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Usarei o caminho relativo.  </span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](..<span class="sc">/</span>..<span class="sc">/</span>figuras<span class="sc">/</span>capa.png)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="sc">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="sc">---</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="st">```</span><span class="at">{r, include=FALSE}</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="at"># estafuncao checa se os pacotes em </span><span class="st">`</span>lista_de_pacotes<span class="st">`</span><span class="at"> estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="at">lista_de_pacotes &lt;- c("ggplot2")</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="at">pacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,"Package"])]</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="at">if(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">```</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="do">## Análise exploratória de dados</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>Vou analisar o conjunto de dados chamado <span class="st">`</span><span class="at">iris</span><span class="st">`</span>.</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="st">```</span><span class="at">{r, echo=FALSE}</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="at">head(iris, 5)</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="st">```</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
+<span id="cb1-24"><a href="#cb1-24"></a></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="do">### Gráficos</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="st">```</span><span class="at">{r, echo=TRUE}</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="at">library("ggplot2")</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="at">iris |&gt; </span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="at">  ggplot(aes(Sepal.Length, Sepal.Width)) +</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="at">  geom_point()</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="st">```</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a></span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="do">## Colocarei uma figura localizada em outra pasta</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a>Usarei o caminho relativo.  </span>
+<span id="cb1-38"><a href="#cb1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="sc">!</span>[](..<span class="sc">/</span>..<span class="sc">/</span>figuras<span class="sc">/</span>capa.png)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <section id="yaml" class="level3">
 <h3 class="anchored" data-anchor-id="yaml">YAML</h3>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="sc">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>YAML<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como <code>html_document</code>. Caso quiséssemos um arquivo no formato <code>.docx</code> (ou Word), o output deveria ser modificado para <code>word_document</code>. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar a página de cada formato disponível na documentação do Rmd.</p>
+<p>YAML<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como <code>html_document</code>. Caso quiséssemos um arquivo no formato <a href="./05_output.html#sec-docx">DOCX</a> (ou também chamado popularmente de <a href="https://pt.wikipedia.org/wiki/Microsoft_Word">Word</a>), o <em>output</em> deveria ser modificado para <code>word_document</code>. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar as páginas dos pacotes R listados abaixo pois cada um possui funcionalidades específicas para alguns tipos de formatos de arquivos:</p>
+<ul>
+<li><p>para formatos [PDF], HTML, DOCX e ODT básicos, visitar a página que trata do pacote <strong>Rmarkdown</strong> <span class="citation" data-cites="R-rmarkdown">(<a href="referencias.html#ref-R-rmarkdown" role="doc-biblioref">Allaire et al. 2024</a>)</span>: <a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>;</p></li>
+<li><p>para criar livros com a linguagem, visite a página que trata do pacote <strong>bookdown</strong> <span class="citation" data-cites="R-bookdown">(<a href="referencias.html#ref-R-bookdown" role="doc-biblioref">Xie 2025a</a>)</span>: <a href="https://bookdown.org/yihui/bookdown" class="uri">https://bookdown.org/yihui/bookdown</a>;</p></li>
+<li><p>para criar apresentações com a linguagem, visite a página do pacote R <strong>xaringan</strong> <span class="citation" data-cites="R-xaringan">(<a href="referencias.html#ref-R-xaringan" role="doc-biblioref">Xie 2025c</a>)</span>: <a href="https://github.com/yihui/xaringan" class="uri">https://github.com/yihui/xaringan</a>;</p></li>
+<li><p>caso as apresentações do pacote R citado anteriormente sejam muito complicadas e você deseje fazer apresentações mais simples, visite a seção de <a href="https://bookdown.org/yihui/rmarkdown/presentations.html">Apresentações</a> do livro que trata da linguagem como um todo [<strong>R Markdown: The Definitive Guide</strong>: <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>]. Lá você terá acesso a uma visão geral de diversos pacotes de R que podem gerar apresentações mais simples que as do pacote <strong>xaringan</strong>;</p></li>
+<li><p>para criar documentos DOCX e PPTX com maior número de funcionalidades, busque o pacote <strong>officedown</strong> <span class="citation" data-cites="R-officedown">(<a href="referencias.html#ref-R-officedown" role="doc-biblioref">Gohel e Ross 2025</a>)</span>: <a href="https://ardata-fr.github.io/officeverse/" class="uri">https://ardata-fr.github.io/officeverse/</a>;</p></li>
+</ul>
 </section>
 <section id="texto" class="level3">
 <h3 class="anchored" data-anchor-id="texto">Texto</h3>
 <p>No corpo do texto, você pode escrever normalmente, utilizando a sintaxe de Markdown para incluir elementos em itálico, negrito, incluir imagens, tabelas etc. Veja o aprofundamento deste tema no <strong><a href="./03_sintaxe.html">capítulo “Sintaxe”</a></strong>.</p>
 <p>Por exemplo, veja o texto escrito em Markdown abaixo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cabeçalho de nível 2</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Temos *itálico*, __negrito__, listas como a presente abaixo:</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>item 1</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>item 2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">## Cabeçalho de nível 2</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  </span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>Temos *itálico*, __negrito__, listas como a presente abaixo:</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  </span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="ss">  + </span>item 1</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ss">  + </span>item 2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Se compilamos um arquivo Markdown contendo este texto, o produto final terá uma imagem como a evidenciada abaixo:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -773,10 +780,10 @@ Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no 
 <section id="pedaços-de-código" class="level3">
 <h3 class="anchored" data-anchor-id="pedaços-de-código">Pedaços de código</h3>
 <p>Os pedaços de código em R (<em>code chunks</em>) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho <code>CTRL + ALT + I</code> no Windows/Linux e <code>CMD + ALT + I</code> no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gplot</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">gplot</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width)</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Isso conclui nosso capítulo introdutório sobre arquivos Rmd. Nos próximos capítulos, vamos explorar a sintaxe utilizada em arquivos Rmd e tipos diferentes de produtos com o Rmd.</p>
 <!-- tópicos mais avançados, incluindo personalização de saída, integração com pacotes externos e dicas de boas práticas.   -->
 <!-- Por exemplo, um mesmo código Markdown pode ser convertido para HTML, LaTeX (gera pdf’s), docx etc. -->
@@ -784,14 +791,26 @@ Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no 
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-R-rmarkdown" class="csl-entry" role="listitem">
+Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2024. <em>rmarkdown: Dynamic Documents for R</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.
+</div>
+<div id="ref-R-officedown" class="csl-entry" role="listitem">
+Gohel, David, e Noam Ross. 2025. <em>officedown: Enhanced R Markdown Format for Word and PowerPoint</em>. <a href="https://ardata-fr.github.io/officeverse/">https://ardata-fr.github.io/officeverse/</a>.
+</div>
 <div id="ref-knitr2014" class="csl-entry" role="listitem">
 Xie, Yihui. 2014. <span>«knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>»</span>. Em <em>Implementing Reproducible Computational Research</em>, editado por Victoria Stodden, Friedrich Leisch, e Roger D. Peng. Chapman; Hall/CRC.
 </div>
 <div id="ref-knitr2015" class="csl-entry" role="listitem">
 ———. 2015. <em>Dynamic Documents with <span>R</span> and knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
+<div id="ref-R-bookdown" class="csl-entry" role="listitem">
+———. 2025a. <em>bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
 <div id="ref-R-knitr" class="csl-entry" role="listitem">
-———. 2025. <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+———. 2025b. <em>knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-xaringan" class="csl-entry" role="listitem">
+———. 2025c. <em>xaringan: Presentation Ninja</em>. <a href="https://github.com/yihui/xaringan">https://github.com/yihui/xaringan</a>.
 </div>
 </div>
 </section>

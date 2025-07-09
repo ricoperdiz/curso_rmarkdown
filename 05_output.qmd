@@ -12,40 +12,27 @@ aliases:
 source("R/utils.R")
 ```
 
-A linguagem Rmarkdown possibilita a produção de inúmeros tipos de conteúdos diferentes em distintos formatos ([HTML](#sec-html), [PDF](#sec-pdf), DOCX, ODT etc).
-Vejam abaixo algumas dessas possibilidades:
-
-
-### Apresentação
-
-Esta é uma apresentação criada por meio do pacote R [**xaringan**](https://github.com/yihui/xaringan).  
+A linguagem Rmarkdown possibilita a produção de inúmeros tipos de conteúdos diferentes em distintos formatos ([HTML](#sec-html), [PDF](#sec-pdf), DOCX, ODT, PPTX etc).
+Vejam abaixo algumas dessas possibilidades, disponíveis na seção [Galeria](https://rmarkdown.rstudio.com/gallery.html) da página de apresentação da linguagem _Rmarkdown_.
+Reparem na enorme quantidade de arquivos nos mais diferentes formatos e estilos que podem ser gerados ao se utilizar a linguagem _Rmarkdown_:  
 
 ```{r, echo=FALSE, eval=TRUE}
-xaringanExtra::embed_xaringan(
-  url = "https://oficina-dados-nir-dia01.netlify.app/",
-  ratio = "4:3"
-)
-```
-
-### Página pessoal
-
-Essa é minha página pessoal, criada por meio do pacote R [**blogdown**](https://bookdown.org/yihui/blogdown/).  
-
-```{r, echo=FALSE, eval=TRUE}
-knitr::include_url("https://ricardoperdiz.com/")
+knitr::include_url("https://rmarkdown.rstudio.com/gallery.html")
 ```
 
 
 *****
 
-Discorro abaixo sobre os principais formatos ([HTML](#sec-html), [PDF](#sec-pdf), e DOCX) e sobre algumas funcionalidades específicas de determinados pacotes R.  
+Discorro abaixo sobre os principais formatos ([HTML](#sec-html), [PDF](#sec-pdf), e [DOCX](#sec-docx)), e sobre algumas funcionalidades específicas de determinados pacotes R.  
 
 
 ## Objetivos de aprendizado
 
-+ Compilar um arquivo Rmd em [HTML](#sec-html);
-+ Compilar um arquivo Rmd em [PDF](#sec-pdf);
-+ Compilar um arquivo Rmd em DOCX;
++ Compilar um arquivo Rmd em [HTML](#sec-html);  
++ Compilar um arquivo Rmd em [PDF](#sec-pdf);  
++ Compilar um arquivo Rmd em [DOCX](#sec-docx);  
++ Compilar um arquivo Rmd em [ODT](#sec-odt);  
++ Compilar um arquivo Rmd em [PPTX](#sec-pptx).  
 
 <!-- 6. **Aplicação Prática:** -->
 <!--    - Realizar exercícios práticos para criar documentos Rmd simples que integrem texto formatado com resultados de código R. -->
@@ -55,7 +42,7 @@ Discorro abaixo sobre os principais formatos ([HTML](#sec-html), [PDF](#sec-pdf)
 <!--    - Aprender sobre melhores práticas para escrever documentos Rmd claros, bem-organizados e reprodutíveis. -->
 <!--    - Conhecer técnicas para comentar e documentar o código dentro dos chunks. -->
 
-## HTML {#sec-html}
+### HTML {#sec-html}
 
 O arquivo HTML é a saída mais comum quanto ao tipo de produto gerado em arquivos Rmd e, portanto, possui o maior número de funcionalidades disponíveis em comparação com os outros tipos de produtos possíveis (PDF e DOCX).
 Há diversas maneiras de produzir HTML distintos, a depender do pacote R utilizado e a finalidade do HTML.
@@ -69,6 +56,128 @@ date: 4 Jun 2024
 output: html_document
 ---
 ```
+
+### PDF {#sec-pdf}
+
+Para poder gerar um [PDF](https://pt.wikipedia.org/wiki/Portable_Document_Format), é necessário termos uma distribuição [LaTeX](https://pt.wikipedia.org/wiki/LaTeX) [instalada no computador](01_instalacao.qmd#sec-latex).
+Certifique-se de que você instalou o pacote R __tinytex__ [@tinytex2019;@R-tinytex] (ver mais detalhes [nesta seção](01_instalacao.qmd#sec-latex)) pois esta é a maneiar mais rápida e fácil atualmente de ter uma distribuição LaTeX funcionando.  
+
+Uma vez com o LaTeX instalado em seu computador, e tendo ao menos o pacote R [rmarkdown](@R-rmarkdown;@rmarkdown) instalado e funcionando, podemos prosseguir à próxima etapa.  
+
+Devemos utilizar a função básica `rmarkdown::pdf_document()` do pacote [__rmarkdown__](@R-rmarkdown) no YAML junto ao `output:`:
+
+```yaml
+---
+title: "Um arquivo Rmd pode gerar um produto DOCX"
+author: Juquinha
+date: 2027-07-07
+output: pdf_document
+---
+```
+
+O formato PDF possui uma série de formatações não disponíveis para outros formatos, já que é o LaTeX que controla o produto final.
+Vejam algumas destas funcionalidades nas seções @sec-sumario, @sec-num_secoes, @sec-refcruz e @sec-controlefigs.  
+
+
+### DOCX {#sec-docx}
+
+Para criar um documento no formato [DOCX](https://www.lenovo.com/pt/pt/glossary/docx/?srsltid=AfmBOopIjzdLtwd17ZHKBJX2LMbRSCDsJqQ2dweZQIQqmrxRgzt3UAvD), devemos utilizar a função `rmarkdown::word_document()` via linha de comando ou simplesmente o argumento `word_document` associado ao `output` no YAML:
+
+```yaml
+---
+title: "Um arquivo Rmd pode gerar um produto DOCX"
+author: Juquinha
+date: 2027-07-07
+output: word_document
+---
+```
+
+### ODT {#sec-odt}
+
+[ODT](https://kb.fileformat.app/pt/extension/odt-file-info/) é a abreviação de _OpenDocument_, uma implementação de código aberto alternativa ao DOCX.
+
+Apesar de menos famoso que seu irmão DOCX, ele também está incluído no universo do _Rmarkdown_.
+Para criarmos um documento ODT, basta utilizarmos a função `rmarkdown::odt_document` junto ao `output` do YAML:
+
+
+```yaml
+---
+title: "Um arquivo Rmd pode gerar um produto ODT também!"
+author: Carlinhos
+date: 2027-07-07
+output: odt_document
+---
+```
+
+### PPTX {#sec-pptx}
+
+Apesar de estranho aos novatos, é possível sim criarmos uma apresentação do PowerPoint (ou simplesmente [PPTX](https://www.onlyoffice.com/blog/pt-br/2024/04/pptx)) a partir de um arquivo Rmd.
+Precisamos utilizar a função `rmarkdown::powerpoint_presentation` junto ao argumento `output` no YAML:
+
+````markdown
+---
+title: "Powerpoint"
+author: Bruninha
+date: 1 Dez 2031
+output: powerpoint_presentation
+---
+
+# Cabeçalho de primeiro grau cria um slide a parte
+
+## Cabeçalho de segundo grau é inserido no topo do slide em uma nova página
+
+- item de lista não numerada
+- outro item
+
+## Quarto slide
+
+- Mais uma lista
+- Outro item
+
+# Mais um slide solitário, como uma quebra de conteúdo
+
+## Outro slide
+
+1. Lista numerada
+2. Outro item
+
+---
+
+O separador `---` pode ser utilizado para separar slides também.  
+
+```{r, cars, fig.cap="Um plot.", echo=FALSE}
+plot(cars)
+```
+
+## Mais outro slide para finalizar
+
+2. Lista numerada
+3. Outro item
+
+````
+
+Podemos também executar um código R por script ou diretamente no console visando a [compilação de um arquivo Rmd](04_compilacao.qmd#sec-compilacomando):
+
+```{r}
+#| echo: true
+#| eval: false
+library("rmarkdown")
+rmarkdown::render(input = "meuArquivoQueVaiGerarUmPPTX.Rmd", output_format = "powerpoint_presentation")
+```
+
+Isso vale para os outros formatos também.
+O que mudaria seria apenas o valor colocado no argumento `output_format`:
+
++ se desejamos um arquivo HTML, utilizaríamos a seguinte notação `rmarkdown::render(input = "meuArquivoQueVaiGerarUmHTML.Rmd", output_format = "html_document")`;  
+
++ se queremos um PDF, então teríamos `rmarkdown::render(input = "meuArquivoQueVaiGerarUmPDF.Rmd", output_format = "pdf_document")`, e assim sucessivamente.  
+
+## Funcionalidades
+
+Apresento abaixo diversas funcionalidades disponíveis para formatar os seus documentos.
+Algumas funcionalidades só poderão ser utilizadas em determinados produtos ou então apenas presentes em alguns pacotes específicos de R.
+Leiam com atenção e pratiquem bastante.
+Em caso de dúvidas, deixe seu comentário ao fim da página.  
 
 ### Acrescentar sumário {#sec-sumario}
 
@@ -163,7 +272,6 @@ Para mais possibilidades, veja a seção [Update the date automatically](https:/
 Por meio do argumento `theme` dentro do YAML, podemos controlar a aparência de seu arquivo HTML.
 Possíveis valores incluem:
 
-
 > default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti
 
 Teste cada uma dessas possibilidades e veja como fica a aparência de seu produto.
@@ -205,14 +313,6 @@ output:
     highlight: espresso
 ---
 ```
-
-## PDF {#sec-pdf}
-
-O formato PDF possui opções não disponíveis para outros formatos, já que é o LaTeX que controla o produto final.
-Do que já vimos até então, as opções @sec-sumario, @sec-num_secoes, @sec-refcruz e @sec-controlefigs também são válidas no PDF.  
-
-
-<!-- ## DOCX -->
 
 
 

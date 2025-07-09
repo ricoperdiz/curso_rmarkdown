@@ -51,7 +51,11 @@ Construímos este arquivo em sala de aula:
 
 + [/docs/exemplos/minhaprimeiraref.bib](/docs/exemplos/minhaprimeiraref.bib)  
 
+`r import_example("minhaprimeiraref.bib")`
+
+
 Temos também um arquivo `csl` com normas da ABNT. Baixe-o por meio do endereço abaixo:
 
 + [/docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl](/docs/exemplos/associacao-brasileira-de-normas-tecnicas.csl)  
 
+`r import_example("associacao-brasileira-de-normas-tecnicas.csl")`
