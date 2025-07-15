@@ -136,43 +136,44 @@ Testem em seus documentos.
 
 ### Listas
 
-+-----------------------------------+---------------------------------+
-| Sintaxe                           | Resultado                       |
-+===================================+=================================+
-| ``` markdown                      |                                 |
-| * Lista não ordenada              | * Lista não ordenada            |
-|     + sub-item 1                  |     + sub-item 1                |
-|     + sub-item 2                  |     + sub-item 2                |
-|         - sub-sub-item 1          |         - sub-sub-item 1        |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| *   item 2                        |  *   item 2                     |
-|     Item 2 continua - basta       | Item 2 continua - basta inserir |
-| inserir 4 espaços                 |4 espaços                        |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| 1. Lista ordenada                 |  1. Lista ordenada              |
-| 2. item 2                         | 2. item 2                       |
-|     i) sub-item 1                 |     i) sub-item 1               |
-|          A.  sub-sub-item 1       |         A.  sub-sub-item 1      |
-| ```                               |                                 |
-|                                   |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| (@)  Uma lista cuja numeração     |  (1) Uma lista cuja numeração   |
-|                                   |                                 |
-| continua após                     |  continua após                  |
-|                                   |                                 |
-| (@)  uma interrupção              |  (2) uma interrupção            |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| termo                             | termo                           |
-| : definição                       | : definição                     |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
++-----------------------------------+------------------------------------+
+| Sintaxe                           | Resultado                          |
++===================================+====================================+
+| ``` markdown                      |                                    |
+| * Lista não ordenada              | * Lista não ordenada               |
+|     + sub-item 1                  |     + sub-item 1                   |
+|     + sub-item 2                  |     + sub-item 2                   |
+|         - sub-sub-item 1          |         - sub-sub-item 1           |
+| ```                               |                                    |
++-----------------------------------+------------------------------------+
+| ``` markdown                      |                                    |
+| *   item 2                        | *   item 2                         |
+|                                   |                                    |
+|     Item 2 continua - basta       |     Item 2 continua - basta        |
+| inserir 4 espaços                 | inserir 4 espaços                  |
+| ```                               |                                    |
++-----------------------------------+------------------------------------+
+| ``` markdown                      |                                    |
+| 1. Lista ordenada                 |  1. Lista ordenada                 |
+| 2. item 2                         | 2. item 2                          |
+|     i) sub-item 1                 |     i) sub-item 1                  |
+|          A.  sub-sub-item 1       |         A.  sub-sub-item 1         |
+| ```                               |                                    |
+|                                   |                                    |
++-----------------------------------+------------------------------------+
+| ``` markdown                      |                                    |
+| (@)  Uma lista cuja numeração     |  (1) Uma lista cuja numeração      |
+|                                   |                                    |
+| continua após                     |  continua após                     |
+|                                   |                                    |
+| (@)  uma interrupção              |  (2) uma interrupção               |
+| ```                               |                                    |
++-----------------------------------+------------------------------------+
+| ``` markdown                      |                                    |
+| termo                             | termo                              |
+| : definição                       | : definição                        |
+| ```                               |                                    |
++-----------------------------------+------------------------------------+
 
 ### Expressões matematicas
 
