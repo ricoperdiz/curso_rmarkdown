@@ -696,56 +696,56 @@ Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no 
 </ol>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="sc">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="sc">---</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="st">```</span><span class="at">{r, include=FALSE}</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="at"># estafuncao checa se os pacotes em </span><span class="st">`</span>lista_de_pacotes<span class="st">`</span><span class="at"> estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="at">lista_de_pacotes &lt;- c("ggplot2")</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="at">pacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,"Package"])]</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="at">if(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="st">```</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="do">## Análise exploratória de dados</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a>Vou analisar o conjunto de dados chamado <span class="st">`</span><span class="at">iris</span><span class="st">`</span>.</span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="st">```</span><span class="at">{r, echo=FALSE}</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="at">head(iris, 5)</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="st">```</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
-<span id="cb1-24"><a href="#cb1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="do">### Gráficos</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="st">```</span><span class="at">{r, echo=TRUE}</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="at">library("ggplot2")</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="at">iris |&gt; </span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="at">  ggplot(aes(Sepal.Length, Sepal.Width)) +</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="at">  geom_point()</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="st">```</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a></span>
-<span id="cb1-34"><a href="#cb1-34"></a></span>
-<span id="cb1-35"><a href="#cb1-35"></a><span class="do">## Colocarei uma figura localizada em outra pasta</span></span>
-<span id="cb1-36"><a href="#cb1-36"></a></span>
-<span id="cb1-37"><a href="#cb1-37"></a>Usarei o caminho relativo.  </span>
-<span id="cb1-38"><a href="#cb1-38"></a></span>
-<span id="cb1-39"><a href="#cb1-39"></a><span class="sc">!</span>[](..<span class="sc">/</span>..<span class="sc">/</span>figuras<span class="sc">/</span>capa.png)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, include=FALSE}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at"># estafuncao checa se os pacotes em </span><span class="st">`</span>lista_de_pacotes<span class="st">`</span><span class="at"> estao instalados no seu computador; se nao estiverem, a funcao vai instalar para vc</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">lista_de_pacotes &lt;- c("ggplot2")</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">pacote_nao_instalado &lt;- lista_de_pacotes[!(lista_de_pacotes %in% installed.packages()[,"Package"])]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">if(length(pacote_nao_instalado)) {install.packages(pacote_nao_instalado)}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Análise exploratória de dados</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Vou analisar o conjunto de dados chamado <span class="st">`</span><span class="at">iris</span><span class="st">`</span>.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, echo=FALSE}</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">head(iris, 5)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Aqui escrevo mais texto sobre meu conjunto de dados.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">### Gráficos</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r, echo=TRUE}</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="at">library("ggplot2")</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="at">iris |&gt; </span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">  ggplot(aes(Sepal.Length, Sepal.Width)) +</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="at">  geom_point()</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Colocarei uma figura localizada em outra pasta</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Usarei o caminho relativo.  </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](..<span class="sc">/</span>..<span class="sc">/</span>figuras<span class="sc">/</span>capa.png)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <section id="yaml" class="level3">
 <h3 class="anchored" data-anchor-id="yaml">YAML</h3>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="sc">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Análise exploratória de dados - iris"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Euzinho Euzo Euzão"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"15 Maio 2024"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>YAML<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se refere ao conjunto de metadados que identifica o documento, e é o responsável pelas configurações do documento. Nesta parte, informamos o título do documento, a data de criação, o nome do autor e o tipo de produto que desejamos. No exemplo acima, definimos o produto como <code>html_document</code>. Caso quiséssemos um arquivo no formato <a href="./05_output.html#sec-docx">DOCX</a> (ou também chamado popularmente de <a href="https://pt.wikipedia.org/wiki/Microsoft_Word">Word</a>), o <em>output</em> deveria ser modificado para <code>word_document</code>. Cada formato possui um conjunto de opções disponíveis. Nesse caso, é importante consultar as páginas dos pacotes R listados abaixo pois cada um possui funcionalidades específicas para alguns tipos de formatos de arquivos:</p>
@@ -761,14 +761,14 @@ Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no 
 <h3 class="anchored" data-anchor-id="texto">Texto</h3>
 <p>No corpo do texto, você pode escrever normalmente, utilizando a sintaxe de Markdown para incluir elementos em itálico, negrito, incluir imagens, tabelas etc. Veja o aprofundamento deste tema no <strong><a href="./03_sintaxe.html">capítulo “Sintaxe”</a></strong>.</p>
 <p>Por exemplo, veja o texto escrito em Markdown abaixo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">## Cabeçalho de nível 2</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  </span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>Temos *itálico*, __negrito__, listas como a presente abaixo:</span>
-<span id="cb3-6"><a href="#cb3-6"></a>  </span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="ss">  + </span>item 1</span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="ss">  + </span>item 2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cabeçalho de nível 2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Ei, gente, __olhem__ aqui. Isso é um texto em Markdown.  </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Temos *itálico*, __negrito__, listas como a presente abaixo:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>item 1</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>item 2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Se compilamos um arquivo Markdown contendo este texto, o produto final terá uma imagem como a evidenciada abaixo:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -780,10 +780,10 @@ Figura&nbsp;2.7: Criação de arquivo Rmarkdown usando as opções presentes no 
 <section id="pedaços-de-código" class="level3">
 <h3 class="anchored" data-anchor-id="pedaços-de-código">Pedaços de código</h3>
 <p>Os pedaços de código em R (<em>code chunks</em>) podem ser executados para gerar resultados que serão incorporados ao documento. Você pode inserir um pedaço de código manualmente manualmente ou com o atalho <code>CTRL + ALT + I</code> no Windows/Linux e <code>CMD + ALT + I</code> no MacOS. É possível incluir uma série de opções relacionadas à execução do código. Falaremos destas opções mais adiante.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">gplot</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width)</span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gplot</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Isso conclui nosso capítulo introdutório sobre arquivos Rmd. Nos próximos capítulos, vamos explorar a sintaxe utilizada em arquivos Rmd e tipos diferentes de produtos com o Rmd.</p>
 <!-- tópicos mais avançados, incluindo personalização de saída, integração com pacotes externos e dicas de boas práticas.   -->
 <!-- Por exemplo, um mesmo código Markdown pode ser convertido para HTML, LaTeX (gera pdf’s), docx etc. -->

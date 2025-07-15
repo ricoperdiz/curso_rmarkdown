@@ -5,15 +5,15 @@ aliases:
   - /sintaxe/
 ---
 
-A sintaxe de Markdown é simples.
+A sintaxe de *Markdown* é simples.
 Exponho[^inspirado-quarto] abaixo as notações mais comuns da linguagem.
 Testem em seus documentos.  
 
-[^inspirado-quarto]: As tabelas escritas em Markdown contendo código e sintaxe da linguagem foram abertamente inspirados [nesta página](https://quarto.org/docs/authoring/markdown-basics.html#text-formatting) que ensina sobre a sintaxe de Markdown no livro sobre o Quarto.  
+[^inspirado-quarto]: As tabelas escritas em *Markdown* contendo código e sintaxe da linguagem foram abertamente inspiradas [nesta página](https://quarto.org/docs/authoring/markdown-basics.html#text-formatting), que ensina sobre a sintaxe de *Markdown* no livro sobre o Quarto.  
 
-### Objetivos de aprendizado
+## Objetivos de aprendizado
 
-<!-- + Aprender a sintaxe básica de Markdown -->
+<!-- + Aprender a sintaxe básica de *Markdown* -->
 <!-- + Testar a sintaxe em documentos próprios para se ambientar com as possibilidades -->
 + Aprender a utilizar cabeçalhos para divisões no texto;
 + Aplicar formatação de texto (negrito, itálico, listas);
@@ -227,7 +227,70 @@ Compilando o texto acima, teríamos:
 
     Com quatro espaços, eu destaco o texto também.
 
-## Blocos de código {#sec-blococodigo}
+### Quebra de linha para criar parágrafos {#sec-paragrafo}
+
+Podemos criar parágrafos com uma linha vazia entre sentenças:
+
+```markdown
+Este é um parágrafo.
+Este parágrafo é composto de algumas sentenças.
+Se eu quiser "quebrar" o parágrafo, isto é, ter dois parágrafos bem separados visualmente, eu deixo uma linha vazia entre os parágrafos.
+
+Aqui eu inicio outro parágrafo.
+E posso continuar escrevendo normalmente.
+```
+
+Caso processado, este texto ficaria assim:
+
+> Este é um parágrafo. Este parágrafo é composto de algumas sentenças. Se eu quiser "quebrar" o parágrafo, isto é, ter dois parágrafos bem separados visualmente, eu deixo uma linha vazia entre os parágrafos.
+>
+> Aqui eu inicio outro parágrafo. E posso continuar escrevendo normalmente.
+
+
+Se você não quiser um novo parágrafo mas apenas quebrar a linha, você deve usar dois espaços em branco (`  `) ao fim de uma linha.
+Isso quebra a linha, e inicia a nova sentença na linha imediatamente inferior, porém sem adicionar um espaço considerável entre as linhas.
+Veja:
+
+```markdown
+Este é um parágrafo.
+Este parágrafo é composto de algumas sentenças.
+Posso quebrar a linha utilizando dois espaços ao fim da linha.  
+Desta maneira, esta linha que você lê neste momento está separada das linhas superiores, porém ainda em um mesmo bloco de texto.  
+```
+
+Compilando o trecho acima, temos:
+
+> Este é um parágrafo.
+Este parágrafo é composto de algumas sentenças. Posso quebrar a linha utilizando dois espaços ao fim da linha.  
+> Desta maneira, esta linha que você lê neste momento está separada das linhas superiores, porém ainda em um mesmo bloco de texto.  
+
+
+### Quebra de página
+
+Um comando útil para inserir conteúdo em uma nova página é o comando `\newpage`, que quebra a página.
+Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.  
+
+Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto.
+Então, o conteúdo após esse comando iniciará na nova página.
+Vejam:
+
+```md
+## Um cabeçalho qualquer
+
+
+Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.
+Para isso, eu insiro o comando de *nova página* abaixo.  
+
+\newpage
+
+## Esse cabeçalho aparecerá em uma nova página
+
+Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  
+
+
+```
+
+### Blocos de código {#sec-blococodigo}
 
 Para fazer um bloco de código, devemos inserir três crases ("`") seguidas pelo nome da linguagem que vamos utilizar (e.g., R, Python, Julia etc) em letras minúsculas, colocando o nome entre chaves ("{}").  
 
@@ -250,9 +313,9 @@ Atualmente, as linguagens que têm suporte para serem utilizadas em blocos de c�
 names(knitr::knit_engines$get())
 ```
 
-Para mais exemplos, veja a [seção "Other Languages"](https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html#other-languages) do livro "Rmarkdown Cookbook" [@rmarkdown2020].  
+Para mais exemplos, veja a [seção "Other Languages"](https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html#other-languages) do livro **Rmarkdown Cookbook** [@rmarkdown2020].  
 
-## Códigos R em linha ("inline codes")
+### Códigos R em linha ("inline codes")
 
 Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em "code chuncks", podem ser feitos utilizando a notação \``{{r}} códigoVaiAqui`\`.
 Inserimos o pedaço de código após a letra \``{{r}} códigoVaiAqui`\`, e antes da crase.
@@ -287,10 +350,13 @@ Ao compilarmos este texto, teríamos o seguinte resultado:
 ```
 
 
-## Tabelas
+### Tabelas
 
-Tabelas podem ser inclusas de diversas maneiras em documentos com Rmarkdown.
-A maneira mais comum de incluir tabelas é usar código Markdown.
+Tabelas podem ser inclusas de diversas maneiras em documentos com Rmarkdown.  
+
+#### Inserção por meio de código *Markdown*
+
+A maneira mais comum de incluir tabelas é usar código *Markdown*.
 Por exemplo, o código abaixo cria uma tabela:
 
 ``` markdown
@@ -300,19 +366,52 @@ Por exemplo, o código abaixo cria uma tabela:
 | 15     | 7  |   João |
 | 20       | 4    |  Jaci |
 
-: Demonstração de sintaxe de tabela em Markdown
+: Demonstração de sintaxe de tabela em *Markdown*
 ```
-
+Neste caso, a barra reta "|" separa colunas e também valores de cada coluna.
+A utilização de três sinais de menos **ao mínimo** "**-**" indica a separação entre os nomes de variáveis/colunas e os valores atribuídos a cada coluna/variável:
 
 | Var1 | Var2 | Nome | 
-|---------|:-----|------:|
+|---------|-----|------:|
 | 10      | 9   |  Joana |
 | 15     | 7  |   João |
 | 20       | 4    |  Jaci |
 
-: Demonstração de sintaxe de tabela em Markdown
+: Demonstração de sintaxe de tabela em *Markdown*
 
-Outra maneira de criar tabelas é através da importação de arquivos por meio de códigos.
+#### Mais exemplos
+
+Exemplo 1:
+
+```md
+| Cabeçalho 1 | Cabeçalho 2 |
+|-------------|-------------|
+| Linha 1 Col 1 | Linha 1 Col 2 |
+| Linha 2 Col 1 | Linha 2 Col 2 |
+```
+
+| Cabeçalho 1 | Cabeçalho 2 |
+|-------------|-------------|
+| Linha 1 Col 1 | Linha 1 Col 2 |
+| Linha 2 Col 1 | Linha 2 Col 2 |
+
+#### Alinhamento de texto
+
+Podemos alinhar o texto, contido em cada variável, para a *esquerda*, *centro* ou *direita*, por meio da utilização do sinal de dois pontos "**:**" à esquerda, em ambos os lados, ou à direita dos sinais de menos, em cada variável.
+Veja o exemplo abaixo:
+
+
+| Var1 | Var2 | Nome | 
+|:---------|:-----:|------:|
+| 10      | 9   |  Joana |
+| 15     | 7  |   João |
+| 20       | 4    |  Jaci |
+
+Nele alinhamos a variavel `Var1` à esquerda, `Var2` ao centro, e a variável `Nome` à direita.  
+
+### Inserção via código em R
+
+Outra maneira de criar tabelas é através da importação de arquivos por meio de códigos em R.
 Tomemos por exemplo os comandos necessários para importar uma tabela de extensão CSV e dados separados por tabulação ("\\t") contendo informação sopre municípios do Brasil: <https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv>.  
 
 ```{r}
@@ -329,7 +428,7 @@ knitr::kable(head(dad, 6))
 ```
 
 
-## Figuras
+### Figuras
 
 A maneira mais simples de inserir uma figura é usando a notação abaixo:
 
@@ -360,32 +459,3 @@ Vamos incluir uma imagem usando a função `knitr::include_graphics()`:
 knitr::include_graphics("figuras/capa.png")
 ```
 
-## Página nova
-
-Um comando útil para inserir conteúdo em uma nova página é o comando `\newpage`.
-Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.  
-
-Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto.
-Então, o conteúdo após esse comando iniciará na nova página.
-Vejam:
-
-```md
-## Um cabeçalho qualquer
-
-
-Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.
-Para isso, eu insiro o comando de *nova página* abaixo.  
-
-\newpage
-
-## Esse cabeçalho aparecerá em uma nova página
-
-Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  
-
-
-```
-
-<!-- ## Parágrafos -->
-
-
-<!-- XXX -->

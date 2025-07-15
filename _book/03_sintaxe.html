@@ -512,18 +512,22 @@ window.Quarto = {
     <h2 id="toc-title">Conteúdo</h2>
    
   <ul>
-  <li><a href="#objetivos-de-aprendizado" id="toc-objetivos-de-aprendizado" class="nav-link active" data-scroll-target="#objetivos-de-aprendizado">Objetivos de aprendizado</a></li>
+  <li><a href="#objetivos-de-aprendizado" id="toc-objetivos-de-aprendizado" class="nav-link active" data-scroll-target="#objetivos-de-aprendizado">Objetivos de aprendizado</a>
+  <ul class="collapse">
   <li><a href="#formatação" id="toc-formatação" class="nav-link" data-scroll-target="#formatação">Formatação</a></li>
   <li><a href="#cabecalhos" id="toc-cabecalhos" class="nav-link" data-scroll-target="#cabecalhos">Cabeçalho</a></li>
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><em>Links</em></a></li>
   <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
   <li><a href="#expressões-matematicas" id="toc-expressões-matematicas" class="nav-link" data-scroll-target="#expressões-matematicas">Expressões matematicas</a></li>
   <li><a href="#citação-em-blocos" id="toc-citação-em-blocos" class="nav-link" data-scroll-target="#citação-em-blocos">Citação em blocos</a></li>
+  <li><a href="#sec-paragrafo" id="toc-sec-paragrafo" class="nav-link" data-scroll-target="#sec-paragrafo">Quebra de linha para criar parágrafos</a></li>
+  <li><a href="#quebra-de-página" id="toc-quebra-de-página" class="nav-link" data-scroll-target="#quebra-de-página">Quebra de página</a></li>
   <li><a href="#sec-blococodigo" id="toc-sec-blococodigo" class="nav-link" data-scroll-target="#sec-blococodigo">Blocos de código</a></li>
   <li><a href="#códigos-r-em-linha-inline-codes" id="toc-códigos-r-em-linha-inline-codes" class="nav-link" data-scroll-target="#códigos-r-em-linha-inline-codes">Códigos R em linha (“inline codes”)</a></li>
   <li><a href="#tabelas" id="toc-tabelas" class="nav-link" data-scroll-target="#tabelas">Tabelas</a></li>
+  <li><a href="#inserção-via-código-em-r" id="toc-inserção-via-código-em-r" class="nav-link" data-scroll-target="#inserção-via-código-em-r">Inserção via código em R</a></li>
   <li><a href="#figuras" id="toc-figuras" class="nav-link" data-scroll-target="#figuras">Figuras</a></li>
-  <li><a href="#página-nova" id="toc-página-nova" class="nav-link" data-scroll-target="#página-nova">Página nova</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/edit/main/03_sintaxe.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/blob/main/03_sintaxe.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/ricoperdiz/curso_rmarkdown/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -550,10 +554,10 @@ window.Quarto = {
 </header>
 
 
-<p>A sintaxe de Markdown é simples. Exponho<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> abaixo as notações mais comuns da linguagem. Testem em seus documentos.</p>
-<section id="objetivos-de-aprendizado" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h3>
-<!-- + Aprender a sintaxe básica de Markdown -->
+<p>A sintaxe de <em>Markdown</em> é simples. Exponho<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> abaixo as notações mais comuns da linguagem. Testem em seus documentos.</p>
+<section id="objetivos-de-aprendizado" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizado">Objetivos de aprendizado</h2>
+<!-- + Aprender a sintaxe básica de *Markdown* -->
 <!-- + Testar a sintaxe em documentos próprios para se ambientar com as possibilidades -->
 <ul>
 <li>Aprender a utilizar cabeçalhos para divisões no texto;</li>
@@ -563,7 +567,6 @@ window.Quarto = {
 <li>Incluir tabelas e gráficos gerados pelo código R;</li>
 <li>Incorporar elementos visuais adicionais, como imagens e links.</li>
 </ul>
-</section>
 <section id="formatação" class="level3">
 <h3 class="anchored" data-anchor-id="formatação">Formatação</h3>
 <table class="caption-top table">
@@ -711,8 +714,8 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="listas">Listas</h3>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 49%">
 <col style="width: 50%">
-<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -739,10 +742,12 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>item 2</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    Item 2 continua - basta</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>inserir 4 espaços</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div></td>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    Item 2 continua - basta</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>inserir 4 espaços</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div></td>
 <td><ul>
-<li>item 2 Item 2 continua - basta inserir 4 espaços</li>
+<li><p>item 2</p>
+<p>Item 2 continua - basta inserir 4 espaços</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -812,17 +817,59 @@ definição
 <p>Compilando o texto acima, teríamos:</p>
 <pre><code>Com quatro espaços, eu destaco o texto também.</code></pre>
 </section>
-<section id="sec-blococodigo" class="level2">
-<h2 class="anchored" data-anchor-id="sec-blococodigo">Blocos de código</h2>
+<section id="sec-paragrafo" class="level3">
+<h3 class="anchored" data-anchor-id="sec-paragrafo">Quebra de linha para criar parágrafos</h3>
+<p>Podemos criar parágrafos com uma linha vazia entre sentenças:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Este é um parágrafo.</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>Este parágrafo é composto de algumas sentenças.</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>Se eu quiser "quebrar" o parágrafo, isto é, ter dois parágrafos bem separados visualmente, eu deixo uma linha vazia entre os parágrafos.</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>Aqui eu inicio outro parágrafo.</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>E posso continuar escrevendo normalmente.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Caso processado, este texto ficaria assim:</p>
+<blockquote class="blockquote">
+<p>Este é um parágrafo. Este parágrafo é composto de algumas sentenças. Se eu quiser “quebrar” o parágrafo, isto é, ter dois parágrafos bem separados visualmente, eu deixo uma linha vazia entre os parágrafos.</p>
+<p>Aqui eu inicio outro parágrafo. E posso continuar escrevendo normalmente.</p>
+</blockquote>
+<p>Se você não quiser um novo parágrafo mas apenas quebrar a linha, você deve usar dois espaços em branco (<code></code>) ao fim de uma linha. Isso quebra a linha, e inicia a nova sentença na linha imediatamente inferior, porém sem adicionar um espaço considerável entre as linhas. Veja:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Este é um parágrafo.</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>Este parágrafo é composto de algumas sentenças.</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>Posso quebrar a linha utilizando dois espaços ao fim da linha.  </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>Desta maneira, esta linha que você lê neste momento está separada das linhas superiores, porém ainda em um mesmo bloco de texto.  </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compilando o trecho acima, temos:</p>
+<blockquote class="blockquote">
+<p>Este é um parágrafo. Este parágrafo é composto de algumas sentenças. Posso quebrar a linha utilizando dois espaços ao fim da linha.<br>
+Desta maneira, esta linha que você lê neste momento está separada das linhas superiores, porém ainda em um mesmo bloco de texto.</p>
+</blockquote>
+</section>
+<section id="quebra-de-página" class="level3">
+<h3 class="anchored" data-anchor-id="quebra-de-página">Quebra de página</h3>
+<p>Um comando útil para inserir conteúdo em uma nova página é o comando <code>\newpage</code>, que quebra a página. Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.</p>
+<p>Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto. Então, o conteúdo após esse comando iniciará na nova página. Vejam:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Um cabeçalho qualquer</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>Para isso, eu insiro o comando de *nova página* abaixo.  </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>\newpage</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esse cabeçalho aparecerá em uma nova página</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  </span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sec-blococodigo" class="level3">
+<h3 class="anchored" data-anchor-id="sec-blococodigo">Blocos de código</h3>
 <p>Para fazer um bloco de código, devemos inserir três crases (“`”) seguidas pelo nome da linguagem que vamos utilizar (e.g., R, Python, Julia etc) em letras minúsculas, colocando o nome entre chaves (“{}”).</p>
 <p>Um código em R:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Olá, como vai?"</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Olá, como vai?"</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Um código em Python:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"OI"</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"OI"</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>As linguagens em blocos de códigos são processadas pelo pacote <strong>knitr</strong> <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="referencias.html#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="referencias.html#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="referencias.html#ref-R-knitr" role="doc-biblioref">2025</a>)</span>. Atualmente, as linguagens que têm suporte para serem utilizadas em blocos de código são:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -837,10 +884,10 @@ definição
 [49] "stan"      "targets"   "tikz"      "verbatim"  "ojs"       "mermaid"  </code></pre>
 </div>
 </div>
-<p>Para mais exemplos, veja a <a href="https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html#other-languages">seção “Other Languages”</a> do livro “Rmarkdown Cookbook” <span class="citation" data-cites="rmarkdown2020">(<a href="referencias.html#ref-rmarkdown2020" role="doc-biblioref">Xie, Dervieux, e Riederer 2020</a>)</span>.</p>
+<p>Para mais exemplos, veja a <a href="https://bookdown.org/yihui/rmarkdown-cookbook/other-languages.html#other-languages">seção “Other Languages”</a> do livro <strong>Rmarkdown Cookbook</strong> <span class="citation" data-cites="rmarkdown2020">(<a href="referencias.html#ref-rmarkdown2020" role="doc-biblioref">Xie, Dervieux, e Riederer 2020</a>)</span>.</p>
 </section>
-<section id="códigos-r-em-linha-inline-codes" class="level2">
-<h2 class="anchored" data-anchor-id="códigos-r-em-linha-inline-codes">Códigos R em linha (“inline codes”)</h2>
+<section id="códigos-r-em-linha-inline-codes" class="level3">
+<h3 class="anchored" data-anchor-id="códigos-r-em-linha-inline-codes">Códigos R em linha (“inline codes”)</h3>
 <p>Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em “code chuncks”, podem ser feitos utilizando a notação `<code>{r} códigoVaiAqui</code>`. Inserimos o pedaço de código após a letra `<code>{r} códigoVaiAqui</code>`, e antes da crase. O resultado será exposto como um texto normal, e não será distinto do texto circundante. Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.</p>
 <p>Tomando o conjunto de dados <code>iris</code> como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:</p>
 <p>`r nrow(iris)`</p>
@@ -854,47 +901,112 @@ definição
 
 + Os dados possuem 150 linhas e 5 colunas.</code></pre>
 </section>
-<section id="tabelas" class="level2">
-<h2 class="anchored" data-anchor-id="tabelas">Tabelas</h2>
-<p>Tabelas podem ser inclusas de diversas maneiras em documentos com Rmarkdown. A maneira mais comum de incluir tabelas é usar código Markdown. Por exemplo, o código abaixo cria uma tabela:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Var1 <span class="pp">|</span> Var2 <span class="pp">|</span> Nome <span class="pp">|</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|:-----|------:|</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10      <span class="pp">|</span> 9   <span class="pp">|</span>  Joana <span class="pp">|</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 15     <span class="pp">|</span> 7  <span class="pp">|</span>   João <span class="pp">|</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 20       <span class="pp">|</span> 4    <span class="pp">|</span>  Jaci <span class="pp">|</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>: Demonstração de sintaxe de tabela em Markdown</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tabelas" class="level3">
+<h3 class="anchored" data-anchor-id="tabelas">Tabelas</h3>
+<p>Tabelas podem ser inclusas de diversas maneiras em documentos com Rmarkdown.</p>
+<section id="inserção-por-meio-de-código-markdown" class="level4">
+<h4 class="anchored" data-anchor-id="inserção-por-meio-de-código-markdown">Inserção por meio de código <em>Markdown</em></h4>
+<p>A maneira mais comum de incluir tabelas é usar código <em>Markdown</em>. Por exemplo, o código abaixo cria uma tabela:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Var1 <span class="pp">|</span> Var2 <span class="pp">|</span> Nome <span class="pp">|</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|:-----|------:|</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10      <span class="pp">|</span> 9   <span class="pp">|</span>  Joana <span class="pp">|</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 15     <span class="pp">|</span> 7  <span class="pp">|</span>   João <span class="pp">|</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 20       <span class="pp">|</span> 4    <span class="pp">|</span>  Jaci <span class="pp">|</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>: Demonstração de sintaxe de tabela em *Markdown*</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Neste caso, a barra reta “|” separa colunas e também valores de cada coluna. A utilização de três sinais de menos <strong>ao mínimo</strong> “<strong>-</strong>” indica a separação entre os nomes de variáveis/colunas e os valores atribuídos a cada coluna/variável:</p>
 <table class="caption-top table">
-<caption>Demonstração de sintaxe de tabela em Markdown</caption>
+<caption>Demonstração de sintaxe de tabela em <em>Markdown</em></caption>
 <thead>
 <tr class="header">
 <th>Var1</th>
-<th style="text-align: left;">Var2</th>
+<th>Var2</th>
 <th style="text-align: right;">Nome</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>10</td>
-<td style="text-align: left;">9</td>
+<td>9</td>
 <td style="text-align: right;">Joana</td>
 </tr>
 <tr class="even">
 <td>15</td>
-<td style="text-align: left;">7</td>
+<td>7</td>
 <td style="text-align: right;">João</td>
 </tr>
 <tr class="odd">
 <td>20</td>
-<td style="text-align: left;">4</td>
+<td>4</td>
 <td style="text-align: right;">Jaci</td>
 </tr>
 </tbody>
 </table>
-<p>Outra maneira de criar tabelas é através da importação de arquivos por meio de códigos. Tomemos por exemplo os comandos necessários para importar uma tabela de extensão CSV e dados separados por tabulação (“\t”) contendo informação sopre municípios do Brasil: <a href="https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv" class="uri">https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv</a>.</p>
+</section>
+<section id="mais-exemplos" class="level4">
+<h4 class="anchored" data-anchor-id="mais-exemplos">Mais exemplos</h4>
+<p>Exemplo 1:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cabeçalho 1 <span class="pp">|</span> Cabeçalho 2 <span class="pp">|</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------|-------------|</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Linha 1 Col 1 <span class="pp">|</span> Linha 1 Col 2 <span class="pp">|</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Linha 2 Col 1 <span class="pp">|</span> Linha 2 Col 2 <span class="pp">|</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Cabeçalho 1</th>
+<th>Cabeçalho 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linha 1 Col 1</td>
+<td>Linha 1 Col 2</td>
+</tr>
+<tr class="even">
+<td>Linha 2 Col 1</td>
+<td>Linha 2 Col 2</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alinhamento-de-texto" class="level4">
+<h4 class="anchored" data-anchor-id="alinhamento-de-texto">Alinhamento de texto</h4>
+<p>Podemos alinhar o texto, contido em cada variável, para a <em>esquerda</em>, <em>centro</em> ou <em>direita</em>, por meio da utilização do sinal de dois pontos “<strong>:</strong>” à esquerda, em ambos os lados, ou à direita dos sinais de menos, em cada variável. Veja o exemplo abaixo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Var1</th>
+<th style="text-align: center;">Var2</th>
+<th style="text-align: right;">Nome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: right;">Joana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">15</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">João</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">Jaci</td>
+</tr>
+</tbody>
+</table>
+<p>Nele alinhamos a variavel <code>Var1</code> à esquerda, <code>Var2</code> ao centro, e a variável <code>Nome</code> à direita.</p>
+</section>
+</section>
+<section id="inserção-via-código-em-r" class="level3">
+<h3 class="anchored" data-anchor-id="inserção-via-código-em-r">Inserção via código em R</h3>
+<p>Outra maneira de criar tabelas é através da importação de arquivos por meio de códigos em R. Tomemos por exemplo os comandos necessários para importar uma tabela de extensão CSV e dados separados por tabulação (“\t”) contendo informação sopre municípios do Brasil: <a href="https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv" class="uri">https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv</a>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dad <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dad, <span class="dv">6</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dad <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"https://raw.githubusercontent.com/LABOTAM/IntroR/main/dados/municipiosbrasil.csv"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dad, <span class="dv">6</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Country Province Regiao            Municipio Latitude Longitude
 1  Brasil     Acre  Norte          Mâncio Lima   -7.614   -72.896
@@ -907,7 +1019,7 @@ definição
 </div>
 <p>Para deixar a tabela mais elegante visualmente, uma dica é utilizar a função <code>knitr::kable()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dad, <span class="dv">6</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dad, <span class="dv">6</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -974,12 +1086,12 @@ definição
 </div>
 </div>
 </section>
-<section id="figuras" class="level2">
-<h2 class="anchored" data-anchor-id="figuras">Figuras</h2>
+<section id="figuras" class="level3">
+<h3 class="anchored" data-anchor-id="figuras">Figuras</h3>
 <p>A maneira mais simples de inserir uma figura é usando a notação abaixo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Legenda da figura](endereco-da-figura)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Legenda da figura](endereco-da-figura)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A figura pode estar gravada em seu computador, ou pode estar alojada na rede em algum sítio digital. O necessário é que o endereço esteja correto. Por exemplo, a figura “capa.png” está dentro de uma pasta “figuras/” dentro deste projeto. Vou colocá-la abaixo da seguinte maneira:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Capa deste livro](figuras/capa.png)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Capa deste livro](figuras/capa.png)</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figuras/capa.png" class="img-fluid figure-img"></p>
@@ -989,7 +1101,7 @@ definição
 <p>As figuras inseridas podem ser de diversos formatos: jpeg, png, tiff etc. Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do arquivo. É importante então se atentar para este detalhe.</p>
 <p>Outra maneira de inserir figuras é por meio de funções dentro de <a href="#sec-blococodigo">blocos de código</a>. Vamos incluir uma imagem usando a função <code>knitr::include_graphics()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figuras/capa.png"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figuras/capa.png"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -998,25 +1110,6 @@ definição
 </div>
 </div>
 </div>
-</section>
-<section id="página-nova" class="level2">
-<h2 class="anchored" data-anchor-id="página-nova">Página nova</h2>
-<p>Um comando útil para inserir conteúdo em uma nova página é o comando <code>\newpage</code>. Originalmente, ele funcionava apenas para produtos PDF, mas já há algum tempo, ele pode ser utilizado também em produtos DOCX.</p>
-<p>Para utilizá-lo, basta inserir o comando onde você deseja que seja criada uma nova página a partir daquele ponto. Então, o conteúdo após esse comando iniciará na nova página. Vejam:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Um cabeçalho qualquer</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>Aqui eu já escrevi bastante e penso que o próximo conteúdo deva aparecer em uma nova página.</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>Para isso, eu insiro o comando de *nova página* abaixo.  </span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>\newpage</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Esse cabeçalho aparecerá em uma nova página</span></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>Já estando em uma nova página, podemos continuar a inserir mais conteúdo.  </span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- ## Parágrafos -->
-<!-- XXX -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -1034,10 +1127,11 @@ Xie, Yihui, Christophe Dervieux, e Emily Riederer. 2020. <em>R Markdown Cookbook
 </div>
 </div>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>As tabelas escritas em Markdown contendo código e sintaxe da linguagem foram abertamente inspirados <a href="https://quarto.org/docs/authoring/markdown-basics.html#text-formatting">nesta página</a> que ensina sobre a sintaxe de Markdown no livro sobre o Quarto.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>As tabelas escritas em <em>Markdown</em> contendo código e sintaxe da linguagem foram abertamente inspiradas <a href="https://quarto.org/docs/authoring/markdown-basics.html#text-formatting">nesta página</a>, que ensina sobre a sintaxe de <em>Markdown</em> no livro sobre o Quarto.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
