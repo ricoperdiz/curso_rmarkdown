@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.16">
+<meta name="generator" content="quarto-1.9.3">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,14 +94,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-50a6adf84115c145d18121a4a81cbcfe.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48a67b8a3f4081896fa7798b81e7b76c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c2c734c87a0287ab07c66a91f9aca017.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-dbf1ef4b50b87ad3dcdf3eec5e07506a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c2c734c87a0287ab07c66a91f9aca017.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b1ccfc91e9a27938a49a770e6131bfa2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6614bd3905b4b0fa797c882fb704b00d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b1ccfc91e9a27938a49a770e6131bfa2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f4032afa54fa802362e8aab1784b2dce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e00cb244db8fdcea2494a84408c21b36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f4032afa54fa802362e8aab1784b2dce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -130,20 +130,20 @@ div.csl-indent {
 }</script>
 
 
-<meta property="og:title" content="Conceitos básicos – Introdução ao Rmarkdown e Quarto">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://intrormarkdown.netlify.app/figuras/rstudio_newproject.png">
-<meta property="og:site_name" content="Introdução ao Rmarkdown e Quarto">
-<meta property="og:image:height" content="257">
-<meta property="og:image:width" content="404">
+<meta property="og:title" content="Introdução ao Rmarkdown e Quarto">
+<meta property="og:description" content="Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.">
+<meta property="og:image" content="https://intrormarkdown.netlify.app//figuras/capa.png">
+<meta property="og:site_name" content="RicardoPerdiz:Intro Rmarkdown/Quarto">
+<meta property="og:image:height" content="796">
+<meta property="og:image:width" content="1589">
 <meta name="twitter:title" content="Introdução ao Rmarkdown e Quarto">
 <meta name="twitter:description" content="Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos.">
-<meta name="twitter:image" content="https://intrormarkdown.netlify.app/figuras/capa.png">
+<meta name="twitter:image" content="https://intrormarkdown.netlify.app//figuras/capa.png">
 <meta name="twitter:creator" content="ricoperdiz">
 <meta name="twitter:site" content="ricoperdiz">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="796">
 <meta name="twitter:image-width" content="1589">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -887,13 +887,14 @@ Xie, Yihui. 2014. <span>«knitr: A Comprehensive Tool for Reproducible Research 
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
