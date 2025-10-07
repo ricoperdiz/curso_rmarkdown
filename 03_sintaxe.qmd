@@ -6,14 +6,15 @@ aliases:
 ---
 
 A sintaxe de *Markdown* é simples.
-Exponho[^inspirado-quarto] abaixo as notações mais comuns da linguagem.
+O [sabor (ou dialeto) de *Markdown*](https://pt.wikipedia.org/wiki/Markdown#Padroniza%C3%A7%C3%A3o) aqui empregado é o do [*Pandoc*](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html).
+Exponho[^inspirado-quarto] abaixo as notações mais comuns da linguagem neste dialeto.
 Testem em seus documentos.  
 
 [^inspirado-quarto]: As tabelas escritas em *Markdown* contendo código e sintaxe da linguagem foram abertamente inspiradas [nesta página](https://quarto.org/docs/authoring/markdown-basics.html#text-formatting), que ensina sobre a sintaxe de *Markdown* no livro sobre o Quarto.  
 
 ## Objetivos de aprendizado
 
-<!-- + Aprender a sintaxe básica de *Markdown* -->
++ Aprender a sintaxe básica de *Markdown*, sabor [*Pandoc*](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html);
 <!-- + Testar a sintaxe em documentos próprios para se ambientar com as possibilidades -->
 + Aprender a utilizar cabeçalhos para divisões no texto;
 + Aplicar formatação de texto (negrito, itálico, listas);
@@ -104,7 +105,7 @@ Testem em seus documentos.
 ```
 
 
-### *Links*
+### *Links* {#sec-link}
 
 +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Sintaxe                                                      | Resultado                                                                                              |
@@ -117,22 +118,7 @@ Testem em seus documentos.
 | [UFRR](https://ufrr.br/)                                     |                                                                                                        |
 | ```                                                          |                                                                                                        |
 +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | ![Legenda](figuras/ufrr.png){fig-alt="Texto alternativo."}                                             |
-| ![Legenda](figuras/capa.png)                                 |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![Legenda](figuras/ufrr.png)](https://ufrr.br)                                                        |
-| [![Legenda](figuras/ufrr.png)](https://ufrr.br)              |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![Legenda](figuras/ufrr.png "UFRR"){fig-alt="Texto alternativo"}](https://ufrr.br)                    |
-| [![Caption](figuras/ufrr.png "UFRR")](https://ufrr.br)       |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![](figuras/ufrr.png){fig-alt="Texto"}](https://ufrr.br)                                              |
-| [![](figuras/ufrr.png){fig-alt="Texto"}](https://ufrr.br)    |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
 
 ### Listas
 
@@ -318,9 +304,9 @@ Para mais exemplos, veja a [seção "Other Languages"](https://bookdown.org/yihu
 
 ### Códigos R em linha ("inline codes")
 
-Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, não inclusos em "code chuncks", podem ser feitos utilizando a notação \``{{r}} códigoVaiAqui`\`.
-Inserimos o pedaço de código após a letra \``{{r}} códigoVaiAqui`\`, e antes da crase.
-O resultado será exposto como um texto normal, e não será distinto do texto circundante.
+Códigos R em linha, isto é, pedaços de códigos mesclados diretamente ao texto, diferentemente dos pedaços de código ([*code chunks*](https://bookdown-org.translate.goog/yihui/rmarkdown/r-code.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc)), podem ser feitos utilizando a notação ``{r} códigoVaiAqui``.
+Inserimos o pedaço de código entre a letra *r* e antes da crase: ``{r} ``.
+O resultado deste  *código em linha* será exibido como um texto normal, e não será distinto do texto circundante.
 Uma das implicações disso é permitir confiança na transmissão de informações se mantivermos uma base de dados atualizada.  
 
 Tomando o conjunto de dados `iris` como exemplo, podemos informar quantas linhas há neste conjunto de dados utilizando a notação:
@@ -431,29 +417,66 @@ knitr::kable(head(dad, 6))
 
 ### Figuras
 
-A maneira mais simples de inserir uma figura é usando a notação abaixo:
+#### Inserção via código *Markdown*
+
+A maneira mais simples de inserir uma figura é usando a notação *Markdown* abaixo:
 
 ```md
-![Legenda da figura](endereco-da-figura)
+![Texto alternativo](endereco-da-figura)
 ```
+
+A notação *Markdown* para inserir uma figura é semelhante a de um [*link*](#sec-link), porém com o acréscimo à frente de um ponto de exclamação.
+É **importante** que o código *esteja em uma linha só para ele* e que não haja nada nem antes da exclamação nem depois do parêntese que fecha o endereço.
+Desta forma, a imagem será renderizada e incluída no documento junto a uma legenda.
+O texto alternativo serve como **legenda da figura** (**não disponível** nos formatos de saída ODT e RTF; nesses casos, a figura aparecerá sozinha).  
+
+Caso você deseje incluir uma imagem junto a um texto, inclua texto após o parêntese.
+Veja o exemplo abaixo:
+
+```md
+![Capa do livro presente em <https://intrormarkdown.netlify.app/>](figuras/capa.png) teste
+```
+
+![Capa do livro presente em <https://intrormarkdown.netlify.app/>](figuras/capa.png) teste
+
+
 
 A figura pode estar gravada em seu computador, ou pode estar alojada na rede em algum sítio digital.
 O necessário é que o endereço esteja correto.
-Por exemplo, a figura "capa.png" está dentro de uma pasta "figuras/" dentro deste projeto.
+Por exemplo, a figura `capa.png` está dentro de uma pasta `figuras/` dentro deste projeto.
 Vou colocá-la abaixo da seguinte maneira:
 
 ```md
-![Capa deste livro](figuras/capa.png)
+![Capa do livro presente em <https://intrormarkdown.netlify.app/>](figuras/capa.png)
 ```
 
-![Capa deste livro](figuras/capa.png)
+![Capa do livro presente em <https://intrormarkdown.netlify.app/>](figuras/capa.png)
 
-As figuras inseridas podem ser de diversos formatos: jpeg, png, tiff etc.
+As figuras inseridas podem ser de diversos formatos: [jpeg](https://pt.wikipedia.org/wiki/JPEG), [png](https://pt.wikipedia.org/wiki/PNG), [tiff](https://pt.wikipedia.org/wiki/Tagged_Image_File_Format) etc.
 Porém, quanto menor o tamanho da figura, menor será o tempo de compilação do arquivo. 
 É importante então se atentar para este detalhe.  
 
+
+```md
+![Legenda](figuras/ufrr.png){fig-alt="Texto alternativo."}
+```
+
+```md
+[![Legenda](figuras/ufrr.png)](https://ufrr.br)
+```
+
+```md
+[![Legenda](figuras/ufrr.png "UFRR"){fig-alt="Texto alternativo"}](https://ufrr.br)
+```
+
+```md
+[![](figuras/ufrr.png){fig-alt="Texto"}](https://ufrr.br)
+```
+
+#### Inserção via código em R
+
 Outra maneira de inserir figuras é por meio de funções dentro de [blocos de código](#sec-blococodigo).
-Vamos incluir uma imagem usando a função `knitr::include_graphics()`:
+Vamos incluir uma imagem usando a função `knitr::include_graphics()`:  
 
 ```{r}
 #| echo: true
