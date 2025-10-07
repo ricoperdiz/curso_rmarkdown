@@ -42,11 +42,16 @@ book:
   back-to-top-navigation: true
   reader-mode: true
   favicon: "figuras/favicon.png"
-  open-graph: true
+  open-graph:
+    title: "Introdução ao Rmarkdown e Quarto"
+    description: "Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos."
+    image: "/figuras/capa.png"
+    site-name: "RicardoPerdiz:Intro Rmarkdown/Quarto"
   twitter-card:
     title: "Introdução ao Rmarkdown e Quarto"
     description: "Material sobre o uso de Rmarkdown e Quarto para a produção de relatórios, apresentações, artigos, livros e diversos outros produtos."
-    image: "figuras/capa.png"
+    image: "/figuras/capa.png"
+    card-style: summary_large_image
     creator: "ricoperdiz"
     site: "ricoperdiz"
   site-url: "https://intrormarkdown.netlify.app/"
@@ -55,7 +60,7 @@ book:
   repo-actions: [edit, source, issue]
   
   navbar: 
-    logo: "figuras/favicon.png"
+    logo: "/figuras/favicon.png"
     pinned: false
     # background: "dark"
     tools:
